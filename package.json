@@ -5,6 +5,8 @@
   "scripts": {
     "build": "rm -rf _site && eleventy",
     "start": "eleventy --serve",
+    "lint": "eslint .",
+    "lint:fix": "npm run lint -- --fix",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
