@@ -1,0 +1,65 @@
+  <footer class="no-print">
+    <span class="bar"/>
+    <p name="copyright">2022</p>
+  </footer>
+
+<script webc:keep webc:scoped>
+  window.customElements.define('site-footer', class extends HTMLElement {
+    connectedCallback() {
+      const copyright = this.querySelector('p');
+      copyright.innerHTML = `Copyright &copy; ${new Date().getFullYear()}`
+    }
+  })
+</script>
+
+<style webc:keep webc:scoped>
+  footer {
+    color: var(--text-color);
+    margin: 0 auto;
+    max-width: 940px;
+    overflow: hidden;
+    padding: 30px 15px;
+    position: relative;
+    text-align: center;
+  }
+
+  .bar {
+    border-top: 4px solid var(--link-color);
+    display: block;
+    margin: 48px auto;
+    width: 50%;
+  }
+
+  @media (max-width: 1200px) {
+    .bar {
+      margin: 48px auto;
+    }
+  }
+
+  @media (max-width: 990px) {
+    .bar {
+      margin: 0 auto 48px;
+    }
+  }
+
+  @media (max-width: 575px) {
+    footer {
+      padding: 22px 15px;
+    }
+
+    .bar {
+      margin: 0 auto 32px;
+    }
+  }
+
+  a {
+    color: var(--link-color);
+    transition: 0.15s ease-in-out;
+  }
+
+  p {
+    font-size: 0.75rem;
+    margin: 0 auto;
+    text-align: center;
+  }
+</style>
