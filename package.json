@@ -24,7 +24,12 @@
   "homepage": "https://github.com/ulisesantana/web#readme",
   "devDependencies": {
     "@11ty/eleventy": "^2.0.0-canary.23",
-    "@11ty/eleventy-plugin-webc": "^0.8.1"
+    "@11ty/eleventy-plugin-webc": "^0.8.1",
+    "eslint": "^8.31.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-n": "^15.6.0",
+    "eslint-plugin-promise": "^6.1.1"
   },
   "dependencies": {
     "@icongo/io": "^1.1.2"
