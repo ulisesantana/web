@@ -1,0 +1,97 @@
+<div class="theme-switch">
+  <input type="checkbox" />
+  <span class="icon">
+    <light-bulb></light-bulb>
+  </span>
+</div>
+
+<script webc:keep>
+  window.customElements.define('theme-switch', class extends HTMLElement {
+    themeKey = 'theme'
+    theme = {
+      dark: 'dark',
+      light: 'light'
+    }
+    
+    connectedCallback() {
+      const checkbox = this.querySelector(':scope input')
+      checkbox.checked = this.getDarkModeCachedValue()
+      this.setTheme(checkbox.checked)
+      checkbox.addEventListener('change', (event) => {
+        const isDark = event.target.checked
+        this.setTheme(isDark)
+      })
+    }
+    
+    isDarkModeEnabled = () => window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+    setDarkModeCachedValue = (value) => window.localStorage.setItem(this.themeKey, value ? this.theme.dark : this.theme.light)
+    getDarkModeCachedValue = () => {
+      const state = window.localStorage.getItem(this.themeKey)
+      if (state !== null) {
+        return state === this.theme.dark
+      }
+      return this.isDarkModeEnabled()
+    }
+    setTheme(isDark) {
+      console.log('Setting to dark theme', isDark)
+      this.setDarkModeCachedValue(isDark)
+      if (isDark) {
+        document.body.classList.add('theme-dark')
+        document.body.classList.remove('theme-light')
+      } else {
+        document.body.classList.add('theme-light')
+        document.body.classList.remove('theme-dark')
+      }
+    }
+  })
+
+</script>
+
+<style webc:keep webc:scoped>
+  /* .theme-switch {
+    --size: 36px;
+    cursor: pointer;
+    color: var(--black);
+    display: inline-block;
+    height: calc(var(--size) + 10px);
+    position: relative;
+    width: var(--size);
+  }
+
+  .theme-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .theme-switch input + .icon,
+  .theme-switch input + .icon:before {
+    background-color: #bbb;
+    border-radius: 50%;
+    content: '';
+    position: absolute;
+    height: 27px;
+    width: 22px;
+    left: 14px;
+    transition: all ease-in-out 0.5s;
+  }
+
+  .theme-switch input .light-bulb {
+    height: var(--size);
+    position: absolute;
+    transition: all ease-in-out 0.5s;
+    filter: drop-shadow(0 0 0.25rem yellow);
+    width: var(--size);
+  }
+
+  .theme-switch input:checked .light-bulb {
+    filter: none;
+  }
+
+  .theme-switch input:checked+.icon,
+  .theme-switch input:checked+.icon:before {
+    background-color: yellow;
+    filter: drop-shadow(0 0 0.50rem yellow);
+    transition: all ease-in-out 0.5s;
+  } */
+</style>

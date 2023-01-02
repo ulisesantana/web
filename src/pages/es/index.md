@@ -1,6 +1,6 @@
 ---
 layout: base.webc
-metaTitle: Sobre mí | Ulises Santana
+title: Sobre mí
 ---
 
 Ulises Santana

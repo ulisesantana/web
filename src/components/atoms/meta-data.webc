@@ -1,0 +1,21 @@
+<script webc:type="render" webc:is="template">
+	function () {
+		const localeSite = this.site[this.locale]
+		const {author, twitter, name: siteName, colors} = this.site
+		const description = this.description ?? localeSite.description;
+		const title = this.title ?? localeSite.title;
+
+		return `
+<meta property="og:type" content="${this.metatype}">
+<meta name="theme-color" content="${colors.primary}"/>
+<meta name="author" content="${author.name}">
+<meta property="og:title" content="${title}">
+<meta name="description" property="og:description" content="${description}">
+<meta property="og:site_name" content="${siteName}">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="${twitter}">
+<meta name="twitter:title" content="${title}">
+<meta name="twitter:description" content="${description}">
+`;
+	}
+</script>

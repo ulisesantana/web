@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html :lang="this.locale">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title webc:is="meta-title"></title>
+
+  <meta webc:is="meta-data"></meta>
+  <link webc:is="link-canonical">
+  <meta name="generator" :content="this.eleventy.generator">
+  
+  <!-- open graph -->
+  <meta property="og:image" :content="this.metaImage">
+
+  <!-- twitter -->
+  <meta name="twitter:image" :content="this.metaImage">
+  
+  <!-- styles -->
+  <link rel="stylesheet" href="/styles/base.css" webc:keep>
+  <style @html="this.getCSS(this.page.url)"></style>
+  <script @html="this.getJS(this.page.url)"></script>
+
+</head>
+
+<body class="theme-dark" @html="this.content">
+</body>
+
+</html>

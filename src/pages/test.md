@@ -1,11 +1,7 @@
 ---
 layout: base.webc
-metaTitle: Test | Ulises Santana
+title: Test | Ulises Santana
 ---
-
-## Social media (social-media)
-<social-media></social-media>
-
 ## Highlight code 
 
 <figure>
@@ -14,7 +10,7 @@ metaTitle: Test | Ulises Santana
 ```js
 module.exports = {
   buildTime: new Date(),
-  baseUrl: 'https://ulisesantana.dev',
+  url: 'https://ulisesantana.dev',
   name: 'Ulises Santana',
   twitter: '@ulisesantana',
   es: {

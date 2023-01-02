@@ -54,8 +54,7 @@
   .theme-light pre[class*="language-"]::selection,
   .theme-light pre[class*="language-"] ::selection,
   .theme-light code[class*="language-"]::selection,
-  .theme-light code[class*="language-"] ::selection,
-  .theme-light figcaption {
+  .theme-light code[class*="language-"] ::selection {
     text-shadow: none;
     background: #b3d4fc;
   }
@@ -76,7 +75,8 @@
   }
 
   .theme-light :not(pre)>code[class*="language-"],
-  .theme-light pre[class*="language-"] {
+  .theme-light pre[class*="language-"],
+  .theme-light figcaption {
     background: #eae5e1;
   }
 

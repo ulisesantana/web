@@ -1,37 +1,8 @@
-<!DOCTYPE html>
-<html :lang="this.locale">
+---
+metatype: web
+layout: root.webc
+---
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title @html="this.metaTitle"></title>
-  <meta name="generator" :content="this.eleventy.generator">
-  
-  <!-- open graph -->
-  <meta property="og:type" content="article">
-  <meta property="og:title" :content="this.metaTitle">
-  <meta property="og:image" :content="this.metaImage">
-  <meta property="og:site_name" :content="this.site.name">
-  <meta property="og:description" :content="this.socialMedia.github.label">
-
-  <!-- twitter -->
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:site" :content="this.site.twitter">
-  <meta name="twitter:title" :content="this.metaTitle">
-  <meta name="twitter:description" :content="this.metaDescription">
-  <meta name="twitter:image" :content="this.metaImage">
-  
-  <!-- styles -->
-  <link rel="stylesheet" href="/styles/base.css" webc:keep>
-  <style @html="this.getCSS(this.page.url)"></style>
-  <script @html="this.getJS(this.page.url)"></script>
-
-</head>
-
-<body class="theme-dark">
-  <main @html="content"></main>
-  <site-footer></site-footer>
-</body>
-
-</html>
+<site-menu></site-menu>
+<main @html="this.content"></main>
+<site-footer></site-footer>

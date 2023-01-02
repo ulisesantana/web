@@ -1,0 +1,9 @@
+<nav>
+  <theme-switch></theme-switch>
+</nav>
+
+<style webc:keep webc:scope>
+:host {
+
+}
+</style>

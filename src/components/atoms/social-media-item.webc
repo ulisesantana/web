@@ -61,7 +61,7 @@
     position: absolute;
     background-color: #fff;
     pointer-events: none;
-    padding: 0.4rem 0.8rem;
+    padding: 8px;
     border-radius: 3px;
     color: #333;
     font-size: 13px;

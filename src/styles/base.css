@@ -77,6 +77,8 @@ body {
 }
 
 main {
+  margin: 0 auto;
+  max-width: 960px !important;
   width: 100% !important;
 }
 

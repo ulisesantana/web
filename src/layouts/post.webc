@@ -1,0 +1,6 @@
+---
+metatype: article
+layout: base.webc
+---
+
+<article @html="content"></article>

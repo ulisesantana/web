@@ -1,0 +1,13 @@
+<script webc:type="render" webc:is="template">
+	function () {
+		let title;
+
+		if (this.title) {
+			title = `${this.title} | ${this.site.name}`;
+		} else {
+			title = this.site.name;
+		}
+
+		return `<title>${title}</title>`;
+	}
+</script>
