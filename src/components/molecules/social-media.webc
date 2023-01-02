@@ -1,0 +1,49 @@
+<ul class="social-media">
+  <social-media-item :label="this.socialMedia.github.label" :url="this.socialMedia.github.url">
+    <github-icon slot="icon"></github-icon>
+  </social-media-item>
+  <social-media-item :label="this.socialMedia.twitter.label" :url="this.socialMedia.twitter.url">
+    <twitter-icon slot="icon"></twitter-icon>
+  </social-media-item>
+  <social-media-item :label="this.socialMedia.cv.label" :url="this.socialMedia.cv.url">
+    <cv-icon slot="icon"></cv-icon>
+  </social-media-item>
+</ul>
+
+<style webc:scoped webc:keep>
+  .social-media {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+    max-width: 120px;
+    width:100%;
+  }
+
+  .social-media li {
+    list-style: none;
+  }
+
+  .social-media li:last-child {
+    margin-right: 0;
+  }
+
+
+  @media screen and (max-width: 767px) {
+    .social-media {
+      width: 100%;
+    }
+  }
+
+  @media print {
+    .social-media {
+      display: flex;
+      flex-direction: column;
+      margin: 0;
+      max-width: 90vw;
+    }
+  }
+</style>

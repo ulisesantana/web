@@ -5,17 +5,15 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title @html="this.metaTitle"></title>  
+  <title @html="this.metaTitle"></title>
   <meta name="generator" :content="this.eleventy.generator">
-  <!-- styles -->
-  <link rel="stylesheet" href="/styles/base.css" webc:keep>
-
+  
   <!-- open graph -->
   <meta property="og:type" content="article">
   <meta property="og:title" :content="this.metaTitle">
   <meta property="og:image" :content="this.metaImage">
   <meta property="og:site_name" :content="this.site.name">
-  <meta property="og:description" :content="this.metaDescription">
+  <meta property="og:description" :content="this.socialMedia.github.label">
 
   <!-- twitter -->
   <meta name="twitter:card" content="summary">
@@ -23,11 +21,16 @@
   <meta name="twitter:title" :content="this.metaTitle">
   <meta name="twitter:description" :content="this.metaDescription">
   <meta name="twitter:image" :content="this.metaImage">
+  
+  <!-- styles -->
+  <link rel="stylesheet" href="/styles/base.css" webc:keep>
+  <style @html="this.getCSS(this.page.url)"></style>
+  <script @html="this.getJS(this.page.url)"></script>
 
 </head>
 
 <body class="theme-dark">
-  <main @html="this.content"></main>
+  <main @html="content"></main>
   <site-footer></site-footer>
 </body>
 

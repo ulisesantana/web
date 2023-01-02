@@ -76,6 +76,10 @@ body {
   width: 100% !important;
 }
 
+main {
+  width: 100% !important;
+}
+
 p {
   color: inherit;
   text-align: justify;
@@ -212,8 +216,4 @@ p {
   .no-print {
     display: none !important;
   }
-}
-
-template {
-  display: block;
 }
