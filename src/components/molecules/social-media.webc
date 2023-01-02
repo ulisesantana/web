@@ -1,17 +1,25 @@
-<ul class="social-media">
-  <social-media-item :label="this.socialMedia.github.label" :url="this.socialMedia.github.url">
-    <github-icon slot="icon"></github-icon>
-  </social-media-item>
-  <social-media-item :label="this.socialMedia.twitter.label" :url="this.socialMedia.twitter.url">
-    <twitter-icon slot="icon"></twitter-icon>
-  </social-media-item>
-  <social-media-item :label="this.socialMedia.cv.label" :url="this.socialMedia.cv.url">
-    <cv-icon slot="icon"></cv-icon>
-  </social-media-item>
-</ul>
+<div class="social-media" webc:keep>
+  <ul>
+    <li>
+      <social-media-item :label="this.socialMedia.github.label" :url="this.socialMedia.github.url">
+        <github-icon slot="icon"></github-icon>
+      </social-media-item>
+    </li>
+    <li>
+      <social-media-item :label="this.socialMedia.twitter.label" :url="this.socialMedia.twitter.url">
+        <twitter-icon slot="icon"></twitter-icon>
+      </social-media-item>
+    </li>
+    <li>
+      <social-media-item :label="this.socialMedia.cv.label" :url="this.socialMedia.cv.url">
+        <cv-icon slot="icon"></cv-icon>
+      </social-media-item>
+    </li>
+  </ul>
+</div>
 
 <style webc:scoped webc:keep>
-  .social-media {
+  .social-media ul {
     align-items: center;
     display: flex;
     justify-content: space-between;
@@ -20,17 +28,16 @@
     margin: 0;
     padding: 0;
     max-width: 120px;
-    width:100%;
+    width: 100%;
   }
 
-  .social-media li {
+  .social-media ul li {
     list-style: none;
   }
 
-  .social-media li:last-child {
+  .social-media ul li:last-child {
     margin-right: 0;
   }
-
 
   @media screen and (max-width: 767px) {
     .social-media {
