@@ -1,8 +1,6 @@
 <div class="theme-switch">
   <input type="checkbox" />
-  <span class="icon">
-    <light-bulb></light-bulb>
-  </span>
+  <light-bulb></light-bulb>
 </div>
 
 <script webc:keep>
@@ -12,17 +10,18 @@
       dark: 'dark',
       light: 'light'
     }
-    
+
     connectedCallback() {
+      const component = this.querySelector(':scope .theme-switch')
       const checkbox = this.querySelector(':scope input')
       checkbox.checked = this.getDarkModeCachedValue()
       this.setTheme(checkbox.checked)
-      checkbox.addEventListener('change', (event) => {
-        const isDark = event.target.checked
-        this.setTheme(isDark)
+      component.addEventListener('click', () => {
+        checkbox.checked = !checkbox.checked
+        this.setTheme(checkbox.checked)
       })
     }
-    
+
     isDarkModeEnabled = () => window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
     setDarkModeCachedValue = (value) => window.localStorage.setItem(this.themeKey, value ? this.theme.dark : this.theme.light)
     getDarkModeCachedValue = () => {
@@ -48,14 +47,10 @@
 </script>
 
 <style webc:keep webc:scoped>
-  /* .theme-switch {
-    --size: 36px;
+  .theme-switch {
     cursor: pointer;
     color: var(--black);
     display: inline-block;
-    height: calc(var(--size) + 10px);
-    position: relative;
-    width: var(--size);
   }
 
   .theme-switch input {
@@ -64,34 +59,14 @@
     height: 0;
   }
 
-  .theme-switch input + .icon,
-  .theme-switch input + .icon:before {
-    background-color: #bbb;
-    border-radius: 50%;
-    content: '';
-    position: absolute;
-    height: 27px;
-    width: 22px;
-    left: 14px;
+  .theme-switch input+svg {
+    fill: gray;
+    font-size: 32px;
     transition: all ease-in-out 0.5s;
   }
 
-  .theme-switch input .light-bulb {
-    height: var(--size);
-    position: absolute;
-    transition: all ease-in-out 0.5s;
-    filter: drop-shadow(0 0 0.25rem yellow);
-    width: var(--size);
+  .theme-switch input:checked+svg {
+    fill: yellow;
+    filter: drop-shadow(0 0 6px yellow);
   }
-
-  .theme-switch input:checked .light-bulb {
-    filter: none;
-  }
-
-  .theme-switch input:checked+.icon,
-  .theme-switch input:checked+.icon:before {
-    background-color: yellow;
-    filter: drop-shadow(0 0 0.50rem yellow);
-    transition: all ease-in-out 0.5s;
-  } */
 </style>
