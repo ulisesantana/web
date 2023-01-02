@@ -87,6 +87,10 @@ p {
   margin: 2rem auto;
 }
 
+figcaption {
+  padding: 4px 8px;
+}
+
 input,
 textarea,
 select,

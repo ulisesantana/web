@@ -19,7 +19,8 @@
  */
 
   .theme-light code[class*="language-"],
-  .theme-light pre[class*="language-"] {
+  .theme-light pre[class*="language-"],
+  .theme-light figcaption {
     color: black;
     background: none;
     text-shadow: 0 1px white;
@@ -53,7 +54,8 @@
   .theme-light pre[class*="language-"]::selection,
   .theme-light pre[class*="language-"] ::selection,
   .theme-light code[class*="language-"]::selection,
-  .theme-light code[class*="language-"] ::selection {
+  .theme-light code[class*="language-"] ::selection,
+  .theme-light figcaption {
     text-shadow: none;
     background: #b3d4fc;
   }
@@ -106,7 +108,8 @@
   .theme-light .token.number,
   .theme-light .token.constant,
   .theme-light .token.symbol,
-  .theme-light .token.deleted {
+  .theme-light .token.deleted,
+  .theme-light figcaption {
     color: #905;
   }
 
