@@ -1,14 +1,13 @@
 const pluginWebC = require('@11ty/eleventy-plugin-webc')
-const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
+const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ 'src/styles': 'styles' })
-	eleventyConfig.addPlugin(syntaxHighlight)
+  eleventyConfig.addPassthroughCopy({ 'src/assets': 'assets' })
+  eleventyConfig.addPlugin(syntaxHighlight)
   eleventyConfig.addPlugin(pluginWebC, {
     components: 'src/components/**/*.webc'
   })
-
-  eleventyConfig.addPassthroughCopy({ public: '.' })
 
   eleventyConfig.addCollection('posts_es', function (collection) {
     return collection.getFilteredByGlob('./src/pages/es/posts/*.md')

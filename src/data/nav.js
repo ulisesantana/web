@@ -6,7 +6,7 @@ module.exports = {
     { url: '/notas/', label: 'notas' }
   ],
   en: [
-    { url: '/', label: '🇮🇨' },
+    { url: '/', label: '🇪🇸' },
     { url: '/en/blog/', label: 'blog' },
     { url: '/en/projects/', label: 'projects' }
   ]

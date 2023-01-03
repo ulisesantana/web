@@ -1,0 +1,147 @@
+<script webc:type="render" webc:is="template">
+  function navItems() {
+    function toggleMenu() {
+      const menu = document.querySelector(':scope .nav-items')
+      const btn = document.querySelector(':scope button')
+      menu.classList.toggle('active')
+      btn.classList.toggle('active')
+    }
+    const renderItem = ({ url, label }) =>
+      `<li>
+        <a 
+          href="${url}"
+          class="${this.page.url === url ? 'active' : ''}"
+        >
+        ${label.toUpperCase()}
+        </a>
+      </li>`
+    const renderItems = items => items.map(renderItem).join('\n')
+    return `
+<nav>
+  <ul class="nav-items">
+    ${renderItems(this.nav[this.locale])}
+    <li><theme-switch></theme-switch></li>
+  </ul>
+  <button class="mobile-menu" onclick="(${toggleMenu.toString()})()">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </button>
+</nav>`
+  }
+</script>
+
+<style webc:keep webc:scoped>
+  nav {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+  }
+
+  .nav-items {
+    align-items: center;
+    background: var(--menu-mobile-bg-color);
+    bottom: -100%;
+    display: flex;
+    flex-direction: column;
+    height: 50%;
+    left: 0;
+    margin: 0;
+    padding: 16px 16px 96px;
+    position: fixed;
+    transition: bottom ease-in-out 0.5s;
+    width: 100%;
+  }
+
+  .nav-items li:first-child {
+    font-size: 32px;
+  }
+
+  button.mobile-menu {
+    background: var(--primary-color);
+    border: none;
+    border-radius: 50%;
+    bottom: 32px;
+    color: black;
+    display: block;
+    font-size: 32px;
+    height: 48px;
+    left: calc(50% - 24px);
+    padding-bottom: 4px;
+    position: fixed;
+    width: 48px;
+  }
+
+  .bar {
+    display: block;
+    position: relative;
+    width: 24px;
+    height: 4px;
+    border-radius: 3px;
+    background-color: black;
+    margin: 4px auto 2px;
+    transition: all 0.3s ease-in-out;
+  }
+
+  button.mobile-menu.active .bar:nth-child(1) {
+    transform: rotate(-45deg);
+    margin-top: 14px;
+  }
+
+  button.mobile-menu.active .bar:nth-child(2) {
+    transform: rotate(45deg);
+    margin-top: -6px;
+  }
+
+  button.mobile-menu.active .bar:nth-child(3) {
+    opacity: 0;
+    transform: rotate(45deg);
+  }
+
+  .nav-items.active {
+    bottom: 0;
+  }
+
+  li {
+    font-weight: 600;
+    list-style: none;
+    padding: 8px;
+  }
+
+  .nav-items .active {
+    border-bottom: solid var(--link-color) 2px;
+  }
+
+  .nav-items a,
+  .nav-items a:visited {
+    color: var(--text-color);
+  }
+
+  @media screen and (min-width: 768px) {
+    nav {
+      background: transparent;
+      display: inline;
+      padding: 0;
+      position: relative;
+    }
+
+    .nav-items {
+      padding: 0;
+      align-items: center;
+      background: transparent;
+      flex-direction: row;
+      position: relative;
+      width: fit-content;
+    }
+
+    button.mobile-menu {
+      display: none;
+    }
+
+    nav::after {
+      display: none;
+    }
+  }
+</style>
