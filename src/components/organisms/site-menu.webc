@@ -1,9 +1,20 @@
 <nav>
-  <theme-switch></theme-switch>
+  <small>LOGO AQUÍ</small>
+  <nav-items></nav-items>
 </nav>
 
 <style webc:keep webc:scope>
-:host {
+  nav {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0 auto 24px;
+    max-width: 960px;
+    width: 100%;
+  }
 
-}
+  nav .lang {
+    font-size: 32px;
+  }
 </style>

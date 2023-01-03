@@ -1,9 +1,20 @@
 <div class="theme-switch">
   <input type="checkbox" />
-  <!--light bulb icon-->
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="1em" width="1em">
+  <!--light bulb icon
+  {# <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="1em" width="1em">
     <path d="M9 21c0 .5.4 1 1 1h4c.6 0 1-.5 1-1v-1H9v1zm3-19C8.1 2 5 5.1 5 9c0 2.4 1.2 4.5 3 5.7V17c0 .5.4 1 1 1h6c.6 0 1-.5 1-1v-2.3c1.8-1.3 3-3.4 3-5.7 0-3.9-3.1-7-7-7z"/>
-  </svg>
+  </svg> -->
+  <span class="icon">
+    <svg viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg" height="1em" width="1em">
+      <path d="M23.86 29.15H12.11a.8.8 0 1 0 0 1.6h11.75a.8.8 0 0 0 0-1.6Z" class="clr-i-solid clr-i-solid-path-1" />
+      <path d="M22 32.15h-8a.8.8 0 1 0 0 1.6h8a.8.8 0 1 0 0-1.6Z" class="clr-i-solid clr-i-solid-path-2" />
+      <path
+        d="M18 2.25a11 11 0 0 0-11 11 10.68 10.68 0 0 0 1 4.63 16.36 16.36 0 0 0 1.12 1.78 17 17 0 0 1 2 3.47 16.19 16.19 0 0 1 .59 4h5.69v-5.52l-2.86-3.13 3-3a.8.8 0 0 1 1.13 1.13l-1.89 1.89L19 21v6.17h5.3a16.19 16.19 0 0 1 .59-4 17 17 0 0 1 2-3.47A16.31 16.31 0 0 0 28 17.86a10.68 10.68 0 0 0 1-4.63A11 11 0 0 0 18 2.25Zm.45 9.75-2.73 2.73a.8.8 0 1 1-1.13-1.13l2.73-2.73A.8.8 0 1 1 18.45 12Z"
+        class="clr-i-solid clr-i-solid-path-3" />
+      <path fill="none" d="M0 0h36v36H0z" />
+    </svg>
+  </span>
+
 </div>
 
 <script webc:keep>
@@ -51,23 +62,43 @@
   .theme-switch {
     cursor: pointer;
     color: var(--black);
-    display: inline-block;
+    border-radius: 50%;
+    display: block;
+    position: relative;
   }
 
   .theme-switch input {
     opacity: 0;
+    position: absolute;
     width: 0;
     height: 0;
   }
 
-  .theme-switch input+svg {
-    fill: gray;
-    font-size: 24px;
+  .theme-switch .icon {
+    align-items: center;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    background: #f5d503;
+  }
+
+  .theme-switch input:checked + .icon {
+    background: #656565;
+  }
+
+  .theme-switch input + .icon svg {
+    border-radius: 50%;
+    fill: yellow;
+    filter: drop-shadow(0 0 10px black);
+    font-size: 32px;
     transition: all ease-in-out 0.5s;
   }
 
-  .theme-switch input:checked+svg {
-    fill: yellow;
-    filter: drop-shadow(0 0 6px yellow);
+  .theme-switch input:checked + .icon svg {
+    background-color: transparent;
+    fill: var(--light-border-color);
+    filter: none;
   }
 </style>

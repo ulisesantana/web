@@ -1,6 +1,6 @@
   .theme-light {
     /* light theme */
-    --bg-color: #F7F7F7;
+    --bg-color: #ddddee;
     --highlight-color: #323330;
     --icon-color: var(--text-color);
     --inactive-field-color: #F7F7F7;

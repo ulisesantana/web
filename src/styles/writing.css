@@ -1,0 +1,11 @@
+p {
+  color: inherit;
+  text-align: justify;
+  line-height: 2;
+  margin: 2rem auto;
+}
+
+h1, h2, h3 {
+  border-bottom: solid var(--link-color) 4px;
+  width: fit-content;
+}
