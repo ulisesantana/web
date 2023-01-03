@@ -1,5 +1,5 @@
 <script webc:type="render" webc:is="template">
-	function () {
+	function metaData() {
 		const localeSite = this.site[this.locale]
 		const {author, twitter, name: siteName, colors} = this.site
 		const description = this.description ?? localeSite.description;
