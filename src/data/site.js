@@ -8,7 +8,7 @@ module.exports = {
   },
   colors: {
     primary: '#F7E018',
-    secondary: '#2D79C7'
+    secondary: '#44853e'
   },
   es: {
     title: 'Ulises Santana',

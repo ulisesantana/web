@@ -6,7 +6,7 @@
     --inactive-field-color: #F7F7F7;
     --light-color: #cccccc;
     --light-border-color: #9a9a9a;
-    --link-color: #292929;
+    --link-color: var(--secondary-color);
     --link-visited-color: var(--secondary-color);
     --tag-color: var(--secondary-color);
     --text-color: #292929;
