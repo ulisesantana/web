@@ -1,0 +1,32 @@
+<header>
+  <a class="isotype" href="/" webc:if="this.locale !== 'en'">ulisesantana.dev</a>
+  <a class="isotype" href="/en" webc:if="this.locale === 'en'">ulisesantana.dev</a>
+  <nav-items></nav-items>
+</header>
+
+<style webc:keep webc:scope>
+  header {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0 auto 24px;
+    max-width: 960px;
+    width: 100%;
+  }
+
+  header .lang {
+    font-size: 32px;
+  }
+
+  .isotype {
+    border: none;
+    color: transparent;
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: var(--link-color);
+    text-decoration: none;
+  }
+</style>

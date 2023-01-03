@@ -3,6 +3,6 @@ metatype: web
 layout: root.webc
 ---
 
-<site-menu></site-menu>
+<site-header></site-header>
 <main @html="this.content"></main>
 <site-footer></site-footer>
