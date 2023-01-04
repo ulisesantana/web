@@ -53,6 +53,7 @@
     position: fixed;
     transition: bottom ease-in-out 0.5s;
     width: 100%;
+    z-index: 10;
   }
 
   .nav-items li:first-child {
@@ -72,6 +73,7 @@
     padding-bottom: 4px;
     position: fixed;
     width: 48px;
+    z-index: 10;
   }
 
   .bar {
