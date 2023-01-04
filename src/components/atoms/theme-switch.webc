@@ -73,22 +73,24 @@
 
   .theme-switch .icon {
     align-items: center;
+    background: yellow;
     border-radius: 50%;
     display: flex;
+    filter: drop-shadow(0 0 8px yellow);
+    height: 48px;
     justify-content: center;
     width: 48px;
-    height: 48px;
-    background: #f5d503;
   }
 
   .theme-switch input:checked + .icon {
     background: #656565;
+    filter: none;
   }
 
   .theme-switch input + .icon svg {
     border-radius: 50%;
     fill: yellow;
-    filter: drop-shadow(0 0 10px black);
+    filter: drop-shadow(0 0 2px black);
     font-size: 32px;
     transition: all ease-in-out 0.5s;
   }

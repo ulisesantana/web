@@ -61,7 +61,7 @@
   }
 
   button.mobile-menu {
-    background: var(--primary-color);
+    background: var(--link-color);
     border: none;
     border-radius: 50%;
     bottom: 32px;
@@ -82,7 +82,7 @@
     width: 24px;
     height: 4px;
     border-radius: 3px;
-    background-color: black;
+    background-color: var(--bg-color);
     margin: 4px auto 2px;
     transition: all 0.3s ease-in-out;
   }
@@ -139,10 +139,6 @@
     }
 
     button.mobile-menu {
-      display: none;
-    }
-
-    nav::after {
       display: none;
     }
   }

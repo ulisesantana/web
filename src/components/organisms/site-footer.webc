@@ -1,7 +1,7 @@
 <footer class="no-print">
   <span class="bar"></span>
   <social-media></social-media>
-  <p @raw="this.footer.copyright"></p>
+  <small @raw="this.footer.copyright"></small>
 </footer>
 
 <style webc:keep webc:scoped>
@@ -10,11 +10,12 @@
     color: var(--text-color);
     display: flex;
     flex-direction: column;
+    gap: 8px;
     justify-content: center;
     margin: 0 auto;
-    max-width: 940px;
+    max-width: 960px;
     overflow: hidden;
-    padding: 30px 15px;
+    padding: 30px 15px 98px;
     position: relative;
     text-align: center;
     z-index: 1;
@@ -23,40 +24,13 @@
   .bar {
     border-top: 4px solid var(--link-color);
     display: block;
-    margin: 48px auto 24px;
+    margin: 16px auto 8px;
     width: 50%;
   }
 
-  @media (max-width: 1200px) {
-    .bar {
-      margin: 24px auto;
-    }
-  }
-
-  @media (max-width: 990px) {
-    .bar {
-      margin: 0 auto 24px;
-    }
-  }
-
-  @media (max-width: 575px) {
+  @media screen and (min-width: 768px) {
     footer {
-      padding: 22px 15px;
+      padding: 30px 15px;
     }
-
-    .bar {
-      margin: 0 auto 16px;
-    }
-  }
-
-  a {
-    color: var(--link-color);
-    transition: 0.15s ease-in-out;
-  }
-
-  p {
-    font-size: 0.75rem;
-    margin: 0 auto;
-    text-align: center;
   }
 </style>
