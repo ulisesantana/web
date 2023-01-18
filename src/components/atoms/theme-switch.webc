@@ -79,6 +79,7 @@
     filter: drop-shadow(0 0 8px yellow);
     height: 48px;
     justify-content: center;
+    transition: all ease-in-out 0.6s;
     width: 48px;
   }
 
@@ -92,7 +93,7 @@
     fill: yellow;
     filter: drop-shadow(0 0 1px black);
     font-size: 32px;
-    transition: all ease-in-out 0.5s;
+    transition: all ease-in-out 0.6s;
   }
 
   .theme-switch input:checked + .icon svg {

@@ -19,3 +19,48 @@
   --primary-color: #F7E018;
   --secondary-color: #44853e;
 }
+
+@property --bg-color {
+  syntax: "<color>";
+  initial-value: #e6e2e2;
+}
+@property --highlight-color {
+  syntax: "<color>";
+  initial-value: #323330;
+}
+@property --icon-color {
+  syntax: "<color>";
+  initial-value: var(--text-color);
+}
+@property --menu-mobile-bg-color {
+  syntax: "<color>";
+  initial-value: #F7F7F7;
+}
+@property --inactive-field-color {
+  syntax: "<color>";
+  initial-value: #F7F7F7;
+}
+@property --light-color {
+  syntax: "<color>";
+  initial-value: #cccccc;
+}
+@property --light-border-color {
+  syntax: "<color>";
+  initial-value: #9a9a9a;
+}
+@property --link-color {
+  syntax: "<color>";
+  initial-value: var(--secondary-color);
+}
+@property --link-visited-color {
+  syntax: "<color>";
+  initial-value: var(--secondary-color);
+}
+@property --tag-color {
+  syntax: "<color>";
+  initial-value: var(--secondary-color);
+}
+@property --text-color {
+  syntax: "<color>";
+  initial-value: #292929;
+}
