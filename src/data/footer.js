@@ -1,3 +1,3 @@
 module.exports = {
-  copyright: `Copyright &copy; ${new Date().getFullYear()}`
+  copyright: `Ulises Santana &copy; 2019 - ${new Date().getFullYear()}`
 }

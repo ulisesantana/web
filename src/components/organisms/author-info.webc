@@ -16,8 +16,8 @@
     </h2>
     <p class="description">
       <span webc:if="this.locale !== 'en'" webc:nokeep>
-        Me gano la vida como Full Stack Developer. JavaScript es mi lengua materna
-        y la web mi patria.
+        Me gano la vida como Full Stack Developer. 
+        JavaScript es mi lengua materna y la web mi patria.
         Trasteo con tecnologías desde las Islas Canarias 🏝️
       </span>
       <span webc:if="this.locale === 'en'" webc:nokeep>

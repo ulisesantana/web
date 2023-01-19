@@ -1,7 +1,20 @@
 <footer class="no-print">
   <span class="bar"></span>
   <social-media></social-media>
-  <span @raw="this.footer.copyright"></span>
+  <div class="bottom-text">
+    <span class="thanks">
+      <span webc:if="this.locale !== 'en'">
+        Hecho con <like-icon></like-icon> y
+      </span>
+      <span webc:if="this.locale === 'en'">
+        Made with <like-icon></like-icon> and
+      </span>
+      <a href="https://www.11ty.dev" target="_blank">
+        <eleventy-icon></eleventy-icon>
+      </a>
+    </span>
+    <span @raw="this.footer.copyright"></span>
+  </div>
 </footer>
 
 <style webc:keep webc:scoped>
@@ -21,11 +34,33 @@
     z-index: 1;
   }
 
+  .icon {
+    font-size: 1rem;
+  }
+
   .bar {
     border-top: 4px solid var(--link-color);
     display: block;
     margin: 16px auto 8px;
     width: 75%;
+  }
+
+  .bottom-text {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    font-size: 1rem;
+    gap: 1rem;
+    justify-content: center;
+  }
+
+  .bottom-text svg {
+    font-size: 1.25rem;
+    margin-bottom: -0.25rem;
+  }
+
+  .thanks a {
+    margin-left: 4px;
   }
 
   @media screen and (min-width: 768px) {
