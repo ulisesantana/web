@@ -20,8 +20,10 @@
   <!-- styles -->
   <link rel="stylesheet" href="/styles/base.css" webc:keep>
   <style @html="this.getCSS(this.page.url)"></style>
+  
+  <!-- scripts -->
+  <script type="module" src="/components/index.js" webc:keep></script>
   <script @html="this.getJS(this.page.url)"></script>
-
 </head>
 
 <body class="theme-dark" @html="this.content">
