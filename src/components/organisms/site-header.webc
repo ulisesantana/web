@@ -29,4 +29,10 @@
     -webkit-text-stroke-color: var(--link-color);
     text-decoration: none;
   }
+
+  @media screen and (max-width: 767px) {
+    header {
+      justify-content: center;
+    }
+  }
 </style>

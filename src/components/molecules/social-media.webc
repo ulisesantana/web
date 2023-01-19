@@ -25,10 +25,9 @@
     justify-content: space-between;
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 8px;
+    gap: 1rem;
     margin: 0;
     padding: 0;
-    max-width: 120px;
     width: 100%;
   }
 

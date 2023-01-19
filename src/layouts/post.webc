@@ -3,4 +3,4 @@ metatype: article
 layout: base.webc
 ---
 
-<article @html="content"></article>
+<article @raw="content"></article>

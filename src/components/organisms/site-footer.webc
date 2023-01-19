@@ -1,7 +1,7 @@
 <footer class="no-print">
   <span class="bar"></span>
   <social-media></social-media>
-  <small @raw="this.footer.copyright"></small>
+  <span @raw="this.footer.copyright"></span>
 </footer>
 
 <style webc:keep webc:scoped>
@@ -10,7 +10,7 @@
     color: var(--text-color);
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 1rem;
     justify-content: center;
     margin: 0 auto;
     max-width: 960px;
@@ -25,12 +25,16 @@
     border-top: 4px solid var(--link-color);
     display: block;
     margin: 16px auto 8px;
-    width: 50%;
+    width: 75%;
   }
 
   @media screen and (min-width: 768px) {
     footer {
       padding: 30px 15px;
+    }
+
+    .description {
+      width: 50%;
     }
   }
 </style>

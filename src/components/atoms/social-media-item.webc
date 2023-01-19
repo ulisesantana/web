@@ -38,7 +38,7 @@
   a:visited {
     border: none;
     color: var(--highlight-color) !important;
-    font-size: 24px;
+    font-size: 2rem;
     padding: 0.2rem;
     display: block;
   }

@@ -1,4 +1,4 @@
-window.customElements.define('theme-switch', class extends HTMLElement {
+class ThemeSwitch extends HTMLElement {
   themeKey = 'theme'
   theme = {
     dark: 'dark',
@@ -36,4 +36,6 @@ window.customElements.define('theme-switch', class extends HTMLElement {
       document.body.classList.remove('theme-dark')
     }
   }
-})
+}
+
+window.customElements.define('theme-switch', ThemeSwitch)

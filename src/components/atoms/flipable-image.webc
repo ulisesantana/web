@@ -1,0 +1,74 @@
+<div class="flipable-image">
+  <div class="flip-container">
+    <div class="flip-front">
+      <slot name="front-image"></slot>
+    </div>
+    <div class="flip-back no-print">
+      <slot name="back-image"></slot>
+    </div>
+  </div>
+</div>
+
+<style webc:scope webc:keep>
+  .flipable-image {
+    background-color: transparent;
+    border: 4px solid var(--link-color);
+    border-radius: 50%;
+    flex-shrink: 0;
+    height: 216px;
+    margin: 0 auto;
+    padding: 24px;
+    perspective: 1000px;
+    width: 216px;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 50%;
+  }
+
+  .flip-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+  }
+
+  .flipable-image:hover .flip-container,
+  .flipable-image:active .flip-container {
+    transform: rotateY(180deg);
+  }
+
+  .flipable-image:hover .flip-container .flip-front,
+  .flipable-image:active .flip-container .flip-front {
+    opacity: 0;
+  }
+
+  .flip-front,
+  .flip-back {
+    background-color: transparent;
+    border-radius: 50%;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    transition: opacity ease-in-out 0.6s;
+  }
+
+  .flip-back {
+    transform: rotateY(180deg);
+  }
+
+  @media (max-width: 767px) {
+    .flipable-image {
+      width: 180px;
+      height: 180px;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+  }
+</style>
