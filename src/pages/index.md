@@ -26,4 +26,9 @@ Hay otra meta personal que tengo pendiente y es construir o al menos ayudar a co
 
 Como parte de mi plan de aportar a la comunidad, he patrocinado las tres últimas ediciones de JS Day Canarias y PyDay Gran Canaria 2019, aparte de también patrocinar y co-organizar el Global Day of Coderetreat Canarias 2019. Además, en Noviembre de 2018 tuve la oportunidad de dar una charla en JS Day Canarias sobre Node.js, npm y cómo publicar y mantener un paquete en un registro npm. Me encantó la experiencia y quiero continuar compartiendo conocimiento con el resto del mundo.
 
+{% renderTemplate "webc" %}
+<youtube-video @video-id="T9Frov6wS7U">
+</youtube-video>
+{% endrenderTemplate %}
+
 
