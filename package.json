@@ -29,6 +29,7 @@
     "@11ty/eleventy": "^2.0.0-beta",
     "@11ty/eleventy-plugin-syntaxhighlight": "^4.2.0",
     "@11ty/eleventy-plugin-webc": "^0.8.1",
+    "eleventy-plugin-external-links": "^1.1.2",
     "eslint": "^8.31.0",
     "eslint-config-standard": "^17.0.0",
     "eslint-plugin-import": "^2.26.0",

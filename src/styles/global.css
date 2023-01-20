@@ -1,68 +1,8 @@
- @import url('./theme/theme.css');
- @import url('./writing.css');
-
- /* RESET CSS */
- html {
-  box-sizing: border-box;
-  font-size: 18px;
-  line-height: 1.15;
-  margin: 0;
-  padding: 0;
-  -webkit-text-size-adjust: 100%;
-  -ms-overflow-style: scrollbar;
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-* {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-html,
-html a,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-a,
-p,
-li,
-dl,
-th,
-dt,
-input,
-textarea,
-span,
-div {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin-top: 0;
-  font-family: 'Poppins', sans-serif;
-}
-
-ul,
-ol {
-  margin: 0;
-  padding: 0;
-}
-
 /* GLOBAL CSS */
+:root {
+  --border-radius: 8px;
+}
+
 body {
   background-color: var(--bg-color);
   color: var(--text-color);
@@ -84,8 +24,19 @@ main {
   width: 100% !important;
 }
 
+figure {
+  margin: 1rem auto;
+}
+
 figcaption {
+  border-top-left-radius: var(--border-radius);
+  border-top-right-radius: var(--border-radius);
   padding: 4px 8px;
+}
+
+pre {
+  border-bottom-left-radius: var(--border-radius);
+  border-bottom-right-radius: var(--border-radius);
 }
 
 input,
@@ -194,26 +145,7 @@ ul {
   margin: 0 !important;
 }
 
-.only-print {
-  display: none;
-}
-
-@media print {
-  body {
-    display: block;
-    padding: 0;
-    margin: 0;
-  }
-
-  .page-break-after {
-    page-break-after: always;
-  }
-
-  .only-print {
-    display: block !important;
-  }
-
-  .no-print {
-    display: none !important;
-  }
+img {
+  border-radius: var(--border-radius);
+  max-width: 100%;
 }

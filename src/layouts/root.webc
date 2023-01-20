@@ -18,7 +18,7 @@
   <meta name="twitter:image" :content="this.metaImage">
   
   <!-- styles -->
-  <link rel="stylesheet" href="/styles/base.css" webc:keep>
+  <link rel="stylesheet" href="/styles/index.css" webc:keep>
   <style webc:keep @raw="this.getCSS(this.page.url)"></style>
   
   <!-- scripts -->

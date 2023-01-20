@@ -3,10 +3,9 @@ PROPS
 @video-id: YouTube video id.
 -->
 <div class="video-wrapper">
-  <iframe :src="`https://www.youtube-nocookie.com/embed/${videoId}`"}
-  title="YouTube video player" frameBorder="0"
-  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-  allowFullScreen></iframe>
+  <iframe :src="`https://www.youtube-nocookie.com/embed/${videoId}`" } title="YouTube video player" frameBorder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowFullScreen></iframe>
 </div>
 
 <!--This style has no webc:scoped because I want to use it on markdown files-->
@@ -22,6 +21,7 @@ PROPS
 
   /* Then style the iframe to fit in the container div with full height and width */
   .video-wrapper iframe {
+    border-radius: var(--border-radius);
     position: absolute;
     top: 0;
     left: 0;

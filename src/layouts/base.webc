@@ -5,5 +5,7 @@ layout: root.webc
 
 <site-header></site-header>
 <author-info></author-info>
-<main @raw="this.content"></main>
+<main>
+  <div @raw="content"></div>
+</main>
 <site-footer></site-footer>

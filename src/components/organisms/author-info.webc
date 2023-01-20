@@ -1,7 +1,7 @@
 <section class="author-info">
   <a :href="this.locale === 'en' ? '/en' : '/'">
     <flipable-image>
-      <img slot="front-image" src="/assets/author.jpg" alt="Ulises Santana" />
+      <img slot="front-image" src="/assets/images/author.jpg" alt="Ulises Santana" />
       <img slot="back-image" src="/assets/logo.png" alt="Ulises Santana" />
     </flipable-image>
   </a>

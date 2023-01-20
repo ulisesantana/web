@@ -13,7 +13,7 @@
         <eleventy-icon></eleventy-icon>
       </a>
     </span>
-    <span @raw="this.footer.copyright"></span>
+    <small @raw="this.footer.copyright"></small>
   </div>
 </footer>
 

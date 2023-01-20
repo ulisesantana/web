@@ -2,25 +2,46 @@
 layout: base.webc
 title: Test | Ulises Santana
 ---
+
+[Mi web](https://ulisesantana.dev)
+
 ## Highlight code 
 
 <figure>
 <figcaption>src/data/site.js</figcaption>
 
 ```js
-module.exports = {
-  buildTime: new Date(),
-  url: 'https://ulisesantana.dev',
-  name: 'Ulises Santana',
-  twitter: '@ulisesantana',
-  es: {
-    metaTitle: 'Ulises Santana',
-    metaDescription: 'Ingeniero con JavaScript como lengua materna y la web como patria. Trasteando con tecnologías desde las Islas Canarias 🏝️'
-  },
-  en: {
-    metaTitle: 'Ulises Santana',
-    metaDescription: 'Engineer with JavaScript as mother tongue and web as my home nation. Based in the Canary Islands 🏝️'
+/**
+ * Number sorting following Quicksort algorithm
+ * @function
+ * @param {Array} x - Number array to order
+ * @param {Boolean} [asc=true] - Ascending order flag
+ * @returns {Array} - Sorted array
+ */
+function quickSort(x, asc = true){
+  if (x.length < 2){
+    return x;
   }
+
+  const [ pivot, ...rest ] = x;
+  const highers = rest.filter(n => n > pivot);
+  const lowers = rest.filter(n => n <= pivot);
+  const result = [
+    ...quickSort(lowers),
+    pivot,
+    ...quickSort(highers)
+  ]
+
+  return asc
+    ? result
+    : result.reverse();
 }
 ```
 </figure>
+
+![Hablando de cómo crear un paquete de npm en el JSDay Canarias de 2018](/assets/images/jsdaycanarias.jpg)
+
+{% renderTemplate "webc" %}
+<youtube-video @video-id="T9Frov6wS7U">
+</youtube-video>
+{% endrenderTemplate %}

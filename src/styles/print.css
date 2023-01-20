@@ -1,0 +1,23 @@
+.only-print {
+  display: none;
+}
+
+@media print {
+  body {
+    display: block;
+    padding: 0;
+    margin: 0;
+  }
+
+  .page-break-after {
+    page-break-after: always;
+  }
+
+  .only-print {
+    display: block !important;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+}
