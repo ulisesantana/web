@@ -1,4 +1,4 @@
-<div class="social-media" webc:keep>
+<div class="social-media">
   <ul>
     <li>
       <social-media-item :label="this.socialMedia.github.label" :url="this.socialMedia.github.url">
@@ -18,7 +18,7 @@
   </ul>
 </div>
 
-<style webc:scoped webc:keep>
+<style webc:scoped>
   .social-media ul {
     align-items: center;
     display: flex;

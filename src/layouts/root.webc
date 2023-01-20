@@ -19,11 +19,11 @@
   
   <!-- styles -->
   <link rel="stylesheet" href="/styles/base.css" webc:keep>
-  <style @raw="this.getCSS(this.page.url)"></style>
+  <style webc:keep @raw="this.getCSS(this.page.url)"></style>
   
   <!-- scripts -->
   <script type="module" src="/components/index.js" webc:keep></script>
-  <script @raw="this.getJS(this.page.url)"></script>
+  <script webc:keep @raw="this.getJS(this.page.url)"></script>
 </head>
 
 <body class="theme-dark" @raw="this.content">

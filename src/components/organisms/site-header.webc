@@ -4,7 +4,7 @@
   <nav-items></nav-items>
 </header>
 
-<style webc:keep webc:scoped>
+<style webc:scoped>
   header {
     align-items: center;
     display: flex;

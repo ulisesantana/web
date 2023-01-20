@@ -30,7 +30,7 @@
   </div>
 </section>
 
-<style webc:scoped webc:keep>
+<style webc:scoped>
   b {
     color: var(--link-color);
     display: inline-block;

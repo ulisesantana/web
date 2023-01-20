@@ -13,7 +13,7 @@
   </span>
 </div>
 
-<style webc:scoped webc:keep>
+<style webc:scoped>
   .social-media-item {
     position: relative;
   }

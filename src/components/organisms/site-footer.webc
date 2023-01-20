@@ -17,7 +17,7 @@
   </div>
 </footer>
 
-<style webc:keep webc:scoped>
+<style webc:scoped>
   footer {
     align-items: center;
     color: var(--text-color);

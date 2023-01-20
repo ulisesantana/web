@@ -13,7 +13,7 @@
   </span>
 </div>
 
-<style webc:keep webc:scoped>
+<style webc:scoped>
   .theme-switch {
     cursor: pointer;
     color: var(--black);
