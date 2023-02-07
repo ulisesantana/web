@@ -26,7 +26,9 @@
   <script webc:keep @raw="this.getJS(this.page.url)"></script>
 </head>
 
-<body class="theme-dark" @raw="this.content">
+<body class="theme-dark">
+  <div @raw="this.content"></div>
+  <scroll-to-top></scroll-to-top>
 </body>
 
 </html>
