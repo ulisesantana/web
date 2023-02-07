@@ -1,20 +1,24 @@
-<button class="scroll-to-top">
+<button class="scroll-to-top hidden">
   <up-icon></up-icon>
 </button>
 
 <style>
   .scroll-to-top {
-    width: 3rem;
-    height: 3rem;
+    align-items: center;
+    background-color: var(--highlight-color);
     border: none;
     border-radius: 50%;
-    background-color: var(--highlight-color);
+    bottom: 1rem;
     color: var(--bg-color);
     cursor: pointer;
     display: flex;
-    align-items: center;
+    height: 3rem;
     justify-content: center;
+    opacity: 1;
+    position: fixed;
+    right: 1rem;
     transition: 0.15s ease-in-out;
+    width: 3rem;
   }
 
   .scroll-to-top:hover {
@@ -26,6 +30,10 @@
   .scroll-to-top svg {
     font-size: 1.5rem;
     margin: 0;
+  }
+
+  .hidden {
+    opacity: 0;
   }
 
   @media print {
