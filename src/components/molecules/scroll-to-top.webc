@@ -5,31 +5,23 @@
 <style>
   .scroll-to-top {
     align-items: center;
-    background-color: var(--highlight-color);
+    background-color: var(--link-color);
     border: none;
     border-radius: 50%;
-    bottom: 1rem;
-    color: var(--bg-color);
+    bottom: 32px;
     cursor: pointer;
     display: flex;
-    height: 3rem;
+    height: 60px;
     justify-content: center;
     opacity: 1;
     position: fixed;
-    right: 1rem;
-    transition: 0.15s ease-in-out;
-    width: 3rem;
+    right: 16px;
+    transition: 0.3s ease-in-out;
+    width: 60px;
   }
 
   .scroll-to-top:hover {
-    background-color: var(--primary-color);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
-    color: var(--black);
-  }
-
-  .scroll-to-top svg {
-    font-size: 1.5rem;
-    margin: 0;
+    filter: drop-shadow(0 0 0.75rem var(--link-color));
   }
 
   .hidden {

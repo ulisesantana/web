@@ -1,4 +1,24 @@
 <!--https://icongo.github.io/#/icon/co/chevron_duo_up.svg-->
-<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" height="1em" width="1em">
-  <path d="M7.403 18.425 5.99 17.01 12 10.999l6.01 6.011-1.413 1.413-4.6-4.6-4.6 4.6.006.002Zm0-5.424L5.99 11.585 12 5.575l6.01 6.01-1.413 1.414-4.6-4.6-4.6 4.6.006.002Z" fill="#000"/>
-</svg>
+<span class="up-icon">
+  <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 1024 1024" height="1em" width="1em">
+    <path
+      d="M890.5 755.3 537.9 269.2c-12.8-17.6-39-17.6-51.7 0L133.5 755.3A8 8 0 0 0 140 768h75c5.1 0 9.9-2.5 12.9-6.6L512 369.8l284.1 391.6c3 4.1 7.8 6.6 12.9 6.6h75c6.5 0 10.3-7.4 6.5-12.7z" />
+  </svg>
+</span>
+
+<style>
+  .up-icon {
+    align-items: center;
+    display: flex;
+    fill: var(--bg-color);
+    font-size: 2.25rem;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+  }
+
+  .up-icon svg path {
+    stroke: var(--bg-color);
+    stroke-width: 4rem;
+  }
+</style>
