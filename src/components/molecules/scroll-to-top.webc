@@ -15,7 +15,7 @@
     justify-content: center;
     opacity: 1;
     position: fixed;
-    right: 16px;
+    right: 48px;
     transition: 0.3s ease-in-out;
     width: 60px;
   }
