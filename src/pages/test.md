@@ -3,6 +3,14 @@ layout: base.webc
 title: Test | Ulises Santana
 ---
 
+{% renderTemplate "webc" %}
+<tldr-section>
+
+Chiquito pelete
+
+</tldr-section>
+{% endrenderTemplate %}
+
 [Mi web](https://ulisesantana.dev)
 
 ## Highlight code 

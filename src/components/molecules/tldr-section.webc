@@ -1,0 +1,138 @@
+<div class="tldr">
+  <button title="Open TL;DR" class="summary">
+    <span>
+      TL;DR 🔥
+    </span>
+  </button>
+  <div class="content closed">
+    <slot></slot>
+  </div>
+</div>
+
+<style>
+  .tldr {
+    color: var(--bg-color);
+    padding: 0;
+    position: relative;
+  }
+
+  .tldr .summary {
+    align-items: center;
+    display: flex;
+    background-color: var(--link-color);
+    border: none;
+    color: var(--bg-color);
+    cursor: pointer;
+    font-size: var(--font-size-3);
+    font-weight: bold;
+    justify-content: space-between;
+    margin-bottom: 24px;
+    padding: 8px;
+    text-align: center;
+  }
+
+  .tldr .summary span.icon {
+    align-items: center;
+    display: flex;
+    height: 24px;
+    padding-left: 8px;
+    position: relative;
+  }
+
+  #open-icon,
+  #closed-icon {
+    position: absolute;
+    top: 1px;
+    transition: all ease-in-out 0.5s;
+    width: 1rem;
+  }
+
+  .tldr .summary span.icon.open #open-icon,
+  .tldr .summary span.icon.closed #closed-icon {
+    opacity: 1;
+  }
+
+  .tldr .summary span.icon.closed #open-icon,
+  .tldr .summary span.icon.open #closed-icon {
+    opacity: 0;
+  }
+
+  .summary~div {
+    left: -50%;
+    padding-left: calc(50% + 48px);
+    position: absolute;
+    transition: all ease-in-out 0.5s;
+    width: 150%;
+    z-index: 100;
+  }
+
+  .summary~.open {
+    opacity: 1;
+  }
+
+  .summary~.closed {
+    opacity: 0;
+    transform: scaleX(0);
+    transform-origin: -100% 0;
+  }
+
+  .tldr> :not(.summary) {
+    background-color: var(--primary-color);
+    height: max(24px, auto);
+    padding: 48px;
+    padding-left: 16px;
+  }
+
+  .content> :first-child {
+    margin-top: 0;
+  }
+
+  .content> :last-child {
+    margin-bottom: 0;
+  }
+
+  .tldr>blockquote {
+    margin-top: 0;
+  }
+
+  .tldr svg {
+    color: var(--bg-color);
+  }
+
+  @media print {
+    .tldr {
+      display: none;
+    }
+  }
+
+  @media (max-width: 575px) {
+    .summary {
+      font-size: var(--font-size-2);
+      font-weight: bold;
+      width: 5rem;
+    }
+
+    .summary~div {
+      padding: 16px;
+      padding-left: 50%;
+    }
+
+    blockquote {
+      font-size: var(--font-size-1);
+      margin: 0 0 16px;
+
+    }
+
+    blockquote p {
+      font-size: var(--font-size-2);
+    }
+  }
+
+  @media (min-width: 1500px) {
+    .summary~div {
+      left: 0;
+      padding-left: 48px;
+      width: 100%;
+    }
+  }
+</style>
