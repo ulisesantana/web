@@ -22,7 +22,7 @@
     ${renderItems(this.nav[this.locale])}
     <li><theme-switch></theme-switch></li>
   </ul>
-  <button class="mobile-menu" onclick="(${toggleMenu.toString()})()">
+  <button title="Toggle menu" class="mobile-menu" onclick="(${toggleMenu.toString()})()">
     <span class="bar"></span>
     <span class="bar"></span>
     <span class="bar"></span>
