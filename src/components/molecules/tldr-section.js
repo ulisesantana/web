@@ -1,28 +1,52 @@
 class TldrSection extends HTMLElement {
-  show = false
-  element = null
   content = null
+  cta = null
+  show = false
 
   connectedCallback () {
-    this.element = this.querySelector(':scope .tldr')
-    this.content = this.querySelector(':scope .tldr .content')
-    console.log(this.element)
-    console.log(this.content)
-    this.element.addEventListener('click', this.handleClick.bind(this))
+    this.cta = document.querySelector(':scope .tldr .summary')
+    this.content = document.querySelector(':scope .tldr .content')
+
+    this.cta.addEventListener('click', this.handleClick.bind(this))
+    document.addEventListener('click', this.onDocumentClick.bind(this))
   }
 
   disconnectedCallback () {
-    this.element.removeEventListener('click', this.handleClick)
+    this.cta.removeEventListener('click', this.handleClick)
+    document.removeEventListener('click', this.onDocumentClick)
   }
 
   /**
    * Handle click on the button
    */
   handleClick () {
-    console.log('click')
-    this.show = !this.show
-    this.content.classList.toggle('closed')
-    this.content.classList.toggle('open')
+    if (this.show) {
+      this.close()
+    } else {
+      this.open()
+    }
+  }
+
+  onDocumentClick (event) {
+    if (
+      this.show &&
+      !this.cta.contains(event.target) &&
+      !this.content.contains(event.target)
+    ) {
+      this.close()
+    }
+  }
+
+  open () {
+    this.show = true
+    this.content.classList.remove('closed')
+    this.content.classList.add('open')
+  }
+
+  close () {
+    this.show = false
+    this.content.classList.add('closed')
+    this.content.classList.remove('open')
   }
 }
 
