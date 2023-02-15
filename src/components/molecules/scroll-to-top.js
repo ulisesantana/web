@@ -3,7 +3,7 @@ class ScrollToTop extends HTMLElement {
   element = null
 
   connectedCallback () {
-    this.element = this.querySelector(':scope .scroll-to-top')
+    this.element = document.querySelector(':scope .scroll-to-top')
     this.handleScroll()
     // Add all listeners which can start scroll
     this.element.addEventListener('click', this.handleClick.bind(this))

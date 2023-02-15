@@ -6,8 +6,8 @@ class ThemeSwitch extends HTMLElement {
   }
 
   connectedCallback () {
-    const component = this.querySelector(':scope .theme-switch')
-    const checkbox = this.querySelector(':scope input')
+    const component = document.querySelector(':scope .theme-switch')
+    const checkbox = document.querySelector(':scope input')
     checkbox.checked = this.getDarkModeCachedValue()
     this.setTheme(checkbox.checked)
     component.addEventListener('click', () => {
