@@ -52,6 +52,7 @@ export const JavaScriptRepl = ({
  init = [],
  height
 }) => {
+  init = typeof init === 'string' ? eval(init) : init
   const repl = generateREPL()
   const initializeLines = () => {
     repl.loadScope(loadToScope)

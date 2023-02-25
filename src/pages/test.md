@@ -13,7 +13,7 @@ Chiquito pelete
 
 [Mi web](https://ulisesantana.dev)
 
-<js-repl title="Microfrontend rules"></js-repl>
+<js-repl title="Microfrontend rules" height="500" init="['1 === 1']"></js-repl>
 
 ## Highlight code 
 

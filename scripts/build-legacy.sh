@@ -16,11 +16,11 @@ done
 
 cd ./src/legacy
 if test -z "$dev"; then
-  echo "Installing legacy dependencies."
+  echo "📦 Installing legacy dependencies."
   npm install
 fi
-echo "Starting build."
+echo "🚧 Starting build."
 npm run build
-echo "Build done."
-cp -f ./build/static/js/main.*.js ../components/legacy.js
-echo "Build copied."
+echo "👷 Build done."
+cp -f ./dist/assets/index-*.js ../components/legacy.js
+echo "📋 Build copied."
