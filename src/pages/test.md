@@ -16,7 +16,8 @@ Chiquito pelete
 <js-repl 
   title="Microfrontend rules" 
   height="500" 
-  init="[`'1' === 1`, `Boolean(1)`]">
+  init="[`'1' === 1`, `'Ulises'.rainbow()`]"
+  load-to-scope="[`String.prototype.rainbow = function(){return '🌈 ' + this.valueOf() + ' 🌈'}`]">
 </js-repl>
 
 ## Highlight code 
