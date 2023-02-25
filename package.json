@@ -4,8 +4,11 @@
   "description": "My personal website",
   "scripts": {
     "build": "npm run clean && eleventy",
+    "build:ci": "npm run build:legacy && npm run build",
+    "build:legacy": "./scripts/build-legacy.sh",
     "clean": "rm -rf _site",
     "dependencies:purge": "rm -rf node_modules && npm install",
+    "dev": "npm run build:legacy -- -d && npm run start",
     "lint": "eslint .",
     "lint:fix": "npm run lint -- --fix",
     "start": "npm run clean && eleventy --serve",

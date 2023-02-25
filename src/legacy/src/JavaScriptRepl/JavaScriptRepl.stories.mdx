@@ -1,0 +1,21 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { JavaScriptRepl } from './JavaScriptRepl';
+
+<Meta title="Components/JavaScriptRepl" component={JavaScriptRepl} />
+
+# JavaScript REPL
+
+This component is a fork from [react-repl](https://github.com/seveibar/react-repl)
+
+<Canvas>
+  <Story
+    name="with init commands"
+    args={{
+      title: 'REPL',
+      init: ['"1" === 1'],
+      height: 200
+    }}>
+  >
+      {JavaScriptRepl.bind({})}
+  </Story>
+</Canvas>

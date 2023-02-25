@@ -24,6 +24,7 @@
   <!-- scripts -->
   <script type="module" src="/components/index.js" webc:keep></script>
   <script webc:keep @raw="this.getJS(this.page.url)"></script>
+  <script defer src="/components/legacy.js" webc:keep></script>
 </head>
 
 <body class="theme-dark">

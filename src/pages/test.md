@@ -13,6 +13,8 @@ Chiquito pelete
 
 [Mi web](https://ulisesantana.dev)
 
+<js-repl title="Microfrontend rules"></js-repl>
+
 ## Highlight code 
 
 <figure>
