@@ -1,6 +1,6 @@
 ---
 layout: base.webc
-title: Test | Ulises Santana
+title: Test
 ---
 
 {% renderTemplate "webc" %}

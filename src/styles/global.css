@@ -1,6 +1,8 @@
 /* GLOBAL CSS */
 :root {
   --border-radius: 8px;
+  --transition-speed-fast: 0.3s;
+  --transition-speed-regular: 0.6s;
 }
 
 html {
@@ -24,7 +26,7 @@ body {
 
 body, body * {
   transition-property: background;
-  transition-duration: .6s;
+  transition-duration: var(--transition-speed-regular);
   transition-timing-function: ease-in-out;
 }
 
@@ -45,8 +47,12 @@ figcaption {
 }
 
 pre {
-  border-bottom-left-radius: var(--border-radius);
-  border-bottom-right-radius: var(--border-radius);
+  border-radius: var(--border-radius);
+}
+
+figure pre {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
 }
 
 input,
@@ -115,9 +121,9 @@ span a,
 figcaption a,
 article li a {
   border-bottom: solid 4px var(--link-color);
-  color: var(--text-color);
+  color: var(--link-color);
   font-weight: 700;
-  transition: all ease-in-out 0.3s;
+  transition: all ease-in-out var(--transition-speed-fast);
 }
 
 blockquote {

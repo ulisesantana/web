@@ -1,0 +1,55 @@
+---
+layout: base.webc
+title: Blog
+---
+<div class="blog-posts">
+	<script webc:type="render" webc:is="template">
+		function () {
+			let collection = this.collections.posts_es.filter(({ data }) => {
+				if (process.env.NODE_ENV === 'dev') {
+					return data.title
+				}
+				return !data.draft && data.title
+			});
+
+			return `
+			<h1>
+				<span webc:if="this.locale !== 'en'" webc:nokeep>
+					Últimos artículos
+				</span>
+				<span webc:if="this.locale === 'en'" webc:nokeep>
+					Latest posts
+				</span>
+			</h1>
+			`.concat(collection.map((post) => {
+				const locale = this.locale === 'es' ? 'es-ES' : 'en-US'
+				const dateOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+				const date = post.data.date.toLocaleDateString(locale, dateOptions)
+				return `
+				<post-card 
+					@post-title="${post.data.title}"
+					@image="${'/assets/images/' + post.url + post.data.cover}"
+					@url="${post.url}"
+					@description="${post.data.description}"
+					@date="${date}"
+					@draft=${post.data.draft}>
+				</post-card>
+      `})
+				.join(""));
+		}
+	</script>
+</div>
+
+<style webc:scoped>
+	:host {
+		display: block;
+	}
+
+	a:visited {
+		color: inherit;
+	}
+
+	article>p {
+		margin-block-start: var(--space-xs);
+	}
+</style>

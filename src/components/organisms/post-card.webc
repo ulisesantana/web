@@ -1,0 +1,108 @@
+<a :href="this.url">
+  <article :class="'post-card' + (this.draft === 'true' ? ' draft' : '')">
+    <div class="date-and-preview">
+      <span class="preview">
+        <img :src="this.image" :alt="this.postTitle" />
+      </span>
+      <span class="date">
+        <time :datetime="this.date" @raw="this.date"></time>
+      </span>
+    </div>
+    <div class="content">
+      <h2 @raw="this.postTitle"></h2>
+      <p class="excerpt" @raw="this.description"></p>
+    </div>
+  </article>
+</a>
+
+<style>
+  .post-card {
+    display: grid;
+    border-bottom: solid 8px transparent;
+    gap: 8px;
+    grid-template-columns: 170px 1fr;
+    position: relative;
+    text-shadow: none;
+    transition: var(--transition-speed-fast) ease-in-out;
+  }
+
+  .post-card.draft {
+    background: repeating-linear-gradient(45deg,
+    transparent,
+    transparent 10px,
+    teal 10px,
+    teal 20px);
+  }
+
+  .post-card .content {
+    padding: 0 8px;
+  }
+
+  .post-card h2 {
+    margin: 0;
+    margin-bottom: 8px;
+  }
+  
+  .post-card p {
+    margin: 0;
+    font-size: 1rem;
+  }
+
+  .post-card:hover {
+    border-bottom-color: var(--accent-color);
+  }
+
+  .post-card:hover .preview {
+      transform: translateY(100%);
+    }
+
+  .post-card:hover .date {
+    transform: translateY(0);
+  }
+
+  .post-card .date-and-preview {
+    position: relative;
+    margin-right: 45px;
+    flex-shrink: 0;
+    overflow: hidden;
+    height: 170px;
+    width: 170px;
+  }
+
+  .post-card .preview {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transition: 0.35s ease-in-out;
+  }
+
+  .post-card .preview img {
+    border-radius: 3px;
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+  }
+
+  .post-card .date {
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    line-height: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-color);
+    transform: translateY(-100%);
+    transition: 0.35s ease-in-out;
+  }
+
+  .post-card .date > time {
+    display: block;
+    margin-top: 12px;
+  }
+</style>

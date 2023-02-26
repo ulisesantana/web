@@ -1,5 +1,6 @@
   .theme-light {
     /* light theme */
+    --accent-color: var(--secondary-color);
     --bg-color: #e6e2e2;
     --highlight-color: #323330;
     --icon-color: var(--text-color);
@@ -84,7 +85,7 @@
   /* Inline code */
   .theme-light :not(pre)>code[class*="language-"] {
     padding: .1em;
-    border-radius: .3em;
+    border-radius: var(--border-radius);
     white-space: normal;
   }
 

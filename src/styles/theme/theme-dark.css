@@ -1,5 +1,6 @@
 .theme-dark {
   /* dark theme */
+  --accent-color: var(--primary-color);
   --bg-color: #323330;
   --highlight-color: #F7F7F7;
   --icon-color: var(--primary-color);
@@ -60,7 +61,7 @@
 /* Inline code */
 .theme-dark :not(pre)>code[class*="language-"] {
   padding: .1em;
-  border-radius: .3em;
+  border-radius: var(--border-radius);
   white-space: normal;
 }
 
