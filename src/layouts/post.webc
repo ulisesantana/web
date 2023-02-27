@@ -3,13 +3,16 @@ metatype: article
 layout: base.webc
 ---
 
-<img :src="`/assets/images/blog/${this.date.getFullYear()}/${this.slug}/${this.cover}`" :alt="this.title"/>
+<img 
+  :src="`/assets/images${this.page.url}cover.png`" 
+  :alt="this.title"/>
 <h1 @raw="title"></h1>
 <article @raw="content"></article>
 <author-info></author-info>
 
-<style webc:scoped>
+<style>
   h1 {
-    margin-top: 24px;
+    border: none;
+    color: var(--accent-color);
   }
 </style>

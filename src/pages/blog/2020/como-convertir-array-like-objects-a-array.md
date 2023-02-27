@@ -3,8 +3,6 @@ title: Cómo convertir array-like objects a array
 date: 2020-10-10
 description: En JavaScript existen los array-like objects que pueden parecerse a un array e incluso algunos se pueden iterar, pero no tienen el mismo comportamiento que un array. Por ello en ocasiones es necesario convertirlo en un array para poder trabajar mejor con ellos.
 tags: [javascript,array,array-like objects]
-slug: como-convertir-array-like-objects-a-array
-cover: cover.png
 draft: false
 ---
 

@@ -11,12 +11,6 @@
   <link webc:is="link-canonical">
   <meta name="generator" :content="this.eleventy.generator">
   
-  <!-- open graph -->
-  <meta property="og:image" :content="this.metaImage">
-
-  <!-- twitter -->
-  <meta name="twitter:image" :content="this.metaImage">
-  
   <!-- styles -->
   <link rel="stylesheet" href="/styles/index.css" webc:keep>
   <style webc:keep @raw="this.getCSS(this.page.url)"></style>

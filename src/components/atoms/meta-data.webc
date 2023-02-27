@@ -4,18 +4,23 @@
 		const {author, twitter, name: siteName, colors} = this.site
 		const description = this.description ?? localeSite.description;
 		const title = this.title ?? localeSite.title;
+		const metaImage = this.metaImage ? this.metaImage : `/assets/images${this.page.url}cover.png`
 
 		return `
+<!-- open graph -->
 <meta property="og:type" content="${this.metatype}">
 <meta name="theme-color" content="${colors.primary}"/>
 <meta name="author" content="${author.name}">
 <meta property="og:title" content="${title}">
 <meta name="description" property="og:description" content="${description}">
 <meta property="og:site_name" content="${siteName}">
+<meta property="og:image" content="${metaImage}"">
+<!-- twitter -->
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="${twitter}">
 <meta name="twitter:title" content="${title}">
 <meta name="twitter:description" content="${description}">
+<meta name="twitter:image" content="${metaImage}">
 `;
 	}
 </script>

@@ -3,7 +3,6 @@ title: Gestionando buffers en Node.js
 date: 2021-10-16
 description: Buffers en Node.js
 tags: [node.js]
-slug: buffers-en-node.js
 draft: true
 ---
 

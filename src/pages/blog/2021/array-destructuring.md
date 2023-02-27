@@ -3,8 +3,6 @@ title: Introducción al Array Destructuring en JavaScript
 date: 2021-10-09
 description: El destructuring es una funcionalidad que se añadió a JavaScript en ES2015 y que desde que llegó se ha convertido en un recurso increíblemente útil.
 tags: [javascript, arrays, basics]
-slug: array-destructuring
-cover: cover.png
 draft: false
 ---
 

@@ -6,7 +6,18 @@ p {
   margin: 2rem auto;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  margin: 2rem 0;
+}
+
 h1, h2, h3 {
   border-bottom: solid var(--link-color) 4px;
   width: fit-content;
+}
+
+strong {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  color: var(--black);
+  padding: 8px;
 }
