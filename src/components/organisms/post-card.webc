@@ -16,11 +16,15 @@
 </a>
 
 <style>
+  :root {
+    --min-preview-height: 170px;
+  }
   .post-card {
     display: grid;
     border-bottom: solid 8px transparent;
     gap: 8px;
-    grid-template-columns: 170px 1fr;
+    grid-template-columns: 1fr;
+    grid-template-rows: var(--min-preview-height) auto;
     position: relative;
     text-shadow: none;
     transition: var(--transition-speed-fast) ease-in-out;
@@ -39,6 +43,8 @@
   }
 
   .post-card h2 {
+    border: none;
+    color: var(--accent-color);
     margin: 0;
     margin-bottom: 8px;
   }
@@ -65,8 +71,8 @@
     margin-right: 45px;
     flex-shrink: 0;
     overflow: hidden;
-    height: 170px;
-    width: 170px;
+    height: 100%;
+    width: 100%;
   }
 
   .post-card .preview {
@@ -104,5 +110,13 @@
   .post-card .date > time {
     display: block;
     margin-top: 12px;
+  }
+
+  @media (min-width: 768px) {
+    .post-card {
+      grid-template-columns: var(--min-preview-height) 1fr;
+      grid-template-rows: 1fr;
+      height: var(--min-preview-height);
+    }
   }
 </style>

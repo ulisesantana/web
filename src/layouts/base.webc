@@ -4,8 +4,7 @@ layout: root.webc
 ---
 
 <site-header></site-header>
-<author-info></author-info>
 <main>
-  <div @raw="content"></div>
+  <div @raw="content" webc:nokeep></div>
 </main>
 <site-footer></site-footer>

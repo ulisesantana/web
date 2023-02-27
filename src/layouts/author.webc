@@ -1,0 +1,7 @@
+---
+metatype: web
+layout: base.webc
+---
+
+<author-info></author-info>
+<div @raw="content"></div>

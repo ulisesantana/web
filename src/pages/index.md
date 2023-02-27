@@ -1,5 +1,5 @@
 ---
-layout: base.webc
+layout: author.webc
 title: Sobre mí
 ---
 

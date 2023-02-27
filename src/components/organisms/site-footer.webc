@@ -3,10 +3,10 @@
   <social-media></social-media>
   <div class="bottom-text">
     <span class="thanks">
-      <span webc:if="this.locale !== 'en'">
+      <span webc:if="this.locale === 'es'">
         Hecho con <like-icon></like-icon> y
       </span>
-      <span webc:if="this.locale === 'en'">
+      <span webc:if="this.locale !== 'es'">
         Made with <like-icon></like-icon> and
       </span>
       <a href="https://www.11ty.dev" target="_blank">

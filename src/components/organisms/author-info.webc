@@ -1,5 +1,5 @@
 <section class="author-info">
-  <a :href="this.locale === 'en' ? '/en' : '/'">
+  <a :href="this.locale === 'es' ? '/' : '/en'">
     <flipable-image>
       <img slot="front-image" src="/assets/images/author.jpg" alt="Ulises Santana" />
       <img slot="back-image" src="/assets/logo.png" alt="Ulises Santana" />
@@ -8,20 +8,20 @@
   </a>
   <div class="info">
     <h2 class="title">
-      <span webc:if="this.locale !== 'en'" webc:nokeep>
+      <span webc:if="this.locale === 'es'" webc:nokeep>
         👋 Hola! Soy <b>Ulises Santana</b>
       </span>
-      <span webc:if="this.locale === 'en'" webc:nokeep>
+      <span webc:if="this.locale !== 'es'" webc:nokeep>
         👋 Hi! I'm <b>Ulises Santana</b>
       </span>
     </h2>
     <p class="description">
-      <span webc:if="this.locale !== 'en'" webc:nokeep>
+      <span webc:if="this.locale === 'es'" webc:nokeep>
         Me gano la vida como Full Stack Developer. 
         JavaScript es mi lengua materna y la web mi patria.
         Trasteo con tecnologías desde las Islas Canarias 🏝️
       </span>
-      <span webc:if="this.locale === 'en'" webc:nokeep>
+      <span webc:if="this.locale !== 'es'" webc:nokeep>
         Full Stack Developer with JavaScript as mother tongue
         and web as my home nation.
         Based in the Canary Islands 🏝️

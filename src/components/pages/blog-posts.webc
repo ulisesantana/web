@@ -1,0 +1,62 @@
+<div class="blog-posts">
+	<script webc:type="render" webc:is="template">
+		function BlogPosts() {
+      const localeCollection = this.locale === 'es' ? 'posts_es' : 'posts_en'
+			const collection = this.collections[localeCollection].filter(({ data }) => {
+				if (process.env.NODE_ENV === 'dev') {
+					return data.title
+				}
+				return !data.draft && data.title
+			});
+
+			return `
+			<h1>
+				<span webc:if="this.locale === 'es'" webc:nokeep>
+					Últimos artículos
+				</span>
+				<span webc:if="this.locale !== 'es'" webc:nokeep>
+					Latest posts
+				</span>
+			</h1>
+			<ul>
+			`.concat(collection.map((post) => {
+				const locale = this.locale === 'es' ? 'es-ES' : 'en-US'
+				const dateOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+				const date = post.data.date.toLocaleDateString(locale, dateOptions)
+				const coverPath = post.data.cover ? post.url + post.data.cover : 'blog/preview.png'
+				return `
+				<li>
+					<post-card 
+						@post-title="${post.data.title}"
+						@image="${'/assets/images/' + coverPath}"
+						@url="${post.url}"
+						@description="${post.data.description}"
+						@date="${date}"
+						@draft=${post.data.draft}>
+					</post-card>
+				</li>
+      `})
+			.join(""))
+			.concat(`
+			</ul>
+			`);
+		}
+	</script>
+</div>
+
+<style webc:scoped>
+	ul {
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+		margin: 0;
+		padding: 0;
+		gap: 16px;
+		width: 100%;
+	}
+
+	li {
+		list-style: none;
+		padding: 0;
+	}
+</style>
