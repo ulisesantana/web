@@ -23,7 +23,7 @@
 				const locale = this.locale === 'es' ? 'es-ES' : 'en-US'
 				const dateOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
 				const date = post.data.date.toLocaleDateString(locale, dateOptions)
-				const coverPath = `/assets/images${this.page.url}cover.png`
+				const coverPath = `/assets/images${post.url}cover.png`
 				return `
 				<li>
 					<post-card 
