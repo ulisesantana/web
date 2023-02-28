@@ -41,7 +41,7 @@
   }
 
   .post-card .content {
-    padding: 0 0 8px;
+    padding: 0 0 16px;
     height: 100%;
   }
 
@@ -79,7 +79,7 @@
     }
 
     .post-card .content {
-      padding: 0 8px 8px 0;
+      padding: 8px 8px 8px 0;
       min-height: var(--min-preview-height);
     }
 
