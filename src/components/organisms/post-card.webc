@@ -65,7 +65,7 @@
   }
 
   .post-card time {
-    color: var(--black);
+    color: var(--text-color);
     display: block;
     font-weight: bold;
     margin-bottom: 8px;
