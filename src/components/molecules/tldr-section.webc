@@ -60,7 +60,7 @@
     left: -50%;
     padding-left: calc(50% + 48px);
     position: absolute;
-    transition: all ease-in-out 0.5s;
+    transition: all ease-in-out var(--transition-speed-regular);
     width: 150%;
     z-index: 100;
   }

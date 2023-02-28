@@ -19,6 +19,7 @@
   :root {
     --min-preview-height: 170px;
   }
+  
   .post-card {
     display: grid;
     border-bottom: solid 8px transparent;
@@ -81,7 +82,7 @@
     height: 100%;
     top: 0;
     left: 0;
-    transition: 0.35s ease-in-out;
+    transition: ease-in-out 0.3;
   }
 
   .post-card .preview img {
@@ -104,7 +105,7 @@
     justify-content: center;
     color: var(--text-color);
     transform: translateY(-100%);
-    transition: 0.35s ease-in-out;
+    transition: ease-in-out 0.3s;
   }
 
   .post-card .date > time {

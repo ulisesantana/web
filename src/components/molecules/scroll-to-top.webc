@@ -16,7 +16,7 @@
     opacity: 1;
     position: fixed;
     right: 48px;
-    transition: 0.3s ease-in-out;
+    transition: ease-in-out var(--transition-speed-fast);
     width: 60px;
   }
 

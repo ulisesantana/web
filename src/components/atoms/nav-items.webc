@@ -84,7 +84,7 @@
     border-radius: 3px;
     background-color: var(--bg-color);
     margin: 4px auto 2px;
-    transition: all 0.3s ease-in-out;
+    transition: all ease-in-out var(--transition-speed-fast);
   }
 
   button.mobile-menu.active .bar:nth-child(1) {
