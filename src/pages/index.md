@@ -18,13 +18,10 @@ Desde que me gano la vida como desarrollador trato de mantenerme al día en Java
 
 En la JSConf 2018 con Ryan Dahl
 A la izquierda parte del gran equipo con el que trabajé en [Kentech](https://www.kentech-sp.es) y Ryan Dahl justo después de dar la charla más épica de JSConf EU 2018.
-En mi tiempo libre durante la semana trasteo con alguna tecnología como Node.js y trato de mejorar mis habilidades relacionadas con ingeniería de software leyendo blogs o libros. Durante los fines de semana disfruto pasando tiempo en familia o con amigos. Aunque también trato de hacer algo de turismo local.
 
-Últimamente tengo como objetivo devolver a la comunidad de desarrolladores la ayuda que me prestaron. Disfruto cada día en mi trabajo y eso es gracias a toda la gente que comparte su tiempo, conocimiento o punto de vista haciéndole a otros posible aprender conceptos o utilizar herramientas que de otra manera no sería posible. Por eso trato de dar al menos una charla al año en centros de formación personal. Suelo hablarles de tecnología web y de cómo es la industria de software. Trato de ayudarles para que optimicen su formación y puedan encontrar trabajo al terminar sus estudios.
+En mi tiempo libre durante la semana trasteo con alguna tecnología como Node.js y trato de mejorar mis habilidades relacionadas con ingeniería y diseño de software leyendo blogs o libros. Durante los fines de semana disfruto pasando tiempo en familia o con amigos. Aunque también trato de hacer algo de turismo local.
 
-Hay otra meta personal que tengo pendiente y es construir o al menos ayudar a construir algo con un fin social. Casi lo consigo hace un par de años en Hack for Good, pero el proyecto que construimos en 36 horas murió 6 meses después. Por lo tanto, si tienes un proyecto con un fin social y crees que puedo ayudar técnicamente, programando o pensado, ponte en contacto conmigo 😁
-
-Como parte de mi plan de aportar a la comunidad, he patrocinado las tres últimas ediciones de JS Day Canarias y PyDay Gran Canaria 2019, aparte de también patrocinar y co-organizar el Global Day of Coderetreat Canarias 2019. Además, en Noviembre de 2018 tuve la oportunidad de dar una charla en JS Day Canarias sobre Node.js, npm y cómo publicar y mantener un paquete en un registro npm. Me encantó la experiencia y quiero continuar compartiendo conocimiento con el resto del mundo.
+Como parte de mi plan de aportar a la comunidad, he patrocinado las tres ediciones de JS Day Canarias y PyDay Gran Canaria 2019, aparte de también patrocinar y co-organizar el Global Day of Coderetreat Canarias 2019. Además, en Noviembre de 2018 tuve la oportunidad de dar una charla en JS Day Canarias sobre Node.js, npm y cómo publicar y mantener un paquete en un registro npm. Me encantó la experiencia y quiero continuar compartiendo conocimiento con el resto del mundo.
 
 ![Hablando de cómo crear un paquete de npm en el JSDay Canarias de 2018](/assets/images/jsdaycanarias.jpg)
 

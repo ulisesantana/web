@@ -1,5 +1,5 @@
 <a :href="this.url">
-  <article :class="'post-card' + (this.draft === 'true' ? ' draft' : '')">
+  <article :class="'post-card' + (this.draft == 1 ? ' draft' : '')">
     <div class="date-and-preview">
       <span class="preview">
         <img :src="this.image" :alt="this.postTitle" />

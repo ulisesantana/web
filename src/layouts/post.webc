@@ -5,12 +5,14 @@ layout: base.webc
 
 <img 
   :src="`/assets/images${this.page.url}cover.png`" 
-  :alt="this.title"/>
+  :alt="this.title"
+/>
 <h1 @raw="title"></h1>
 <article @raw="content"></article>
 <author-info></author-info>
 
-<style>
+
+<style webc:scoped>
   h1 {
     border: none;
     color: var(--accent-color);

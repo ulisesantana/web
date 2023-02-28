@@ -22,8 +22,7 @@
 </head>
 
 <body class="theme-dark">
-  <div @raw="this.content"></div>
-  <scroll-to-top></scroll-to-top>
+  <div @raw="this.content" webc:nokeep></div>
 </body>
 
 </html>

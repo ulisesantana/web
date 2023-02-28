@@ -4,7 +4,6 @@ layout: root.webc
 ---
 
 <site-header></site-header>
-<main>
-  <div @raw="content" webc:nokeep></div>
-</main>
+<main @raw="content"></main>
+<scroll-to-top></scroll-to-top>
 <site-footer></site-footer>
