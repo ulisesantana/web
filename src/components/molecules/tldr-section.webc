@@ -108,7 +108,6 @@
     .tldr .summary {
       font-size: var(--font-size-2);
       font-weight: bold;
-      width: 5rem;
     }
 
     .tldr .summary~div {

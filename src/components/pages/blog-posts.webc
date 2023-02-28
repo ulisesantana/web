@@ -7,7 +7,7 @@
 					return data.title
 				}
 				return !data.draft && data.title
-			});
+			}).sort((a,b) => b.data.date.getTime() - a.data.date.getTime());
 
 			return `
 			<h1>

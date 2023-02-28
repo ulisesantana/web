@@ -1,15 +1,11 @@
 <a :href="this.url">
   <article :class="'post-card' + (this.draft == 1 ? ' draft' : '')">
-    <div class="date-and-preview">
-      <span class="preview">
-        <img :src="this.image" :alt="this.postTitle" />
-      </span>
-      <span class="date">
-        <time :datetime="this.date" @raw="this.date"></time>
-      </span>
+    <div class="cover">
+      <img :src="this.image" :alt="this.postTitle" />
     </div>
     <div class="content">
       <h2 @raw="this.postTitle"></h2>
+      <time :datetime="this.date" @raw="this.date"></time>
       <p class="excerpt" @raw="this.description"></p>
     </div>
   </article>
@@ -17,107 +13,83 @@
 
 <style>
   :root {
-    --min-preview-height: 170px;
+    --min-preview-height: 180px;
+    --min-preview-width: 180px;
+    --content-height: calc(var(--min-preview-height) * 1.5)
   }
-  
+
   .post-card {
     display: grid;
-    border-bottom: solid 8px transparent;
+    border-radius: var(--border-radius);
     gap: 8px;
     grid-template-columns: 1fr;
-    grid-template-rows: var(--min-preview-height) auto;
-    position: relative;
+    grid-template-rows: var(--min-preview-height) 100%;
     text-shadow: none;
-    transition: var(--transition-speed-fast) ease-in-out;
+    transition: ease-in-out var(--transition-speed-fast);
+  }
+
+  .post-card:hover {
+    transform: scale(103%);
   }
 
   .post-card.draft {
     background: repeating-linear-gradient(45deg,
-    transparent,
-    transparent 10px,
-    teal 10px,
-    teal 20px);
+        transparent,
+        transparent 10px,
+        teal 10px,
+        teal 20px);
   }
 
   .post-card .content {
-    padding: 0 8px;
+    padding: 0 0 8px;
+    height: 100%;
   }
 
   .post-card h2 {
     border: none;
     color: var(--accent-color);
     margin: 0;
-    margin-bottom: 8px;
+    margin-bottom: 4px;
   }
-  
+
   .post-card p {
     margin: 0;
     font-size: 1rem;
   }
 
-  .post-card:hover {
-    border-bottom-color: var(--accent-color);
-  }
-
-  .post-card:hover .preview {
-      transform: translateY(100%);
-    }
-
-  .post-card:hover .date {
-    transform: translateY(0);
-  }
-
-  .post-card .date-and-preview {
-    position: relative;
-    margin-right: 45px;
-    flex-shrink: 0;
-    overflow: hidden;
+  .post-card img {
+    border-radius: var(--border-radius) var(--border-radius) 0 0;
     height: 100%;
-    width: 100%;
-  }
-
-  .post-card .preview {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    transition: ease-in-out 0.3;
-  }
-
-  .post-card .preview img {
-    border-radius: 3px;
     object-fit: cover;
-    height: 100%;
     width: 100%;
   }
 
-  .post-card .date {
-    font-size: 1.5rem;
-    font-weight: 700;
-    text-align: center;
-    width: 100%;
-    height: 100%;
-    line-height: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: var(--text-color);
-    transform: translateY(-100%);
-    transition: ease-in-out 0.3s;
-  }
-
-  .post-card .date > time {
+  .post-card time {
+    color: var(--black);
     display: block;
-    margin-top: 12px;
+    font-weight: bold;
+    margin-bottom: 8px;
   }
 
   @media (min-width: 768px) {
     .post-card {
-      grid-template-columns: var(--min-preview-height) 1fr;
+      grid-template-columns: var(--min-preview-width) 1fr;
       grid-template-rows: 1fr;
       height: var(--min-preview-height);
+    }
+
+    .post-card .content {
+      padding: 0 8px 8px 0;
+      min-height: var(--min-preview-height);
+    }
+
+    .post-card img {
+      border-radius: var(--border-radius) 0 0 var(--border-radius);
+      width: var(--min-preview-height);
+    }
+
+    .post-card:hover {
+      box-shadow: 0 4px 8px var(--black);
     }
   }
 </style>
