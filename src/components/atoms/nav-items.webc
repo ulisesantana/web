@@ -113,7 +113,7 @@
   }
 
   .nav-items .active {
-    border-bottom: solid var(--link-color) 2px;
+    border-bottom: solid var(--accent-color) 4px;
   }
 
   .nav-items a,
