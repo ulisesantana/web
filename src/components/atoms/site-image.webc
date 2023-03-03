@@ -1,0 +1,3 @@
+<object :data="img" :title="imgTitle" :type="imgType || 'image/png'">
+  <img :src="imgFallback" :title="imgTitle" />
+</object>

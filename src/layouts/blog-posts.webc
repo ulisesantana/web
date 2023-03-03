@@ -1,3 +1,8 @@
+---
+metatype: blog
+layout: author.webc
+---
+
 <div class="blog-posts">
 	<script webc:type="render" webc:is="template">
 		function BlogPosts() {
@@ -21,8 +26,6 @@
 			<ul>
 			`.concat(collection.map((post) => {
 				const locale = this.locale === 'es' ? 'es-ES' : 'en-US'
-				const dateOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-				const date = post.data.date.toLocaleDateString(locale, dateOptions)
 				const coverPath = `/assets/images${post.url}cover.png`
 				return `
 				<li>
@@ -31,7 +34,7 @@
 						@image="${coverPath}"
 						@url="${post.url}"
 						@description="${post.data.description}"
-						@date="${date}"
+						@date="${this.fefo.dates.toLocaleDateString(post.data.date, locale)}"
 						@draft=${Number(post.data.draft)}>
 					</post-card>
 				</li>

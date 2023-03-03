@@ -1,7 +1,9 @@
 <a :href="this.url">
   <article :class="'post-card' + (this.draft == 1 ? ' draft' : '')">
     <div class="cover">
-      <img :src="this.image" :alt="this.postTitle" />
+      <object :data="image" :title="postTitle" type="image/png">
+        <img :src="fefo.images.fallback" :title="postTitle" />
+      </object>
     </div>
     <div class="content">
       <h2 @raw="this.postTitle"></h2>
@@ -53,11 +55,17 @@
     font-size: 1rem;
   }
 
-  .post-card img {
+  .post-card .cover img,
+  .post-card .cover object {
     border-radius: var(--border-radius) var(--border-radius) 0 0;
     height: 100%;
     object-fit: cover;
     width: 100%;
+  }
+
+  .post-card.draft .cover img,
+  .post-card.draft .cover object {
+    height: calc(100% - 8px);
   }
 
   .post-card time {
@@ -79,7 +87,8 @@
       min-height: var(--min-preview-height);
     }
 
-    .post-card img {
+    .post-card .cover img,
+    .post-card .cover object {
       border-radius: var(--border-radius) 0 0 var(--border-radius);
       width: var(--min-preview-height);
     }

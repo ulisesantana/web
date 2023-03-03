@@ -3,11 +3,13 @@ metatype: article
 layout: base.webc
 ---
 
-<img 
-  :src="`/assets/images${this.page.url}cover.png`" 
-  :alt="this.title"
-/>
+<site-image 
+  :img="`/assets/images${this.page.url}cover.png`"
+  :img-fallback="fefo.images.fallback"  
+  :img-title="title"
+/></site-image>
 <h1 @raw="title"></h1>
+<time @raw="fefo.dates.toLocaleDateString(this.date, this.locale)"></time>
 <article @raw="content"></article>
 <author-info></author-info>
 
@@ -16,6 +18,11 @@ layout: base.webc
   h1 {
     border: none;
     color: var(--accent-color);
+    margin-bottom: 0;
+  }
+
+  time {
+    margin-top: 0;
   }
 
   img {

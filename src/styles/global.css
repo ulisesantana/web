@@ -161,7 +161,7 @@ ul {
   margin: 0 !important;
 }
 
-img {
+img, object {
   border-radius: var(--border-radius);
   max-width: 100%;
 }
