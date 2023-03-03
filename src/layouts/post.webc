@@ -3,26 +3,33 @@ metatype: article
 layout: base.webc
 ---
 
-<site-image 
-  :img="`/assets/images${this.page.url}cover.png`"
-  :img-fallback="fefo.images.fallback"  
-  :img-title="title"
-/></site-image>
-<h1 @raw="title"></h1>
-<time @raw="fefo.dates.toLocaleDateString(this.date, this.locale)"></time>
-<article @raw="content"></article>
+<article class="post">
+  <site-image 
+    :img="`/assets/images${this.page.url}cover.png`" 
+    :img-fallback="fefo.images.fallback"
+    :img-title="title" />
+  </site-image>
+  <time 
+    :datetime="fefo.dates.toLocaleDateString(this.date, this.locale)"
+    @raw="fefo.dates.toLocaleDateString(this.date, this.locale)">
+  </time>
+  <h1 custom @raw="title"></h1>
+  <article @raw="content" webc:nokeep></article>
+</article>
 <author-info></author-info>
+<related-posts></related-posts>
 
 
 <style webc:scoped>
   h1 {
-    border: none;
     color: var(--accent-color);
-    margin-bottom: 0;
   }
 
   time {
-    margin-top: 0;
+    display: inline-block;
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin: 1rem 0;
   }
 
   img {

@@ -6,7 +6,7 @@
       </object>
     </div>
     <div class="content">
-      <h2 @raw="this.postTitle"></h2>
+      <h2 @raw="this.postTitle" custom></h2>
       <time :datetime="this.date" @raw="this.date"></time>
       <p class="excerpt" @raw="this.description"></p>
     </div>
@@ -31,7 +31,7 @@
   }
 
   .post-card:hover {
-    transform: scale(103%);
+    transform: scale(110%);
   }
 
   .post-card.draft {
@@ -44,8 +44,8 @@
   }
 
   .post-card h2 {
-    border: none;
     color: var(--accent-color);
+    font-size: 1.5rem;
     margin: 0;
     margin-bottom: 4px;
   }

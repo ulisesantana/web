@@ -7,7 +7,7 @@
     <!--TODO: Añadir imagen y transición para tema claro y tema oscuro-->
   </a>
   <div class="info">
-    <h2 class="title">
+    <h2 class="title" custom>
       <span webc:if="this.locale === 'es'" webc:nokeep>
         👋 Hola! Soy <b>Ulises Santana</b>
       </span>
@@ -62,7 +62,6 @@
   }
 
   .title {
-    border: none;
     font-size: 1.5rem;
     font-weight: 400;
     font-family: var(--font-family-1);

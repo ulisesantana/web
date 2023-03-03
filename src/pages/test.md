@@ -13,12 +13,23 @@ Chiquito pelete
 
 [Mi web](https://ulisesantana.dev)
 
-<js-repl 
-  title="Microfrontend rules" 
-  height="500" 
-  init="[`'1' === 1`, `'Ulises'.rainbow()`]"
-  load-to-scope="[`String.prototype.rainbow = function(){return '🌈 ' + this.valueOf() + ' 🌈'}`]">
-</js-repl>
+# Heading H1
+Lorem ipsum
+
+## Heading H2
+Lorem ipsum
+
+### Heading H3
+Lorem ipsum
+
+#### Heading H4
+Lorem ipsum
+
+##### Heading H5
+Lorem ipsum
+
+###### Heading H6
+Lorem ipsum
 
 ## Highlight code 
 
@@ -53,6 +64,15 @@ function quickSort(x, asc = true){
 }
 ```
 </figure>
+
+## JavaScript REPL
+
+<js-repl 
+  title="Microfrontend rules" 
+  height="500" 
+  init="[`'1' === 1`, `'Ulises'.rainbow()`]"
+  load-to-scope="[`String.prototype.rainbow = function(){return '🌈 ' + this.valueOf() + ' 🌈'}`]">
+</js-repl>
 
 ![Hablando de cómo crear un paquete de npm en el JSDay Canarias de 2018](/assets/images/jsdaycanarias.jpg)
 
