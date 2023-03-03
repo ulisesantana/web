@@ -22,7 +22,7 @@
 
   .theme-light code[class*="language-"],
   .theme-light pre[class*="language-"],
-  .theme-light figcaption {
+  .theme-light figcaption:has(+ pre) {
     color: black;
     background: none;
     text-shadow: 0 1px white;
@@ -78,7 +78,7 @@
 
   .theme-light :not(pre)>code[class*="language-"],
   .theme-light pre[class*="language-"],
-  .theme-light figcaption {
+  .theme-light figcaption:has(+ pre) {
     background: #eae5e1;
   }
 
@@ -111,7 +111,7 @@
   .theme-light .token.constant,
   .theme-light .token.symbol,
   .theme-light .token.deleted,
-  .theme-light figcaption {
+  .theme-light figcaption:has(+ pre) {
     color: #905;
   }
 

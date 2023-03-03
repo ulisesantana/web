@@ -4,11 +4,17 @@ layout: base.webc
 ---
 
 <article>
-  <site-image 
-    :img="`/assets/images${this.page.url}cover.png`" 
-    :img-fallback="fefo.images.fallback"
-    :img-title="title">
-  </site-image>
+  <figure>
+    <site-image 
+      :img="`/assets/images${this.page.url}cover.png`" 
+      :img-fallback="fefo.images.fallback"
+      :img-title="title">
+    </site-image>
+    <figcaption webc:if="this.coverCopyright">
+      <small @raw="this.coverCopyright"></small>
+    </figcaption>
+  </figure>
+  
   <h1 custom @raw="title"></h1>
   <time 
     :datetime="fefo.dates.toLocaleDateString(this.date, this.locale)"
@@ -34,5 +40,9 @@ layout: base.webc
   img {
     display: block;
     margin: 0 auto;
+  }
+
+  figcaption {
+    text-align: center;
   }
 </style>

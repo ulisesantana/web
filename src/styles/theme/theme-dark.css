@@ -20,9 +20,9 @@
  * @author Rose Pritchard
  */
 
-.theme-dark .theme-light code[class*="language-"],
+.theme-dark code[class*="language-"], 
 .theme-dark pre[class*="language-"],
-.theme-dark figcaption {
+.theme-dark figcaption:has(+ pre) {
   color: #ccc;
   background: none;
   font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
@@ -54,7 +54,7 @@
 
 .theme-dark :not(pre)>code[class*="language-"],
 .theme-dark pre[class*="language-"], 
-.theme-dark figcaption {
+.theme-dark figcaption:has( + pre) {
   background: #2d2d2d;
 }
 
@@ -98,7 +98,7 @@
 .theme-dark .token.class-name,
 .theme-dark .token.constant,
 .theme-dark .token.symbol,
-.theme-dark figcaption {
+.theme-dark figcaption:has( + pre) {
   color: #f8c555;
 }
 
