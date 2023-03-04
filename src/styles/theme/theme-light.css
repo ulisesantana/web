@@ -131,7 +131,7 @@
   .theme-light .language-css .token.string,
   .theme-light .style .token.string {
     color: #9a6e3a;
-    background: #eae5e1;
+    background: var(--bg-alt-color);
   }
 
   .theme-light .token.atrule,

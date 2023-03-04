@@ -15,12 +15,12 @@ layout: base.webc
     </figcaption>
   </figure>
   
-  <site-tags :url="this.page.url"></site-tags>
   <h1 custom @raw="title"></h1>
   <time 
-    :datetime="fefo.dates.toLocaleDateString(this.date, this.locale)"
-    @raw="fefo.dates.toLocaleDateString(this.date, this.locale)">
+  :datetime="fefo.dates.toLocaleDateString(this.date, this.locale)"
+  @raw="fefo.dates.toLocaleDateString(this.date, this.locale)">
   </time>
+  <site-tags :url="this.page.url"></site-tags>
   <article @raw="content" webc:nokeep></article>
   <author-info></author-info>
   <related-posts :url="this.page.url"></related-posts>
@@ -29,13 +29,14 @@ layout: base.webc
 <style webc:scoped>
   h1 {
     color: var(--accent-color);
-    margin: 1rem 0 0;
+    margin: 2.5rem 0 0;
   }
 
   time {
     display: inline-block;
     font-size: var(--font-size-2);
     font-weight: bold;
+    margin-bottom: 1rem;
   }
 
   img {

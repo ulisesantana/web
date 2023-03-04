@@ -21,6 +21,7 @@
     display: flex;
     background-color: var(--link-color);
     border: none;
+    border-radius: var(--border-radius);
     color: var(--bg-color);
     cursor: pointer;
     font-size: var(--font-size-3);
@@ -29,31 +30,6 @@
     margin-bottom: 24px;
     padding: 8px;
     text-align: center;
-  }
-
-  .tldr .summary span.icon {
-    align-items: center;
-    display: flex;
-    height: 24px;
-    padding-left: 8px;
-    position: relative;
-  }
-
-  .tldr #open-icon,
-  .tldr #closed-icon {
-    position: absolute;
-    top: 1px;
-    width: 1rem;
-  }
-
-  .tldr .summary span.icon.open #open-icon,
-  .tldr .summary span.icon.closed #closed-icon {
-    opacity: 1;
-  }
-
-  .tldr .summary span.icon.closed #open-icon,
-  .tldr .summary span.icon.open #closed-icon {
-    opacity: 0;
   }
 
   .tldr .summary~div {
@@ -77,6 +53,8 @@
 
   .tldr> :not(.summary) {
     background-color: var(--link-color);
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
     height: max(24px, auto);
     padding: 48px;
     padding-left: 16px;
