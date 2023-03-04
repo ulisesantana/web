@@ -161,14 +161,17 @@ export const Repl = ({
       }
     }
   }
+  // Limiting to read only due to component disappearing once
+  // something that throw an error is given by input
   return (
     <Container onClick={() => (inputRef.current.focus())}>
       <Header>
         <Title>{title}</Title>
-        <Tab onClick={onClear}><FaUndo/></Tab>
+        {/* <Tab onClick={onClear}><FaUndo/></Tab> */}
       </Header>
       <TerminalContent height={height} ref={terminalContentRef}>
         {lines.map(renderLine)}
+        {/*         
         <ActiveInputLine>
           <InputCaret>{">"}</InputCaret>
           <TextInput
@@ -177,7 +180,8 @@ export const Repl = ({
             value={activeInputValue}
             ref={inputRef}
           />
-        </ActiveInputLine>
+        </ActiveInputLine> 
+        */}
       </TerminalContent>
     </Container>
   )
