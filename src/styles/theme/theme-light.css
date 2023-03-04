@@ -2,6 +2,7 @@
     /* light theme */
     --accent-color: var(--secondary-color);
     --bg-color: #e6e2e2;
+    --bg-alt-color: #f2f2f2;
     --highlight-color: #323330;
     --icon-color: var(--text-color);
     --menu-mobile-bg-color: #F7F7F7;
@@ -79,7 +80,7 @@
   .theme-light :not(pre)>code[class*="language-"],
   .theme-light pre[class*="language-"],
   .theme-light figcaption:has(+ pre) {
-    background: #eae5e1;
+    background: var(--bg-alt-color);
   }
 
   /* Inline code */

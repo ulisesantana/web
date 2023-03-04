@@ -20,22 +20,22 @@ describe('fefo should', () => {
   })
 
   describe('work with blog posts', () => {
-    describe('returning the related posts', () => {
-      const posts = [
-        generatePost({
-          url: '/test1',
-          tags: ['software', 'food']
-        }),
-        generatePost({
-          url: '/test2',
-          tags: ['software']
-        }),
-        generatePost({
-          url: '/test3',
-          tags: ['food']
-        })
-      ]
+    const posts = [
+      generatePost({
+        url: '/test1',
+        tags: ['software', 'food']
+      }),
+      generatePost({
+        url: '/test2',
+        tags: ['software']
+      }),
+      generatePost({
+        url: '/test3',
+        tags: ['food']
+      })
+    ]
 
+    describe('returning the related posts', () => {
       it('successfully', () => {
         assert.deepEqual(
           fefo.blog.getRelatedPosts(posts[2].page.url, posts),
@@ -46,6 +46,13 @@ describe('fefo should', () => {
           [posts[1], posts[2]]
         )
       })
+    })
+
+    it('returning tags from post by url', () => {
+      assert.deepEqual(
+        fefo.blog.getTags(posts[0].page.url, posts),
+        posts[0].data.tags
+      )
     })
   })
 })

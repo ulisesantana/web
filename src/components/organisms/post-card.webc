@@ -34,6 +34,7 @@
   }
 
   .post-card .content {
+    background-color: var(--bg-alt-color);
     padding: 0 0 16px;
     height: 100%;
   }
@@ -60,7 +61,7 @@
 
   .post-card.draft .cover img,
   .post-card.draft .cover object {
-    height: calc(100% - 8px);
+    height: 100%;
   }
 
   .post-card time {
@@ -72,6 +73,7 @@
 
   @media (min-width: 768px) {
     .post-card {
+      gap: 0;
       grid-template-columns: var(--min-preview-width) 1fr;
       grid-template-rows: 1fr;
       height: var(--min-preview-height);
@@ -79,8 +81,10 @@
     }
 
     .post-card .content {
-      padding: 8px 8px 8px 0;
-      min-height: var(--min-preview-height);
+      border-top-right-radius: var(--border-radius);
+      border-bottom-right-radius: var(--border-radius);
+      padding: 8px;
+      min-height: calc(var(--min-preview-height) - 16px);
     }
 
     .post-card .cover img,

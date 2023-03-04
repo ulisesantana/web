@@ -15,7 +15,7 @@ layout: base.webc
     </figcaption>
   </figure>
   
-  <span @raw="tags"></span>
+  <site-tags :url="this.page.url"></site-tags>
   <h1 custom @raw="title"></h1>
   <time 
     :datetime="fefo.dates.toLocaleDateString(this.date, this.locale)"

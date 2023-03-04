@@ -1,43 +1,131 @@
 <section class="related-posts">
-  <h3 webc:if="this.locale === 'es'">Artículos relacionados</h3>
-  <h3 webc:if="this.locale !== 'es'">Related posts</h3>
-  <ul>
-    <script webc:type="render" webc:is="template">
-      function relatedPosts() {
-        const localeCollection = this.locale === 'es'
-          ? this.fefo.collections.blog.es
-          : this.fefo.collections.blog.en
-        const collection = this.fefo.blog.getRelatedPosts(this.page.url, this.collections[localeCollection]).slice(0, 3)
-        return collection.map((post) => {
-          const coverPath = `/assets/images${post.url}cover.png`
-          return `
+  <script webc:type="render" webc:is="template">
+    function relatedPosts() {
+      const localeCollection = this.locale === 'es'
+        ? this.fefo.collections.blog.es
+        : this.fefo.collections.blog.en
+      const collection = this.fefo.blog.getRelatedPosts(this.url, this.collections[localeCollection]).slice(0, 3)
+      return collection.length === 0 
+        ? '' 
+        : /*html*/`
+      <h3 webc:if="this.locale === 'es'">Artículos relacionados</h3>
+      <h3 webc:if="this.locale !== 'es'">Related posts</h3>
+      <ul>
+      `.concat(collection.map((post) => {
+        const coverPath = `/assets/images${post.url}cover.png`
+        const title = post.data.title
+        const date = this.fefo.dates.toLocaleDateString(post.data.date, this.locale)
+        return /*html*/`
           <li>
-            <post-card-minimal 
-              @post-title="${post.data.title}"
-              @image="${coverPath}"
-              @tags="${post.data.tags}"
-              @url="${post.url}"
-              @date="${this.fefo.dates.toLocaleDateString(post.data.date, this.locale)}"
-              @draft=${Number(post.data.draft)}>
-            </post-card-minimal>
+            <a href="${post.url}">
+              <article class="${'post-card-minimal' + (post.data.draft ? ' draft' : '')}">
+                <div class="cover">
+                  <object data="${coverPath}" title="${title}" type="image/png">
+                    <img src="${this.fefo.images.fallback}" title="${title}" />
+                  </object>
+                </div>
+                <div class="content">
+                  <h4 custom>${title}</h4>
+                  <time datetime="${date}">${date}</time>
+                  <span class="excerpt">${post.data.description}</span>
+                  <site-tags url="${post.url}"></site-tags>
+                </div>
+              </article>
+            </a>
           </li>
         `}).join('')
-      }
-    </script>
-  </ul>
+        ).concat('</ul>')
+    }
+  </script>
 </section>
 
 <style>
-  .related-posts ul {
+  :root {
+    --min-preview-height: 110px;
+    --min-preview-width: 220px;
+  }
+
+  .related-posts>ul {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    gap: 16px;
+    gap: 32px;
     max-width: 80ch;
     width: 100%;
   }
 
-  .related-posts li {
+  .related-posts>ul>li {
     list-style: none;
+  }
+
+  .post-card-minimal {
+    display: grid;
+    border-radius: var(--border-radius);
+    gap: 0;
+    grid-template-columns: 1fr;
+    grid-template-rows: var(--min-preview-height) auto;
+    text-shadow: none;
+    width: 100%;
+  }
+
+  .post-card-minimal.draft {
+    border: 4px dashed var(--accent-color);
+  }
+
+  .post-card-minimal h4 {
+    color: var(--accent-color);
+    font-size: var(--font-size-2);
+    margin: 0;
+    margin-bottom: 4px;
+  }
+
+  .post-card-minimal .cover img,
+  .post-card-minimal .cover object {
+    border-radius: var(--border-radius) var(--border-radius) 0 0;
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+  }
+
+  .post-card-minimal.draft .cover img,
+  .post-card-minimal.draft .cover object {
+    height: calc(100% - 8px);
+  }
+
+  .post-card-minimal .content {
+    background-color: var(--bg-alt-color);
+    border-bottom-right-radius: var(--border-radius);
+    border-bottom-left-radius: var(--border-radius);
+    padding: 8px;
+    padding-bottom: 16px;
+  }
+
+  .post-card-minimal .content .excerpt {
+    display: block;
+    color: var(--text-color);
+    font-size: var(--font-size-0);
+    font-weight: 400;
+    margin-bottom: 1rem;
+  }
+
+  .post-card-minimal time {
+    color: var(--text-color);
+    display: block;
+    font-size: var(--font-size-0);
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+
+  @media (min-width: 768px) {
+    .post-card-minimal {
+      width: var(--min-preview-width);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    :root {
+      --min-preview-height: 130px;
+      --min-preview-width: 260px;
+    }
   }
 </style>

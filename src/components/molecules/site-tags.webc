@@ -1,0 +1,32 @@
+<ul class="tag-list">
+    <script webc:type="render" webc:is="template">
+      function relatedPosts() {
+        const localeCollection = this.locale === 'es'
+          ? this.fefo.collections.blog.es
+          : this.fefo.collections.blog.en
+        const tags = this.fefo.blog.getTags(this.url, this.collections[localeCollection])
+        return tags.map((tag) => `
+          <li>
+            <site-tag @tag="${tag}"></site-tag>
+          </li>
+        `).join('')
+      }
+    </script>
+</ul>
+
+<style>
+  .tag-list {
+    align-items: center;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 0;
+    width: 100%;
+  }
+
+  .tag-list li {
+    list-style: none;
+    padding: 0;
+  }
+</style>

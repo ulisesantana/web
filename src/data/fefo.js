@@ -35,7 +35,7 @@ module.exports = {
   blog: {
     /**
      * Get related post based on shared tags
-     * @param {Post} fromPost
+     * @param {string} fromPostUrl
      * @param {Post[]} posts
      * @returns {Post[]} A list of related post
      */
@@ -45,6 +45,16 @@ module.exports = {
         post.page.url !== fromPostUrl &&
         post.data.tags.some(tag => tags.includes(tag))
       )
+    },
+    /**
+     * Get tags from a post url
+     * @param {string} fromPostUrl
+     * @param {Post[]} posts
+     * @returns {string[]} Post tags list
+     */
+    getTags (fromPostUrl, posts) {
+      const { data: { tags } } = posts.find(({ page: { url } }) => url === fromPostUrl)
+      return tags
     }
   },
   dates: {
