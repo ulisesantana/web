@@ -1,6 +1,5 @@
 class ImageCaption extends HTMLElement {
   connectedCallback () {
-    console.log('RUN')
     const imgPath = this.getAttribute('src')
     const imgAlt = this.getAttribute('alt')
     const imgCaption = this.getAttribute('caption')
@@ -14,7 +13,6 @@ class ImageCaption extends HTMLElement {
         </figcaption>
       </figure>
     `
-    console.log(this.innerHTML)
   }
 };
 
