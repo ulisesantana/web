@@ -10,7 +10,7 @@
   .up-icon {
     align-items: center;
     display: flex;
-    fill: var(--bg-color);
+    fill: var(--bg-alt-color);
     font-size: 2.25rem;
     justify-content: center;
     margin: 0;
@@ -18,7 +18,7 @@
   }
 
   .up-icon svg path {
-    stroke: var(--bg-color);
+    stroke: var(--bg-alt-color);
     stroke-width: 4rem;
   }
 </style>

@@ -5,7 +5,7 @@
 <style>
   .scroll-to-top {
     align-items: center;
-    background-color: var(--link-color);
+    background-color: var(--accent-color);
     border: none;
     border-radius: 50%;
     bottom: 32px;
@@ -22,7 +22,7 @@
   }
 
   .scroll-to-top:hover {
-    filter: drop-shadow(0 0 0.75rem var(--link-color));
+    filter: drop-shadow(0 0 0.75rem var(--accent-color));
   }
 
   .hidden {
