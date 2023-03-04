@@ -15,6 +15,7 @@ layout: base.webc
     </figcaption>
   </figure>
   
+  <span @raw="tags"></span>
   <h1 custom @raw="title"></h1>
   <time 
     :datetime="fefo.dates.toLocaleDateString(this.date, this.locale)"
@@ -22,7 +23,7 @@ layout: base.webc
   </time>
   <article @raw="content" webc:nokeep></article>
   <author-info></author-info>
-  <related-posts></related-posts>
+  <related-posts :url="this.page.url"></related-posts>
 </article>
 
 <style webc:scoped>

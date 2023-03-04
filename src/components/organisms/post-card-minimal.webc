@@ -1,0 +1,103 @@
+<a :href="this.url">
+  <article :class="'post-card-minimal' + (this.draft == 1 ? ' draft' : '')">
+    <div class="cover">
+      <object :data="image" :title="postTitle" type="image/png">
+        <img :src="fefo.images.fallback" :title="postTitle" />
+      </object>
+    </div>
+    <div class="content">
+      <h4 @raw="this.postTitle" custom></h2>
+      <time :datetime="this.date" @raw="this.date"></time>
+      <span class="excerpt" @raw="this.tags"></p>
+    </div>
+  </article>
+</a>
+
+<style>
+  :root {
+    --min-preview-height: 250px;
+    --min-preview-width: 250px;
+    --content-height: calc(var(--min-preview-height) * 1.5)
+  }
+
+  .post-card-minimal {
+    display: grid;
+    border-radius: var(--border-radius);
+    gap: 8px;
+    grid-template-columns: 1fr;
+    grid-template-rows: var(--min-preview-height) 100%;
+    text-shadow: none;
+  }
+
+  .post-card-minimal.draft {
+    border: 4px dashed var(--accent-color);
+  }
+
+  .post-card-minimal .content {
+    padding: 0 0 16px;
+    height: 100%;
+  }
+
+  .post-card-minimal h2 {
+    color: var(--accent-color);
+    font-size: var(--font-size-3);
+    margin: 0;
+    margin-bottom: 4px;
+  }
+
+  .post-card-minimal p {
+    margin: 0;
+    font-size: var(--font-size-1);
+  }
+
+  .post-card-minimal .cover img,
+  .post-card-minimal .cover object {
+    border-radius: var(--border-radius) var(--border-radius) 0 0;
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+  }
+
+  .post-card-minimal.draft .cover img,
+  .post-card-minimal.draft .cover object {
+    height: calc(100% - 8px);
+  }
+
+  .post-card-minimal time {
+    color: var(--text-color);
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+  }
+
+  @media (min-width: 768px) {
+    .post-card-minimal {
+      grid-template-columns: var(--min-preview-width) 1fr;
+      grid-template-rows: 1fr;
+      height: var(--min-preview-height);
+      transition: all ease-in-out var(--transition-speed-fast);
+    }
+
+    .post-card-minimal .content {
+      padding: 8px 8px 8px 0;
+      min-height: var(--min-preview-height);
+    }
+
+    .post-card-minimal .cover img,
+    .post-card-minimal .cover object {
+      border-radius: var(--border-radius) 0 0 var(--border-radius);
+      transition: all ease-in-out var(--transition-speed-fast);
+      width: var(--min-preview-height);
+    }
+
+    .post-card-minimal:hover {
+      box-shadow: 0 4px 8px var(--black);
+      transform: scale(110%);
+    }
+
+    .post-card-minimal:hover .cover img,
+    .post-card-minimal:hover .cover object {
+      filter: brightness(1.5);
+    }
+  }
+</style>
