@@ -6,18 +6,19 @@
       </object>
     </div>
     <div class="content">
-      <h4 @raw="this.postTitle" custom></h2>
-      <time :datetime="this.date" @raw="this.date"></time>
-      <span class="excerpt" @raw="this.tags"></p>
+      <h4 @raw="this.postTitle" custom>
+        </h2>
+        <time :datetime="this.date" @raw="this.date"></time>
+        <span class="excerpt" @raw="tags"></p>
     </div>
   </article>
 </a>
 
 <style>
   :root {
-    --min-preview-height: 250px;
+    --min-preview-height: 125px;
     --min-preview-width: 250px;
-    --content-height: calc(var(--min-preview-height) * 1.5)
+    --content-height: 100%;
   }
 
   .post-card-minimal {
@@ -25,29 +26,20 @@
     border-radius: var(--border-radius);
     gap: 8px;
     grid-template-columns: 1fr;
-    grid-template-rows: var(--min-preview-height) 100%;
+    grid-template-rows: var(--min-preview-height) var(--content-height);
     text-shadow: none;
+    width: 100%;
   }
 
   .post-card-minimal.draft {
     border: 4px dashed var(--accent-color);
   }
 
-  .post-card-minimal .content {
-    padding: 0 0 16px;
-    height: 100%;
-  }
-
-  .post-card-minimal h2 {
+  .post-card-minimal h4 {
     color: var(--accent-color);
-    font-size: var(--font-size-3);
+    font-size: var(--font-size-2);
     margin: 0;
     margin-bottom: 4px;
-  }
-
-  .post-card-minimal p {
-    margin: 0;
-    font-size: var(--font-size-1);
   }
 
   .post-card-minimal .cover img,
@@ -63,41 +55,27 @@
     height: calc(100% - 8px);
   }
 
+  .post-card-minimal .content {
+    padding: 0 8px 8px;
+  }
+
   .post-card-minimal time {
     color: var(--text-color);
     display: block;
+    font-size: var(--font-size-0);
     font-weight: bold;
     margin-bottom: 8px;
   }
 
   @media (min-width: 768px) {
     .post-card-minimal {
-      grid-template-columns: var(--min-preview-width) 1fr;
-      grid-template-rows: 1fr;
-      height: var(--min-preview-height);
-      transition: all ease-in-out var(--transition-speed-fast);
-    }
-
-    .post-card-minimal .content {
-      padding: 8px 8px 8px 0;
-      min-height: var(--min-preview-height);
-    }
-
-    .post-card-minimal .cover img,
-    .post-card-minimal .cover object {
-      border-radius: var(--border-radius) 0 0 var(--border-radius);
-      transition: all ease-in-out var(--transition-speed-fast);
-      width: var(--min-preview-height);
-    }
-
-    .post-card-minimal:hover {
-      box-shadow: 0 4px 8px var(--black);
-      transform: scale(110%);
-    }
-
-    .post-card-minimal:hover .cover img,
-    .post-card-minimal:hover .cover object {
-      filter: brightness(1.5);
+      display: grid;
+      border-radius: var(--border-radius);
+      gap: 8px;
+      grid-template-columns: 1fr;
+      grid-template-rows: var(--min-preview-height) var(--content-height);
+      text-shadow: none;
+      width: var(--min-preview-width);
     }
   }
 </style>

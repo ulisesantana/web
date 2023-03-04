@@ -9,11 +9,11 @@ describe('fefo should', () => {
       const date = new Date('2023/03/01')
 
       assert.equal(
-        fefo.dates.toLocaleDateString(date, 'es-ES'),
+        fefo.dates.toLocaleDateString(date, 'es'),
         'miércoles, 1 de marzo de 2023'
       )
       assert.equal(
-        fefo.dates.toLocaleDateString(date, 'en-US'),
+        fefo.dates.toLocaleDateString(date, 'en'),
         'Wednesday, March 1, 2023'
       )
     })

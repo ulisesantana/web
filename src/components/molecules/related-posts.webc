@@ -7,7 +7,7 @@
         const localeCollection = this.locale === 'es'
           ? this.fefo.collections.blog.es
           : this.fefo.collections.blog.en
-        const collection = this.fefo.blog.getRelatedPosts(this.page.url, this.collections[localeCollection]).slice(0,3)
+        const collection = this.fefo.blog.getRelatedPosts(this.page.url, this.collections[localeCollection]).slice(0, 3)
         return collection.map((post) => {
           const coverPath = `/assets/images${post.url}cover.png`
           return `
@@ -15,14 +15,29 @@
             <post-card-minimal 
               @post-title="${post.data.title}"
               @image="${coverPath}"
+              @tags="${post.data.tags}"
               @url="${post.url}"
-              @description="${post.data.description}"
               @date="${this.fefo.dates.toLocaleDateString(post.data.date, this.locale)}"
               @draft=${Number(post.data.draft)}>
-            </post-card>
+            </post-card-minimal>
           </li>
-        `})
+        `}).join('')
       }
     </script>
   </ul>
 </section>
+
+<style>
+  .related-posts ul {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+    max-width: 80ch;
+    width: 100%;
+  }
+
+  .related-posts li {
+    list-style: none;
+  }
+</style>
