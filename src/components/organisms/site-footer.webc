@@ -35,7 +35,7 @@
   }
 
   .icon {
-    font-size: 1rem;
+    font-size: var(--font-size-3);
   }
 
   .bar {
@@ -49,7 +49,7 @@
     align-items: center;
     display: flex;
     flex-direction: column;
-    font-size: 1rem;
+    font-size: var(--font-size-3);
     gap: 1rem;
     justify-content: center;
   }

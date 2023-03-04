@@ -47,8 +47,8 @@
   }
 
   .description {
-    font-size: 1rem;
-    line-height: 1.5rem;
+    font-size: var(--font-size-1);
+    line-height: var(--line-height-normal-text);
     margin: 0;
     text-align: justify;
   }
@@ -62,7 +62,7 @@
   }
 
   .title {
-    font-size: 1.5rem;
+    font-size: var(--font-size-3);
     font-weight: 400;
     font-family: var(--font-family-1);
     margin: 0;
@@ -78,8 +78,8 @@
     }
 
     .description {
-      font-size: 1rem;
-      line-height: 1.5rem;
+      font-size: var(--font-size-1);
+      line-height: var(--line-height-normal-text);
       margin: 1rem auto;
     }
   }

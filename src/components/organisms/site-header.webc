@@ -22,7 +22,7 @@
   .isotype {
     border: none;
     color: transparent;
-    font-size: 2rem;
+    font-size: var(--font-size-5);
     font-weight: 600;
     letter-spacing: 1px;
     -webkit-text-stroke-width: 1.5px;

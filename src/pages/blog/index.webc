@@ -1,5 +1,4 @@
 ---
-layout: author.webc
+layout: blog-posts.webc
 title: Blog
 ---
-<blog-posts></blog-posts>
