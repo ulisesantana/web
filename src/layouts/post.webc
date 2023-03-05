@@ -56,6 +56,15 @@ layout: base.webc
     padding-left: 2rem;
   }
 
+  li::marker {
+    color: var(--accent-color);
+    font-weight: bold;
+  }
+
+  p, li {
+    line-height: var(--line-height-normal-text);
+  }
+
   .head {
     margin-bottom: 2rem;
   }

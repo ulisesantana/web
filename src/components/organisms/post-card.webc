@@ -84,6 +84,7 @@
       border-bottom-right-radius: var(--border-radius);
       padding: 8px;
       min-height: calc(var(--min-preview-height) - 16px);
+      overflow-y: hidden;
     }
 
     .post-card .cover img,
