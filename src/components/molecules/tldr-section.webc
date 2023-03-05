@@ -4,8 +4,12 @@
       TL;DR 🔥
     </span>
   </button>
-  <div class="content closed">
-    <slot></slot>
+  <div class="content open">
+    <div class="blur">
+      <div class="text">
+        <slot></slot>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -13,13 +17,12 @@
   .tldr {
     color: var(--bg-color);
     padding: 0;
-    position: relative;
   }
 
   .tldr .summary {
     align-items: center;
     display: flex;
-    background-color: var(--link-color);
+    background-color: var(--accent-color);
     border: none;
     border-radius: var(--border-radius);
     color: var(--bg-color);
@@ -32,39 +35,47 @@
     text-align: center;
   }
 
-  .tldr .summary~div {
-    left: -50%;
-    padding-left: calc(50% + 48px);
-    position: absolute;
-    transition: all ease-in-out var(--transition-speed-regular);
-    width: 150%;
-    z-index: 100;
+  .tldr .content.open {
+    display: block;
   }
 
-  .tldr .summary~.open {
-    opacity: 1;
+  .tldr .content.closed {
+    display: none;
   }
 
-  .tldr .summary~.closed {
-    opacity: 0;
-    transform: scaleX(0);
-    transform-origin: -100% 0;
+  .tldr .content {
+    left: 0;
+    position: fixed;
+    top: 0;
   }
 
-  .tldr> :not(.summary) {
-    background-color: var(--link-color);
-    border-top-right-radius: 8px;
-    border-bottom-right-radius: 8px;
-    height: max(24px, auto);
+  .tldr .blur {
+    align-items: center;
+    backdrop-filter: blur(5px);
+    display: flex; 
+    height: 100vh;
+    justify-content: center;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    z-index: var(--z-index-6);
+  }
+
+  .tldr .text {
+    background-color: var(--accent-color);
+    border-radius: var(--border-radius);
+    max-width: 80ch;
     padding: 48px;
-    padding-left: 16px;
+    width: 80%;
+    z-index: var(--z-index-6);
   }
 
-  .tldr .content> :first-child {
+  .tldr .text> :first-child {
     margin-top: 0;
   }
 
-  .tldr .content> :last-child {
+  .tldr .text> :last-child {
     margin-bottom: 0;
   }
 

@@ -70,7 +70,7 @@
     opacity: 0;
     white-space: nowrap;
     visibility: hidden;
-    z-index: 999;
+    z-index: var(--z-index-0);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     transform: translate3d(-50%, 0, 0);
     transition: cubic-bezier(0.165, 0.84, 0.44, 1) var(--transition-speed-fast);

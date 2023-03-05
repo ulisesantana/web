@@ -77,7 +77,6 @@
       grid-template-columns: var(--min-preview-width) 1fr;
       grid-template-rows: 1fr;
       height: var(--min-preview-height);
-      transition: all ease-in-out var(--transition-speed-fast);
     }
 
     .post-card .content {
@@ -92,16 +91,6 @@
       border-radius: var(--border-radius) 0 0 var(--border-radius);
       transition: all ease-in-out var(--transition-speed-fast);
       width: var(--min-preview-height);
-    }
-
-    .post-card:hover {
-      box-shadow: 0 4px 8px var(--black);
-      transform: scale(110%);
-    }
-
-    .post-card:hover .cover img,
-    .post-card:hover .cover object {
-      filter: brightness(1.5);
     }
   }
 </style>

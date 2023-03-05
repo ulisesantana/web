@@ -31,7 +31,7 @@
     padding: 30px 15px 98px;
     position: relative;
     text-align: center;
-    z-index: 1;
+    z-index: var(--z-index-0);
   }
 
   .icon {

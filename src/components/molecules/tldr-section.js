@@ -8,12 +8,12 @@ class TldrSection extends HTMLElement {
     this.content = document.querySelector(':scope .tldr .content')
 
     this.cta.addEventListener('click', this.handleClick.bind(this))
-    document.addEventListener('click', this.onDocumentClick.bind(this))
+    this.content.addEventListener('click', this.handleClick.bind(this))
   }
 
   disconnectedCallback () {
     this.cta.removeEventListener('click', this.handleClick)
-    document.removeEventListener('click', this.onDocumentClick)
+    this.content.removeEventListener('click', this.handleClick)
   }
 
   /**
@@ -24,16 +24,6 @@ class TldrSection extends HTMLElement {
       this.close()
     } else {
       this.open()
-    }
-  }
-
-  onDocumentClick (event) {
-    if (
-      this.show &&
-      !this.cta.contains(event.target) &&
-      !this.content.contains(event.target)
-    ) {
-      this.close()
     }
   }
 
