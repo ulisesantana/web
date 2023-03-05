@@ -46,10 +46,10 @@
   }
 
   .related-posts>ul {
-    display: flex;
+    display: grid;
     justify-content: center;
-    flex-direction: row;
-    flex-wrap: wrap;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
     gap: 32px;
     max-width: 80ch;
     padding: 0;
