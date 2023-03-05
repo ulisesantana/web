@@ -92,14 +92,14 @@ blockquote p {
   font-style: italic;
 }
 
-blockquote cite {
+blockquote cite, blockquote small {
   font-family: var(--font-family-1);
   font-size: var(--font-size-1);
   font-style: normal;
   font-weight: bold;
 }
 
-blockquote p:has(cite) {
+blockquote p:has(cite, small) {
   text-align: right;
 }
 

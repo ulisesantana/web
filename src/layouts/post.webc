@@ -29,7 +29,7 @@ layout: base.webc
 <style webc:scoped>
   h1 {
     color: var(--accent-color);
-    margin: 2.5rem 0 0;
+    margin: 2.25rem 0 0.5rem;
   }
 
   time {

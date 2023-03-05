@@ -15,8 +15,8 @@
 
 <style>
   :root {
-    --min-preview-height: 180px;
-    --min-preview-width: 180px;
+    --min-preview-height: 220px;
+    --min-preview-width: 220px;
     --content-height: calc(var(--min-preview-height) * 1.5)
   }
 
