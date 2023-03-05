@@ -1,11 +1,13 @@
 class TldrSection extends HTMLElement {
   content = null
   cta = null
+  text = null
   show = false
 
   connectedCallback () {
     this.cta = document.querySelector(':scope .tldr .summary')
     this.content = document.querySelector(':scope .tldr .content')
+    this.text = document.querySelector(':scope .tldr .content .text')
 
     this.cta.addEventListener('click', this.handleClick.bind(this))
     this.content.addEventListener('click', this.handleClick.bind(this))
@@ -19,11 +21,13 @@ class TldrSection extends HTMLElement {
   /**
    * Handle click on the button
    */
-  handleClick () {
-    if (this.show) {
-      this.close()
-    } else {
-      this.open()
+  handleClick (event) {
+    if (!this.text.contains(event.target)) {
+      if (this.show) {
+        this.close()
+      } else {
+        this.open()
+      }
     }
   }
 

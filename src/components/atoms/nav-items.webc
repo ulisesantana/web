@@ -73,7 +73,7 @@
     padding-bottom: 4px;
     position: fixed;
     width: 60px;
-    z-index: var(--z-index-0);
+    z-index: var(--z-index-5);
   }
 
   .bar {

@@ -65,7 +65,9 @@
   .tldr .text {
     background-color: var(--accent-color);
     border-radius: var(--border-radius);
+    max-height: 65%;
     max-width: 80ch;
+    overflow-x: scroll;
     padding: 48px;
     width: 80%;
     z-index: var(--z-index-6);
