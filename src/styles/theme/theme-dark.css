@@ -1,6 +1,7 @@
 .theme-dark {
   /* dark theme */
   --accent-color: var(--primary-color);
+  --accent-alt-color: var(--secondary-color);
   --bg-color: #323330;
   --bg-alt-color: #2d2d2d;
   --highlight-color: #F7F7F7;

@@ -1,6 +1,7 @@
   .theme-light {
     /* light theme */
     --accent-color: var(--secondary-color);
+    --accent-alt-color: var(--primary-color);
     --bg-color: #e6e2e2;
     --bg-alt-color: #f2f2f2;
     --highlight-color: #323330;

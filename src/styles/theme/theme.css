@@ -4,6 +4,7 @@
 :root {
   color-scheme: light dark;
   --black: #323330;
+  --white: #f2f2f2;
   --primary-color: #F7E018;
   --secondary-color: #44853e;
 }

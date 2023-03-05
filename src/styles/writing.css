@@ -70,3 +70,53 @@ h6 {
   font-size: var(--font-size-1);
 }
 
+.theme-dark blockquote {
+  color: var(--black);
+}
+
+.theme-light blockquote {
+  color: var(--white);
+}
+
+blockquote {
+  background-color: var(--accent-color);
+  border-radius: var(--border-radius);
+  font-weight: 500;
+  margin: 0;
+  padding: 1rem;
+}
+
+blockquote p {
+  font-family: var(--font-family-2);
+  font-size: var(--font-size-2);
+  font-style: italic;
+}
+
+blockquote cite {
+  font-family: var(--font-family-1);
+  font-size: var(--font-size-1);
+  font-style: normal;
+  font-weight: bold;
+}
+
+blockquote p:has(cite) {
+  text-align: right;
+}
+
+blockquote :first-child {
+  margin-top: 0;
+}
+
+blockquote :last-child {
+  margin-bottom: 0;
+}
+
+blockquote a, blockquote a:visited {
+  border-color: var(--accent-alt-color);
+  color: var(--accent-alt-color);
+}
+
+blockquote a:hover {
+  background-color: var(--accent-alt-color);
+  color: var(--accent-color);
+}

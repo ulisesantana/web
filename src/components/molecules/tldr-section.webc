@@ -4,7 +4,7 @@
       TL;DR 🔥
     </span>
   </button>
-  <div class="content open">
+  <div class="content closed">
     <div class="blur">
       <div class="text">
         <slot></slot>
@@ -109,7 +109,6 @@
     .tldr blockquote {
       font-size: var(--font-size-1);
       margin: 0 0 16px;
-
     }
 
     .tldr blockquote p {

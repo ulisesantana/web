@@ -83,11 +83,6 @@ a svg {
   color: var(--icon-color);
 }
 
-blockquote {
-  font-family: var(--font-family-2);
-  font-weight: 500;
-}
-
 pre[class*="language-"] {
   padding: 1.5rem;
   margin: 2rem 0;
@@ -131,15 +126,6 @@ article li a {
   color: var(--link-color);
   font-weight: 700;
   transition: all ease-in-out var(--transition-speed-fast);
-}
-
-blockquote {
-  background-color: var(--primary-color);
-  color: var(--black);
-}
-
-blockquote a:hover {
-  background-color: var(--secondary-color);
 }
 
 a.anchor.before {

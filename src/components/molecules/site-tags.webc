@@ -15,17 +15,18 @@
 </ul>
 
 <style>
-  .tag-list {
+  ul.tag-list {
     align-items: center;
     display: flex;
     justify-content: flex-start;
+    flex-direction: row;
     flex-wrap: wrap;
     gap: 8px;
     padding: 0;
     width: 100%;
   }
 
-  .tag-list li {
+  ul.tag-list li {
     list-style: none;
     padding: 0;
   }
