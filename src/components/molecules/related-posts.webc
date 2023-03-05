@@ -47,11 +47,12 @@
 
   .related-posts>ul {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     flex-direction: row;
     flex-wrap: wrap;
     gap: 32px;
     max-width: 80ch;
+    padding: 0;
     width: 100%;
   }
 

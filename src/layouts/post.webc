@@ -14,13 +14,14 @@ layout: base.webc
       <small @raw="this.coverCopyright"></small>
     </figcaption>
   </figure>
-  
-  <h1 custom @raw="title"></h1>
-  <time 
-  :datetime="fefo.dates.toLocaleDateString(this.date, this.locale)"
-  @raw="fefo.dates.toLocaleDateString(this.date, this.locale)">
-  </time>
-  <site-tags :url="this.page.url"></site-tags>
+  <div class="head">
+    <h1 custom @raw="title"></h1>
+    <time 
+    :datetime="fefo.dates.toLocaleDateString(this.date, this.locale)"
+    @raw="fefo.dates.toLocaleDateString(this.date, this.locale)">
+    </time>
+    <site-tags :url="this.page.url"></site-tags>
+  </div>
   <article @raw="content" webc:nokeep></article>
   <author-info></author-info>
   <related-posts :url="this.page.url"></related-posts>
@@ -53,5 +54,9 @@ layout: base.webc
     flex-direction: column;
     gap: 8px;
     padding-left: 2rem;
+  }
+
+  .head {
+    margin-bottom: 2rem;
   }
 </style>

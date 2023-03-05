@@ -1,14 +1,32 @@
 class ImageCaption extends HTMLElement {
+  constructor () {
+    super()
+    this.attachShadow({ mode: 'open' })
+  }
+
   connectedCallback () {
     const imgPath = this.getAttribute('src')
     const imgAlt = this.getAttribute('alt')
-    const imgCaption = this.getAttribute('caption')
-    this.innerHTML = /* html */`
+    this.shadowRoot.innerHTML = /* html */`
+      <style>
+        figure {
+          align-items: center;
+          display: flex;
+          justify-content: center;
+          flex-direction: column;
+        }
+
+        img {
+          border-radius: var(--border-radius);
+          margin: 0 auto;
+          max-width: 100%;
+        }
+      </style>
       <figure>
         <img src="${imgPath}" alt="${imgAlt}">
         <figcaption>
           <small>
-            ${imgCaption}
+            <slot></slot>
           </small>
         </figcaption>
       </figure>
