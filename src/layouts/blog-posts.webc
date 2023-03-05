@@ -8,7 +8,7 @@ layout: author.webc
 		function BlogPosts() {
       const localeCollection = this.locale === 'es' ? 'posts_es' : 'posts_en'
 			const collection = this.collections[localeCollection].filter(({ data }) => {
-				if (process.env.NODE_ENV === 'dev') {
+				if (this.fefo.server.isDev()) {
 					return data.title
 				}
 				return !data.draft && data.title

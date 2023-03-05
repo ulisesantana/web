@@ -21,7 +21,14 @@
  * @property {string} content - Post content
  */
 
+const isProd = () => process.env.NODE_ENV === 'production'
+const isDev = () => process.env.NODE_ENV === 'dev'
+
 module.exports = {
+  server: {
+    isDev,
+    isProd
+  },
   images: {
     fallback: '/assets/images/fallback.png',
     logo: '/assets/logo.png'
@@ -43,7 +50,8 @@ module.exports = {
       const { data: { tags } } = posts.find(({ page: { url } }) => url === fromPostUrl)
       return posts.filter(post =>
         post.page.url !== fromPostUrl &&
-        post.data.tags.some(tag => tags.includes(tag))
+        post.data.tags.some(tag => tags.includes(tag)) &&
+        ((isProd() && !post.data.draft) || isDev())
       )
     },
     /**
