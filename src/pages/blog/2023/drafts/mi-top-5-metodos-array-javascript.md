@@ -28,27 +28,13 @@ Este método oficialmente todavía no es parte del estándar de EcmaScript, pero
 
 Aunque parezca una tontería, este método nos permite acceder a una posición concreta del array. Seguro que pensarás que al final esto es lo que ya puedes hacer desde hace años:
 
-<JavaScriptRepl
-  title="Ejemplo de Array.at"
-  init={[
-    "const list = [1,2,3,4,5]",
-    "list[0]",
-    "list.at(0)",
-  ]}
-/>
+<js-repl title="Ejemplo de Array.at" init="['const list = [1,2,3,4,5]','list[0]','list.at(0)']">
+</js-repl>
 
 Sin embargo, donde brilla `Array.at` es cuando queremos acceder al último o penúltimo elemento:
 
-<JavaScriptRepl
-  title="Ejemplo de Array.at"
-  loadToScope={["const list = [1,2,3,4,5]",]}
-  init={[
-    "list[list.length - 1]",
-    "list[list.length - 2]",
-    "list.at(-1)",
-    "list.at(-2)",
-  ]}
-/>
+<js-repl title="Ejemplo de Array.at" load-to-scope="['const list = [1,2,3,4,5]']" init="['list[list.length - 1]','list[list.length - 2]','list.at(-1)','list.at(-2)']">
+</js-repl>
 
 Es un método simple, pero que nos permite escribir un código más legible. Aunque todo el mundo pueda entender `list[list.length - 1]`, es más fácil de leer `list.at(-1)`, además de más rápido de escribir.
 

@@ -97,7 +97,9 @@ echo 'eval "$(starship init zsh)"' >> $HOME/.zshrc
 
 Así es como luce Starship en mi Raspberry:
 
-<img-caption src="/assets/images/blog/2021/convierte-tu-raspberry-pi-en-un-ide-espartano/starship.png" alt="Como se ve Starship en mi Raspberry Pi" caption="Como se ve Starship en mi Raspberry Pi"></img-caption>
+<img-caption src="/assets/images/blog/2021/convierte-tu-raspberry-pi-en-un-ide-espartano/starship.png" alt="Como se ve Starship en mi Raspberry Pi">
+Como se ve Starship en mi Raspberry Pi
+</img-caption>
 
 A continuación te comparto la configuración que tengo para hacer que se vea de esta manera. De todos modos, siempre
 puedes revisar la [documentación de Starship](https://starship.rs/es-ES/config/) y configurarlo a tu gusto.
@@ -248,7 +250,9 @@ nvim +PlugInstall
 Si has hecho todo esto correctamente al abrir un fichero con el comando `nvim` deberías ver algo parecido a la terminal
 de la izquierda:
 
-<img-caption src="/assets/images/blog/2021/convierte-tu-raspberry-pi-en-un-ide-espartano/cover.png" alt="Como se ve programando con Neovim" caption="Programando con Neovim"></img-caption>
+<img-caption src="/assets/images/blog/2021/convierte-tu-raspberry-pi-en-un-ide-espartano/cover.png" alt="Como se ve programando con Neovim">
+Programando con Neovim
+</img-caption>
 
 Con esto ya tendrás tu Raspberry Pi preparada como entorno de desarrollo en el podrás programar, escribir tus entradas
 de blog o hacer [katas](https://kata-log.rocks).

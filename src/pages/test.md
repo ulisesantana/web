@@ -3,13 +3,9 @@ layout: author.webc
 title: Test
 ---
 
-{% renderTemplate "webc" %}
 <tldr-section>
-
 Chiquito pelete
-
 </tldr-section>
-{% endrenderTemplate %}
 
 [Mi web](https://ulisesantana.dev)
 
@@ -76,7 +72,5 @@ function quickSort(x, asc = true){
 
 ![Hablando de cómo crear un paquete de npm en el JSDay Canarias de 2018](/assets/images/jsdaycanarias.jpg)
 
-{% renderTemplate "webc" %}
-<youtube-video @video-id="T9Frov6wS7U">
-</youtube-video>
-{% endrenderTemplate %}
+<youtube-video video-id="T9Frov6wS7U"></youtube-video>
+

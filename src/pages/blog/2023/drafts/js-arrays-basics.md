@@ -12,33 +12,12 @@ draft: true
 
 Un array puede ser mutado tanto en su longitud como en sus valores.
 
-<JavaScriptRepl
-  title="Mutando la longitud de un array"
-  init={[
-    "const array = []",
-    "array[0] = 1",
-    "array",
-    "array[4] = 5",
-    "array",
-    "array.length",
-    "array.length = 0",
-    "array",
-    "array.length",
-  ]}
-/>
+<js-repl title="Mutando la longitud de un array" init="['const array = []','array[0] = 1','array','array[4] = 5','array','array.length','array.length = 0','array','array.length']"></js-repl>
 
 Como has podido ver en el último caso, si alteras la propiedad length puedes incluso borrar el contenido del array. Para hacer un array inmutable deberíamos *congelarlo* con el método estático `Object.freeze`
 
-<JavaScriptRepl
-  title="Haciendo un array inmutable"
-  init={[
-    "const array = Object.freeze(Array(1,2,3,4))",
-    "array.push(5)",
-    "array[0] = 0",
-    "array.length = 0",
-    "array"
-  ]}
-/>
+<js-repl title="Haciendo un array inmutable"   init="['const array = Object.freeze(Array(1,2,3,4))','array.push(5)','array[0] = 0','array.length = 0','array']">
+</js-repl>
 
 También existen métodos del prototipo Array que mutan el contenido del array:
 - [copyWithin](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/copyWithin): copia una parte del array en otra posición modificando los elementos, pero no su longitud.

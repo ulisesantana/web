@@ -7,7 +7,6 @@ draft: false
 images: [chromebook-nodeconfeu2018.jpg]
 ---
 
-{% renderTemplate "webc" %}
 <tldr-section>
 
 No te compares contra internet. El objetivo final de tu vida debe ser hacer lo que te haga sentir feliz. Si quieres ser mejor en algo disfruta del camino, disfruta del proceso, y no tengas prisa por llegar al objetivo final. De nada te sirve ser el experto o la experta en un campo si por el camino te dejas la salud, tu familia o tu vida personal.
@@ -15,7 +14,6 @@ No te compares contra internet. El objetivo final de tu vida debe ser hacer lo q
 Si hay una época en la que te apetece darlo todo y exprimir cada día aprendiendo e investigando, adelante. Sin embargo, si tienes otra que lo que quieres es terminar de trabajar y salir a la playa o pasarte la tarde con la gente que quieres, no te sientas culpable. La vida está para disfrutarla.
 
 </tldr-section>
-{% endrenderTemplate %}
 
 Cada día ves por redes sociales como otras personas están haciendo cosas: completando cursos sobre alguna tecnología, presentando sus side projects, contribuyendo a proyectos open source, hablando del libro que acaban de leer o terminar de escribir, compartiendo la charla que dieron en una conferencia, etc.
 
@@ -27,7 +25,9 @@ Me pasé desde 2015 hasta 2020 sin descansar en las vacaciones que tenía. Desde
 
 Una vez terminé el ciclo y comencé a trabajar mis vacaciones las destiné a seguir estudiando e ir a toda conferencia que podía. Aparte de que durante el resto del año dedicaba al menos un par de horas diarias a investigar sobre JavaScript, Node.js o cualquier cosa nueva a la que me estuviera enfrentando. En ningún momento diré que lo pasé mal, me apasiona el software y el desarrollo web y disfrutaba el aprendizaje. Aparte, eso me dio la oportunidad de viajar y hacer turismo en diferentes ciudades europeas, lo cual disfruté como un niño chico. Como dice el dicho: *Que me quiten lo bailao*.
 
-<img-caption src="/assets/images/blog/2021/la-ansiedad-de-evolucionar-como-profesional-del-software/chromebook-nodeconfeu2018.png" alt="Mi chromebook tratando de compilar Node.js durante la NodeCONF EU 2018" caption="En mi primera NodeCONF EU fui a un taller para hacer mi primera aportación a Node.js. El problema es que fui con un chromebook que tardó casi 2 horas en compilar Node.js."></img-caption>
+<img-caption src="/assets/images/blog/2021/la-ansiedad-de-evolucionar-como-profesional-del-software/chromebook-nodeconfeu2018.jpg" alt="Mi chromebook tratando de compilar Node.js durante la NodeCONF EU 2018">
+En mi primera NodeCONF EU fui a un taller para hacer mi primera aportación a Node.js. El problema es que fui con un chromebook que tardó casi 2 horas en compilar Node.js.
+</img-caption>
 
 Sin embargo, pese a todo este esfuerzo seguía sintiendo que no estaba llegando a mis objetivos, que no paraba de proponerme cosas que al final no completaba. Mientras tanto, seguía viendo como en Twitter todos los días alguien compartía algún progreso que hacía en su carrera. Yo crecía profesionalmente, pero seguía sintiéndome pequeño. Y es normal, me comparaba con personas con 10 años de experiencia y personas que no conocía. Repito, me comparaba. Todo el tiempo.
 

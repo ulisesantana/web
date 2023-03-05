@@ -27,9 +27,6 @@ Como parte de mi plan de aportar a la comunidad, he patrocinado las tres edicion
 
 Si quieres saber un poco más de mí puedes ver esta entrevista que me hizo mi compañero Adrián Ferrera en su podcast Devs Lives.
 
-{% renderTemplate "webc" %}
-<youtube-video @video-id="T9Frov6wS7U">
-</youtube-video>
-{% endrenderTemplate %}
+<youtube-video video-id="T9Frov6wS7U"></youtube-video>
 
 

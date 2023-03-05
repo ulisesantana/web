@@ -6,7 +6,6 @@ tags: [javascript, arrays, basics]
 draft: false
 ---
 
-{% renderTemplate "webc" %}
 <tldr-section>
 
   Hay varias formas de crear arrays en JavaScript:
@@ -41,7 +40,6 @@ Array.of(5); // [ 5 ]
 ```
 
 </tldr-section>
-{% endrenderTemplate %}
 
 ## ¿Qué es un array?
 
@@ -102,12 +100,6 @@ Como vemos tenemos varias opciones a la hora de crear un array en JavaScript. En
 
 El `Array.from` lo uso sobre todo cuando necesito pasar un iterable o array-like object a array para trabajar con él. También lo uso para hacer cosas como esta y tratar de parecer más inteligente ☕️🧐:
 
-<JavaScriptRepl
-  title="Array.from fancy"
-  init={[
-    "",
-  ]}
-/>
 <js-repl
   title="Array.from fancy"
   init="[`Array.from({length: 5}).map((_, index) => \`${'*'.repeat(index + 1)}\`)`]">

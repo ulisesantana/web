@@ -17,7 +17,7 @@
       </li>`
     const renderItems = items => items.map(renderItem).join('\n')
     return `
-<nav>
+<nav class="no-print">
   <ul class="nav-items">
     ${renderItems(this.nav[this.locale])}
     <li><theme-switch></theme-switch></li>

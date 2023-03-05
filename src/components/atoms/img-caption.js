@@ -21,6 +21,12 @@ class ImageCaption extends HTMLElement {
           margin: 0 auto;
           max-width: 100%;
         }
+
+        ::slotted(a) {
+          border-bottom: solid 4px var(--accent-color);
+          color: var(--accent-color);
+          font-weight: 700;
+        }
       </style>
       <figure>
         <img src="${imgPath}" alt="${imgAlt}">

@@ -6,7 +6,6 @@ tags: [javascript,array,array-like objects]
 draft: false
 ---
 
-{% renderTemplate "webc" %}
 <tldr-section>
 
 Estas son las tres maneras posibles de convertir un array-like object a array en JavaScript, siendo el `Array.prototype.slice` el que mejor rendimiento ofrece:
@@ -18,7 +17,6 @@ const charsArray3 = [...'Hola Mundo!']
 ```
 
 </tldr-section>
-{% endrenderTemplate %}
 
 En JavaScript existen los array-like objects que pueden parecerse a un array e incluso algunos se pueden iterar,
 pero no tienen el mismo comportamiento que un array. Por ello en ocasiones es necesario convertirlo en un array para

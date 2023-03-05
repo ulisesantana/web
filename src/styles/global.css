@@ -122,8 +122,8 @@ p a,
 span a,
 figcaption a,
 article li a {
-  border-bottom: solid 4px var(--link-color);
-  color: var(--link-color);
+  border-bottom: solid 4px var(--accent-color);
+  color: var(--accent-color);
   font-weight: 700;
   transition: all ease-in-out var(--transition-speed-fast);
 }
