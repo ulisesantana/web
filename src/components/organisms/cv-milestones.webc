@@ -1,0 +1,88 @@
+<script webc:type="render" webc:is="template">
+  function CV() {
+    const collection = this.cv.milestones
+
+
+    return `
+			<ul>
+			`.concat(collection.map(({ when, location, title, youtube, description, twitter }) => {
+      return /* html */`
+				<li class="milestone page-break-after">
+					<div>
+            <div class="milestone-head">
+              <span>🏆 ${title}</span>
+              <span>📆 ${when}</span>
+              <span>📍 ${location}</span>
+					  </div>
+            <div class="milestone-description">
+              <p>${description}</p>
+              <youtube-video webc:if="${youtube !== undefined}" video-id="${youtube}"></youtube-video>
+              <div webc:if="${twitter !== undefined}" style="text-align: right;">
+                <a href="${twitter}" alt="${title} tweet">Tweet <twitter-icon></twitter-icon></a>
+              </div>
+					  </div>
+				</li>
+      `})
+      .join(""))
+      .concat(`
+			</ul>
+			`);
+  }
+</script>
+
+<style webc:scoped>
+  .milestone {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin: 0;
+  }
+
+  .milestone-head {
+    background-color: var(--accent-color);
+    border-top-left-radius: var(--border-radius);
+    border-top-right-radius: var(--border-radius);
+    color: var(--bg-alt-color);
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+    gap: 8px;
+    padding: 1rem;
+  }
+
+  .milestone-description {
+    background-color: var(--bg-alt-color);
+    border-bottom-left-radius: var(--border-radius);
+    border-bottom-right-radius: var(--border-radius);
+    padding: 1rem;
+    margin: 0;
+  }
+
+  p {
+    padding: 0;
+    margin: 0;
+    margin-bottom: 1rem;
+  }
+
+  ul {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    gap: 1rem;
+    width: 100%;
+  }
+
+  li {
+    list-style: none;
+    padding: 0;
+  }
+
+  @media (min-width: 768px) {
+    ul {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+</style>

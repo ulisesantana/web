@@ -9,7 +9,7 @@
       <span webc:if="this.locale !== 'es'">
         Made with <like-icon></like-icon> and
       </span>
-      <a href="https://www.11ty.dev" target="_blank">
+      <a href="https://www.11ty.dev" >
         <eleventy-icon></eleventy-icon>
       </a>
     </span>
@@ -40,6 +40,7 @@
 
   .bar {
     border-top: 4px solid var(--link-color);
+    border-radius: var(--border-radius);
     display: block;
     margin: 16px auto 8px;
     width: 75%;

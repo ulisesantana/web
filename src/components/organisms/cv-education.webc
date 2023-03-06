@@ -1,0 +1,87 @@
+<script webc:type="render" webc:is="template">
+  function CV() {
+    const collection = this.cv.education
+    const renderSkill = skill => /* html */`
+      <li>
+        <site-tag @tag="${skill}"></site-tag>
+      </li>`
+
+    return `
+			<ul>
+			`.concat(collection.map(({ institution, location, position, from, to, description, skills }) => {
+      return /* html */`
+				<li>
+					<div class="education page-break-after">
+            <div class="education-head">
+              <div>
+                <span>👨‍🎓 ${position}</span>
+                <span>${from} - ${to}</span>
+              </div>
+              <span>🏫 ${institution}</span>
+              <span>📍 ${location}</span>
+					  </div>
+            <p class="education-description">
+              ${description}
+					  </p>
+            <ul class="education-skills">
+              ${skills.map(renderSkill).join('')}
+            </ul>
+            <site-bar></site-bar>
+					</div>
+				</li>
+      `})
+      .join(""))
+      .concat(`
+			</ul>
+			`);
+  }
+</script>
+
+<style webc:scoped>
+  .education {
+    margin: 0;
+  }
+
+  .education-head {
+    display: flex;
+    color: var(--accent-color);
+    flex-direction: column;
+    font-weight: bold;
+    gap: 8px;
+  }
+
+  .education-head div:first-child {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .education-description {
+    margin: 1rem 0;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    gap: 3rem;
+    width: 100%;
+  }
+
+  ul.education-skills {
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+
+  li {
+    list-style: none;
+    padding: 0;
+  }
+</style>

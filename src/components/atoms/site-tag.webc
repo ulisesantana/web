@@ -1,4 +1,4 @@
-<span class="tag" @raw="'#' + this.tag"></span>
+<span class="tag" @raw="this.tag"></span>
 
 <style>
   span.tag {

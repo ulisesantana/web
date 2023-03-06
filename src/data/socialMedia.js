@@ -10,5 +10,9 @@ module.exports = {
   cv: {
     url: '/cv',
     label: 'Curriculum Vitae'
+  },
+  linkedin: {
+    url: 'https://www.linkedin.com/in/ulisesantana/',
+    label: 'LinkedIn'
   }
 }

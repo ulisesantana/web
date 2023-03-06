@@ -6,12 +6,17 @@
       </social-media-item>
     </li>
     <li>
+      <social-media-item :label="this.socialMedia.linkedin.label" :url="this.socialMedia.linkedin.url">
+        <linkedin-icon slot="icon"></linkedin-icon>
+      </social-media-item>
+    </li>
+    <li>
       <social-media-item :label="this.socialMedia.twitter.label" :url="this.socialMedia.twitter.url">
         <twitter-icon slot="icon"></twitter-icon>
       </social-media-item>
     </li>
     <li>
-      <social-media-item :label="this.socialMedia.cv.label" :url="this.socialMedia.cv.url">
+      <social-media-item webc:if="page.url !== '/cv/'" :label="this.socialMedia.cv.label" :url="this.socialMedia.cv.url">
         <cv-icon slot="icon"></cv-icon>
       </social-media-item>
     </li>

@@ -51,7 +51,10 @@
     margin: 0;
     padding: 16px 16px 104px;
     position: fixed;
-    transition: all ease-in-out var(--transition-speed-regular);
+    transition-property: background-color;
+    transition-property: color;
+    transition-timing-function: ease-in-out;
+    transition-duration: var(--transition-speed-regular);
     width: 100%;
     z-index: var(--z-index-0);
   }

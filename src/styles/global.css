@@ -164,3 +164,11 @@ tldr-section p a:visited {
   border-color: var(--accent-alt-color);
   color: var(--accent-alt-color) !important;
 }
+
+img-caption a, 
+img-caption a:visited {
+  border-bottom: solid 4px var(--accent-color);
+  border-color: var(--accent-color);
+  color: var(--accent-color) !important;
+  font-weight: bold;
+}

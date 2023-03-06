@@ -7,7 +7,7 @@
         const tags = this.fefo.blog.getTags(this.url, this.collections[localeCollection])
         return tags.map((tag) => `
           <li>
-            <site-tag @tag="${tag}"></site-tag>
+            <site-tag @tag="#${tag}"></site-tag>
           </li>
         `).join('')
       }

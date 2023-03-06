@@ -1,0 +1,153 @@
+<script webc:type="render" webc:is="template">
+  function CV() {
+    const collection = this.cv.jobs
+    const renderSkill = skill => /* html */`
+      <li>
+        <site-tag @tag="${skill}"></site-tag>
+      </li>`
+
+    return `
+			<ul class="cv-jobs">
+			`.concat(collection.map(({ employer, location, position, from, to, description, skills }) => {
+      return /* html */`
+				<li>
+					<div class="job page-break-after">
+            <ul class="job-skills">
+              ${skills.map(renderSkill).join('')}
+            </ul>
+            <div class="job-info">
+              <span>🧑‍💻 ${position}</span>
+              <span>📆 ${from} - ${to}</span>
+              <span>💼 ${employer}</span>
+              <span>📍 ${location}</span>
+					  </div>
+            <div class="job-description">
+              <p>
+                ${description}
+              </p>
+            <div>
+					</div>
+				</li>
+      `})
+      .join(""))
+      .concat(`
+			</ul>
+			`);
+  }
+</script>
+
+<style>
+  .theme-light {
+    --job-bg-color: var(--accent-color);
+    --job-text-color: var(--white);
+  }
+
+  .theme-dark  {
+    --job-bg-color: var(--secondary-color);
+    --job-text-color: var(--white);
+  }
+
+  .job {
+    display: grid;
+    grid-template-areas:
+      "info"
+      "description"
+      "skills";
+    margin: 0;
+    padding: 0;
+  }
+
+  .job-info {
+    background-color: var(--job-bg-color);
+    border-top-left-radius: var(--border-radius);
+    border-top-right-radius: var(--border-radius);
+    color: var(--job-text-color);
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+    gap: 8px;
+    grid-area: info;
+    padding: 1rem;
+    margin: 0;
+  }
+
+  .job-description {
+    background-color: var(--bg-alt-color);
+    grid-area: description;
+    padding: 1rem;
+    margin: 0;
+  }
+
+  .job-description p {
+    margin: 0;
+  }
+
+  ul.job-skills {
+    align-content: flex-end;
+    background-color: var(--bg-alt-color);
+    border-bottom-left-radius: var(--border-radius);
+    border-bottom-right-radius: var(--border-radius);
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 8px;
+    grid-area: skills;
+    height: 100%;
+    justify-content: center;
+    padding: 1rem 0;
+  }
+
+  ul.cv-jobs {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    gap: 3rem;
+  }
+
+  ul.cv-jobs li {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    height: auto;
+    width: auto;
+  }
+
+  @media (min-width: 768px) {
+    .job {
+      grid-template-areas:
+        "info description"
+        "skills description";
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+    }
+
+    .job-info {
+      border-radius: 0;
+      border-top-left-radius: var(--border-radius);
+      gap: 1rem;
+    }
+
+    .job-description {
+      border-radius: 0;
+      border-top-right-radius: var(--border-radius);
+      border-bottom-right-radius: var(--border-radius);
+    }
+
+    ul.job-skills {
+      background-color: var(--job-bg-color);
+      border-radius: 0;
+      border-bottom-left-radius: var(--border-radius);
+      padding: 1rem;
+    }
+
+    .theme-light ul.cv-jobs site-tag .tag {
+      background-color: var(--white);
+      color: var(--black);
+    }
+
+    .theme-dark ul.cv-jobs site-tag .tag {
+      background-color: var(--black);
+      color: var(--white);
+    }
+  }
+</style>

@@ -2,6 +2,7 @@ const pluginWebC = require('@11ty/eleventy-plugin-webc')
 const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight')
 const { EleventyRenderPlugin } = require('@11ty/eleventy')
 const externalLinks = require('eleventy-plugin-external-links')
+const yaml = require('js-yaml')
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(EleventyRenderPlugin)
@@ -17,6 +18,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addCollection('posts_es', function (collection) {
     return collection.getFilteredByGlob('./src/pages/blog/**/*.md')
   })
+  eleventyConfig.addDataExtension('yaml', contents => yaml.load(contents))
 
   return {
     dir: {

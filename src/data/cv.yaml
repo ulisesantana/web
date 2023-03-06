@@ -1,0 +1,520 @@
+about: >
+  I was thinking about defining myself in a sentence, but I concluded that's an impossible task. So let me simply describe myself. I am a  lifelong learner passionate about tech, focused on the web with JavaScript as my native programming language and I solve problems with tech based on JavaScript.
+
+  I believe that for a healthy industry the professionals must share their experience. Committed to this, I try to give at least one talk/workshop per year in vocational schools. Moreover, I co-organized and sponsored the last Global Day of Coderetreat in Gran Canaria, which is an awesome environment for coding students.
+
+  I also sponsored other events during the last years as part of my giveback plan to the software community. There is no doubt that software communities and open source have been crucial for my professional growth, so I am just returning the favor.
+jobs:
+  - employer: Lean Mind
+    location: San Cristóbal de la La Laguna, Spain (Remote)
+    position: Full Stack Developer
+    from: 03/2020
+    to:  10/2022
+    description: >
+      I work as external developer in development teams for different customers with different technologies. The way we work at Lean Mind is firmly grounded in Software Craftsmanship and eXtreme Programming principles.
+
+      As company, Lean Mind has a very rich culture based on knowledge sharing and trust by learning from each others and 
+      being always open for feedback. I've been mentoring internship students and also given several talks as internal training.
+    skills:
+      - Node.js
+      - AngularJS
+      - React
+      - TypeScript
+      - Jest
+      - Java
+      - Groovy
+      - Kotlin
+      - Husky
+      - testing-library
+      - MySQL
+      - Microservices
+      - Docker
+      - Gitlab
+      - Toggl
+      - Jira
+      - Confluence
+      - Slack
+      - Visual Studio Code
+      - IntelliJ Ultimate
+  - employer: Kentech
+    location: Las Palmas de Gran Canaria, Spain
+    position: Full Stack Developer
+    from: 08/2018
+    to: 03/2020
+    description: >
+      After being promoted, I am daily involved in developing features, even whole projects, on the backend and frontend side. Based on the team goal, could be just backend or frontend. This means working some sprints with AngularJS and Symfony, others with NestJS and React and sometimes just React or Node.js and Express.
+
+      I usually discuss the solutions with the Solution Architect or Team Leaders. Also, I introduced and evangelized things like TypeScript, Storybook, NestJS,  Microfrontends, Inner Source, Cypress, Husky, Jest or how to create npm packages among my teammates.
+
+      Besides, I help with another kind of tasks as maintaining development environments, assisting production deployments or recruiting React/Node.js developers.
+    skills:
+      - Node.js
+      - AngularJS
+      - React
+      - TypeScript
+      - Storybook
+      - Jest
+      - Husky
+      - testing-library
+      - Socket.io
+      - PHP7
+      - MySQL
+      - MongoDB
+      - Microservices
+      - Microfrontends
+      - Redis
+      - Docker
+      - Portainer
+      - Rancher
+      - Gitlab
+      - Express
+      - NestJS
+      - Toggl
+      - Jira
+      - Confluence
+      - Slack
+      - Visual Studio Code
+      - Webstorm
+  - employer: Kentech
+    location: Las Palmas de Gran Canaria, Spain
+    position: Back End Developer
+    from: 06/2017
+    to: 07/2018
+    description: >
+      After my internship period, I was hired as a Backend Developer due to my interest and performance in Node.js tasks during my internship. In the first six months, my main tasks were coding new features on Node.js microservices, helping the infrastructure area and handling deployments on our environments before CI/CD came to our lives. That means handling web servers with Nginx and pm2 processes for Node.js, besides handling all the files on servers for other services. Thankfully, some really smart teammates deployed Rancher with Docker connected with our Gitlab, giving us the chance to add CI/CD on our workflow.
+
+      During the following six months, I gradually stop working on infrastructure and started creating new features across all the stack. I also evangelized best practices about ES2017 Promises with async / await.
+    skills:
+      - Node.js
+      - AngularJS
+      - Socket.io
+      - PHP7
+      - MySQL
+      - MongoDB
+      - Microservices
+      - Redis
+      - Docker
+      - Docker Swarm
+      - Slack
+      - Portainer
+      - Rancher
+      - Gitlab
+      - WordPress
+      - Toggl
+      - Jira
+      - Confluence
+      - Rocket Chat
+      - Visual Studio Code
+      - Webstorm
+      - PHPStorm
+  - employer: Kentech
+    location: Las Palmas de Gran Canaria, Spain
+    position: Web Developer Intern
+    from: 03/2017
+    to: 05/2017
+    description: >
+      The last part of the Higher Technician in development of web application certification is doing an internship in a company of your choice. I chose Kentech because was the only company I found in Gran Canaria who was using Node.js at that time. Also, was a really good opportunity to test my English skills because the communication on Kentech is full in English.
+
+      Kentech is a provider of custom solutions across various verticals, specializing in the online entertainment industry with a focus on sports in multiple countries. The applications build by Kentech are used by millions of users across the world.
+
+      I started as a QA, but after some weeks testing the main web app, they gave me some tasks related to UI optimization for Opera Mini and creating a Wordpress theme for a corporative site. In the last weeks, my mentor, a Node.js developer, explained to me the microservices architecture and some basics about high availability concepts. Also, he challenged me on the last week to do a proof of concept about a cache system with a distributed lock with MySQL and Redis.
+    skills:
+      - Node.js
+      - AngularJS
+      - Quality Assurance
+      - PHP7
+      - MongoDB
+      - Gitlab
+      - Docker
+      - WordPress
+      - Jira
+      - Confluence
+      - Rocket Chat
+      - Visual Studio Code
+      - Webstorm
+      - PHPStorm
+      - Opera Mini Optimization
+  - employer: Cmas Digital
+    location: Maspalomas, Las Palmas, Spain (partial remote)
+    position: Web developer
+    from: 04/2016
+    to: 09/2016
+    description: >
+      I was the web developer in a small studio of web development and digital marketing. Also, I took care of everything related to new technologies and information management in the company, managing customers, project management and making wireframes for the different web projects.
+    skills:
+      - HTML5
+      - CSS3
+      - Bootstrap 3
+      - JavaScript
+      - PHP5
+      - LAMP Stack
+      - WordPress
+      - G Suite
+      - Scrum
+      - Trello
+      - Toggl
+      - Kanban
+      - UI/UX
+      - Gitkraken
+      - Atom
+      - Pingendo
+      - Customer Management
+      - Project Management.
+
+  - employer: Mokaps Studio
+    location: Las Palmas de Gran Canaria, Spain (partial remote)
+    position: Social Media Manager / Co-founder
+    from: 02/2013
+    to: 06/2015
+    description: >
+      For two and a half years I worked creating content and executing digital marketing plans in different channels based on customer objectives, interacting with communities, following active listening and resolving reputation crises with a community manager under my charge. As a copywriter, I wrote all the content for the different blogs that we managed. I also made the content insertion in web projects using HTML and CSS.
+
+      As co-founder, I was involved in managing customers, products, and projects. Furthermore, a lot of problems come up on the daily basis of a business and somebody needs to handle it. On the other hand, trying to do the math to pay employee salaries, company debts and the taxes of being a small business in Spain. This kind of experience gave me more perspective about the cost of a digital product.
+    skills:
+      - Community Management
+      - Social Media Strategy
+      - Content Generation
+      - Business Management
+      - Digital Marketing
+      - HTML5
+      - CSS3
+      - WordPress
+      - G Suite
+      - Scrum
+      - Kanban
+      - Trello
+      - Toggl
+      - Slack
+      - Hootsuite
+      - Sprout Social
+      - Google Sites
+      - Customer Management
+      - Project Management
+education:
+  - institution: CIFP Villa de Agüimes
+    location: Cruce de Arinaga, Las Palmas, Spain
+    position: Higher Technician in Web Application Development
+    from: 10/2015
+    to: 05/2017
+    description: >
+      2-years course of Web Application Development.
+      Equivalent to a Certificate of Higher Education related to
+      web application development.
+
+    skills:
+      - HTML5
+      - CSS3
+      - SQL
+      - Java
+      - PHP5
+      - OOP
+      - JavaScript
+      - jQuery
+      - MVC
+      - Bootstrap 3
+      - Progressive Web Apps
+      - Angular 2
+      - MongoDB
+      - Node.js
+      - Express
+  - institution: IES José Zerpa
+    location: Vecindario, Las Palmas, Spain
+    position: Higher Technician in Bussiness Management and Marketing
+    from: 09/2011
+    to: 11/2012
+    description: >
+      1400-hours course of bussiness management and marketing.
+      Equivalent to a Certificate of Higher Education related to
+      bussiness management and marketing.
+    skills:
+      - Marketing
+      - Customer management
+      - Logistics
+      - Sales
+      - Business management
+      - Office automation
+      - Excel reporting
+      - CRM
+milestones:
+  - when: 05/2022
+    location: La Laguna, Santa Cruz de Tenerife, Spain
+    title: Talk at JSDay Canarias 2022
+    youtube: V4sXNlzJIy8
+    description: >
+      A story about how I passed a Node.js process from 5 hours to 5 minutes. Tips about handling asynchrony included.
+  - when: 11/2019
+    location: Las Palmas de Gran Canaria, Spain
+    title: Global Day of Coderetreat
+    description: >
+      I co-organized and hosted a Global Day of Coderetreat. Coderetreat is a day-long stress-free, intensive practice event, focusing on the fundamentals of software development and design.
+  - when: 10/2019
+    location: Las Palmas de Gran Canaria, Spain
+    title: Workshop for React Canarias community
+    youtube: gkTAlgsr4tg
+    description: >
+      I ran and organized an introductory workshop about Cypress and react-testing-library.
+  - when: 11/2018
+    location: La Laguna, Santa Cruz de Tenerife, Spain
+    title: Talk at JSDay Canarias 2018
+    youtube: Joqdb-oZjC8
+    description: >
+      An introductory talk to npm and how to publish on it.
+  - when: 11/2018
+    location: Kilkenny, Ireland
+    title: Compile Node.js project on a Chromebook
+    twitter: https://twitter.com/ulisesantana/status/1059825362220261376
+    description: >
+      During a workshop on NodeConf EU I compiled Node.js on a Chromebook, improve some tests and contribute to the project. With an Acer Chromebook R11 in a virtual Debian. Took almost 2 hours only to compile.
+  - when: 03/2017
+    location: Las Palmas de Gran Canaria, Spain
+    title: Second prize at Hack for Good hackaton
+    twitter: https://twitter.com/H4GCAN/status/840609174404886531?s=20
+    description: >
+      A 36-hours-long hackathon to create a tech solution for social good. The project was Aprende con Amidi, a question quiz for learning Canarian culture build as a progressive web app. Canarian culture is losing diffusion, so we try to increment the diffusion making a multiplatform app for being used for everybody who wants to learn or for teaching on schools.
+  - when: 03/2016
+    location: Las Palmas de Gran Canaria, Spain
+    title: First prize at Startup Weekend hackaton
+    twitter: https://twitter.com/IGROCA/status/709106699530080258?s=20
+    description: >
+      A 54-hours-long hackathon for creating a startup. I worked in an English-speaking team and our project was BasketUp, a big data basketball analytics web app using just 3 smartphones for ball tracking.
+sponsored:
+  - when: 05/2022
+    location: La Laguna, Santa Cruz de Tenerife, Spain
+    title: JSDay Canarias
+  - when: 11/2019
+    location: Las Palmas de Gran Canaria, Spain
+    title: Global Day of Coderetreat Canarias
+  - when: 11/2019
+    location: Las Palmas de Gran Canaria, Spain
+    title: PyDay Gran Canaria
+  - when: 11/2019
+    location: La Laguna, Santa Cruz de Tenerife, Spain
+    title: JSDay Canarias
+  - when: 10/2018
+    location: La Laguna, Santa Cruz de Tenerife, Spain
+    title: JSDay Canarias
+attended:
+  - when: 02/2020
+    location: Santa Cruz de Tenerife, Spain
+    title: Socracan
+  - when: 11/2019
+    location: Kilkenny, Ireland
+    title: NodeCONF EU
+  - when: 11/2019
+    location: La Laguna, Santa Cruz de Tenerife, Spain
+    title: JSDay Canarias
+  - when: 09/2019
+    location: La Laguna, Santa Cruz de Tenerife, Spain
+    title: AdaLoversConf
+  - when: 06/2019
+    location: Berlin, Germany
+    title: JSConf EU
+  - when: 06/2019
+    location: Berlin, Germany
+    title: CSSconf EU
+  - when: 05/2019
+    location: Paris, France
+    title: React Europe
+  - when: 11/2018
+    location: La Laguna, Santa Cruz de Tenerife, Spain
+    title: JSDay Canarias
+  - when: 11/2018
+    location: Kilkenny, Ireland
+    title: NodeCONF EU
+  - when: 06/2018
+    location: Berlin, Germany
+    title: JSConf EU
+  - when: 04/2018
+    location: Las Palmas de Gran Canaria, Spain
+    title: Socracan
+stuff:
+  - title: Bizenter
+    url:
+    git:
+    description: An assets management app. Asked by
+    stack: [ ]
+  - title: ts-boilerplate
+    url: https://github.com/ulisesantana/ts-boilerplate
+    git: https://github.com/ulisesantana/ts-boilerplate
+    description: A basic boilerplate for TypeScript projects
+    stack: [ "TypeScript", "Jest", "Husky", "xo" ]
+  - title: ink-boilerplate
+    url: https://github.com/ulisesantana/ink-boilerplate
+    git: https://github.com/ulisesantana/ink-boilerplate
+    description: A basic boilerplate for building CLI with React
+    stack: [ "React", "Ava", "Husky", "xo" ]
+  - title: Testing with React Workshop
+    url:
+    git: https://github.com/ulisesantana/react-testing-workshop
+    description:
+    stack: [ ]
+  - title: Game of life in vanilla
+    url: https://wwww.ulisesantana.dev/game-of-life-vanilla
+    git: https://github.com/ulisesantana/game-of-life-vanilla
+    description:
+    stack: [ "Parcel", "TypeScript" ]
+  - title: Randomizer
+    url:
+    git:
+    description: An Offline Progressive Web App app for get an item from a random list.
+    stack: [ "React", "TypeScript", "Styled Components" ]
+  - title: Diet
+    url: https://www.ulisesantana.dev/diet/
+    git: https://github.com/ulisesantana/diet
+    description: I have some minor health issues which affects to my diet. With this PWA me and my family can cook or buy food friendly for me.
+    stack: [ "React", "TypeScript", "Styled Components", "React Material UI" ]
+  - title: array-analyzer
+    url: https://www.ulisesantana.dev/array-analyzer/
+    git: https://github.com/ulisesantana/array-analyzer
+    description: Analize the data on JSON Array with the built-in Array methods
+    stack: [ "React", "TypeScript", "Styled Components" ]
+  - title: Toolbox
+    url:
+    git: https://github.com/ulisesantana/toolbox/tree/develop
+    description: A Chrome extension with some basic and dummy tools for my daily basis.
+    stack: [ "React", "TypeScript", "Styled Components", "Styleguidist" ]
+  - title: assets-api
+    url:
+    git: https://github.com/ulisesantana/assets-api
+    description: A proof of concept about a REST API build with TypeScript, Koa and TypeORM.
+    stack: [ "TypeScript", "TypeORM", "Koa" ]
+  - title: buffer
+    url:
+    git: https://github.com/ulisesantana/buffer
+    description: A proof of concept about a buffer with Mongo and Redis
+    stack: [ "TypeScript", "Redis", "Mongo" ]
+  - title: cluedo
+    url:
+    git: https://github.com/ulisesantana/cluedo
+    description: Digital version for playing to GOT Cluedo. Instead of using paper and pencil, just use your phone.
+    stack: [ "Vue" ]
+  - title: ubuntuReady
+    url:
+    git: https://github.com/ulisesantana/ubuntuReady
+    description: A bash script for setting up a new Ubuntu. Automate all the basic stuff I use install and config when I have a new PC.
+    stack: [ "bash" ]
+  - title: bug-hunter
+    url:
+    git: https://github.com/ulisesantana/bug-hunter
+    description: A CLI game as proof of concept about doing something with CLI on Vanilla Node.js.
+    stack: [ "Node.js" ]
+  - title: Web Native Form Validation
+    url: https://repl.it/@ulisesantana/Web-Native-Form-Validation
+    git:
+    description: A proof of concept about vanilla form validation without JavaScript.
+    stack: [ "HTML", "CSS" ]
+  - title: Object deep validation
+    url: https://repl.it/@ulisesantana/Validate
+    git:
+    description: A proof of concept about object validation with a recursive function
+    stack: [ "Node.js" ]
+  - title: Fibonacci limits
+    url: https://repl.it/@ulisesantana/fibonacci
+    git:
+    description: A proof of concept about performance with a recursive function versus a iterative one using Big Number in JavaScript.
+    stack: [ "Node.js" ]
+projects:
+  - name: git-reporter
+    url:
+    source:
+    image:
+    status: Maintained
+    description:
+      es:
+      en:
+  - name: array-analyzer
+    url:
+    source:
+    image:
+    status: Maintained
+    description:
+      es:
+      en:
+  - name: randomizer
+    url:
+    source:
+    image:
+    status: Maintained
+    description:
+      es:
+      en:
+  - name: bizenter
+    url:
+    source:
+    image:
+    status: Maintained
+    description:
+      es:
+      en:
+  - name: cheapest-power-hour
+    url:
+    source:
+    image:
+    status: Maintained
+    description:
+      es:
+      en:
+  - name: week-plan
+    url:
+    source:
+    image:
+    status: Maintained
+    description:
+      es:
+      en:
+  - name: paralacurva
+    url:
+    source:
+    image:
+    status: Maintained
+    description:
+      es:
+      en:
+  - name: diet
+    url:
+    source:
+    image:
+    status: Maintained
+    description:
+      es:
+      en:
+  - name: object-comparer
+    url:
+    source:
+    image:
+    status: Maintained
+    description:
+      es:
+      en:
+  - name: toolbox
+    url:
+    source:
+    image:
+    status: Maintained
+    description:
+      es:
+      en:
+  - name: ipRetriever
+    url:
+    source:
+    image:
+    status: Maintained
+    description:
+      es:
+      en:
+  - name: bug-hunter
+    url:
+    source: https://github.com/ulisesantana/bug-hunter
+    image:
+    status: Maintained
+    description:
+      es:
+      en:
+  - name: fefo
+    url:
+    source: https://github.com/ulisesantana/bug-hunter
+    image:
+    status: Maintained
+    description:
+      es:
+      en:

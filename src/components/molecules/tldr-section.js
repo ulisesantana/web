@@ -37,6 +37,7 @@ const tldrStyles = /* html */`
 
   .tldr .blur {
     align-items: center;
+    -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
     display: flex; 
     height: 100vh;
@@ -132,9 +133,9 @@ class TldrSection extends HTMLElement {
         </div>
       </div>
     </div>`
-    this.cta = this.shadowRoot.querySelector(':scope .tldr .summary')
-    this.content = this.shadowRoot.querySelector(':scope .tldr .content')
-    this.text = this.shadowRoot.querySelector(':scope .tldr .content .text')
+    this.cta = this.shadowRoot.querySelector('.tldr .summary')
+    this.content = this.shadowRoot.querySelector('.tldr .content')
+    this.text = this.shadowRoot.querySelector('.tldr .content .text')
 
     this.cta.addEventListener('click', this.handleClick.bind(this))
     this.content.addEventListener('click', this.handleClick.bind(this))

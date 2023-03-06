@@ -1,4 +1,4 @@
-<button title="Scroll to top" class="scroll-to-top hidden">
+<button title="Scroll to top" class="scroll-to-top hidden no-print">
   <up-icon></up-icon>
 </button>
 

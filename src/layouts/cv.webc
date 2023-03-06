@@ -1,0 +1,50 @@
+---
+metatype: person
+layout: base.webc
+locale: en
+---
+
+<div class="cv">
+	<script webc:type="render" webc:is="template">
+		function CV() {
+      const localeCollection = this.locale === 'es' ? 'posts_es' : 'posts_en'
+			const collection = this.cv.jobs
+
+			return /* html*/`
+      <author-info></author-info>
+
+      <div @raw="content"></div>
+
+			<h2>💼 Work experience</h2>
+			<cv-jobs></cv-jobs>
+
+			<h2>🎓 Education & Training</h2>
+			<cv-education></cv-education>
+
+			<h2>🏆 Milestones</h2>
+			<cv-milestones></cv-milestones>
+
+			<h2>💰 Sponsored events</h2>
+			<cv-sponsored-events></cv-sponsored-events>
+
+			`;
+		}
+	</script>
+</div>
+
+<style webc:scoped>
+	ul {
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+		margin: 0;
+		padding: 0;
+		gap: 32px;
+		width: 100%;
+	}
+
+	li {
+		list-style: none;
+		padding: 0;
+	}
+</style>
