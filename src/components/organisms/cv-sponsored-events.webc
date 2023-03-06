@@ -22,9 +22,9 @@
 
 <style webc:scoped>
   .sponsored-event {
-    background-color: var(--accent-color);
+    background-color: var(--yellow);
     border-radius: var(--border-radius);
-    color: var(--bg-alt-color);
+    color: var(--black);
     display: flex;
     flex-direction: column;
     font-weight: bold;

@@ -38,12 +38,12 @@
 
 <style>
   .theme-light {
-    --job-bg-color: var(--accent-color);
+    --job-bg-color: var(--green);
     --job-text-color: var(--white);
   }
 
   .theme-dark  {
-    --job-bg-color: var(--secondary-color);
+    --job-bg-color: var(--green);
     --job-text-color: var(--white);
   }
 

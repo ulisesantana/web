@@ -7,26 +7,23 @@
       </li>`
 
     return `
-			<ul>
+			<ul class="cv-educations">
 			`.concat(collection.map(({ institution, location, position, from, to, description, skills }) => {
       return /* html */`
 				<li>
 					<div class="education page-break-after">
-            <div class="education-head">
-              <div>
-                <span>👨‍🎓 ${position}</span>
-                <span>${from} - ${to}</span>
-              </div>
+            <ul class="education-skills">
+              ${skills.map(renderSkill).join('')}
+            </ul>
+            <div class="education-info">
+              <span>👨‍🎓 ${position}</span>
+              <span>📆 ${from} - ${to}</span>
               <span>🏫 ${institution}</span>
               <span>📍 ${location}</span>
 					  </div>
             <p class="education-description">
               ${description}
 					  </p>
-            <ul class="education-skills">
-              ${skills.map(renderSkill).join('')}
-            </ul>
-            <site-bar></site-bar>
 					</div>
 				</li>
       `})
@@ -37,51 +34,118 @@
   }
 </script>
 
-<style webc:scoped>
-  .education {
-    margin: 0;
+<style>
+  .theme-light {
+    --education-bg-color: var(--blue);
+    --education-text-color: var(--white);
   }
 
-  .education-head {
+  .theme-dark {
+    --education-bg-color:  var(--blue);
+    --education-text-color: var(--white);
+  }
+
+  .education {
+    display: grid;
+    grid-template-areas:
+      "info"
+      "description"
+      "skills";
+    margin: 0;
+    padding: 0;
+  }
+
+  .education-info {
+    background-color: var(--education-bg-color);
+    border-top-left-radius: var(--border-radius);
+    border-top-right-radius: var(--border-radius);
+    color: var(--education-text-color);
     display: flex;
-    color: var(--accent-color);
     flex-direction: column;
     font-weight: bold;
     gap: 8px;
-  }
-
-  .education-head div:first-child {
-    align-items: center;
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
+    grid-area: info;
+    padding: 1rem;
+    margin: 0;
   }
 
   .education-description {
-    margin: 1rem 0;
+    background-color: var(--bg-alt-color);
+    grid-area: description;
+    padding: 1rem;
+    margin: 0;
   }
 
-  ul {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
+  .education-description p {
     margin: 0;
-    padding: 0;
-    gap: 3rem;
-    width: 100%;
   }
 
   ul.education-skills {
-    align-items: center;
+    align-content: flex-end;
+    background-color: var(--bg-alt-color);
+    border-bottom-left-radius: var(--border-radius);
+    border-bottom-right-radius: var(--border-radius);
     flex-direction: row;
     flex-wrap: wrap;
     gap: 8px;
+    grid-area: skills;
+    height: 100%;
     justify-content: center;
-    margin-bottom: 1rem;
+    padding: 1rem 0;
   }
 
-  li {
+  ul.cv-educations {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    gap: 3rem;
+  }
+
+  ul.cv-educations li {
     list-style: none;
     padding: 0;
+    margin: 0;
+    height: auto;
+    width: auto;
+  }
+
+  @media (min-width: 768px) {
+    .education {
+      grid-template-areas:
+        "info description"
+        "skills description";
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+    }
+
+    .education-info {
+      border-radius: 0;
+      border-top-left-radius: var(--border-radius);
+      gap: 1rem;
+    }
+
+    .education-description {
+      border-radius: 0;
+      border-top-right-radius: var(--border-radius);
+      border-bottom-right-radius: var(--border-radius);
+    }
+
+    ul.education-skills {
+      background-color: var(--education-bg-color);
+      border-radius: 0;
+      border-bottom-left-radius: var(--border-radius);
+      padding: 1rem;
+    }
+
+    .theme-light ul.cv-educations site-tag .tag {
+      background-color: var(--white);
+      color: var(--black);
+    }
+
+    .theme-dark ul.cv-educations site-tag .tag {
+      background-color: var(--black);
+      color: var(--white);
+    }
   }
 </style>

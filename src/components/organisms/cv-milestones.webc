@@ -4,7 +4,7 @@
 
 
     return `
-			<ul>
+			<ul class="cv-milestones">
 			`.concat(collection.map(({ when, location, title, youtube, description, twitter }) => {
       return /* html */`
 				<li class="milestone page-break-after">
@@ -30,7 +30,17 @@
   }
 </script>
 
-<style webc:scoped>
+<style>
+  .theme-light {
+    --milestones-bg-color: var(--purple);
+    --milestones-text-color: var(--white);
+  }
+
+  .theme-dark {
+    --milestones-bg-color: var(--purple);
+    --milestones-text-color: var(--white);
+  }
+
   .milestone {
     display: flex;
     flex-direction: column;
@@ -39,10 +49,10 @@
   }
 
   .milestone-head {
-    background-color: var(--accent-color);
+    background-color: var(--milestones-bg-color);
     border-top-left-radius: var(--border-radius);
     border-top-right-radius: var(--border-radius);
-    color: var(--bg-alt-color);
+    color: var(--milestones-text-color);
     display: flex;
     flex-direction: column;
     font-weight: bold;
@@ -58,13 +68,13 @@
     margin: 0;
   }
 
-  p {
+  .cv-milestones p {
     padding: 0;
     margin: 0;
     margin-bottom: 1rem;
   }
 
-  ul {
+  ul.cv-milestones {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto;
@@ -75,13 +85,13 @@
     width: 100%;
   }
 
-  li {
+  ul.cv-milestones li {
     list-style: none;
     padding: 0;
   }
 
   @media (min-width: 768px) {
-    ul {
+    ul.cv-milestones {
       grid-template-columns: repeat(2, 1fr);
     }
   }
