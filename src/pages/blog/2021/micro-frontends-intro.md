@@ -15,7 +15,7 @@ el frontend se hace más grande, difícil de mantener y complejo para las nuevas
 En las siguientes arquitecturas vemos como el frontend es siempre un monolito:
 
 <img-caption src="/assets/images/blog/2021/micro-frontends-intro/monolith-frontback-microservices.png"  alt="Comparación entre arquitecturas">
-  Imagen de <a href="https://micro-frontends.org" target="_blank">
+  Imagen de <a href="https://micro-frontends.org" >
   https://micro-frontends.org</a>
 </img-caption>
 
@@ -25,7 +25,7 @@ comunicarse con múltiples equipos para saber cómo integrarse con el backend. E
 sería el siguiente paso lógico: micro frontends.
 
 <img-caption src="/assets/images/blog/2021/micro-frontends-intro/verticals-headline.png"  alt="Comparación entre arquitecturas">
-  Imagen de <a href="https://micro-frontends.org" target="_blank">
+  Imagen de <a href="https://micro-frontends.org" >
   https://micro-frontends.org</a>
 </img-caption>
 
@@ -72,7 +72,7 @@ mientras que horizontalmente estamos limitando el micro frontend a una parte
 de la página.
 
 <img-caption src="/assets/images/blog/2021/micro-frontends-intro/micro-frontend-split.jpeg"  alt="Gráfico que muestra la división de micro frontends vertical u horizontalmente">
-  Imagen de <a href="https://increment.com/frontend/micro-frontends-in-context/" target="_blank">
+  Imagen de <a href="https://increment.com/frontend/micro-frontends-in-context/" >
   un post de Increment</a> sobre micro frontends
 </img-caption>
 
