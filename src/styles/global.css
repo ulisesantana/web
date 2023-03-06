@@ -158,3 +158,9 @@ img, object {
   border-radius: var(--border-radius);
   max-width: 100%;
 }
+
+tldr-section p a, 
+tldr-section p a:visited {
+  border-color: var(--accent-alt-color);
+  color: var(--accent-alt-color) !important;
+}

@@ -67,14 +67,6 @@ const tldrStyles = /* html */`
     margin-bottom: 0;
   }
 
-  .tldr>blockquote {
-    margin-top: 0;
-  }
-
-  .tldr svg {
-    color: var(--bg-color);
-  }
-
   @media print {
     .tldr {
       display: none;
@@ -118,12 +110,12 @@ class TldrSection extends HTMLElement {
   text = null
   show = false
 
-  constructor () {
+  constructor() {
     super()
     this.attachShadow({ mode: 'open' })
   }
 
-  connectedCallback () {
+  connectedCallback() {
     this.shadowRoot.innerHTML = /* html */`
     ${tldrStyles}
     <div class="tldr">
@@ -148,7 +140,7 @@ class TldrSection extends HTMLElement {
     this.content.addEventListener('click', this.handleClick.bind(this))
   }
 
-  disconnectedCallback () {
+  disconnectedCallback() {
     this.cta.removeEventListener('click', this.handleClick)
     this.content.removeEventListener('click', this.handleClick)
   }
@@ -156,7 +148,7 @@ class TldrSection extends HTMLElement {
   /**
    * Handle click on the button
    */
-  handleClick (event) {
+  handleClick(event) {
     if (!this.text.contains(event.target)) {
       if (this.show) {
         this.close()
@@ -166,13 +158,13 @@ class TldrSection extends HTMLElement {
     }
   }
 
-  open () {
+  open() {
     this.show = true
     this.content.classList.remove('closed')
     this.content.classList.add('open')
   }
 
-  close () {
+  close() {
     this.show = false
     this.content.classList.add('closed')
     this.content.classList.remove('open')

@@ -22,10 +22,9 @@ class ImageCaption extends HTMLElement {
           max-width: 100%;
         }
 
-        ::slotted(a) {
-          border-bottom: solid 4px var(--accent-color);
-          color: var(--accent-color);
-          font-weight: 700;
+        figcaption {
+          font-size: var(--font-size-1);
+          text-align: center;
         }
       </style>
       <figure>
