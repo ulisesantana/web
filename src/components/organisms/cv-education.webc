@@ -16,10 +16,22 @@
               ${skills.map(renderSkill).join('')}
             </ul>
             <div class="education-info">
-              <span>👨‍🎓 ${position}</span>
-              <span>📆 ${from} - ${to}</span>
-              <span>🏫 ${institution}</span>
-              <span>📍 ${location}</span>
+              <div class="education-info-data">
+                <span class="icon">📆</span>
+                <span>${from} - ${to}</span>
+              </div>
+              <div class="education-info-data">
+                <span class="icon">👨‍🎓</span>
+                <span>${position}</span>
+              </div>
+              <div class="education-info-data">
+                <span class="icon">🏫</span>
+                <span>${institution}</span>
+              </div>
+              <div class="education-info-data">
+                <span class="icon">📍</span>
+                <span>${location}</span>
+              </div>
 					  </div>
             <p class="education-description">
               ${description}
@@ -41,7 +53,7 @@
   }
 
   .theme-dark {
-    --education-bg-color:  var(--blue);
+    --education-bg-color: var(--blue);
     --education-text-color: var(--white);
   }
 
@@ -67,6 +79,17 @@
     grid-area: info;
     padding: 1rem;
     margin: 0;
+  }
+
+  .education-info-data {
+    align-items: center;
+    display: grid;
+    gap: 24px;
+    grid-template-columns: 1rem auto;
+  }
+
+  .education-info-data .icon {
+    font-size: 1.75rem;
   }
 
   .education-description {
@@ -111,41 +134,17 @@
   }
 
   @media (min-width: 768px) {
-    .education {
-      grid-template-areas:
-        "info description"
-        "skills description";
+    ul.cv-educations {
+      display: grid;
       grid-template-columns: repeat(2, 1fr);
-      grid-template-rows: repeat(2, 1fr);
+      margin: 0;
+      padding: 0;
+      gap: 3rem;
     }
 
-    .education-info {
-      border-radius: 0;
-      border-top-left-radius: var(--border-radius);
-      gap: 1rem;
-    }
-
-    .education-description {
-      border-radius: 0;
-      border-top-right-radius: var(--border-radius);
-      border-bottom-right-radius: var(--border-radius);
-    }
-
-    ul.education-skills {
+    ul.cv-educations site-tag .tag {
       background-color: var(--education-bg-color);
-      border-radius: 0;
-      border-bottom-left-radius: var(--border-radius);
-      padding: 1rem;
-    }
-
-    .theme-light ul.cv-educations site-tag .tag {
-      background-color: var(--white);
-      color: var(--black);
-    }
-
-    .theme-dark ul.cv-educations site-tag .tag {
-      background-color: var(--black);
-      color: var(--white);
+      color: var(--education-text-color);
     }
   }
 </style>

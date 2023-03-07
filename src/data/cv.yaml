@@ -1,25 +1,28 @@
-about: >
-  I was thinking about defining myself in a sentence, but I concluded that's an impossible task. So let me simply describe myself. I am a  lifelong learner passionate about tech, focused on the web with JavaScript as my native programming language and I solve problems with tech based on JavaScript.
-
-  I believe that for a healthy industry the professionals must share their experience. Committed to this, I try to give at least one talk/workshop per year in vocational schools. Moreover, I co-organized and sponsored the last Global Day of Coderetreat in Gran Canaria, which is an awesome environment for coding students.
-
-  I also sponsored other events during the last years as part of my giveback plan to the software community. There is no doubt that software communities and open source have been crucial for my professional growth, so I am just returning the favor.
 jobs:
   - employer: Lean Mind
     location: San Cristóbal de la La Laguna, Spain (Remote)
     position: Full Stack Developer
     from: 03/2020
     to:  10/2022
-    description: >
-      I work as external developer in development teams for different customers with different technologies. The way we work at Lean Mind is firmly grounded in Software Craftsmanship and eXtreme Programming principles.
-
-      As company, Lean Mind has a very rich culture based on knowledge sharing and trust by learning from each others and 
-      being always open for feedback. I've been mentoring internship students and also given several talks as internal training.
+    description:
+      - I work as external developer in development teams for different customers 
+        with different technologies. The way we work at Lean Mind is firmly grounded 
+        in Software Craftsmanship and eXtreme Programming principles.
+      - As company, Lean Mind has a very rich culture based on knowledge sharing 
+        and trust by learning from each others and being always open for feedback. 
+        I've been mentoring internship students and also given several talks as 
+        internal training.
     skills:
       - Node.js
+      - JavaScript
+      - TypeScript
+      - Clean Code
+      - eXtreme Programming (XP)
+      - Test-driven Development (TDD)
+      - Domain-driven Design (DDD)
       - AngularJS
       - React
-      - TypeScript
+      - PHP5
       - Jest
       - Java
       - Groovy
@@ -27,9 +30,12 @@ jobs:
       - Husky
       - testing-library
       - MySQL
+      - MongoDB
       - Microservices
       - Docker
       - Gitlab
+      - Github
+      - Bitbucket
       - Toggl
       - Jira
       - Confluence
@@ -41,12 +47,18 @@ jobs:
     position: Full Stack Developer
     from: 08/2018
     to: 03/2020
-    description: >
-      After being promoted, I am daily involved in developing features, even whole projects, on the backend and frontend side. Based on the team goal, could be just backend or frontend. This means working some sprints with AngularJS and Symfony, others with NestJS and React and sometimes just React or Node.js and Express.
-
-      I usually discuss the solutions with the Solution Architect or Team Leaders. Also, I introduced and evangelized things like TypeScript, Storybook, NestJS,  Microfrontends, Inner Source, Cypress, Husky, Jest or how to create npm packages among my teammates.
-
-      Besides, I help with another kind of tasks as maintaining development environments, assisting production deployments or recruiting React/Node.js developers.
+    description: 
+      - After being promoted, I am daily involved in developing features, even 
+        whole projects, on the backend and frontend side. Based on the team goal, 
+        could be just backend or frontend. This means working some sprints with 
+        AngularJS and Symfony, others with NestJS and React and sometimes just 
+        React or Node.js and Express.
+      - I usually discuss the solutions with the Solution Architect or Team Leaders. 
+        Also, I introduced and evangelized things like TypeScript, Storybook, NestJS, 
+        Microfrontends, Inner Source, Cypress, Husky, Jest or how to create npm 
+        packages among my teammates.
+      - Besides, I help with another kind of tasks as maintaining development environments, 
+        assisting production deployments or recruiting React/Node.js developers.
     skills:
       - Node.js
       - AngularJS
@@ -80,10 +92,19 @@ jobs:
     position: Back End Developer
     from: 06/2017
     to: 07/2018
-    description: >
-      After my internship period, I was hired as a Backend Developer due to my interest and performance in Node.js tasks during my internship. In the first six months, my main tasks were coding new features on Node.js microservices, helping the infrastructure area and handling deployments on our environments before CI/CD came to our lives. That means handling web servers with Nginx and pm2 processes for Node.js, besides handling all the files on servers for other services. Thankfully, some really smart teammates deployed Rancher with Docker connected with our Gitlab, giving us the chance to add CI/CD on our workflow.
-
-      During the following six months, I gradually stop working on infrastructure and started creating new features across all the stack. I also evangelized best practices about ES2017 Promises with async / await.
+    description: 
+      - After my internship period, I was hired as a Backend Developer due to 
+        my interest and performance in Node.js tasks during my internship. 
+        In the first six months, my main tasks were coding new features on Node.js 
+        microservices, helping the infrastructure area and handling deployments 
+        on our environments before CI/CD came to our lives. That means handling 
+        web servers with Nginx and pm2 processes for Node.js, besides handling 
+        all the files on servers for other services. Thankfully, some really smart 
+        teammates deployed Rancher with Docker connected with our Gitlab, giving us 
+        the chance to add CI/CD on our workflow.
+      - During the following six months, I gradually stop working on infrastructure 
+        and started creating new features across all the stack. I also evangelized 
+        best practices about ES2017 Promises with async / await.
     skills:
       - Node.js
       - AngularJS
@@ -112,12 +133,21 @@ jobs:
     position: Web Developer Intern
     from: 03/2017
     to: 05/2017
-    description: >
-      The last part of the Higher Technician in development of web application certification is doing an internship in a company of your choice. I chose Kentech because was the only company I found in Gran Canaria who was using Node.js at that time. Also, was a really good opportunity to test my English skills because the communication on Kentech is full in English.
-
-      Kentech is a provider of custom solutions across various verticals, specializing in the online entertainment industry with a focus on sports in multiple countries. The applications build by Kentech are used by millions of users across the world.
-
-      I started as a QA, but after some weeks testing the main web app, they gave me some tasks related to UI optimization for Opera Mini and creating a Wordpress theme for a corporative site. In the last weeks, my mentor, a Node.js developer, explained to me the microservices architecture and some basics about high availability concepts. Also, he challenged me on the last week to do a proof of concept about a cache system with a distributed lock with MySQL and Redis.
+    description: 
+      - The last part of the Higher Technician in development of web application 
+        certification is doing an internship in a company of your choice. I chose 
+        Kentech because was the only company I found in Gran Canaria who was 
+        using Node.js at that time. Also, was a really good opportunity to test 
+        my English skills because the communication on Kentech is full in English.
+      - Kentech is a provider of custom solutions across various verticals, specializing 
+        in the online entertainment industry with a focus on sports in multiple countries. 
+        The applications build by Kentech are used by millions of users across the world.
+      - I started as a QA, but after some weeks testing the main web app, they gave me 
+        some tasks related to UI optimization for Opera Mini and creating a Wordpress 
+        theme for a corporative site. In the last weeks, my mentor, a Node.js developer, 
+        explained to me the microservices architecture and some basics about 
+        high availability concepts. Also, he challenged me on the last week to do a 
+        proof of concept about a cache system with a distributed lock with MySQL and Redis.
     skills:
       - Node.js
       - AngularJS
@@ -139,8 +169,11 @@ jobs:
     position: Web developer
     from: 04/2016
     to: 09/2016
-    description: >
-      I was the web developer in a small studio of web development and digital marketing. Also, I took care of everything related to new technologies and information management in the company, managing customers, project management and making wireframes for the different web projects.
+    description: 
+      - I was the web developer in a small studio of web development and digital 
+        marketing. Also, I took care of everything related to new technologies 
+        and information management in the company, managing customers, project 
+        management and making wireframes for the different web projects.
     skills:
       - HTML5
       - CSS3
@@ -166,10 +199,19 @@ jobs:
     position: Social Media Manager / Co-founder
     from: 02/2013
     to: 06/2015
-    description: >
-      For two and a half years I worked creating content and executing digital marketing plans in different channels based on customer objectives, interacting with communities, following active listening and resolving reputation crises with a community manager under my charge. As a copywriter, I wrote all the content for the different blogs that we managed. I also made the content insertion in web projects using HTML and CSS.
-
-      As co-founder, I was involved in managing customers, products, and projects. Furthermore, a lot of problems come up on the daily basis of a business and somebody needs to handle it. On the other hand, trying to do the math to pay employee salaries, company debts and the taxes of being a small business in Spain. This kind of experience gave me more perspective about the cost of a digital product.
+    description: 
+      - For two and a half years I worked creating content and executing 
+        digital marketing plans in different channels based on customer objectives, 
+        interacting with communities, following active listening and resolving reputation 
+        crises with a community manager under my charge. As a copywriter, I wrote all 
+        the content for the different blogs that we managed. I also made the content 
+        insertion in web projects using HTML and CSS.
+      - As co-founder, I was involved in managing customers, products, and projects. 
+        Furthermore, a lot of problems come up on the daily basis of a business 
+        and somebody needs to handle it. On the other hand, trying to do the math 
+        to pay employee salaries, company debts and the taxes of being a small 
+        business in Spain. This kind of experience gave me more perspective about 
+        the cost of a digital product.
     skills:
       - Community Management
       - Social Media Strategy
@@ -196,10 +238,10 @@ education:
     position: Higher Technician in Web Application Development
     from: 10/2015
     to: 05/2017
-    description: >
-      2-years course of Web Application Development.
-      Equivalent to a Certificate of Higher Education related to
-      web application development.
+    description: 
+      - 2-years course of Web Application Development.
+        Equivalent to a Certificate of Higher Education related to
+        web application development.
 
     skills:
       - HTML5
@@ -222,10 +264,10 @@ education:
     position: Higher Technician in Bussiness Management and Marketing
     from: 09/2011
     to: 11/2012
-    description: >
-      1400-hours course of bussiness management and marketing.
-      Equivalent to a Certificate of Higher Education related to
-      bussiness management and marketing.
+    description: 
+      - 1400-hours course of bussiness management and marketing.
+        Equivalent to a Certificate of Higher Education related to
+        bussiness management and marketing.
     skills:
       - Marketing
       - Customer management
@@ -240,43 +282,48 @@ milestones:
     location: La Laguna, Santa Cruz de Tenerife, Spain
     title: Talk at JSDay Canarias 2022
     youtube: V4sXNlzJIy8
-    description: >
-      A story about how I passed a Node.js process from 5 hours to 5 minutes. Tips about handling asynchrony included.
+    description: A story about how I passed a Node.js process from 5 hours to 
+      5 minutes. Tips about handling asynchrony included.
   - when: 11/2019
     location: Las Palmas de Gran Canaria, Spain
     title: Global Day of Coderetreat
-    description: >
-      I co-organized and hosted a Global Day of Coderetreat. Coderetreat is a day-long stress-free, intensive practice event, focusing on the fundamentals of software development and design.
+    description: I co-organized and hosted a Global Day of Coderetreat. 
+      Coderetreat is a day-long stress-free, intensive practice event, focusing 
+      on the fundamentals of software development and design.
   - when: 10/2019
     location: Las Palmas de Gran Canaria, Spain
     title: Workshop for React Canarias community
     youtube: gkTAlgsr4tg
-    description: >
-      I ran and organized an introductory workshop about Cypress and react-testing-library.
+    description: I ran and organized an introductory workshop about Cypress and 
+      react-testing-library.
   - when: 11/2018
     location: La Laguna, Santa Cruz de Tenerife, Spain
     title: Talk at JSDay Canarias 2018
     youtube: Joqdb-oZjC8
-    description: >
-      An introductory talk to npm and how to publish on it.
+    description: An introductory talk to npm and how to publish on it.
   - when: 11/2018
     location: Kilkenny, Ireland
     title: Compile Node.js project on a Chromebook
     twitter: https://twitter.com/ulisesantana/status/1059825362220261376
-    description: >
-      During a workshop on NodeConf EU I compiled Node.js on a Chromebook, improve some tests and contribute to the project. With an Acer Chromebook R11 in a virtual Debian. Took almost 2 hours only to compile.
+    description: During a workshop on NodeConf EU I compiled Node.js on a Chromebook, improve some 
+      tests and contribute to the project. With an Acer Chromebook R11 in a virtual Debian. Took 
+      almost 2 hours only to compile.
   - when: 03/2017
     location: Las Palmas de Gran Canaria, Spain
     title: Second prize at Hack for Good hackaton
     twitter: https://twitter.com/H4GCAN/status/840609174404886531?s=20
-    description: >
-      A 36-hours-long hackathon to create a tech solution for social good. The project was Aprende con Amidi, a question quiz for learning Canarian culture build as a progressive web app. Canarian culture is losing diffusion, so we try to increment the diffusion making a multiplatform app for being used for everybody who wants to learn or for teaching on schools.
+    description: A 36-hours-long hackathon to create a tech solution for social 
+      good. The project was Aprende con Amidi, a question quiz for learning 
+      Canarian culture build as a progressive web app. Canarian culture is losing 
+      diffusion, so we try to increment the diffusion making a multiplatform 
+      app for being used for everybody who wants to learn or for teaching on schools.
   - when: 03/2016
     location: Las Palmas de Gran Canaria, Spain
     title: First prize at Startup Weekend hackaton
     twitter: https://twitter.com/IGROCA/status/709106699530080258?s=20
-    description: >
-      A 54-hours-long hackathon for creating a startup. I worked in an English-speaking team and our project was BasketUp, a big data basketball analytics web app using just 3 smartphones for ball tracking.
+    description: A 54-hours-long hackathon for creating a startup. I worked in an 
+      English-speaking team and our project was BasketUp, a big data basketball 
+      analytics web app using just 3 smartphones for ball tracking.
 sponsored:
   - when: 05/2022
     location: La Laguna, Santa Cruz de Tenerife, Spain

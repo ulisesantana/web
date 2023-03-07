@@ -9,16 +9,25 @@
       return /* html */`
 				<li class="milestone page-break-after">
 					<div>
-            <div class="milestone-head">
-              <span>🏆 ${title}</span>
-              <span>📆 ${when}</span>
-              <span>📍 ${location}</span>
+            <div class="milestone-info">
+              <div class="milestone-info-data">
+                <span class="icon">🏆</span>
+                <span>${title}</span>
+              </div>
+              <div class="milestone-info-data">
+                <span class="icon">📆</span>
+                <span>${when}</span>
+              </div>
+              <div class="milestone-info-data">
+                <span class="icon">📍</span>
+                <span>${location}</span>
+              </div>
 					  </div>
             <div class="milestone-description">
               <p>${description}</p>
               <youtube-video webc:if="${youtube !== undefined}" video-id="${youtube}"></youtube-video>
               <div webc:if="${twitter !== undefined}" style="text-align: right;">
-                <a href="${twitter}" alt="${title} tweet">Tweet <twitter-icon></twitter-icon></a>
+                <a href="${twitter}" alt="${title} tweet">Source <twitter-icon></twitter-icon></a>
               </div>
 					  </div>
 				</li>
@@ -48,7 +57,7 @@
     margin: 0;
   }
 
-  .milestone-head {
+  .milestone-info {
     background-color: var(--milestones-bg-color);
     border-top-left-radius: var(--border-radius);
     border-top-right-radius: var(--border-radius);
@@ -58,6 +67,17 @@
     font-weight: bold;
     gap: 8px;
     padding: 1rem;
+  }
+
+  .milestone-info-data {
+    align-items: center;
+    display: grid;
+    gap: 24px;
+    grid-template-columns: 1rem auto;
+  }
+
+  .milestone-info-data .icon {
+    font-size: 1.75rem;
   }
 
   .milestone-description {

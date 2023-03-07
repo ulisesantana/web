@@ -8,9 +8,18 @@
 			`.concat(collection.map(({ when, location, title }) => {
       return /* html */`
 				<li class="sponsored-event">
-          <span>🗣️ ${title}</span>
-          <span>📆 ${when}</span>
-          <span>📍 ${location}</span>
+          <div class="sponsored-event-data">
+            <span class="icon">🗣️</span>
+            <span>${title}</span>
+          </div>
+          <div class="sponsored-event-data">
+            <span class="icon">📆</span>
+            <span>${when}</span>
+          </div>
+          <div class="sponsored-event-data">
+            <span class="icon">📍</span>
+            <span>${location}</span>
+          </div>
 				</li>
       `})
       .join(""))
@@ -32,18 +41,15 @@
     padding: 1rem;
   }
 
-  .sponsored-event-description {
-    background-color: var(--bg-alt-color);
-    border-bottom-left-radius: var(--border-radius);
-    border-bottom-right-radius: var(--border-radius);
-    padding: 1rem;
-    margin: 0;
+  .sponsored-event-data {
+    align-items: center;
+    display: grid;
+    gap: 24px;
+    grid-template-columns: 1rem auto;
   }
 
-  p {
-    padding: 0;
-    margin: 0;
-    margin-bottom: 1rem;
+  .sponsored-event-data .icon {
+    font-size: 1.75rem;
   }
 
   ul {

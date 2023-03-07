@@ -16,14 +16,26 @@
               ${skills.map(renderSkill).join('')}
             </ul>
             <div class="job-info">
-              <span>🧑‍💻 ${position}</span>
-              <span>📆 ${from} - ${to}</span>
-              <span>💼 ${employer}</span>
-              <span>📍 ${location}</span>
+              <div class="job-info-data">
+                <span class="icon">📆</span>
+                <span>${from} - ${to}</span>
+              </div>
+              <div class="job-info-data">
+                <span class="icon">🧑‍💻</span>
+                <span>${position}</span>
+              </div>
+              <div class="job-info-data">
+                <span class="icon">💼</span>
+                <span>${employer}</span>
+              </div>
+              <div class="job-info-data">
+                <span class="icon">📍</span>
+                <span>${location}</span>
+              </div>
 					  </div>
             <div class="job-description">
               <p>
-                ${description}
+                ${description.join('<br/><br/>')}
               </p>
             <div>
 					</div>
@@ -71,6 +83,17 @@
     margin: 0;
   }
 
+  .job-info-data {
+    align-items: center;
+    display: grid;
+    gap: 24px;
+    grid-template-columns: 1rem auto;
+  }
+
+  .job-info-data .icon {
+    font-size: 1.75rem;
+  }
+
   .job-description {
     background-color: var(--bg-alt-color);
     grid-area: description;
@@ -116,9 +139,10 @@
     .job {
       grid-template-areas:
         "info description"
+        "skills description"
         "skills description";
-      grid-template-columns: repeat(2, 1fr);
-      grid-template-rows: repeat(2, 1fr);
+      grid-template-columns: 45% 1fr;
+      grid-template-rows: repeat(3, 1fr);
     }
 
     .job-info {
@@ -134,9 +158,12 @@
     }
 
     ul.job-skills {
+      align-content: center;
       background-color: var(--job-bg-color);
       border-radius: 0;
       border-bottom-left-radius: var(--border-radius);
+      gap: 1rem;
+      justify-content: center;
       padding: 1rem;
     }
 
