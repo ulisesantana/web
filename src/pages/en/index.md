@@ -39,7 +39,7 @@ As a thank you to the community, I have sponsored [JSDay Canarias](https://jsday
 Talking about how to create an npm package at JSDay Canarias 2018
 </img-caption>
 
-In 2022 I prepared a talk again. This time about learning from a work experience in which I optimized a process in Node.js from 5 hours to 5 minutes. It was a talk I gave at various events, such as [JSDay Canarias](https://youtu.be/V4sXNlzJIy8) or in the open space of [Pamplona Software Crafters](/blog/2022/pamplona-software-crafters-2022 /), and even turned [blog post](/blog/2022/how-a-process-happens-in-nodejs-from-5-hours-to-5-minutes) into [blog post].
+In 2022 I prepared a talk again. This time about learning from a work experience in which I optimized a process in Node.js from 5 hours to 5 minutes. It was a talk I gave at various events, such as [JSDay Canarias](https://youtu.be/V4sXNlzJIy8) or in the open space of [Pamplona Software Crafters](/blog/2022/pamplona-software-crafters-2022/), and even wrote it down as a [blog post](/blog/2022/como-pase-un-proceso-en-nodejs-de-5-horas-a-5-minutos).
 
 <img-caption src="/assets/images/jsdaycanarias2022.jpeg" alt="Photo of Ulises giving a talk at JSDay Canarias 2022">
 Talking about how to manage asynchrony in Node.js during JSDay Canarias 2022
