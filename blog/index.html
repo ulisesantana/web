@@ -41,9 +41,8 @@
   .post-card {
     display: grid;
     border-radius: var(--border-radius);
-    gap: 8px;
     grid-template-columns: 1fr;
-    grid-template-rows: var(--min-preview-height) 100%;
+    grid-template-rows: var(--min-preview-height) auto;
     text-shadow: none;
   }
 
@@ -53,8 +52,9 @@
 
   .post-card .content {
     background-color: var(--bg-alt-color);
-    padding: 0 0 16px;
-    height: 100%;
+    border-bottom-left-radius: var(--border-radius);
+    border-bottom-right-radius: var(--border-radius);
+    padding: 16px;
   }
 
   .post-card h2 {
