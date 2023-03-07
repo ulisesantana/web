@@ -16,7 +16,7 @@ const Container = styled.div`
 
   .theme-light & {
     --text-color: #292929;
-    --repl-bg-color: #eae5e1;
+    --repl-bg-color: #f2f2f2;
     --repl-caret-color: var(--secondary-color);
     --repl-output-color: #939393;
     --repl-tab-color: #f2f2f2;
