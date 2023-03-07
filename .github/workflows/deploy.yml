@@ -29,6 +29,6 @@ jobs:
         run: npm run build:ci
 
       - name: Deploy on branch
-          run: |
-            git config user.name "Ulises Santana" && git config user.email "ulisesantana@gmail.com"
+          run: git config user.name "Ulises Santana" && 
+            git config user.email "ulisesantana@gmail.com" && 
             npm run deploy:gh-pages
