@@ -2,7 +2,7 @@
 layout: cv.webc
 title: Curriculum Vitae
 locale: en
-metaImage: /assets/images/author.png
+metaImage: /assets/images/author.jpg
 ---
 
 # Who I am
