@@ -6,7 +6,7 @@ on:
       - main
 
 env:
-  PLUGIN_NAME: obsidian-pending-notes # Change this to match the id of your plugin.
+  NODE_ENV: production
 
 jobs:
   build:
