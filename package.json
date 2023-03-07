@@ -8,7 +8,6 @@
     "build:legacy": "./scripts/build-legacy.sh",
     "clean": "rm -rf _site",
     "dependencies:purge": "rm -rf node_modules && npm install",
-    "deploy:gh-pages": "gh-pages -d _site",
     "dev": "npm run build:legacy -- -d && npm run start",
     "lint": "eslint .",
     "lint:fix": "npm run lint -- --fix",
@@ -36,7 +35,6 @@
     "@11ty/eleventy-plugin-syntaxhighlight": "^4.2.0",
     "@11ty/eleventy-plugin-webc": "^0.8.1",
     "eleventy-plugin-external-links": "^1.1.2",
-    "gh-pages": "^5.0.0",
     "js-yaml": "^4.1.0"
   },
   "devDependencies": {

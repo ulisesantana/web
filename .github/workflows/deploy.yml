@@ -28,5 +28,9 @@ jobs:
       - name: Build
         run: npm run build:ci
 
-      - name: Deploy on branch
-        run: git config user.name "Ulises Santana" && git config user.email "ulisesantana@gmail.com" && npm run deploy:gh-pages
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        if: ${{ github.ref == 'refs/heads/main' }}
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./_site
