@@ -48,3 +48,5 @@ I try to lead a sustainable day to day in which I can be creative, feeding my in
 On the other hand, I love to cook, enjoy a good book, podcast, movie or series. I also enjoy nature walks with my chihuahua Mocha or spending time in my real garden. I say real because I also have a [digital garden](https://maggieappleton.com/garden-history) which I maintain with [Obsidian](https://obsidian.md/), serving me also as my [digital brain ](https://maggieappleton.com/basb). In fact, I ended up publishing a [plugin](https://github.com/ulisesantana/obsidian-pending-notes) for Obsidian that allows you to see what notes you have pending to create.
 
 If you want to know a little more about me, you can watch this interview that [Adrián Ferrera](https://adrianferrera.com) did to me on his podcast [Devs Lives](https://www.youtube.com/channel/UC8hcSq8ZoFG8hZrZ8XFC7Qw).
+
+<youtube-video video-id="T9Frov6wS7U"></youtube-video>
