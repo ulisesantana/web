@@ -4,7 +4,7 @@
   "description": "My personal website",
   "scripts": {
     "build": "export NODE_ENV=production; npm run clean && eleventy",
-    "build:ci": "npm run build:legacy && npm run build",
+    "build:ci": "npm run build:legacy && npm run build && cp ./CNAME ./_site",
     "build:legacy": "./scripts/build-legacy.sh",
     "clean": "rm -rf _site",
     "dependencies:purge": "rm -rf node_modules && npm install",
