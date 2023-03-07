@@ -1,0 +1,122 @@
+:root {
+  --font-family-1: 'Fira Sans', sans-serif;
+  --font-family-2: 'Poppins', sans-serif;
+  --font-size-0: 0.8rem;
+  --font-size-1: 1.10rem;
+  --font-size-2: 1.25rem;
+  --font-size-3: 1.5rem;
+  --font-size-4: 1.75rem;
+  --font-size-5: 2rem;
+  --font-size-6: 2.5rem;
+  --line-height-normal: 1;
+  --line-height-normal-text: 1.5;
+  --line-height-title: 2;
+}
+
+p {
+  color: inherit;
+  text-align: justify;
+  line-height: 1.5;
+  font-size: var(--font-size-1);
+  margin: 2rem auto;
+}
+
+h1:not([custom]), 
+h2:not([custom]), 
+h3:not([custom]), 
+h4:not([custom]), 
+h5:not([custom]), 
+h6:not([custom]) {
+  margin: 2rem 0;
+  border-left: solid var(--link-color) 4px;
+  padding-left: 4px;
+  width: fit-content;
+}
+
+strong {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  color: var(--black);
+  padding: 8px;
+}
+
+small {
+  font-size: var(--font-size-0);
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-size: var(--font-size-6);
+}
+
+h2 {
+  font-size: 2rem;
+  font-size: var(--font-size-5);
+}
+
+h3 {
+  font-size: var(--font-size-4);
+}
+
+h4 {
+  font-size: var(--font-size-3);
+}
+
+h5 {
+  font-size: var(--font-size-2);
+}
+
+h6 {
+  font-size: var(--font-size-1);
+}
+
+.theme-dark blockquote {
+  color: var(--black);
+}
+
+.theme-light blockquote {
+  color: var(--white);
+}
+
+blockquote {
+  background-color: var(--accent-color);
+  border-radius: var(--border-radius);
+  font-weight: 500;
+  margin: 0;
+  padding: 1rem;
+}
+
+blockquote p {
+  font-family: var(--font-family-2);
+  font-size: var(--font-size-2);
+  font-style: italic;
+}
+
+blockquote cite, blockquote small {
+  font-family: var(--font-family-1);
+  font-size: var(--font-size-1);
+  font-style: normal;
+  font-weight: bold;
+}
+
+blockquote p:has(cite, small) {
+  text-align: right;
+}
+
+blockquote :first-child {
+  margin-top: 0;
+}
+
+blockquote :last-child {
+  margin-bottom: 0;
+}
+
+blockquote a, blockquote a:visited {
+  border-color: var(--accent-alt-color);
+  color: var(--accent-alt-color);
+}
+
+blockquote a:hover {
+  background-color: var(--accent-alt-color);
+  color: var(--accent-color);
+}
