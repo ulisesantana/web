@@ -56,7 +56,7 @@
     transition-timing-function: ease-in-out;
     transition-duration: var(--transition-speed-regular);
     width: 100%;
-    z-index: var(--z-index-0);
+    z-index: var(--z-index-1);
   }
 
   .nav-items li:first-child {

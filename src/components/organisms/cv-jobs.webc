@@ -50,16 +50,18 @@
 
 <style>
   .theme-light {
-    --job-bg-color: var(--green);
+    --job-bg-color: teal;
     --job-text-color: var(--white);
   }
 
-  .theme-dark  {
-    --job-bg-color: var(--green);
+  .theme-dark {
+    --job-bg-color: teal;
     --job-text-color: var(--white);
   }
 
   .job {
+    background-color: var(--job-bg-color);
+    border-radius: var(--border-radius);
     display: grid;
     grid-template-areas:
       "info"
@@ -116,7 +118,7 @@
     grid-area: skills;
     height: 100%;
     justify-content: center;
-    padding: 1rem 0;
+    padding: 1rem;
   }
 
   ul.cv-jobs {
@@ -135,14 +137,19 @@
     width: auto;
   }
 
+  ul.cv-jobs site-tag .tag {
+    background-color: var(--job-bg-color);
+    color: var(--job-text-color);
+  }
+
   @media (min-width: 768px) {
     .job {
+      align-items: center;
       grid-template-areas:
-        "info description"
-        "skills description"
-        "skills description";
+        "info skills"
+        "description description";
       grid-template-columns: 45% 1fr;
-      grid-template-rows: repeat(3, 1fr);
+      grid-template-rows: auto 1fr;
     }
 
     .job-info {
@@ -153,7 +160,7 @@
 
     .job-description {
       border-radius: 0;
-      border-top-right-radius: var(--border-radius);
+      border-bottom-left-radius: var(--border-radius);
       border-bottom-right-radius: var(--border-radius);
     }
 
@@ -161,10 +168,9 @@
       align-content: center;
       background-color: var(--job-bg-color);
       border-radius: 0;
-      border-bottom-left-radius: var(--border-radius);
+      border-top-right-radius: var(--border-radius);
       gap: 1rem;
-      justify-content: center;
-      padding: 1rem;
+      justify-content: flex-end;
     }
 
     .theme-light ul.cv-jobs site-tag .tag {
