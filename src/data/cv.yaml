@@ -5,43 +5,36 @@ jobs:
     from: 03/2020
     to:  10/2022
     description:
-      - I work as external developer in development teams for different customers 
-        with different technologies. The way we work at Lean Mind is firmly grounded 
-        in Software Craftsmanship and eXtreme Programming principles.
-      - As company, Lean Mind has a very rich culture based on knowledge sharing 
-        and trust by learning from each others and being always open for feedback. 
-        I've been mentoring internship students and also given several talks as 
-        internal training.
+      - I worked as an external developer in teams for multiple customers with 
+        varied technologies. The way we work at Lean Mind is firmly grounded in 
+        Software Craftsmanship and eXtreme Programming principles, focusing on 
+        adding value not only to the product but to the team and building 
+        maintainable solutions.
+      - As a company, Lean Mind has a shining culture based on knowledge sharing 
+        and trust by learning from each other and being always open for feedback. 
+        I mentored several internship apprentices, even one of them hired by 
+        Lean Mind. I also ran talks as internal training.
+      - The diverse projects I was working on were related to e-learning platforms, 
+        billing engines, and audience intelligence. I worked with Node.js and 
+        TypeScript, but also migrated projects from PHP, and maintained ancient Node.js.
     skills:
       - Node.js
       - JavaScript
       - TypeScript
-      - Clean Code
+      - Hexagonal Architecture
       - eXtreme Programming (XP)
       - Test-driven Development (TDD)
       - Domain-driven Design (DDD)
-      - AngularJS
       - React
       - PHP5
-      - Jest
-      - Java
-      - Groovy
-      - Kotlin
-      - Husky
-      - testing-library
       - MySQL
       - MongoDB
-      - Microservices
       - Docker
       - Gitlab
       - Github
       - Bitbucket
-      - Toggl
-      - Jira
-      - Confluence
-      - Slack
-      - Visual Studio Code
-      - IntelliJ Ultimate
+      - Technical documentation
+      - Async communication
   - employer: Kentech
     location: Las Palmas de Gran Canaria, Spain
     position: Full Stack Developer
@@ -67,7 +60,6 @@ jobs:
       - Storybook
       - Jest
       - Husky
-      - testing-library
       - Socket.io
       - PHP7
       - MySQL
@@ -76,25 +68,18 @@ jobs:
       - Microfrontends
       - Redis
       - Docker
-      - Portainer
-      - Rancher
       - Gitlab
       - Express
       - NestJS
-      - Toggl
-      - Jira
-      - Confluence
-      - Slack
-      - Visual Studio Code
-      - Webstorm
+      - Technical Documentation
   - employer: Kentech
     location: Las Palmas de Gran Canaria, Spain
     position: Back End Developer
     from: 06/2017
     to: 07/2018
     description: 
-      - After my internship period, I was hired as a Backend Developer due to 
-        my interest and performance in Node.js tasks during my internship. 
+      - I was hired as a Backend Developer due to my interest and performance 
+        in Node.js tasks during my internship. 
         In the first six months, my main tasks were coding new features on Node.js 
         microservices, helping the infrastructure area and handling deployments 
         on our environments before CI/CD came to our lives. That means handling 
@@ -115,19 +100,10 @@ jobs:
       - Microservices
       - Redis
       - Docker
-      - Docker Swarm
       - Slack
-      - Portainer
-      - Rancher
       - Gitlab
-      - WordPress
-      - Toggl
-      - Jira
-      - Confluence
-      - Rocket Chat
-      - Visual Studio Code
-      - Webstorm
-      - PHPStorm
+      - WordPress Development
+      - Technical Documentation
   - employer: Kentech
     location: Las Palmas de Gran Canaria, Spain
     position: Web Developer Intern
@@ -142,13 +118,14 @@ jobs:
       - Kentech is a provider of custom solutions across various verticals, specializing 
         in the online entertainment industry with a focus on sports in multiple countries. 
         The applications build by Kentech are used by millions of users across the world.
-      - I started as a QA, but after some weeks testing the main web app, they gave me 
-        some tasks related to UI optimization for Opera Mini and creating a Wordpress 
-        theme for a corporative site. In the last weeks, my mentor, a Node.js developer, 
-        explained to me the microservices architecture and some basics about 
-        high availability concepts. Also, he challenged me on the last week to do a 
-        proof of concept about a cache system with a distributed lock with MySQL and Redis.
+      - I started as a QA, but after some weeks testing the main web app, they 
+        gave me some tasks related to UI optimization for Opera Mini and creating 
+        a Wordpress theme for a corporative site. In the last weeks, my mentor 
+        explained the microservices architecture and some basics about high 
+        availability concepts. Also, he challenged me to do a proof of concept 
+        about a cache system with a distributed lock with MySQL and Redis.
     skills:
+      - Opera Mini Optimization
       - Node.js
       - AngularJS
       - Quality Assurance
@@ -156,16 +133,10 @@ jobs:
       - MongoDB
       - Gitlab
       - Docker
-      - WordPress
-      - Jira
-      - Confluence
-      - Rocket Chat
-      - Visual Studio Code
-      - Webstorm
-      - PHPStorm
-      - Opera Mini Optimization
+      - WordPress Development
+      - Technical Documentation
   - employer: Cmas Digital
-    location: Maspalomas, Las Palmas, Spain (partial remote)
+    location: Maspalomas, Las Palmas, Spain (Partial remote)
     position: Web developer
     from: 04/2016
     to: 09/2016
@@ -177,25 +148,17 @@ jobs:
     skills:
       - HTML5
       - CSS3
-      - Bootstrap 3
       - JavaScript
       - PHP5
-      - LAMP Stack
-      - WordPress
-      - G Suite
+      - WordPress Development
       - Scrum
-      - Trello
-      - Toggl
       - Kanban
       - UI/UX
-      - Gitkraken
-      - Atom
-      - Pingendo
       - Customer Management
-      - Project Management.
+      - Project Management
 
   - employer: Mokaps Studio
-    location: Las Palmas de Gran Canaria, Spain (partial remote)
+    location: Las Palmas de Gran Canaria, Spain (Partial remote)
     position: Social Media Manager / Co-founder
     from: 02/2013
     to: 06/2015
@@ -213,25 +176,19 @@ jobs:
         business in Spain. This kind of experience gave me more perspective about 
         the cost of a digital product.
     skills:
-      - Community Management
+      - Digital Marketing
       - Social Media Strategy
       - Content Generation
+      - Community Management
+      - Customer Management
+      - Project Management
       - Business Management
-      - Digital Marketing
       - HTML5
       - CSS3
       - WordPress
-      - G Suite
       - Scrum
       - Kanban
-      - Trello
-      - Toggl
-      - Slack
-      - Hootsuite
-      - Sprout Social
-      - Google Sites
-      - Customer Management
-      - Project Management
+      - Async communication
 education:
   - institution: CIFP Villa de Agüimes
     location: Cruce de Arinaga, Las Palmas, Spain
@@ -279,7 +236,7 @@ education:
       - CRM
 milestones:
   - when: 05/2022
-    location: La Laguna, Santa Cruz de Tenerife, Spain
+    location: San Cristóbal de la La Laguna, Spain
     title: Talk at JSDay Canarias 2022
     youtube: V4sXNlzJIy8
     description: A story about how I passed a Node.js process from 5 hours to 
@@ -297,7 +254,7 @@ milestones:
     description: I ran and organized an introductory workshop about Cypress and 
       react-testing-library.
   - when: 11/2018
-    location: La Laguna, Santa Cruz de Tenerife, Spain
+    location: San Cristóbal de la La Laguna, Spain
     title: Talk at JSDay Canarias 2018
     youtube: Joqdb-oZjC8
     description: An introductory talk to npm and how to publish on it.
@@ -326,7 +283,7 @@ milestones:
       analytics web app using just 3 smartphones for ball tracking.
 sponsored:
   - when: 05/2022
-    location: La Laguna, Santa Cruz de Tenerife, Spain
+    location: San Cristóbal de la La Laguna, Spain
     title: JSDay Canarias
   - when: 11/2019
     location: Las Palmas de Gran Canaria, Spain
@@ -335,10 +292,10 @@ sponsored:
     location: Las Palmas de Gran Canaria, Spain
     title: PyDay Gran Canaria
   - when: 11/2019
-    location: La Laguna, Santa Cruz de Tenerife, Spain
+    location: San Cristóbal de la La Laguna, Spain
     title: JSDay Canarias
   - when: 10/2018
-    location: La Laguna, Santa Cruz de Tenerife, Spain
+    location: San Cristóbal de la La Laguna, Spain
     title: JSDay Canarias
 attended:
   - when: 02/2020
@@ -348,10 +305,10 @@ attended:
     location: Kilkenny, Ireland
     title: NodeCONF EU
   - when: 11/2019
-    location: La Laguna, Santa Cruz de Tenerife, Spain
+    location: San Cristóbal de la La Laguna, Spain
     title: JSDay Canarias
   - when: 09/2019
-    location: La Laguna, Santa Cruz de Tenerife, Spain
+    location: San Cristóbal de la La Laguna, Spain
     title: AdaLoversConf
   - when: 06/2019
     location: Berlin, Germany
@@ -363,7 +320,7 @@ attended:
     location: Paris, France
     title: React Europe
   - when: 11/2018
-    location: La Laguna, Santa Cruz de Tenerife, Spain
+    location: San Cristóbal de la La Laguna, Spain
     title: JSDay Canarias
   - when: 11/2018
     location: Kilkenny, Ireland
