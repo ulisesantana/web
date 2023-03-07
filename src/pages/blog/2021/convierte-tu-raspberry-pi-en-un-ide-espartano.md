@@ -97,7 +97,7 @@ echo 'eval "$(starship init zsh)"' >> $HOME/.zshrc
 
 Así es como luce Starship en mi Raspberry:
 
-<img-caption src="/assets/images/blog/2021/convierte-tu-raspberry-pi-en-un-ide-espartano/starship.png" alt="Como se ve Starship en mi Raspberry Pi">
+<img-caption src="/assets/blog/2021/convierte-tu-raspberry-pi-en-un-ide-espartano/starship.png" alt="Como se ve Starship en mi Raspberry Pi">
 Como se ve Starship en mi Raspberry Pi
 </img-caption>
 
@@ -250,7 +250,7 @@ nvim +PlugInstall
 Si has hecho todo esto correctamente al abrir un fichero con el comando `nvim` deberías ver algo parecido a la terminal
 de la izquierda:
 
-<img-caption src="/assets/images/blog/2021/convierte-tu-raspberry-pi-en-un-ide-espartano/cover.png" alt="Como se ve programando con Neovim">
+<img-caption src="/assets/blog/2021/convierte-tu-raspberry-pi-en-un-ide-espartano/cover.png" alt="Como se ve programando con Neovim">
 Programando con Neovim
 </img-caption>
 

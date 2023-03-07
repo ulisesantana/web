@@ -17,7 +17,7 @@ I was born in the Canary Islands, Spain, in a sunny small town located southwest
 
 However, my destiny with the web seems to be that it would not be as a Social Media Manager. After two and a half years working in that role, I realized that marketing was not my thing, but web development was. That was the starting point for me to become a programmer and the motivation to leave the company I had co-founded and start my studies in web application development. I find marketing very interesting, but I prefer to program applications and let marketing lovers work in marketing.
 
-<img src="/assets/images/uli-social-media.jpg" 
+<img src="/assets/about/uli-social-media.jpg" 
   alt="Ulises in his time as Social Media Manager" 
   style="display: block;max-width:300px;margin: 0 auto;"/>
 
@@ -29,19 +29,19 @@ Three years after, I became part of [Lean Mind](https://leanmind.es), an incredi
 
 Since I've been a developer for a living, I aim to keep up with JavaScript and the web, so I have tried to go to as many conferences as I am able to. This, ended up in attending events like JSConf EU where I had the opportunity to take a selfie with [Ryan Dahl](https://tinyclouds.org/), the creator of [Node.js](https://nodejs.org ) and [Deno](https://deno.land). It was quite a fanboy moment.
 
-<img-caption src="/assets/images/dahl.jpg" alt="At JSConf 2018 with Ryan Dahl">
+<img-caption src="/assets/about/dahl.jpg" alt="At JSConf 2018 with Ryan Dahl">
 On the left part of the great team I worked with at Kentech and Ryan Dahl right after giving <a href="https://www.youtube.com/watch?v=M3BM9TB-8yA" >the most epic talk of JSConf EU 2018.</a>
 </img-caption>
 
 As a thank you to the community, I have sponsored [JSDay Canarias](https://jsdaycanarias.com) from 2018 to 2022 and [PyDay Gran Canaria 2019](https://pythoncanarias.es/events/pydaygc19), apart from also sponsor and co-organize the [Global Day of Coderetreat Canarias 2019](https://twitter.com/GDCR_Canarias). Also, in November 2018, I had the opportunity to give a talk at [JS Day Canarias](https://2018.jsdaycanarias.com) about [Node.js, npm and how to publish and maintain a package in an npm registry]( https://www.youtube.com/watch?v=Joqdb-oZjC8). I loved the experience, and I want to continue sharing knowledge with the rest of the world. Thanks to selfless people, I became a professional software developer. I want to contribute so that more people can do it by giving talks at events and educational centers or simply writing on [my blog](/blog).
 
-<img-caption src="/assets/images/jsdaycanarias2018.jpg" alt="Photo of Ulises giving a talk at JSDay Canarias 2018">
+<img-caption src="/assets/about/jsdaycanarias2018.jpg" alt="Photo of Ulises giving a talk at JSDay Canarias 2018">
 Talking about how to create an npm package at JSDay Canarias 2018
 </img-caption>
 
 In 2022 I prepared a talk again. This time about learning from a work experience in which I optimized a process in Node.js from 5 hours to 5 minutes. It was a talk I gave at various events, such as [JSDay Canarias](https://youtu.be/V4sXNlzJIy8) or in the open space of [Pamplona Software Crafters](/blog/2022/pamplona-software-crafters-2022/), and even wrote it down as a [blog post](/blog/2022/como-pase-un-proceso-en-nodejs-de-5-horas-a-5-minutos).
 
-<img-caption src="/assets/images/jsdaycanarias2022.jpeg" alt="Photo of Ulises giving a talk at JSDay Canarias 2022">
+<img-caption src="/assets/about/jsdaycanarias2022.jpeg" alt="Photo of Ulises giving a talk at JSDay Canarias 2022">
 Talking about how to manage asynchrony in Node.js during JSDay Canarias 2022
 </img-caption>
 

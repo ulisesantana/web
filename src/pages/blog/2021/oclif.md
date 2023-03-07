@@ -16,7 +16,7 @@ Un aspecto que me pareció bastante interesante es que oclif está diseñado par
 
 Volviendo a oclif y el proyecto en el que lo estaba incluyendo, en mi caso usé el generador para crear un CLI con único comando. Cuando creamos un proyecto con el generador de oclif se nos genera todo lo necesario para comenzar con nuestro CLI.
 
-<img-caption src="/assets/images/blog/2021/oclif/oclif-single-cli.png"  alt="Captura de pantalla de cómo genera oclif un cli de un sólo comando">
+<img-caption src="/assets/blog/2021/oclif/oclif-single-cli.png"  alt="Captura de pantalla de cómo genera oclif un cli de un sólo comando">
   oclif nos pregunta todo lo que necesita para crear nuestro CLI desde cero.
 </img-caption>
 
@@ -30,7 +30,7 @@ Volviendo al proyecto que te genera oclif, el proyecto viene preparado para que 
 
 Sin duda oclif mola, pero [cli-ux](https://github.com/oclif/cli-ux) mola muchísimo. Es un paquete hecho por el mismo equipo de oclif que facilita mucho el poder hacer un CLI bonito e interactivo. Lo mejor de todo es que se puede instalar por separado, ya que no es algo exclusivo de oclif. Entre otras cosas tienes spinners, barras de progreso, prompt o poder renderizar datos en una tabla. Todo esto en tu terminal.
 
-<img-caption src="/assets/images/blog/2021/oclif/cli-ux-spinner.gif"  alt="Ejemplo de como se ve el spinner de cli-ux">
+<img-caption src="/assets/blog/2021/oclif/cli-ux-spinner.gif"  alt="Ejemplo de como se ve el spinner de cli-ux">
   Un spinner en tu terminal gracias a cli-ux. (Imagen sacada de la documentación de cli-ux)
 </img-caption>
 

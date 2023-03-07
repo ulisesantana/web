@@ -31,7 +31,8 @@ module.exports = {
   },
   images: {
     fallback: '/assets/images/fallback.png',
-    logo: '/assets/logo.png'
+    logo: '/assets/images/logo.png',
+    author: '/assets/about/author.jpg'
   },
   collections: {
     blog: {

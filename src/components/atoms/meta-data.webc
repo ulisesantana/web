@@ -4,10 +4,10 @@
 		const {author, twitter, name: siteName, colors} = this.site
 		const description = this.description ?? localeSite.description;
 		const title = this.title ?? localeSite.title;
-		const metaImage = this.metaImage ? this.metaImage : `/assets/images${this.page.url}cover.png`
+		const metaImage = this.metaImage ? this.metaImage : `/assets${this.page.url}cover.png`
 
 		return `
-<link rel="icon" type="image/x-icon" href="/assets/logo.png">
+<link rel="icon" type="image/x-icon" href="/assets/images/favicon.png">
 <!-- open graph -->
 <meta property="og:type" content="${this.metatype}">
 <meta name="theme-color" content="${colors.primary}"/>

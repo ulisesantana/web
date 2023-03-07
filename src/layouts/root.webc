@@ -1,6 +1,6 @@
 ---
 metatype: web
-metaImage: /assets/images/author.png
+metaImage: /assets/images/logo.png
 ---
 <!DOCTYPE html>
 <html :lang="this.locale">

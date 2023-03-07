@@ -12,7 +12,7 @@
       <h3 webc:if="this.locale !== 'es'">Related posts</h3>
       <ul>
       `.concat(collection.map((post) => {
-        const coverPath = `/assets/images${post.url}cover.png`
+        const coverPath = `/assets${post.url}cover.png`
         const title = post.data.title
         const date = this.fefo.dates.toLocaleDateString(post.data.date, this.locale)
         return /*html*/`

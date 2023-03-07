@@ -41,7 +41,7 @@ necesitaba: [WiFi Connect](https://github.com/balena-os/wifi-connect) (bendito s
 
 ## La solución: conéctate a tu Raspberry Pi gracias a WiFi Connect
 
-![Instrucciones de WiFi Connect (en inglés)](/assets/images/blog/2021/raspberry-pi-en-tu-ipad/wifi-connect-instructions.png)
+![Instrucciones de WiFi Connect (en inglés)](/assets/blog/2021/raspberry-pi-en-tu-ipad/wifi-connect-instructions.png)
 
 WiFi Connect es un software que puedes instalar en tu Raspberry Pi para que en caso de que no encuentre ninguna red que
 hayas guardado previamente, cree un punto de acceso al que te puedas conectar y configurar la WiFi. La gran ventaja es que
@@ -73,7 +73,7 @@ este propósito. Además, es suuuuuper fácil de usar. Sólo tienes que:
 1. Darle al botón *Flash!*
 1. Esperar a que termine. El tiempo que tarde depende de la microSD y de tu sistema, pero en mi caso tardó unos 20 minutos.
 
-<img-caption src="/assets/images/blog/2021/raspberry-pi-en-tu-ipad/balena-etcher.png" alt="Balena Etcher">
+<img-caption src="/assets/blog/2021/raspberry-pi-en-tu-ipad/balena-etcher.png" alt="Balena Etcher">
   Balena Etcher es un software maravilloso para flashear imágenes en dispositivos.
 </img-caption>
 
@@ -145,20 +145,20 @@ sudo raspi-config
 Seleccionamos con las flechas del teclado la
 opción *Localisation Options* y apretamos la tecla *ENTER*
 
-![Selecciona la opción Localisation options](/assets/images/blog/2021/raspberry-pi-en-tu-ipad/wifi-connect-step-3-1.png)
+![Selecciona la opción Localisation options](/assets/blog/2021/raspberry-pi-en-tu-ipad/wifi-connect-step-3-1.png)
 
 Ahora seleccionamos la opción `WLAN Country`.
 
-![Selecciona la opción WLAN Country](/assets/images/blog/2021/raspberry-pi-en-tu-ipad/wifi-connect-step-3-2.png)
+![Selecciona la opción WLAN Country](/assets/blog/2021/raspberry-pi-en-tu-ipad/wifi-connect-step-3-2.png)
 
 Seleccionamos el país donde vayamos a usar la Raspberry, en mi caso es España.
 
-![Selecciona la opción de tu país](/assets/images/blog/2021/raspberry-pi-en-tu-ipad/wifi-connect-step-3-3.png)
+![Selecciona la opción de tu país](/assets/blog/2021/raspberry-pi-en-tu-ipad/wifi-connect-step-3-3.png)
 
 Si todo ha salido bien debería de aparecer una pantalla como la siguiente, en la que lo único que tendremos que hacer es
 darle a *ENTER*.
 
-![Acepta los cambios](/assets/images/blog/2021/raspberry-pi-en-tu-ipad/wifi-connect-step-3-4.png)
+![Acepta los cambios](/assets/blog/2021/raspberry-pi-en-tu-ipad/wifi-connect-step-3-4.png)
 
 Una vez hayamos vuelto a la pantalla principal de raspi-config, sólo tenemos que usar la tecla *TAB* para llegar hasta
 la opción `Finish` y darle a *ENTER*. Te pedirá que si quieres reiniciar la Raspberry, dile que sí.
@@ -181,7 +181,7 @@ echo $PATH | grep /usr/local/sbin
 
 Si aparece es que no necesitas hacer este paso, como puedes ver en la siguiente imagen:
 
-![Cómo comprobar si hace falta actualizar el PATH](/assets/images/blog/2021/raspberry-pi-en-tu-ipad/check-path.png)
+![Cómo comprobar si hace falta actualizar el PATH](/assets/blog/2021/raspberry-pi-en-tu-ipad/check-path.png)
 
 Si vas a cambiar bash por zsh, fish o cualquier otra shell de tu preferencia recuerda actualizar la variable PATH
 también para ella.
@@ -278,7 +278,7 @@ sudo systemctl status wifi-connect-start.service
 
 Si todo ha ido bien deberías ver algo como esto:
 
-![Cómo comprobar que el estado del servicio de WiFi Connect funcionando correctamente](/assets/images/blog/2021/wifi-connect-status.png)
+![Cómo comprobar que el estado del servicio de WiFi Connect funcionando correctamente](/assets/blog/2021/wifi-connect-status.png)
 
 ### Dar permisos de lectura y ejecución a Network Manager
 
@@ -301,7 +301,7 @@ configurar a qué red WiFi quieres que se conecte la Raspberry.
 
 Si no te abre el portal, entra en un navegador web y trata de abrir una nueva página. De esta manera acabará saltándote igualmente el portal.
 
-![Instrucciones de WiFi Connect (en inglés)](/assets/images/blog/2021/raspberry-pi-en-tu-ipad/wifi-connect-instructions.png)
+![Instrucciones de WiFi Connect (en inglés)](/assets/blog/2021/raspberry-pi-en-tu-ipad/wifi-connect-instructions.png)
 
 Ahora desconecta el cable de Ethernet de la Raspberry, reiníciala y trata de conectarte por ssh de nuevo. Si todo ha salido bien
 deberías de poder conectarte y empezar a trastear con ella. La próxima vez que enciendas la Raspberry y no reconozca

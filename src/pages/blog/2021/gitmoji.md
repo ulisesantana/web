@@ -12,13 +12,13 @@ La idea detrás de [gitmoji](https://gitmoji.dev) es muy simple: usar emojis en 
 
  Sin embargo, al haber tantísimos emojis lo que para una persona significa una cosa, para otra puede significar otra. [Carlos Cuesta](https://carloscuesta.me) se dió cuenta de esto y decidió crear [gitmoji](https://gitmoji.dev): una guía de emojis para mensajes de commit.
 
-<img-caption src="/assets/images/blog/2021/gitmoji/gitmoji.png" alt="Captura de pantalla del buscador de la web de gitmoj">
+<img-caption src="/assets/blog/2021/gitmoji/gitmoji.png" alt="Captura de pantalla del buscador de la web de gitmoj">
   En la web de gitmoji podemos buscar que emoji necesitamos en base a la intención de nuestro commit.
 </img-caption>
 
 Además de la web en la que puedes ver los emojis y sus significados de cara a la intención del commit también hay [otras herramientas con la filosofía gitmoji](https://gitmoji.dev/related-tools) como [gitmoji-cli](https://github.com/carloscuesta/gitmoji-cli):
 
-<img-caption src="/assets/images/blog/2021/gitmoji/gitmoji-cli.gif" alt="Ejemplo de uso de gitmoji-cli">
+<img-caption src="/assets/blog/2021/gitmoji/gitmoji-cli.gif" alt="Ejemplo de uso de gitmoji-cli">
   gitmoji-cli nos permite usar gitmoji sin salir de la terminal.
 </img-caption>
 
@@ -26,7 +26,7 @@ Además de la web en la que puedes ver los emojis y sus significados de cara a l
 
 A priori todo esto de los gitmojis puede sonar simplón o que no aporta valor, pero una vez puesto en práctica ayuda mucho a encontrar commits en los que se hacen *bug fixes*, se añade o elimina una dependencia, por ejemplo.
 
-<img-caption src="/assets/images/blog/2021/gitmoji/gitlog.png" alt="Log de git con commits precedidos de un emoji">
+<img-caption src="/assets/blog/2021/gitmoji/gitlog.png" alt="Log de git con commits precedidos de un emoji">
   El log de git puede ser muy visual y autoexplicativo gracias a gitmoji.
 </img-caption>
 

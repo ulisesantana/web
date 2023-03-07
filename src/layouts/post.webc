@@ -6,7 +6,7 @@ layout: base.webc
 <article>
   <figure>
     <site-image 
-      :img="`/assets/images${this.page.url}cover.png`" 
+      :img="`/assets${this.page.url}cover.png`" 
       :img-fallback="fefo.images.fallback"
       :img-title="title">
     </site-image>

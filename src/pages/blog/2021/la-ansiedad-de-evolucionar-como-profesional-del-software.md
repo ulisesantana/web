@@ -25,7 +25,7 @@ Me pasé desde 2015 hasta 2020 sin descansar en las vacaciones que tenía. Desde
 
 Una vez terminé el ciclo y comencé a trabajar mis vacaciones las destiné a seguir estudiando e ir a toda conferencia que podía. Aparte de que durante el resto del año dedicaba al menos un par de horas diarias a investigar sobre JavaScript, Node.js o cualquier cosa nueva a la que me estuviera enfrentando. En ningún momento diré que lo pasé mal, me apasiona el software y el desarrollo web y disfrutaba el aprendizaje. Aparte, eso me dio la oportunidad de viajar y hacer turismo en diferentes ciudades europeas, lo cual disfruté como un niño chico. Como dice el dicho: *Que me quiten lo bailao*.
 
-<img-caption src="/assets/images/blog/2021/la-ansiedad-de-evolucionar-como-profesional-del-software/chromebook-nodeconfeu2018.jpg" alt="Mi chromebook tratando de compilar Node.js durante la NodeCONF EU 2018">
+<img-caption src="/assets/blog/2021/la-ansiedad-de-evolucionar-como-profesional-del-software/chromebook-nodeconfeu2018.jpg" alt="Mi chromebook tratando de compilar Node.js durante la NodeCONF EU 2018">
 En mi primera NodeCONF EU fui a un taller para hacer mi primera aportación a Node.js. El problema es que fui con un chromebook que tardó casi 2 horas en compilar Node.js.
 </img-caption>
 

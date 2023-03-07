@@ -26,7 +26,7 @@ layout: author.webc
 			<ul>
 			`.concat(collection.map((post) => {
 				const locale = this.locale === 'es' ? 'es-ES' : 'en-US'
-				const coverPath = `/assets/images${post.url}cover.png`
+				const coverPath = `/assets${post.url}cover.png`
 				return `
 				<li>
 					<post-card 

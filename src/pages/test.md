@@ -70,7 +70,7 @@ function quickSort(x, asc = true){
   load-to-scope="[`String.prototype.rainbow = function(){return '🌈 ' + this.valueOf() + ' 🌈'}`]">
 </js-repl>
 
-![Hablando de cómo crear un paquete de npm en el JSDay Canarias de 2018](/assets/images/jsdaycanarias.jpg)
+![Hablando de cómo crear un paquete de npm en el JSDay Canarias de 2018](/assets/about/jsdaycanarias.jpg)
 
 <youtube-video video-id="T9Frov6wS7U"></youtube-video>
 

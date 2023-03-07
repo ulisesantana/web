@@ -1,8 +1,8 @@
 <section class="author-info">
   <a :href="this.locale === 'es' ? '/' : '/en'">
     <flipable-image>
-      <img slot="front-image" src="/assets/images/author.jpg" alt="Ulises Santana" />
-      <img slot="back-image" src="/assets/logo.png" alt="Ulises Santana" />
+      <img slot="front-image" :src="this.fefo.images.author" alt="Ulises Santana" />
+      <img slot="back-image" :src="this.fefo.images.logo" alt="Ulises Santana" />
     </flipable-image>
     <!--TODO: Añadir imagen y transición para tema claro y tema oscuro-->
   </a>

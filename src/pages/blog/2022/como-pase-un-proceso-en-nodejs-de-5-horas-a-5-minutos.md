@@ -3,7 +3,7 @@ title: Cómo pasé un proceso en Node.js de 5 horas a 5 minutos
 date: 2022-05-20
 description: En un proyecto me tuve que enfrentar con mi equipo a un proceso en Node.js que después de rehacerlo de cero para hacerlo más sostenible era mucho más ineficiente. Concretamente un 4400% más ineficiente. Sin embargo, después de reanalizar el flujo de datos para evitar bloqueos en el event loop conseguí que fuera más de 20% más rápido que el proceso original.
 tags: [node.js,performance]
-cover: /assets/images/blog/2022/como-pase-un-proceso-en-nodejs-de-5-horas-a-5-minutos/header.png
+cover: /assets/blog/2022/como-pase-un-proceso-en-nodejs-de-5-horas-a-5-minutos/header.png
 draft: false
 ---
 
@@ -22,7 +22,7 @@ Por concluir esta contextualización:
 
 A Abraham Lincoln se le atribuye la siguiente frase: **Dame 6 horas para cortar un árbol y pasaré 4 afilando el hacha**. Sabíamos que iba a haber un cambio legislativo que conllevarían cambios en los proyectos, así que desde 2 meses antes del deadline propusimos refactorizar partes de los proyectos y uno en concreto solicitamos rehacerlo desde 0, ya que en ese entonces era realmente un prototipo que funcionaba, pero costaba mantener y con el cambio legislativo se iba a hacer más insostenible. Nos dieron luz verde a esta propuesta y dicho prototipo iba a ser rehecho desde cero. Vamos a llamar a este proyecto el *Proyecto Leñador*:
 
-![Yo vestido de Leñador con hacha al hombro](/assets/images/blog/2022/como-pase-un-proceso-en-nodejs-de-5-horas-a-5-minutos/lumberjack.jpeg)
+![Yo vestido de Leñador con hacha al hombro](/assets/blog/2022/como-pase-un-proceso-en-nodejs-de-5-horas-a-5-minutos/lumberjack.jpeg)
 
 En [Lean Mind](https://leanmind.es/es/) por regla general trabajamos haciendo pair o mob programming, por lo que nadie nunca está solo y así facilitamos que el código sea más sostenible, además de que tanto la autoría del código como el conocimiento se comparta. Sin embargo, como teníamos 5 proyectos que actualizar decidimos dividirnos lo máximo posible para poder abarcar al menos 3 proyectos a la vez y poder tener los cambios lo antes posible. Eso sale a 2 personas por proyecto y una persona sola. Esa persona que se quedó sola fui yo y estuve a varias bandas asistiendo a los diferentes equipos a la par que trabajaba en el proyecto en el que me tocaba.
 
@@ -36,13 +36,13 @@ Volviendo al *Proyecto Leñador*, estaba muy orgulloso de lo que el equipo habí
 
 El prototipo original basándose en un set de datos de unos cientos de miles de registros era capaz de hacerlo todo en unos 7 minutos. Con el mismo set de datos probé con el *Proyecto Leñador* y el resultado fue que tardó nada más y nada menos que **5 horas 7 minutos y 54 segundos.** Estamos hablando de que tardaba 44 veces más. El proceso real en producción tardaba cada noche unos 40 minutos, por lo que si mandábamos esto a producción el nuevo proceso tardaría unas 29 horas y 20 minutos, cada día. Esta pérdida de performance era inasumible. En ese momento mi yo interno era algo así:
 
-![GIF de los bailarines del ataúd](/assets/images/blog/2022/como-pase-un-proceso-en-nodejs-de-5-horas-a-5-minutos/coffin-dance.gif)
+![GIF de los bailarines del ataúd](/assets/blog/2022/como-pase-un-proceso-en-nodejs-de-5-horas-a-5-minutos/coffin-dance.gif)
 
 Por meter más leña al fuego [¿lo pillas? Leña, *Proyecto Leñador* 🤣], esto pasó a unos 10 días del deadline, 10 días naturales. No podíamos replantear el proyecto, había que optimizarlo en menos de una semana, además de que había más cosas en la parrilla. Recuerdo que habían otros 4 proyectos que necesitaban ser actualizados para el cambio legislativo. En esta situación, por un lado me motivaba a mí mismo pensando cosas del tipo *Llevo toda mi vida preparándome para este momento, los talleres sobre asincronía en Node.js con [Matteo Collina](https://twitter.com/matteocollina) y [James Snell](https://twitter.com/jasnell) van a dar sus frutos*. Sin embargo, otra parte de mí era una mezcla de esto:
 
-![GIF de Sheldon respirando compulsivamente en una bolsa de papel](/assets/images/blog/2022/como-pase-un-proceso-en-nodejs-de-5-horas-a-5-minutos/sheldon-bag.gif)
+![GIF de Sheldon respirando compulsivamente en una bolsa de papel](/assets/blog/2022/como-pase-un-proceso-en-nodejs-de-5-horas-a-5-minutos/sheldon-bag.gif)
 
-![GIF de Pickle Rick a punto de morir de insolación](/assets/images/blog/2022/como-pase-un-proceso-en-nodejs-de-5-horas-a-5-minutos/pickle-rick.gif)
+![GIF de Pickle Rick a punto de morir de insolación](/assets/blog/2022/como-pase-un-proceso-en-nodejs-de-5-horas-a-5-minutos/pickle-rick.gif)
 
 La realidad es que entré en modo pánico y empecé a refactorizar el proyecto y tratar de mejorar en performance todo lo que podía. No cambié nada de lógica, me limité a cambiar el flujo de datos asíncrono, que era mayormente todo lo que tuviera que ver con leer o escribir en base de datos.
 
@@ -66,7 +66,7 @@ Estas dos funciones son idénticas a excepción de que la segunda es asíncrona.
 
 Puede parecer una tontería, pero afecta. Hice una pequeña demo para demostrar hasta qué punto esto afecta a nuestro performance. Lo que hace el script es ejecutar cada una de estas funciones por separado un millón de veces.
 
-![Resultado de ejecutar la demo para la comparación del async](/assets/images/blog/2022/como-pase-un-proceso-en-nodejs-de-5-horas-a-5-minutos/useless-async.png)
+![Resultado de ejecutar la demo para la comparación del async](/assets/blog/2022/como-pase-un-proceso-en-nodejs-de-5-horas-a-5-minutos/useless-async.png)
 
 Como podemos ver, sólo por poner ese `async` hemos hecho que tarde casi seis veces más. Aplicándolo a la vida real, en una suite de test reducimos un 40% el tiempo que tardaba en ejecutarse sólo quitando los async innecesarios que se nos habían quedado después de un refactor. Simplemente quitamos los async que teníamos en las arrow functions que ya no nos hacía falta. Haciendo esto pasamos de tardar algo más de 2 minutos en tirar la suit de test a poco menos de minuto y medio.
 
@@ -87,7 +87,7 @@ async function fetchUserListInfo(ids) {
 
 Parece sencillo y además si lo probamos veremos que funciona. Consigue la información de todos los usuarios sin problemas. ¿Sin problemas? Ese await dentro del `for` fuerza a que se termine de completar cada promesa antes de procesar la siguiente.
 
-<img-caption src="/assets/images/blog/2022/como-pase-un-proceso-en-nodejs-de-5-horas-a-5-minutos/await-loop.jpeg" alt="Las promesas se resuelven una a una">
+<img-caption src="/assets/blog/2022/como-pase-un-proceso-en-nodejs-de-5-horas-a-5-minutos/await-loop.jpeg" alt="Las promesas se resuelven una a una">
   Resolviendo las promesas con un await dentro de un for
 </img-caption>
 
@@ -112,13 +112,13 @@ La gran diferencia de esta solución es que dentro del bucle no resolvemos las p
 
 Volviendo a la solución, vemos que las promesas no se resuelven, sino que se almacenan directamente en estado *Pending*, y la función al devolverlas las resuelve todas *a la vez*. Esto hace que ahora la tarea se haga mucho más rápido, tardando lo que tarde en responder la llamada a la API más lenta.
 
-<img-caption src="/assets/images/blog/2022/como-pase-un-proceso-en-nodejs-de-5-horas-a-5-minutos/promise-all.jpeg" alt="Las promesas se resuelven a la vez">
+<img-caption src="/assets/blog/2022/como-pase-un-proceso-en-nodejs-de-5-horas-a-5-minutos/promise-all.jpeg" alt="Las promesas se resuelven a la vez">
   Resolviendo las promesas con un Promise.all
 </img-caption>
 
 Para ver esto mejor voy a mostrar otra demo en la que usamos casi el mismo código, lo único que cambia es que sustituimos la llamada a la API por una simple espera de 1 milisegundo. Lo que vamos a ver es cuanto tarda cada una de las soluciones ejecutando esta tarea para una lista de 100 IDS y lo va a hacer 1000 veces para que podamos ver si realmente hay una diferencia de performance o no.
 
-![Resultado de ejecutar la demo para bucles asíncronos](/assets/images/blog/2022/como-pase-un-proceso-en-nodejs-de-5-horas-a-5-minutos/async-loop.png)
+![Resultado de ejecutar la demo para bucles asíncronos](/assets/blog/2022/como-pase-un-proceso-en-nodejs-de-5-horas-a-5-minutos/async-loop.png)
 
 Como vemos la diferencia es abismal. Para la misma tarea cuando usamos `Promise.all` tarda poco más de 1 segundo, pero cuando usamos `await` dentro del for tarda **casi 2 minutos**. Esta diferencia en un entorno real es crítica y lo peor es que por lo general no nos damos cuenta de que el problema está en esta clase de sitios.
 
@@ -212,7 +212,7 @@ La diferencia usando `p-map` es que tienes que pasar por separado la lista sobre
 
 Por último, tener en cuenta que `p-map` en su versión 5 pasó a ser de tipo ESModules y a menos que tu proyecto esté hecho de esta manera no te va a funcionar. Para poder usarlo con CommonJS necesitas tirar de la versión 4. La realidad es que ambas versiones sólo difieren en si funcionan con ESModules o con CommonJS. Vamos, que si importas cosas en ficheros con `import` o con `require` respectivamente.
 
-![Pasar de CommonJS to ESModules](/assets/images/blog/2022/como-pase-un-proceso-en-nodejs-de-5-horas-a-5-minutos/cjs-to-esm.png)
+![Pasar de CommonJS to ESModules](/assets/blog/2022/como-pase-un-proceso-en-nodejs-de-5-horas-a-5-minutos/cjs-to-esm.png)
 
 ### 5. Haz caso de los warnings
 
@@ -234,7 +234,7 @@ El problema era que había event handlers que se estaban creando continuamente c
 
 Con todas estas mejoras en el *Proyecto Leñador* lo volvimos a ejecutar con el mismo set de datos y en esta ocasión tardó **04:52**. Era incluso más rápido que el prototipo original que tardaba 7 minutos. En ese momento mi yo interior era algo así:
 
-![GIF de El Nota en el Gran Lebowski dándolo todo](/assets/images/blog/2022/como-pase-un-proceso-en-nodejs-de-5-horas-a-5-minutos/fuck-yeah-dude.gif)
+![GIF de El Nota en el Gran Lebowski dándolo todo](/assets/blog/2022/como-pase-un-proceso-en-nodejs-de-5-horas-a-5-minutos/fuck-yeah-dude.gif)
 
 No recuerdo si era de día, de noche, ni qué hora era. Sólo recuerdo ese sentimiento de *FUCK YEAH*, ese paso de la ansiedad a la paz. Y ya por estar completamente seguros de que había una mejora, ejecutamos una prueba con un set de datos semejante al que se enfrentaba en producción día a día, que eran millones de registros en la base de datos. En este caso el resultado quedó claro:
 
