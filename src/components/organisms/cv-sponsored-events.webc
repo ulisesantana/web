@@ -31,7 +31,7 @@
 
 <style webc:scoped>
   .sponsored-event {
-    background-color: var(--green);
+    background-color: #20b2aa;
     border-radius: var(--border-radius);
     color: var(--white);
     display: flex;
