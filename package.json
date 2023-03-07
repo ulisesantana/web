@@ -13,7 +13,7 @@
     "lint:fix": "npm run lint -- --fix",
     "stage": "export NODE_ENV=production;npm run build:legacy -- -d && npm run clean && eleventy --serve",
     "start": "export NODE_ENV=dev;npm run clean && eleventy --serve",
-    "test": "node --test src/test"
+    "test": "NODE_ENV=production node --test src/test"
   },
   "repository": {
     "type": "git",
