@@ -51,8 +51,7 @@
     margin: 0;
     padding: 16px 16px 104px;
     position: fixed;
-    transition-property: background-color;
-    transition-property: color;
+    transition-property: all;
     transition-timing-function: ease-in-out;
     transition-duration: var(--transition-speed-regular);
     width: 100%;
