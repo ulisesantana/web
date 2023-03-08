@@ -250,7 +250,9 @@ nvim +PlugInstall
 Si has hecho todo esto correctamente al abrir un fichero con el comando `nvim` deberías ver algo parecido a la terminal
 de la izquierda:
 
-<img-caption src="/assets/blog/2021/convierte-tu-raspberry-pi-en-un-ide-espartano/cover.png" alt="Como se ve programando con Neovim">
+<img-caption 
+       src="/assets/blog/2021/                       convierte-tu-raspberry-pi-en-un-ide-espartano/cover.png" 
+       alt="Como se ve programando con Neovim">
 Programando con Neovim
 </img-caption>
 
