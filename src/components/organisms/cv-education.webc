@@ -18,7 +18,7 @@
             <div class="education-info">
               <div class="education-info-data">
                 <span class="icon">📆</span>
-                <span>${from} - ${to}</span>
+                <span>from ${from} to ${to}</span>
               </div>
               <div class="education-info-data">
                 <span class="icon">👨‍🎓</span>

@@ -18,7 +18,7 @@
             <div class="job-info">
               <div class="job-info-data">
                 <span class="icon">📆</span>
-                <span>${from} - ${to}</span>
+                <span>from ${from} to ${to}</span>
               </div>
               <div class="job-info-data">
                 <span class="icon">🧑‍💻</span>
