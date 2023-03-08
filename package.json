@@ -11,6 +11,7 @@
     "dev": "npm run build:legacy -- -d && npm run start",
     "lint": "eslint .",
     "lint:fix": "npm run lint -- --fix",
+    "post:new": "./scripts/create-post.mjs",
     "stage": "export NODE_ENV=production;npm run build:legacy -- -d && npm run clean && eleventy --serve",
     "start": "export NODE_ENV=dev;npm run clean && eleventy --serve",
     "test": "NODE_ENV=production node --test src/test"
@@ -42,6 +43,7 @@
     "eslint-config-standard": "^17.0.0",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-n": "^15.6.0",
-    "eslint-plugin-promise": "^6.1.1"
+    "eslint-plugin-promise": "^6.1.1",
+    "hygen": "^6.2.11"
   }
 }
