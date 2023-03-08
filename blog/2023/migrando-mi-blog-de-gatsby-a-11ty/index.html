@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Cómo convertir tu Raspberry Pi en un entorno de desarrollo espartano | Ulises Santana</title>
+  <title>Migrando mi blog de Gatsby a 11ty | Ulises Santana</title>
 
 
   <link rel="icon" type="image/x-icon" href="/assets/images/favicon.png">
@@ -12,19 +12,19 @@
 <meta property="og:type" content="article">
 <meta name="theme-color" content="#F7E018">
 <meta name="author" content="Ulises Santana">
-<meta property="og:title" content="Cómo convertir tu Raspberry Pi en un entorno de desarrollo espartano">
-<meta name="description" property="og:description" content="Tu Raspberry Pi puede ser un entorno de desarrollo muy interesante para llevar encima cuando viajas. En este post explico cómo lo he hecho con la mía.">
+<meta property="og:title" content="Migrando mi blog de Gatsby a 11ty">
+<meta name="description" property="og:description" content="Hace un par de años monté mi web con Gatsby y le acabé añadiendo un blog. Déjame contarte cómo y por qué acabé migrándolo a 11ty.">
 <meta property="og:site_name" content="Ulises Santana">
 <meta property="og:image" content="/assets/images/logo.png" ">
 
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@ulisesantana">
-<meta name="twitter:title" content="Cómo convertir tu Raspberry Pi en un entorno de desarrollo espartano">
-<meta name="twitter:description" content="Tu Raspberry Pi puede ser un entorno de desarrollo muy interesante para llevar encima cuando viajas. En este post explico cómo lo he hecho con la mía.">
+<meta name="twitter:title" content="Migrando mi blog de Gatsby a 11ty">
+<meta name="twitter:description" content="Hace un par de años monté mi web con Gatsby y le acabé añadiendo un blog. Déjame contarte cómo y por qué acabé migrándolo a 11ty.">
 <meta name="twitter:image" content="/assets/images/logo.png">
 
 
-  <link rel="canonical" href="https://ulisesantana.dev/blog/2021/convierte-tu-raspberry-pi-en-un-ide-espartano/">
+  <link rel="canonical" href="https://ulisesantana.dev/blog/2023/migrando-mi-blog-de-gatsby-a-11ty/">
 
   <meta name="generator" content="Eleventy v2.0.0">
   
@@ -277,23 +277,23 @@
 </site-header>
 <main><article class="wyy1elgja">
   <figure class="wyy1elgja">
-    <object data="/assets/blog/2021/convierte-tu-raspberry-pi-en-un-ide-espartano/cover.png" title="Cómo convertir tu Raspberry Pi en un entorno de desarrollo espartano" type="image/png">
-  <img src="/assets/images/fallback.png" title="Cómo convertir tu Raspberry Pi en un entorno de desarrollo espartano">
+    <object data="/assets/blog/2023/migrando-mi-blog-de-gatsby-a-11ty/cover.png" title="Migrando mi blog de Gatsby a 11ty" type="image/png">
+  <img src="/assets/images/fallback.png" title="Migrando mi blog de Gatsby a 11ty">
 </object>
     
   </figure>
   <div class="head wyy1elgja">
-    <h1 custom class="wyy1elgja">Cómo convertir tu Raspberry Pi en un entorno de desarrollo espartano</h1>
-    <time datetime="viernes, 3 de septiembre de 2021" class="wyy1elgja">viernes, 3 de septiembre de 2021</time>
-    <site-tags url="/blog/2021/convierte-tu-raspberry-pi-en-un-ide-espartano/"><ul class="tag-list">
+    <h1 custom class="wyy1elgja">Migrando mi blog de Gatsby a 11ty</h1>
+    <time datetime="miércoles, 8 de marzo de 2023" class="wyy1elgja">miércoles, 8 de marzo de 2023</time>
+    <site-tags url="/blog/2023/migrando-mi-blog-de-gatsby-a-11ty/"><ul class="tag-list">
     <li>
-            <site-tag><span class="tag">#desarrollo</span>
+            <site-tag><span class="tag">#11ty</span>
 
 </site-tag>
           </li>
         
           <li>
-            <site-tag><span class="tag">#raspberry pi</span>
+            <site-tag><span class="tag">#legacy</span>
 
 </site-tag>
           </li>
@@ -302,126 +302,13 @@
 
 </site-tags>
   </div>
-  <p>Trabajar desde una <a href="https://www.raspberrypi.org/products" target="_blank" rel="noopener">Raspberry Pi</a> puede parecer una locura, pero la realidad es
-que para cierto tipo de tareas es más que suficiente. Además, al ser tan pequeña la puedes llevar a cualquier lado y
-usarla tanto como un ordenador como a través de ssh con tu tablet o móvil como explico
-en <a href="/blog/2021/raspberry-pi-en-tu-ipad">este post</a>. Por otro lado, también es una forma muy barata de acceder a un
-ordenador con el que poder programar, aunque tenga sus limitaciones, ya que al final no deja de ser un procesador de 4
-núcleos a 1.5 GHz en el mejor de los casos.</p>
-<p>Precisamente por esta última razón, lo que sale más rentable es que si vas a trabajar con tu Raspberry que sea desde un
-terminal, ya que conectar una Raspberry a una pantalla y usar los programas con su entorno gráfico completo puede ser
-desesperante. Al menos para mí lo es, por lo que para montar mi entorno de desarrollo en mi Raspberry me he basado 100%
-en herramientas que funcionan por terminal y servidores web para usar el navegador web del iPad como cliente.</p>
-<h2>Mi entorno de desarrollo</h2>
-<p>El entorno de desarrollo que he preparado para mi Raspberry Pi se compone de lo siguiente:</p>
-<ol>
-<li><a href="#zsh">zsh</a></li>
-<li><a href="#zim">zim</a></li>
-<li><a href="#starship">Starship</a></li>
-<li><a href="#nodejs">Node.js</a></li>
-<li><a href="#neovim">Neovim</a></li>
-</ol>
-<p>A continuación te explico paso a paso qué es y como instalar cada una de las herramientas. Por cierto, <strong>esta instalación
-la puedes hacer tanto en tu Raspberry como en cualquier sistema operativo basado en Debian o Ubuntu</strong>. En mi caso tengo en
-mi sobremesa las mismas herramientas y los comandos que he usado son los mismos.</p>
-<div id="zsh"></div>
-<h3>zsh</h3>
-<p><a href="https://www.zsh.org" target="_blank" rel="noopener">zsh</a> es una versión extendida <a href="https://es.wikipedia.org/wiki/Bourne_Shell" target="_blank" rel="noopener">sh</a>, el intérprete de
-órdenes que usaba la terminal (también conocido simplemente como shell) de los sistemas UNIX por defecto desde finales
-de los 70. 20 años después llegó que <a href="https://www.gnu.org/software/bash/" target="_blank" rel="noopener">Bash</a> pasó a ser el nuevo intérprete por
-defecto, que es lo que encuentras hoy en cualquier servidor Linux.</p>
-<p>En macOS a partir de 2019 usa zsh como shell por defecto, después de haber tenido por defecto Bash durante años. Bash
-sigue siendo el shell por defecto en Ubuntu y también en Raspbian, el sistema operativo por defecto para la
-Raspberry Pi.</p>
-<p>Entonces, si Bash es tan usado, ¿cuál está el problema? Realmente Bash no tiene ningún problema, pero es que zsh tiene
-algunas funcionalidades que hace que sea mucho más cómodo trabajar desde la terminal, como por ejemplo la sugerencia y
-autocompletado de comandos. Además, existen frameworks para zsh que nos permiten personalizar y potenciar aún más el trabajo
-desde la terminal gracias al uso de plugins.</p>
-<p>Para instalar zsh sólo tienes que ejecutar los siguientes comandos:</p>
-<pre class="language-shell"><code class="language-shell"><span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> <span class="token function">zsh</span> <span class="token parameter variable">-y</span><br><span class="token function">sudo</span> chsh <span class="token parameter variable">-s</span> <span class="token variable"><span class="token variable">$(</span><span class="token function">which</span> <span class="token function">zsh</span><span class="token variable">)</span></span></code></pre>
-<p>El primer comando instalará zsh y el segundo cambiará nuestra shell por defecto para que sea zsh en vez de Bash. A partir de
-ahora toda nueva terminal que abras usará zsh en vez de Bash.</p>
-<div id="zim"></div>
-<h3>zim</h3>
-<p><a href="https://zimfw.sh" target="_blank" rel="noopener">zim</a> es un framework para zsh, permitiéndonos personalizar y extender zsh fácilmente y mantenerlo
-ligero. Además, la configuración que trae zim por defecto es más que suficiente para mejorar notablemente nuestra
-experiencia en zsh. Para instalarlo es tan fácil como ejecutar el siguiente comando en tu terminal:</p>
-<pre class="language-shell"><code class="language-shell"><span class="token function">sudo</span> <span class="token function">curl</span> <span class="token parameter variable">-fsSL</span> https://raw.githubusercontent.com/zimfw/install/master/install.zsh <span class="token operator">|</span> <span class="token function">bash</span></code></pre>
-<p>Ya está, eso es todo lo que tienes que hacer para instalar zim.</p>
-<div id="starship"></div>
-<h3>Starship</h3>
-<p>¿Alguna vez has visto la terminal de otra persona que tiene todo supercolorido y hasta con emojis?
-Pues <a href="https://starship.rs/es-ES/" target="_blank" rel="noopener">Starship</a> nos da justo eso de una forma supersimple. Lo único que tienes que hacer es instalarlo:</p>
-<pre class="language-shell"><code class="language-shell"><span class="token function">sh</span> <span class="token parameter variable">-c</span> <span class="token string">"<span class="token variable"><span class="token variable">$(</span><span class="token function">curl</span> <span class="token parameter variable">-fsSL</span> https://starship.rs/install.sh<span class="token variable">)</span></span>"</span></code></pre>
-<p>Y después añadir <code>eval &quot;$(starship init zsh)&quot;</code> a tu .zshrc para poder arrancar Starship cada vez que abras una terminal:</p>
-<pre class="language-shell"><code class="language-shell"><span class="token builtin class-name">echo</span> <span class="token string">'eval "$(starship init zsh)"'</span> <span class="token operator">>></span> <span class="token environment constant">$HOME</span>/.zshrc</code></pre>
-<p>Así es como luce Starship en mi Raspberry:</p>
-<img-caption src="/assets/blog/2021/convierte-tu-raspberry-pi-en-un-ide-espartano/starship.png" alt="Como se ve Starship en mi Raspberry Pi">
-Como se ve Starship en mi Raspberry Pi
-</img-caption>
-<p>A continuación te comparto la configuración que tengo para hacer que se vea de esta manera. De todos modos, siempre
-puedes revisar la <a href="https://starship.rs/es-ES/config/" target="_blank" rel="noopener">documentación de Starship</a> y configurarlo a tu gusto.</p>
-<pre class="language-yaml"><code class="language-yaml"><span class="token punctuation">[</span>character<span class="token punctuation">]</span><br>format = "🍓 "<br><br><span class="token punctuation">[</span>git_branch<span class="token punctuation">]</span><br>symbol = "🌱 "<br><br><span class="token punctuation">[</span>java<span class="token punctuation">]</span><br>disabled = false<br><br><span class="token punctuation">[</span>nodejs<span class="token punctuation">]</span><br>symbol = "⬢ "<br><br><span class="token punctuation">[</span>package<span class="token punctuation">]</span><br>symbol = "📦 "<br><br><span class="token punctuation">[</span>directory<span class="token punctuation">]</span><br>fish_style_pwd_dir_length = 10<br><br><span class="token punctuation">[</span>time<span class="token punctuation">]</span><br>disabled = false<br>format = '🕙 <span class="token punctuation">[</span>\<span class="token punctuation">[</span> $time \<span class="token punctuation">]</span><span class="token punctuation">]</span>($style) '<br>time_format = "%T"</code></pre>
-<p>Realmente todo esto también se podría hacer con zsh y zim, pero la ventaja que le veo a Starship es que por un lado es
-superfácil de configurar y por otro es que es compatible con varios shells como Bash o Powershell, por ejemplo.</p>
-<div id="nodejs"></div>
-<h3>Node.js</h3>
-<p>¡Oh! ¡Qué gran sorpresa, quiero <a href="https://nodejs.org/es/" target="_blank" rel="noopener">Node.js</a> en mi entorno de desarrollo! Por si no lo sabías, soy
-un frikazo de JavaScript y TypeScript, aparte que trabajo cada día con Node.js y es mi expertise. Por tanto, tiene mucho
-sentido que quiera tener Node.js en cualquier ordenador que vaya a usar.</p>
-<p>Sin embargo, no vamos a instalar Node.js tal cual desde el gestor de paquetes de apt, sino que vamos a
-usar <a href="https://github.com/nvm-sh/nvm" target="_blank" rel="noopener">nvm</a>. nvm son las siglas de Node Version Manager, que se traduce como <em>gestor de
-versiones de Node.js</em>. Por lo que podrás intuir lo que hace nvm es instalar Node.js por nosotros y gestionar las
-diferentes versiones por sí mismo. De esta manera puedes tener varias versiones de Node.js en tu ordenador y usar la que
-necesites para el proyecto en el que vayas a trabajar.</p>
-<p>Además, hay que tener en cuenta que <a href="https://nodejs.org/es/about/releases/" target="_blank" rel="noopener">cada año salen 2 versiones de Node.js</a>, una
-versión LTS y otra en la que se van preparando las nuevas funcionalidades experimentales y de la que saldrá la versión
-LTS del año siguiente. Esto significa que cada año sería recomendable que te pasaras a la siguiente LTS para poder
-aprovechar las novedades que salen cada año. Hacer todo esto con binarios o los gestores de paquetes del sistema
-operativo puede ser un dolor, por lo que mejor usar nvm. Otro punto a tener en cuenta es que nvm es lo que recomiendan que uses en la certificación de
-Node.js para instalar Node.js.</p>
-<p>Para instalar nvm ejecutamos:</p>
-<pre class="language-shell"><code class="language-shell"><span class="token function">curl</span> -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh <span class="token operator">|</span> <span class="token function">zsh</span></code></pre>
-<p>Una vez lo hayamos instalado nos pedirá que ejecutemos los siguientes comandos para que podamos usar nvm sobre la marcha:</p>
-<pre class="language-shell"><code class="language-shell"><span class="token builtin class-name">export</span> <span class="token assign-left variable">NVM_DIR</span><span class="token operator">=</span><span class="token string">"<span class="token variable"><span class="token variable">$(</span><span class="token punctuation">[</span> <span class="token parameter variable">-z</span> <span class="token string">"<span class="token variable">${XDG_CONFIG_HOME-}</span>"</span> <span class="token punctuation">]</span> <span class="token operator">&amp;&amp;</span> <span class="token builtin class-name">printf</span> %s <span class="token string">"<span class="token variable">${<span class="token environment constant">HOME</span>}</span>/.nvm"</span> <span class="token operator">||</span> <span class="token builtin class-name">printf</span> %s <span class="token string">"<span class="token variable">${XDG_CONFIG_HOME}</span>/nvm"</span><span class="token variable">)</span></span>"</span><br><span class="token punctuation">[</span> <span class="token parameter variable">-s</span> <span class="token string">"<span class="token variable">$NVM_DIR</span>/nvm.sh"</span> <span class="token punctuation">]</span> <span class="token operator">&amp;&amp;</span> <span class="token punctuation">\</span>. <span class="token string">"<span class="token variable">$NVM_DIR</span>/nvm.sh"</span></code></pre>
-<p>Con esto ya podríamos empezar a usar nvm e instalar la versión LTS de Node.js:</p>
-<pre class="language-shell"><code class="language-shell">nvm <span class="token function">install</span> <span class="token parameter variable">--lts</span></code></pre>
-<p>Y ya está, con esto ya deberías tener Node.js y npm instalados.</p>
-<div id="neovim"></div>
-<h3>Neovim</h3>
-<p><a href="https://neovim.io" target="_blank" rel="noopener">Neovim</a> es un editor de texto que se lanza directamente en la terminal y por tanto puedes abrir
-directamente en cualquier terminal, permitiéndote modificar archivos por ssh. Está basado en <a href="https://www.vim.org" target="_blank" rel="noopener">vim</a>,
-por lo que si conoces o has usado vim en algún momento no te supondrá ninguna dificultad utilizar Neovim.</p>
-<p>Realmente no tengo ninguna razón de peso para usar Neovim frente a vim, simplemente vi que lo
-usaba <a href="https://twitter.com/matteocollina" target="_blank" rel="noopener">Matteo Collina</a> y me pareció interesante.</p>
-<p>Al contrario que el resto de herramientas, la instalación de Neovim no es tan fácil ya que requiere que instalemos
-dependencias e incluso el propio proyecto para después compilarlo en nuestra Raspberry. Aun así, verás que no es tan
-complicado, simplemente requerirá más tiempo.</p>
-<h4>Instalar dependencias</h4>
-<p>Para compilar y usar Neovim necesitamos instalar algunas dependencias:</p>
-<pre class="language-shell"><code class="language-shell"><span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> ninja-build gettext libtool libtool-bin autoconf automake cmake g++ pkg-config <span class="token function">unzip</span> <span class="token parameter variable">-y</span><br><span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> xclip xsel <span class="token parameter variable">-y</span><br><span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> python3-pip <span class="token parameter variable">-y</span><br><span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> python-pip <span class="token parameter variable">-y</span><br><span class="token function">sudo</span> python3 <span class="token parameter variable">-m</span> pip <span class="token function">install</span> neovim<br><span class="token function">sudo</span> python <span class="token parameter variable">-m</span> pip <span class="token function">install</span> neovim<br>python3 <span class="token parameter variable">-m</span> pip <span class="token function">install</span> <span class="token parameter variable">--upgrade</span> neovim<br>python <span class="token parameter variable">-m</span> pip <span class="token function">install</span> <span class="token parameter variable">--upgrade</span> neovim<br><span class="token function">npm</span> i <span class="token parameter variable">-g</span> neovim</code></pre>
-<h4>Compilar Neovim e instalarlo</h4>
-<p>Una vez tenemos las dependencias instaladas debemos descargar el proyecto de Neovim desde Github, compilarlo e
-instalarlo:</p>
-<pre class="language-shell"><code class="language-shell"><span class="token comment"># Descargamos el proyecto</span><br><span class="token function">mkdir</span> <span class="token parameter variable">-p</span> <span class="token environment constant">$HOME</span>/apps <span class="token comment"># Prefiero tener Neovim en una carpeta llamada apps dentro de mi home</span><br><span class="token builtin class-name">cd</span> <span class="token environment constant">$HOME</span>/apps<br><span class="token function">git</span> clone https://github.com/neovim/neovim<br><span class="token comment"># Compilamos Neovim</span><br><span class="token builtin class-name">cd</span> neovim<br><span class="token function">git</span> checkout stable<br><span class="token function">make</span> <span class="token parameter variable">-j4</span><br><span class="token comment"># Instalamos Neovim</span><br><span class="token function">make</span> <span class="token assign-left variable">CMAKE_BUILD_TYPE</span><span class="token operator">=</span>RelWithDebInfo<br><span class="token function">sudo</span> <span class="token function">make</span> <span class="token function">install</span></code></pre>
-<h4>Instalar los plugins y configuración</h4>
-<p>Neovim no es mi entorno de desarrollo habitual, sólo lo uso desde la Raspberry o cuando simplemente voy a editar
-archivos desde la terminal. Debido a esto, no tenía ni idea de cómo configurarlo o qué plugins usar para que se
-pareciera lo máximo posible a IntelliJ. Algunas cosas las investigué y aprendí a configurarlas, pero la gran mayoría lo
-cogí prestado de <a href="https://stsewd.dev" target="_blank" rel="noopener">Santos Gallegos</a>. El resultado está
-en <a href="https://gist.github.com/ulisesantana/5f13880a18541459ccd90ef38d9e9fbe#file-init-vim" target="_blank" rel="noopener">este gist</a>, el cual pondría en
-este post directamente, pero es tan largo que creo que no merece la pena.</p>
-<p>Para poder hacer uso de los plugins necesitaremos instalar vim-plug que es el sistema de plugins heredado de vim. A
-partir de ahí simplemente es crear un fichero de configuración y lanzar el comando de instalación de plugins.</p>
-<pre class="language-shell"><code class="language-shell"><span class="token comment"># Instalar vim-plug</span><br><span class="token function">curl</span> <span class="token parameter variable">-fLo</span> <span class="token environment constant">$HOME</span>/.local/share/nvim/site/autoload/plug.vim --create-dirs <span class="token punctuation">\</span><br>       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim<br><span class="token comment"># Crear carpeta de configuración de Neovim</span><br><span class="token function">mkdir</span> <span class="token parameter variable">-p</span> <span class="token environment constant">$HOME</span>/.config/nvim<br><span class="token comment"># Copiar mi configuración para Neovim desde mi gist en Github</span><br><span class="token function">curl</span> https://gist.githubusercontent.com/ulisesantana/5f13880a18541459ccd90ef38d9e9fbe/raw/3e87c92b116b28a5be604dbea9dd054bc29e5987/init.vim <span class="token operator">></span> <span class="token environment constant">$HOME</span>/.config/nvim/init.vim<br><span class="token comment"># Instalar plugins</span><br>nvim +PlugInstall</code></pre>
-<p>Si has hecho todo esto correctamente al abrir un fichero con el comando <code>nvim</code> deberías ver algo parecido a la terminal
-de la izquierda:</p>
-<p><img-caption src="/assets/blog/2021/                       convierte-tu-raspberry-pi-en-un-ide-espartano/cover.png" 
-       alt="Como se ve programando con Neovim">
-Programando con Neovim
-</img-caption></p>
-<p>Con esto ya tendrás tu Raspberry Pi preparada como entorno de desarrollo en el podrás programar, escribir tus entradas
-de blog o hacer <a href="https://kata-log.rocks" target="_blank" rel="noopener">katas</a>.</p>
+  <p>En 2019 decidí que ya era hora de tener una web decente. En ese entonces trabajaba muchísimo con <a href="">React</a> y <a href="">Gatsby</a> parecía una gran opción para montarme una web rápidamente. Además, en <a href="">theme forest</a> habían plantillas de Gatsby que podía comprar para acelerar el proceso. No parecía un mal plan y la verdad es que por 50$ quitarme todo el trabajo de diseñar una web junto con su blog me parecía bastante rentable.</p>
+<p>En fin me acabé poniendo manos a ello y creé mi web, al principio sin blog. Había comprado la plantilla y la había adaptado para que no fuera tal cual la compré, sino que tuviera un poco de mi estilo. La realidad es que le acabé metiendo muchísima mano e inviertiendo bastante tiempo. La web quedó a mi gusto y estaba bastante contento con el resultado final. Sin embargo, con el paso de los años <a href="">Gatsby</a> siguió sacando versiones y los plugins que usaba mi web se estaban quedando obsoletos y tuve que migrar de Gatsby 2 a Gatsby 3. No fue un infierno, pero me hizo darme cuenta que tenía muy poco control sobre mi web.</p>
+<p>Al margen de la migración de versiones de Gatsby, me di cuenta de que se me hacía difícil hacer crecer la web, a veces incluso de mantenerla. Gatsby es muy potente, pero también tiene mucha magia negra por detrás 🧙‍♂️. A veces los flujos de datos se me complicaban un poco. Sin embargo, lo que más dolores de cabeza me daba es que la plantilla que había comprado seguía convenciones de código con las que no estaba de acuerdo, además de que la carpeta de componentes era un agujero negro en el que los sueños mueren. Estoy a favor de <a href="">Atomic Design</a>, pero no de tener componentes atómicos que solo se usan en un sitio.</p>
+<p>La realidad es que el sentimiento que tenía a la hora de querer hacer cosas en mi web era negativo. La fricción que tenía con mi propia web no me gustaba así que decidí que había migrar a otro sistema. Como para ese entonces ya llevaba un par de meses usando Obsidian y gestionando mi cerebro digital, tenía claras un par de cosas. Mi web tenía que ser lo más <em>future proof</em> posible. Esto me parecía inviable con React de por medio, prefería buscar una alternativa que tuviera <a href=""><em>web components</em></a> de por medio. De esta manera, al basarse en un estándar el frontend que escribiera aguantaría mejor el paso del tiempo. Por otro lado, quería que todo lo que escribiera a nivel de contenido fueran ficheros markdown. En mi web con Gatsby tenía un buen lío entre ficheros .mdx y .tsx. Además, teniendo <em>web components</em> podía usarlos en mis archivos markdown, pero sin el dolor de cabeza de tener dependencias con React y MDX en general.</p>
+<p>Tenía claro que es lo que quería, pero no tenía ni idea de con qué podía construirlo. Un día tomando un café con mi amiga <a href="https://www.albaherrerias.dev/" target="_blank" rel="noopener">Alba</a> me contó que su web se la había montado con <a href="">11ty</a> y que estaba muy contenta. Antes había oído hablar de 11ty, pero no le había hecho caso. Resulta que viene a ser un <a href="">Jekyll</a>, pero basado en Node.js en vez de Ruby. Sonaba muy bien. Además, que todo fuera con Node.js era un gran punto a su favor. Curiosamente este no era su único punto a favor. El mismo creador de 11ty, <strong>un fulano del cual pondré el nombre aquí</strong>, había creado algo pensado para ser usado con 11ty: <a href="https://github.com/11ty/webc" target="_blank" rel="noopener">WebC</a>. WebC, es una manera de tener <em>Single File Web Components</em> y poder usarlo como motor de plantillas como Nunjucks o Moustache.</p>
+<p>Es la polla y no quiero volver atrás</p>
+<p>Para las cosas complicadas he usado microfrontend. Por ahora es sólo un componente, pero mola saber que puedo usar React cuando lo necesite.</p>
 
   <author-info class="ws3sp0wuz"><section class="author-info">
   <a href="/">
@@ -555,44 +442,8 @@ de blog o hacer <a href="https://kata-log.rocks" target="_blank" rel="noopener">
 </section>
 
 </author-info>
-  <related-posts url="/blog/2021/convierte-tu-raspberry-pi-en-un-ide-espartano/"><section class="related-posts">
-  <h3>Artículos relacionados</h3>
-      
-      <ul>
-      
-          <li>
-            <a href="/blog/2021/raspberry-pi-en-tu-ipad/">
-              <article class="post-card-minimal">
-                <div class="cover">
-                  <object data="/assets/blog/2021/raspberry-pi-en-tu-ipad/cover.png" title="Cómo convertir tu iPad o tablet en un entorno de desarrollo" type="image/png">
-                    <img src="/assets/images/fallback.png" title="Cómo convertir tu iPad o tablet en un entorno de desarrollo">
-                  </object>
-                </div>
-                <div class="content">
-                  <h4 custom>Cómo convertir tu iPad o tablet en un entorno de desarrollo</h4>
-                  <time datetime="viernes, 3 de septiembre de 2021">viernes, 3 de septiembre de 2021</time>
-                  <span class="excerpt">Descubre cómo desarrollar y experimentar en cualquier lugar con tu tablet y tu Raspberry Pi.</span>
-                  <site-tags url="/blog/2021/raspberry-pi-en-tu-ipad/"><ul class="tag-list">
-    <li>
-            <site-tag><span class="tag">#desarrollo</span>
-
-</site-tag>
-          </li>
-        
-          <li>
-            <site-tag><span class="tag">#raspberry pi</span>
-
-</site-tag>
-          </li>
-        
-</ul>
-
-</site-tags>
-                </div>
-              </article>
-            </a>
-          </li>
-        </ul>
+  <related-posts url="/blog/2023/migrando-mi-blog-de-gatsby-a-11ty/"><section class="related-posts">
+  
 </section>
 
 </related-posts>
