@@ -7,7 +7,7 @@
   <title>oclif: el framework para hacer CLIs en Node.js y TypeScript | Ulises Santana</title>
 
 
-  <link rel="icon" type="image/x-icon" href="/assets/logo.png">
+  <link rel="icon" type="image/x-icon" href="/assets/images/favicon.png">
 
 <meta property="og:type" content="article">
 <meta name="theme-color" content="#F7E018">
@@ -15,13 +15,13 @@
 <meta property="og:title" content="oclif: el framework para hacer CLIs en Node.js y TypeScript">
 <meta name="description" property="og:description" content="oclif se define como el framework abierto para CLIs en Node.js. Te cuento sus bondades y por qué deberías planteártelo para tu próximo CLI.">
 <meta property="og:site_name" content="Ulises Santana">
-<meta property="og:image" content="/assets/images/author.png" ">
+<meta property="og:image" content="/assets/images/logo.png" ">
 
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@ulisesantana">
 <meta name="twitter:title" content="oclif: el framework para hacer CLIs en Node.js y TypeScript">
 <meta name="twitter:description" content="oclif se define como el framework abierto para CLIs en Node.js. Te cuento sus bondades y por qué deberías planteártelo para tu próximo CLI.">
-<meta name="twitter:image" content="/assets/images/author.png">
+<meta name="twitter:image" content="/assets/images/logo.png">
 
 
   <link rel="canonical" href="https://ulisesantana.dev/blog/2021/oclif/">
@@ -277,7 +277,7 @@
 </site-header>
 <main><article class="wyy1elgja">
   <figure class="wyy1elgja">
-    <object data="/assets/images/blog/2021/oclif/cover.png" title="oclif: el framework para hacer CLIs en Node.js y TypeScript" type="image/png">
+    <object data="/assets/blog/2021/oclif/cover.png" title="oclif: el framework para hacer CLIs en Node.js y TypeScript" type="image/png">
   <img src="/assets/images/fallback.png" title="oclif: el framework para hacer CLIs en Node.js y TypeScript">
 </object>
     
@@ -307,7 +307,7 @@
 <p>Si sólo vas a tener un comando puede parecer un poco <em>overkill</em> usar oclif en vez de stdio. Sin embargo, merece la pena por el simple hecho de que oclif es bastante más extensible. No sólo por si añades más comandos, sino que oclif también tiene plugins, que aunque ahora mismo sean pocos, puedes crear tus propios plugins y reusarlos entre proyectos. Por otro lado, me compró el hecho de que te parsee automáticamente las opciones que declaras para el CLI. Por ejemplo, en mi CLI hay una opción que es el número de semanas que quieres que cubra el informe; con stdio tenía que validarlo y pasarlo a <code>Number</code>, ya que parsea todo lo que viene de la línea de comandos a string. Sin embargo, oclif ya valida y parsea, lo cual es maravilloso.</p>
 <p>Un aspecto que me pareció bastante interesante es que oclif está diseñado para hacer CLIs de un sólo comando o multicomando (un ejemplo de CLI multicomando sería git o npm), lo cual facilita mucho el trabajo para hacer aplicaciones enteras para terminal. A mí ya me ha dado todo el hype y no tardaré mucho en hacerme un port de <a href="https://toggl.com/track/" target="_blank" rel="noopener">toggl</a> para terminal.</p>
 <p>Volviendo a oclif y el proyecto en el que lo estaba incluyendo, en mi caso usé el generador para crear un CLI con único comando. Cuando creamos un proyecto con el generador de oclif se nos genera todo lo necesario para comenzar con nuestro CLI.</p>
-<img-caption src="/assets/images/blog/2021/oclif/oclif-single-cli.png"  alt="Captura de pantalla de cómo genera oclif un cli de un sólo comando">
+<img-caption src="/assets/blog/2021/oclif/oclif-single-cli.png"  alt="Captura de pantalla de cómo genera oclif un cli de un sólo comando">
   oclif nos pregunta todo lo que necesita para crear nuestro CLI desde cero.
 </img-caption>
 <p>Entre otras cosas, oclif también nos da la opción de añadir su propia configuración de eslint. En mi caso la incluí, ya que literalmente tienen su propio plugin de eslint, que se basa en <code>@typescript-eslint/eslint-recommended</code> y <code>@typescript-eslint/recommended</code>.</p>
@@ -315,7 +315,7 @@
 <p>En mi caso lo que hice fue crear un proyecto con el generador e ir copiando todos los archivos y configuración necesarios. No es que fuera muy tedioso, pero no es como otros generadores con los que he trabajado que se adaptan al proyecto. Un saludo desde aquí al equipo de <a href="https://storybook.js.org" target="_blank" rel="noopener">Storybook</a> por lo fácil que hacen poder integrarlo.</p>
 <p>Volviendo al proyecto que te genera oclif, el proyecto viene preparado para que puedas ejecutar directamente el comando sin tener que hacer build. Hasta ahora tenía que hacer sí o sí un <a href="https://docs.npmjs.com/cli/v7/commands/npm-link" target="_blank" rel="noopener">npm link</a> para que me lanzara el build de TypeScript y así poder probar el CLI en mi terminal. Con el boilerplate de oclif contemplan que puedas estar en desarrollo y quieres probar el CLI, lo cual es lógico. Con esto me ahorro tener que estar haciendo el build cada vez que quiero hacer una pequeña prueba directamente en terminal al margen de mi suite de test.</p>
 <p>Sin duda oclif mola, pero <a href="https://github.com/oclif/cli-ux" target="_blank" rel="noopener">cli-ux</a> mola muchísimo. Es un paquete hecho por el mismo equipo de oclif que facilita mucho el poder hacer un CLI bonito e interactivo. Lo mejor de todo es que se puede instalar por separado, ya que no es algo exclusivo de oclif. Entre otras cosas tienes spinners, barras de progreso, prompt o poder renderizar datos en una tabla. Todo esto en tu terminal.</p>
-<img-caption src="/assets/images/blog/2021/oclif/cli-ux-spinner.gif"  alt="Ejemplo de como se ve el spinner de cli-ux">
+<img-caption src="/assets/blog/2021/oclif/cli-ux-spinner.gif"  alt="Ejemplo de como se ve el spinner de cli-ux">
   Un spinner en tu terminal gracias a cli-ux. (Imagen sacada de la documentación de cli-ux)
 </img-caption>
 <p>Desde mi experiencia añadiendo oclif y <a href="https://github.com/oclif/cli-ux" target="_blank" rel="noopener">cli-ux</a> a mi proyecto recomiendo completamente usarlo si necesitas hacerte un CLI. La experiencia de desarrollo es buena y el resultado que te da también lo es. Sin duda será el framework que use de ahora en adelante cuando quiera hacerme un CLI.</p>
@@ -325,10 +325,10 @@
     <flipable-image class="wzsx78kcv"><div class="flipable-image">
   <div class="flip-container">
     <div class="flip-front">
-      <img src="/assets/images/author.jpg" alt="Ulises Santana">
+      <img src="/assets/about/author.jpg" alt="Ulises Santana">
     </div>
     <div class="flip-back no-print">
-      <img src="/assets/logo.png" alt="Ulises Santana">
+      <img src="/assets/images/logo.png" alt="Ulises Santana">
     </div>
   </div>
 </div>
@@ -461,7 +461,7 @@
             <a href="/blog/2021/corepack/">
               <article class="post-card-minimal">
                 <div class="cover">
-                  <object data="/assets/images/blog/2021/corepack/cover.png" title="Corepack: el puente entre gestores de paquetes para Node.js" type="image/png">
+                  <object data="/assets/blog/2021/corepack/cover.png" title="Corepack: el puente entre gestores de paquetes para Node.js" type="image/png">
                     <img src="/assets/images/fallback.png" title="Corepack: el puente entre gestores de paquetes para Node.js">
                   </object>
                 </div>
@@ -500,7 +500,7 @@
             <a href="/blog/2022/por-que-no-usar-jest/">
               <article class="post-card-minimal">
                 <div class="cover">
-                  <object data="/assets/images/blog/2022/por-que-no-usar-jest/cover.png" title="Por qué no usar Jest" type="image/png">
+                  <object data="/assets/blog/2022/por-que-no-usar-jest/cover.png" title="Por qué no usar Jest" type="image/png">
                     <img src="/assets/images/fallback.png" title="Por qué no usar Jest">
                   </object>
                 </div>
@@ -539,7 +539,7 @@
             <a href="/blog/2022/como-pase-un-proceso-en-nodejs-de-5-horas-a-5-minutos/">
               <article class="post-card-minimal">
                 <div class="cover">
-                  <object data="/assets/images/blog/2022/como-pase-un-proceso-en-nodejs-de-5-horas-a-5-minutos/cover.png" title="Cómo pasé un proceso en Node.js de 5 horas a 5 minutos" type="image/png">
+                  <object data="/assets/blog/2022/como-pase-un-proceso-en-nodejs-de-5-horas-a-5-minutos/cover.png" title="Cómo pasé un proceso en Node.js de 5 horas a 5 minutos" type="image/png">
                     <img src="/assets/images/fallback.png" title="Cómo pasé un proceso en Node.js de 5 horas a 5 minutos">
                   </object>
                 </div>

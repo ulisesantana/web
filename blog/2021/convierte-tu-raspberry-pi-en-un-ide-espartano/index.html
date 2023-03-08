@@ -7,7 +7,7 @@
   <title>Cómo convertir tu Raspberry Pi en un entorno de desarrollo espartano | Ulises Santana</title>
 
 
-  <link rel="icon" type="image/x-icon" href="/assets/logo.png">
+  <link rel="icon" type="image/x-icon" href="/assets/images/favicon.png">
 
 <meta property="og:type" content="article">
 <meta name="theme-color" content="#F7E018">
@@ -15,13 +15,13 @@
 <meta property="og:title" content="Cómo convertir tu Raspberry Pi en un entorno de desarrollo espartano">
 <meta name="description" property="og:description" content="Tu Raspberry Pi puede ser un entorno de desarrollo muy interesante para llevar encima cuando viajas. En este post explico cómo lo he hecho con la mía.">
 <meta property="og:site_name" content="Ulises Santana">
-<meta property="og:image" content="/assets/images/author.png" ">
+<meta property="og:image" content="/assets/images/logo.png" ">
 
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@ulisesantana">
 <meta name="twitter:title" content="Cómo convertir tu Raspberry Pi en un entorno de desarrollo espartano">
 <meta name="twitter:description" content="Tu Raspberry Pi puede ser un entorno de desarrollo muy interesante para llevar encima cuando viajas. En este post explico cómo lo he hecho con la mía.">
-<meta name="twitter:image" content="/assets/images/author.png">
+<meta name="twitter:image" content="/assets/images/logo.png">
 
 
   <link rel="canonical" href="https://ulisesantana.dev/blog/2021/convierte-tu-raspberry-pi-en-un-ide-espartano/">
@@ -277,7 +277,7 @@
 </site-header>
 <main><article class="wyy1elgja">
   <figure class="wyy1elgja">
-    <object data="/assets/images/blog/2021/convierte-tu-raspberry-pi-en-un-ide-espartano/cover.png" title="Cómo convertir tu Raspberry Pi en un entorno de desarrollo espartano" type="image/png">
+    <object data="/assets/blog/2021/convierte-tu-raspberry-pi-en-un-ide-espartano/cover.png" title="Cómo convertir tu Raspberry Pi en un entorno de desarrollo espartano" type="image/png">
   <img src="/assets/images/fallback.png" title="Cómo convertir tu Raspberry Pi en un entorno de desarrollo espartano">
 </object>
     
@@ -356,7 +356,7 @@ Pues <a href="https://starship.rs/es-ES/" target="_blank" rel="noopener">Starshi
 <p>Y después añadir <code>eval &quot;$(starship init zsh)&quot;</code> a tu .zshrc para poder arrancar Starship cada vez que abras una terminal:</p>
 <pre class="language-shell"><code class="language-shell"><span class="token builtin class-name">echo</span> <span class="token string">'eval "$(starship init zsh)"'</span> <span class="token operator">>></span> <span class="token environment constant">$HOME</span>/.zshrc</code></pre>
 <p>Así es como luce Starship en mi Raspberry:</p>
-<img-caption src="/assets/images/blog/2021/convierte-tu-raspberry-pi-en-un-ide-espartano/starship.png" alt="Como se ve Starship en mi Raspberry Pi">
+<img-caption src="/assets/blog/2021/convierte-tu-raspberry-pi-en-un-ide-espartano/starship.png" alt="Como se ve Starship en mi Raspberry Pi">
 Como se ve Starship en mi Raspberry Pi
 </img-caption>
 <p>A continuación te comparto la configuración que tengo para hacer que se vea de esta manera. De todos modos, siempre
@@ -416,7 +416,7 @@ partir de ahí simplemente es crear un fichero de configuración y lanzar el com
 <pre class="language-shell"><code class="language-shell"><span class="token comment"># Instalar vim-plug</span><br><span class="token function">curl</span> <span class="token parameter variable">-fLo</span> <span class="token environment constant">$HOME</span>/.local/share/nvim/site/autoload/plug.vim --create-dirs <span class="token punctuation">\</span><br>       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim<br><span class="token comment"># Crear carpeta de configuración de Neovim</span><br><span class="token function">mkdir</span> <span class="token parameter variable">-p</span> <span class="token environment constant">$HOME</span>/.config/nvim<br><span class="token comment"># Copiar mi configuración para Neovim desde mi gist en Github</span><br><span class="token function">curl</span> https://gist.githubusercontent.com/ulisesantana/5f13880a18541459ccd90ef38d9e9fbe/raw/3e87c92b116b28a5be604dbea9dd054bc29e5987/init.vim <span class="token operator">></span> <span class="token environment constant">$HOME</span>/.config/nvim/init.vim<br><span class="token comment"># Instalar plugins</span><br>nvim +PlugInstall</code></pre>
 <p>Si has hecho todo esto correctamente al abrir un fichero con el comando <code>nvim</code> deberías ver algo parecido a la terminal
 de la izquierda:</p>
-<img-caption src="/assets/images/blog/2021/convierte-tu-raspberry-pi-en-un-ide-espartano/cover.png" alt="Como se ve programando con Neovim">
+<img-caption src="/assets/blog/2021/convierte-tu-raspberry-pi-en-un-ide-espartano/cover.png" alt="Como se ve programando con Neovim">
 Programando con Neovim
 </img-caption>
 <p>Con esto ya tendrás tu Raspberry Pi preparada como entorno de desarrollo en el podrás programar, escribir tus entradas
@@ -427,10 +427,10 @@ de blog o hacer <a href="https://kata-log.rocks" target="_blank" rel="noopener">
     <flipable-image class="wzsx78kcv"><div class="flipable-image">
   <div class="flip-container">
     <div class="flip-front">
-      <img src="/assets/images/author.jpg" alt="Ulises Santana">
+      <img src="/assets/about/author.jpg" alt="Ulises Santana">
     </div>
     <div class="flip-back no-print">
-      <img src="/assets/logo.png" alt="Ulises Santana">
+      <img src="/assets/images/logo.png" alt="Ulises Santana">
     </div>
   </div>
 </div>
@@ -563,7 +563,7 @@ de blog o hacer <a href="https://kata-log.rocks" target="_blank" rel="noopener">
             <a href="/blog/2021/raspberry-pi-en-tu-ipad/">
               <article class="post-card-minimal">
                 <div class="cover">
-                  <object data="/assets/images/blog/2021/raspberry-pi-en-tu-ipad/cover.png" title="Cómo convertir tu iPad o tablet en un entorno de desarrollo" type="image/png">
+                  <object data="/assets/blog/2021/raspberry-pi-en-tu-ipad/cover.png" title="Cómo convertir tu iPad o tablet en un entorno de desarrollo" type="image/png">
                     <img src="/assets/images/fallback.png" title="Cómo convertir tu iPad o tablet en un entorno de desarrollo">
                   </object>
                 </div>
