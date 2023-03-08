@@ -24,7 +24,6 @@ jobs:
       - Hexagonal Architecture
       - eXtreme Programming (XP)
       - Test-driven Development (TDD)
-      - Domain-driven Design (DDD)
       - React
       - PHP5
       - MySQL
