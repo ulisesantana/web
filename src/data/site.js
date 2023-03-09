@@ -1,6 +1,6 @@
 module.exports = {
   buildTime: new Date(),
-  url: 'https://ulisesantana.dev',
+  url: 'https://www.ulisesantana.dev',
   name: 'Ulises Santana',
   twitter: '@ulisesantana',
   author: {
