@@ -13,7 +13,7 @@ async function createPost (rl, fs) {
   const tags = await rl.question('Tags for your post (comma separated)\n')
   const slug = await rl.question('A friendly URL for your post\n')
   const post = generatePost({ title, description, tags })
-  const postPath = `src/pages/blog/${new Date().getFullYear()}/${slug}.md`
+  const postPath = `src/pages/blog/drafts/${slug}.md`
   const assetsPath = `src/assets/blog/${new Date().getFullYear()}/${slug}`
   await Promise.all([
     fs.writeFile(postPath, post),
