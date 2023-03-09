@@ -1,7 +1,7 @@
 ---
 title: Cómo pasé un proceso en Node.js de 5 horas a 5 minutos
 date: 2022-05-20
-description: En un proyecto me tuve que enfrentar con mi equipo a un proceso en Node.js que después de rehacerlo de cero para hacerlo más sostenible era mucho más ineficiente. Concretamente un 4400% más ineficiente. Sin embargo, después de reanalizar el flujo de datos para evitar bloqueos en el event loop conseguí que fuera más de 20% más rápido que el proceso original.
+description: En un proyecto me tuve que enfrentar con mi equipo a un proceso en Node.js que después de rehacerlo de cero para hacerlo más sostenible era un 4400% más ineficiente. En este post te explico como conseguimos que fuera más de 20% más rápido que el proceso original.
 tags: [node.js,performance]
 cover: /assets/blog/2022/como-pase-un-proceso-en-nodejs-de-5-horas-a-5-minutos/header.png
 draft: false
