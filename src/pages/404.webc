@@ -1,0 +1,30 @@
+---
+layout: base.webc
+imageAltEs: Vincent Vega en Pulp Fiction validando si drogarse en la habitación de su camello o no.
+imageAltEn: Vincent Vega in Pulp Fiction validating whether to get high in his drug dealer's room or not.
+---
+
+<div class="page-not-found">
+  <div class="message">
+    <div webc:if="this.locale === 'es'">
+      <h2>Página no encontrada</h2>
+      <p>Vaya, no sé como has llegado hasta aquí, pero no tengo nada para mostrar</p>
+    </div>
+  </div>
+  <img 
+    src="/assets/images/404.gif" 
+    :alt="this.locale === 'es' ? this.imageAltEs : this.imageAltEn"
+  />
+  <div class="cta">
+    <a href="/" webc:if="this.locale === 'es'">
+      <button>
+        Volver a la página principal
+      </button>
+    </a>
+    <a href="/en" webc:if="this.locale !== 'es'">
+      <button>
+        Go back to the home page
+      </button>
+    </a>
+  </div>
+</div>
