@@ -7,6 +7,11 @@ cover: /assets/blog/2022/como-pase-un-proceso-en-nodejs-de-5-horas-a-5-minutos/h
 draft: false
 ---
 
+<youtube-video 
+  video-id="V4sXNlzJIy8"
+  video-caption="Esta entrada fue originalmente una charla que di en JSDay Canarias 2022">
+</youtube-video>
+
 ## El contexto
 
 Esta historia comienza con un equipo de 5 personas, del cual yo era parte desde hacía casi un año y las otras 4 se habían incorporado en los últimos 3 meses. En este equipo mi rol era el de Senior Node.js Developer y era el único que tenía experiencia previa trabajando con Node.js. Aparte había otra persona con experiencia con JavaScript y Dart, lo cual hacía que le resultara fácil adaptarse a los proyectos en TypeScript, que es el lenguaje en el que estaban todos los proyectos. Sin embargo, las otras tres personas del equipo tenían muy poca experiencia previa en JavaScript.
