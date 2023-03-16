@@ -37,4 +37,32 @@ dynamicPermalink: false
   </script>
 </div>
 
+<style>
+.page-not-found img {
+  display: block;
+  margin: 0 auto;
+}
+
+.page-not-found .cta {
+  align-content: center;
+  display: flex;
+  justify-content:center;
+}
+
+.page-not-found .cta button {
+  align-items: center;
+  display: flex;
+  background-color: var(--accent-color);
+  border: none;
+  border-radius: var(--border-radius);
+  color: var(--bg-color);
+  cursor: pointer;
+  font-size: var(--font-size-3);
+  font-weight: bold;
+  justify-content: center;
+  margin: 2rem 0 0;
+  padding: 8px;
+  text-align: center;
+}
+</style>
 
