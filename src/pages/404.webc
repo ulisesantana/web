@@ -19,11 +19,6 @@ dynamicPermalink: false
         Volver a la página principal
       </button>
     </a>
-    <a href="/en" webc:if="this.locale !== 'es'">
-      <button>
-        Go back to the home page
-      </button>
-    </a>
   </div>
   <script webc:keep>
     if(window.location.pathname.startsWith('/en/')) {
