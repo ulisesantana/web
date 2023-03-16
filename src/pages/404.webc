@@ -2,6 +2,8 @@
 layout: base.webc
 imageAltEs: Vincent Vega en Pulp Fiction validando si drogarse en la habitación de su camello o no.
 imageAltEn: Vincent Vega in Pulp Fiction validating whether to get high in his drug dealer's room or not.
+permalink: "404.html"
+dynamicPermalink: false
 ---
 
 <div class="page-not-found">
@@ -27,4 +29,10 @@ imageAltEn: Vincent Vega in Pulp Fiction validating whether to get high in his d
       </button>
     </a>
   </div>
+  <script webc:keep>
+    console.log(window.location)
+    console.log('window.location')
+  </script>
 </div>
+
+

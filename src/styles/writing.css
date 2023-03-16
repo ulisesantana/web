@@ -31,6 +31,7 @@ h6:not([custom]) {
   border-left: solid var(--link-color) 4px;
   padding-left: 4px;
   width: fit-content;
+  width: -moz-fit-content;
 }
 
 strong {

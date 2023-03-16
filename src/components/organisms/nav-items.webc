@@ -137,6 +137,7 @@
       background: transparent;
       flex-direction: row;
       position: relative;
+      width: -moz-fit-content;
       width: fit-content;
     }
 

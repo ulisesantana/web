@@ -3,15 +3,22 @@
   <social-media></social-media>
   <div class="bottom-text">
     <span class="thanks">
-      <span webc:if="this.locale === 'es'">
-        Hecho con <like-icon></like-icon> y
-      </span>
-      <span webc:if="this.locale !== 'es'">
-        Made with <like-icon></like-icon> and
-      </span>
-      <a href="https://www.11ty.dev" >
-        <eleventy-icon></eleventy-icon>
-      </a>
+      <div webc:if="this.locale === 'es'" webc:nokeep>
+        <span>
+          Hecho con <like-icon></like-icon> y
+        </span>
+        <a href="https://www.11ty.dev" title="Página oficial de 11ty" >
+          <eleventy-icon></eleventy-icon>
+        </a>
+      </div>
+      <div webc:if="this.locale !== 'es'" webc:nokeep>
+        <span>
+          Made with <like-icon></like-icon> and
+        </span>
+        <a href="https://www.11ty.dev" title="11ty website" >
+          <eleventy-icon></eleventy-icon>
+        </a>
+      </div>
     </span>
     <small @raw="this.footer.copyright"></small>
   </div>
