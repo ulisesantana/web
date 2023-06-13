@@ -1,6 +1,28 @@
 jobs:
+  - employer: Triditive
+    location: Meres, Asturias, Spain (Remote)
+    position: Senior Programmer
+    from: 04/2023
+    to:  now
+    description:
+      - Triditive is a startup focused on helping organizations to automate and 
+        manage the entire additive manufacturing workflow on a single platform. 
+        This is translated to maintain and create software related with handling 
+        3D Printers jobs and projects, among other things.
+      - It's flagship is an automated 3D printer designed for printing 24/7 with 
+        minimal human interaction. It's like an automated production line.
+    skills:
+      - Python
+      - JavaScript
+      - Docker
+      - Additive Manufacturing
+      - Github
+      - Vue
+      - jQuery
+      - Flask
+      - Async communication
   - employer: Lean Mind
-    location: San Cristóbal de la La Laguna, Spain (Remote)
+    location: San Cristóbal de La Laguna, Santa Cruz de Tenerife, Spain (Remote)
     position: Full Stack Developer
     from: 03/2020
     to:  10/2022
@@ -35,7 +57,7 @@ jobs:
       - Technical documentation
       - Async communication
   - employer: Kentech
-    location: Las Palmas de Gran Canaria, Spain
+    location: Las Palmas de Gran Canaria, Las Palmas, Spain
     position: Full Stack Developer
     from: 08/2018
     to: 03/2020
@@ -72,7 +94,7 @@ jobs:
       - NestJS
       - Technical Documentation
   - employer: Kentech
-    location: Las Palmas de Gran Canaria, Spain
+    location: Las Palmas de Gran Canaria, Las Palmas, Spain
     position: Back End Developer
     from: 06/2017
     to: 07/2018
@@ -104,7 +126,7 @@ jobs:
       - WordPress Development
       - Technical Documentation
   - employer: Kentech
-    location: Las Palmas de Gran Canaria, Spain
+    location: Las Palmas de Gran Canaria, Las Palmas, Spain
     position: Web Developer Intern
     from: 03/2017
     to: 05/2017
@@ -157,7 +179,7 @@ jobs:
       - Project Management
 
   - employer: Mokaps Studio
-    location: Las Palmas de Gran Canaria, Spain (Partial remote)
+    location: Las Palmas de Gran Canaria, Las Palmas, Spain (Partial remote)
     position: Social Media Manager / Co-founder
     from: 02/2013
     to: 06/2015
