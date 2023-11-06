@@ -1,10 +1,10 @@
 <!DOCTYPE html><!doctype html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Pamplona Software Crafters 2022 | Ulises Santana</title>
+  <title>oclif: el framework para hacer CLIs en Node.js y TypeScript | Ulises Santana</title>
 
 
   <link rel="icon" type="image/x-icon" href="/assets/images/favicon.png">
@@ -12,19 +12,19 @@
 <meta property="og:type" content="article">
 <meta name="theme-color" content="#F7E018">
 <meta name="author" content="Ulises Santana">
-<meta property="og:title" content="Pamplona Software Crafters 2022">
-<meta name="description" property="og:description" content="El fin de semana pasado tuve la oportunidad de asistir a la Pamplona Software Crafters. Déjame compartir contigo esta experiencia.">
+<meta property="og:title" content="oclif: el framework para hacer CLIs en Node.js y TypeScript">
+<meta name="description" property="og:description" content="oclif se define como el framework abierto para CLIs en Node.js. Te cuento sus bondades y por qué deberías planteártelo para tu próximo CLI.">
 <meta property="og:site_name" content="Ulises Santana">
 <meta property="og:image" content="/assets/images/logo.png" ">
 
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@ulisesantana">
-<meta name="twitter:title" content="Pamplona Software Crafters 2022">
-<meta name="twitter:description" content="El fin de semana pasado tuve la oportunidad de asistir a la Pamplona Software Crafters. Déjame compartir contigo esta experiencia.">
+<meta name="twitter:title" content="oclif: el framework para hacer CLIs en Node.js y TypeScript">
+<meta name="twitter:description" content="oclif se define como el framework abierto para CLIs en Node.js. Te cuento sus bondades y por qué deberías planteártelo para tu próximo CLI.">
 <meta name="twitter:image" content="/assets/images/logo.png">
 
 
-  <link rel="canonical" href="https://www.ulisesantana.dev/blog/2022/pamplona-software-crafters-2022/">
+  <link rel="canonical" href="https://www.ulisesantana.dev/es/blog/2021/oclif/">
 
   <meta name="generator" content="Eleventy v2.0.1">
   
@@ -225,23 +225,23 @@
 
 <body class="theme-dark">
   <site-header class="wodum24hl"><header>
-  <a class="isotype" href="/">ulisesantana.dev</a>
   
+  <a class="isotype" href="/es">ulisesantana.dev</a>
   <nav-items class="wqra4zvc8"><nav class="no-print">
   <ul class="nav-items">
     <li>
-        <a href="/es/">
-        🇪🇸
-        </a>
-      </li>
-<li>
         <a href="/">
-        ABOUT ME
+        🇬🇧
         </a>
       </li>
 <li>
-        <a href="/blog/">
+        <a href="/es/blog/">
         BLOG
+        </a>
+      </li>
+<li>
+        <a href="/es/">
+        SOBRE MÍ
         </a>
       </li>
     <li><theme-switch class="wk09v1fvl"><div class="theme-switch">
@@ -277,35 +277,23 @@
 </site-header>
 <main><article class="wyy1elgja">
   <figure class="wyy1elgja">
-    <object data="/assets/es/blog/2022/pamplona-software-crafters-2022/cover.png" title="Pamplona Software Crafters 2022" type="image/png">
-  <img src="/assets/images/fallback.png" title="Pamplona Software Crafters 2022">
+    <object data="/assets/es/blog/2021/oclif/cover.png" title="oclif: el framework para hacer CLIs en Node.js y TypeScript" type="image/png">
+  <img src="/assets/images/fallback.png" title="oclif: el framework para hacer CLIs en Node.js y TypeScript">
 </object>
     
   </figure>
   <div class="head wyy1elgja">
-    <h1 custom class="wyy1elgja">Pamplona Software Crafters 2022</h1>
-    <time datetime="Friday, June 24, 2022" class="wyy1elgja">Friday, June 24, 2022</time>
-    <site-tags url="/blog/2022/pamplona-software-crafters-2022/"><ul class="tag-list">
+    <h1 custom class="wyy1elgja">oclif: el framework para hacer CLIs en Node.js y TypeScript</h1>
+    <time datetime="domingo, 3 de octubre de 2021" class="wyy1elgja">domingo, 3 de octubre de 2021</time>
+    <site-tags url="/es/blog/2021/oclif/"><ul class="tag-list">
     <li>
-            <site-tag><span class="tag">#software</span>
+            <site-tag><span class="tag">#node.js</span>
 
 </site-tag>
           </li>
         
           <li>
-            <site-tag><span class="tag">#evento</span>
-
-</site-tag>
-          </li>
-        
-          <li>
-            <site-tag><span class="tag">#software craftsmanship</span>
-
-</site-tag>
-          </li>
-        
-          <li>
-            <site-tag><span class="tag">#comunidad</span>
+            <site-tag><span class="tag">#cli</span>
 
 </site-tag>
           </li>
@@ -314,49 +302,26 @@
 
 </site-tags>
   </div>
-  <article class="wyy1elgja"><p><youtube-video video-id="iJp7iqjWlr8"></youtube-video></p>
-<p>El fin de semana pasado tuve la suerte de asistir al evento <a href="https://pamplonaswcraft.com" target="_blank" rel="noopener">Pamplona Software Crafters</a>. Sí, mucha suerte porque conseguir entrada fue una odisea. Las más de 150 entradas se agotaron en cuestión de segundos, <strong>SEGUNDOS</strong>. En <a href="https://leanmind.es/es/" target="_blank" rel="noopener">Lean Mind</a> éramos muchos los que queríamos ir, pero solo 5 conseguimos entrada. En esta edición la Pamplona Software Crafters se celebró dentro del <a href="https://almahotels.com/pamplona" target="_blank" rel="noopener">Hotel Alma de Pamplona</a>. Todas las habitaciones estaban ocupadas por asistentes del evento. Esto hacía que no tuvieras que preocuparte de otra cosa que no fuera disfrutar del evento. Además, el Alma es un hotelazo en el que no echabas nada en falta y era muy tranquilo. Pese a que no estás muy lejos del centro la sensación de estar aislado del mundo se hacía notar.</p>
-<p>Este era el escenario perfecto para la Pamplona Software Crafters, ya que es un evento en el que al final lo que importa son las personas que asisten al evento y cómo interaccionan entre ellas. Esto lo digo porque aunque el evento eran 2 días non-stop, solo había 8 charlas y 4 talleres fijos. El resto del evento estaba formado por espacios dedicados a Open Space.</p>
-<h2>¿Qué es un Open Space?</h2>
-<p>Explicado brevemente, es un espacio en el que los propios asistentes del evento definen de qué se va a hablar y cómo va a ser el evento. Pueden ser varios formatos, desde charlas a debates o talleres. Sin embargo, lo más atractivo suelen ser los debates o cualquier otro formato que no sea unidireccional. Como comentaba antes, lo importante es la interacción entre las personas.</p>
-<p>Estos son los pasos para montar un Open Space:</p>
-<ol>
-<li><strong>Propuestas</strong>: Quien quiera propone una o varias sesiones para ese día. Todo vale, puedes hasta pedir que alguien te cuente su experiencia sobre lo que sea. He visto sesiones desde dar paseos por la playa a conversaciones en la piscina, pasando por cómo hacer juegos de mesa.</li>
-<li><strong>Votación</strong>: Cada participante del Open Space tiene 3 votos para administrarlos libremente entre todas las sesiones.</li>
-<li><strong>Organizar el día</strong>: Las sesiones más votadas son las seleccionadas para ese día y se organizan en base a los espacios disponibles y los slots de tiempo que necesiten.</li>
-</ol>
-<p>Al final de estos pasos queda algo tal que así:</p>
-<img-caption src="/assets/es/blog/2022/pamplona-software-crafters-2022/pamplona-open-space.jpg" alt="Tablero con las diferentes sesiones para el segundo día de la Pamplona Software Crafters 2022">
-En este tablero podemos ver las diferentes sesiones seleccionadas con los puntos asignados y dónde y cuándo van a ocurrir.
+  <article class="wyy1elgja"><p>Tengo un pequeño proyecto que se trata de un CLI (<em>Command Line Interface</em> o en otras palabras una aplicación de terminal) con el que puedes generar informes sobre las contribuciones (commits) en un proyecto git. Hasta ahora había usado <a href="https://www.npmjs.com/package/stdio" target="_blank" rel="noopener">stdio</a>, que para algo simple y pequeño está muy bien. Sin embargo, quería mejorar la <a href="https://es.wikipedia.org/wiki/Experiencia_de_usuario" target="_blank" rel="noopener">UX</a> del CLI y para esto stdio se me quedaba corto. Por otro lado, hacía tiempo que había leído sobre <a href="https://oclif.io" target="_blank" rel="noopener">oclif</a> y quería probarlo.</p>
+<p>¿Nunca has oído hablar de oclif? Pues oclif es un framework para hacer CLI en Node.js. Está muy bien documentado y por defecto funciona en TypeScript, lo cual para mí es puro amor ❤️. Tiene su propio CLI para generar CLIs, además de otras utilidades como por ejemplo un <a href="https://github.com/oclif/example-multi-ts/blob/master/test/commands/hello.test.ts" target="_blank" rel="noopener">test runner</a> para poder hacer test <em>end to end</em> con tu comando y comprobar que lo que sale por la terminal es lo que esperas. Por último, está hecho por <a href="https://blog.heroku.com/open-cli-framework" target="_blank" rel="noopener">Heroku</a>.</p>
+<p>Si sólo vas a tener un comando puede parecer un poco <em>overkill</em> usar oclif en vez de stdio. Sin embargo, merece la pena por el simple hecho de que oclif es bastante más extensible. No sólo por si añades más comandos, sino que oclif también tiene plugins, que aunque ahora mismo sean pocos, puedes crear tus propios plugins y reusarlos entre proyectos. Por otro lado, me compró el hecho de que te parsee automáticamente las opciones que declaras para el CLI. Por ejemplo, en mi CLI hay una opción que es el número de semanas que quieres que cubra el informe; con stdio tenía que validarlo y pasarlo a <code>Number</code>, ya que parsea todo lo que viene de la línea de comandos a string. Sin embargo, oclif ya valida y parsea, lo cual es maravilloso.</p>
+<p>Un aspecto que me pareció bastante interesante es que oclif está diseñado para hacer CLIs de un sólo comando o multicomando (un ejemplo de CLI multicomando sería git o npm), lo cual facilita mucho el trabajo para hacer aplicaciones enteras para terminal. A mí ya me ha dado todo el hype y no tardaré mucho en hacerme un port de <a href="https://toggl.com/track/" target="_blank" rel="noopener">toggl</a> para terminal.</p>
+<p>Volviendo a oclif y el proyecto en el que lo estaba incluyendo, en mi caso usé el generador para crear un CLI con único comando. Cuando creamos un proyecto con el generador de oclif se nos genera todo lo necesario para comenzar con nuestro CLI.</p>
+<img-caption src="/assets/es/blog/2021/oclif/oclif-single-cli.png"  alt="Captura de pantalla de cómo genera oclif un cli de un sólo comando">
+  oclif nos pregunta todo lo que necesita para crear nuestro CLI desde cero.
 </img-caption>
-<p>Aparte de estos pasos para montar el Open Space, está la <strong>Ley de los dos Pies</strong> seguida de 4 principios para que el Open Space pueda ser llevado a cabo satisfactoriamente. La Ley de los dos Pies nos dice que si en algún lugar o momento sientes que no te está aportando o no estás aportando, puedes irte a otro lugar sin problemas. Esto choca mucho cuando venimos de los congresos tradicionales en los que está mal visto que alguien entre o salga una vez la charla/taller ha comenzado. Por último, los 4 principios que se siguen en un Open Space son:</p>
-<ol>
-<li><strong>Cualquiera que viene es la persona adecuada</strong>: Cualquier persona es la correcta para aprender y compartir.</li>
-<li><strong>Cualquier cosa que pudo suceder es lo único que podía haber pasado</strong>: Cero expectativas, disfruta del momento en el que estás y aprende de él.</li>
-<li><strong>Cualquier momento en el que empieza es el adecuado</strong>: Puede pasar que existan retrasos o que ciertas conversaciones empiecen mientras se espera para entrar al espacio. Si no te ajustas al horario no es el fin del mundo.</li>
-<li><strong>Cuando se acaba, se acaba</strong>: Si el debate, charla o actividad no da más de sí se puede cortar y pasar a otra cosa. No importa que no hayamos ocupado todo el tiempo destinado.</li>
-</ol>
-<p>Si quieres ahondar más sobre qué es un Open Space, te recomiendo que escuches este podcast de Carlos Blé con Adrian Perreau titulado <a href="https://podcast.carlosble.com/podcast/e35-que-es-un-open-space/" target="_blank" rel="noopener"><em>¿Qué es un Open Space?</em></a>.</p>
-<h2>Mi experiencia en la Pamplona Software Crafters 2022</h2>
-<p>Ahora que tenemos más o menos claro qué es un Open Space quiero hablar de cómo fue mi experiencia en la Pamplona Software Crafters 2022. Puedo resumirlo en una palabra: <strong>INCREÍBLE</strong>. Me permitió encontrarme en persona a personas que hasta ahora solo conocía a través de una webcam. También tuve la oportunidad de volver a dar mi charla sobre <a href="https://www.youtube.com/watch?v=V4sXNlzJIy8" target="_blank" rel="noopener">cómo pasé un proceso en Node.js de 5 horas a 5 minutos</a> en un ambiente más tranquilo. Los asistentes preguntaban sobre la marcha haciendo que no fuera un monólogo, sino algo más conversacional. Aparte, fue un fin de semana en el que conocí a personas maravillosas (un saludo desde aquí a toda esa gente bonita con la que tuve la oportunidad de hablar) y que me permitió reafirmar que el Open Space es mi formato favorito.</p>
-<p>Por un lado, por las sesiones que ofrece la comunidad. No todo es técnico, había bastantes sesiones que tenían más que ver con las personas que con los profesionales. Tenían un sentido más filosófico que técnico. Sinceramente, me enamoró. Algunas de ellas me recordaban a lo que decía en <a href="/blog/2021/la-ansiedad-de-evolucionar-como-profesional-del-software">mi artículo sobre la ansiedad en la industria</a>. Otras hablaban sobre los privilegios que tenemos en la industria y cuál es nuestra responsabilidad social.</p>
-<p>Por otro lado, por lo que pasa fuera de las salas destinadas al Open Space. Es maravilloso. Durante el evento siempre podías conseguir café, agua, cerveza, refresco o comida en cualquier momento. Además, había mucho espacio al margen del evento para sentarte al aire libre para hablar con otras personas.</p>
-<p>Gracias a esto era muy normal ver siempre gente al aire libre o cerca de la zona de comidas y bebidas hablando en pequeños grupos. Podías unirte libremente si no querías ir a ninguna de las sesiones que estaban ocurriendo en ese momento. O simplemente esa charla que estaba pasando ahí en ese momento te parecía más interesante.</p>
-<p>También comentar que la organización del evento me pareció espectacular. Aparte que de por sí el evento estaba bien montado, al final del primer día tuvimos una retrospectiva en la que trasladábamos a la organización cosas que nos habían gustado y cosas que se podían mejorar. Al día siguiente todas las mejoras que se podían aplicar fueron aplicadas. Sin duda mostraron de qué va el Agile.</p>
-<p>Por último, tuve la oportunidad de conocer a más personas de la comunidad de <em>Software Crafters</em>. Este tipo de eventos son los que permiten a la comunidad definirse y asentarse, además de compartir aprendizaje, ya sea profesional o vital.</p>
-<h2>Referencias que me llevo de la Pamplona Software Crafters 2022</h2>
-<p>A lo largo del evento diferentes personas recomendaron varios libros. Estos son los que tengo apuntados y me quiero leer en algún momento:</p>
-<ul>
-<li><a href="https://www.goodreads.com/book/show/61036049-c-digo-sostenible" target="_blank" rel="noopener">Código Sostenible</a> de Carlos Blé.</li>
-<li><a href="https://www.goodreads.com/book/show/40973334-7-habitos-de-la-gente-altamente-efectiva-los-b" target="_blank" rel="noopener">Los 7 Hábitos De La Gente Altamente Efectiva</a> de Stephen R. Covey.</li>
-<li><a href="https://www.goodreads.com/book/show/16208052-stop-starting-start-finishing" target="_blank" rel="noopener">Stop Starting, Start Finishing!</a> de Arne Rock.</li>
-<li><a href="https://www.goodreads.com/book/show/17927630-la-abolici-n-del-trabajo" target="_blank" rel="noopener">La abolición del trabajo</a> de Bob Black.</li>
-<li><a href="https://www.goodreads.com/book/show/49656893-al-menos-tienes-trabajo" target="_blank" rel="noopener">Al menos tienes trabajo</a> de Naiara Puertas.</li>
-<li><a href="https://www.goodreads.com/book/show/7304853-la-f-brica-de-la-infelicidad" target="_blank" rel="noopener">La fábrica de la infelicidad</a> de Franco Berardi.</li>
-</ul>
+<p>Entre otras cosas, oclif también nos da la opción de añadir su propia configuración de eslint. En mi caso la incluí, ya que literalmente tienen su propio plugin de eslint, que se basa en <code>@typescript-eslint/eslint-recommended</code> y <code>@typescript-eslint/recommended</code>.</p>
+<p>Es importante tener en cuenta que <strong>el generador de boilerplate de oclif sólo funciona para proyectos nuevos</strong>. Si quieres añadirlo a un proyecto existente no hay manera de hacerlo desde su CLI. En el fondo es lo mismo que te pasaría con cualquier framework de frontend; si tienes una aplicación en jQuery y la quieres pasar a React vas a tener que hacer un proyecto de cero y traerte todo lo que tenías en el proyecto antiguo.</p>
+<p>En mi caso lo que hice fue crear un proyecto con el generador e ir copiando todos los archivos y configuración necesarios. No es que fuera muy tedioso, pero no es como otros generadores con los que he trabajado que se adaptan al proyecto. Un saludo desde aquí al equipo de <a href="https://storybook.js.org" target="_blank" rel="noopener">Storybook</a> por lo fácil que hacen poder integrarlo.</p>
+<p>Volviendo al proyecto que te genera oclif, el proyecto viene preparado para que puedas ejecutar directamente el comando sin tener que hacer build. Hasta ahora tenía que hacer sí o sí un <a href="https://docs.npmjs.com/cli/v7/commands/npm-link" target="_blank" rel="noopener">npm link</a> para que me lanzara el build de TypeScript y así poder probar el CLI en mi terminal. Con el boilerplate de oclif contemplan que puedas estar en desarrollo y quieres probar el CLI, lo cual es lógico. Con esto me ahorro tener que estar haciendo el build cada vez que quiero hacer una pequeña prueba directamente en terminal al margen de mi suite de test.</p>
+<p>Sin duda oclif mola, pero <a href="https://github.com/oclif/cli-ux" target="_blank" rel="noopener">cli-ux</a> mola muchísimo. Es un paquete hecho por el mismo equipo de oclif que facilita mucho el poder hacer un CLI bonito e interactivo. Lo mejor de todo es que se puede instalar por separado, ya que no es algo exclusivo de oclif. Entre otras cosas tienes spinners, barras de progreso, prompt o poder renderizar datos en una tabla. Todo esto en tu terminal.</p>
+<img-caption src="/assets/es/blog/2021/oclif/cli-ux-spinner.gif"  alt="Ejemplo de como se ve el spinner de cli-ux">
+  Un spinner en tu terminal gracias a cli-ux. (Imagen sacada de la documentación de cli-ux)
+</img-caption>
+<p>Desde mi experiencia añadiendo oclif y <a href="https://github.com/oclif/cli-ux" target="_blank" rel="noopener">cli-ux</a> a mi proyecto recomiendo completamente usarlo si necesitas hacerte un CLI. La experiencia de desarrollo es buena y el resultado que te da también lo es. Sin duda será el framework que use de ahora en adelante cuando quiera hacerme un CLI.</p>
 </article>
   <author-info class="ws3sp0wuz"><section class="author-info">
-  <a href="/en">
+  <a href="/">
     <flipable-image class="wzsx78kcv"><div class="flipable-image">
   <div class="flip-container">
     <div class="flip-front">
@@ -374,16 +339,16 @@ En este tablero podemos ver las diferentes sesiones seleccionadas con los puntos
   <div class="info">
     <h2 class="title" custom>
       
+        👋 Hola! Soy <b>Ulises Santana</b>
       
-        👋 Hi! I'm <b>Ulises Santana</b>
       
     </h2>
     <p class="description">
       
+        Me gano la vida como Full Stack Developer. 
+        JavaScript es mi lengua materna y la web mi patria.
+        Trasteo con tecnologías desde las Islas Canarias 🏝️
       
-        Full Stack Developer with JavaScript as mother tongue
-        and web as my home nation.
-        Based in the Canary Islands 🏝️
       
     </p>
     <social-media class="wcscm75lq"><div class="social-media">
@@ -487,8 +452,122 @@ En este tablero podemos ver las diferentes sesiones seleccionadas con los puntos
 </section>
 
 </author-info>
-  <related-posts url="/blog/2022/pamplona-software-crafters-2022/"><section class="related-posts">
-  
+  <related-posts url="/es/blog/2021/oclif/"><section class="related-posts">
+  <h3>Artículos relacionados</h3>
+      
+      <ul>
+      
+          <li>
+            <a href="/es/blog/2021/corepack/">
+              <article class="post-card-minimal">
+                <div class="cover">
+                  <object data="/assets/es/blog/2021/corepack/cover.png" title="Corepack: el puente entre gestores de paquetes para Node.js" type="image/png">
+                    <img src="/assets/images/fallback.png" title="Corepack: el puente entre gestores de paquetes para Node.js">
+                  </object>
+                </div>
+                <div class="content">
+                  <h4 custom>Corepack: el puente entre gestores de paquetes para Node.js</h4>
+                  <time datetime="viernes, 10 de septiembre de 2021">viernes, 10 de septiembre de 2021</time>
+                  <span class="excerpt">Node.js acaba de sacar Corepack como solución nativa para los diferentes gestores de paquetes que existen en el ecosistema de Node.js.</span>
+                  <site-tags url="/es/blog/2021/corepack/"><ul class="tag-list">
+    <li>
+            <site-tag><span class="tag">#node.js</span>
+
+</site-tag>
+          </li>
+        
+          <li>
+            <site-tag><span class="tag">#development</span>
+
+</site-tag>
+          </li>
+        
+          <li>
+            <site-tag><span class="tag">#npm</span>
+
+</site-tag>
+          </li>
+        
+</ul>
+
+</site-tags>
+                </div>
+              </article>
+            </a>
+          </li>
+        
+          <li>
+            <a href="/es/blog/2022/por-que-no-usar-jest/">
+              <article class="post-card-minimal">
+                <div class="cover">
+                  <object data="/assets/es/blog/2022/por-que-no-usar-jest/cover.png" title="Por qué no usar Jest" type="image/png">
+                    <img src="/assets/images/fallback.png" title="Por qué no usar Jest">
+                  </object>
+                </div>
+                <div class="content">
+                  <h4 custom>Por qué no usar Jest</h4>
+                  <time datetime="domingo, 9 de enero de 2022">domingo, 9 de enero de 2022</time>
+                  <span class="excerpt">Llevo años usando Jest para mis proyectos en Node.js, pero cada vez oigo más quejas por parte de la comunidad de Node.js sobre Jest y que no deberías usarlo.</span>
+                  <site-tags url="/es/blog/2022/por-que-no-usar-jest/"><ul class="tag-list">
+    <li>
+            <site-tag><span class="tag">#node.js</span>
+
+</site-tag>
+          </li>
+        
+          <li>
+            <site-tag><span class="tag">#testing</span>
+
+</site-tag>
+          </li>
+        
+          <li>
+            <site-tag><span class="tag">#jest</span>
+
+</site-tag>
+          </li>
+        
+</ul>
+
+</site-tags>
+                </div>
+              </article>
+            </a>
+          </li>
+        
+          <li>
+            <a href="/es/blog/2022/como-pase-un-proceso-en-nodejs-de-5-horas-a-5-minutos/">
+              <article class="post-card-minimal">
+                <div class="cover">
+                  <object data="/assets/es/blog/2022/como-pase-un-proceso-en-nodejs-de-5-horas-a-5-minutos/cover.png" title="Cómo pasé un proceso en Node.js de 5 horas a 5 minutos" type="image/png">
+                    <img src="/assets/images/fallback.png" title="Cómo pasé un proceso en Node.js de 5 horas a 5 minutos">
+                  </object>
+                </div>
+                <div class="content">
+                  <h4 custom>Cómo pasé un proceso en Node.js de 5 horas a 5 minutos</h4>
+                  <time datetime="viernes, 20 de mayo de 2022">viernes, 20 de mayo de 2022</time>
+                  <span class="excerpt">En un proyecto me tuve que enfrentar a un proceso en Node.js que después de rehacerlo de cero para hacerlo más sostenible era un 4400% más ineficiente. En este post te explico como conseguí que fuera más de 20% más rápido que el proceso original.</span>
+                  <site-tags url="/es/blog/2022/como-pase-un-proceso-en-nodejs-de-5-horas-a-5-minutos/"><ul class="tag-list">
+    <li>
+            <site-tag><span class="tag">#node.js</span>
+
+</site-tag>
+          </li>
+        
+          <li>
+            <site-tag><span class="tag">#performance</span>
+
+</site-tag>
+          </li>
+        
+</ul>
+
+</site-tags>
+                </div>
+              </article>
+            </a>
+          </li>
+        </ul>
 </section>
 
 </related-posts>
@@ -608,18 +687,18 @@ En este tablero podemos ver las diferentes sesiones seleccionadas con los puntos
   <div class="bottom-text">
     <span class="thanks">
       
-      
         <span>
-          Made with <svg version="1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" height="1em" width="1em">
+          Hecho con <svg version="1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" height="1em" width="1em">
   <path fill="#F44336" d="M34 9c-4.2 0-7.9 2.1-10 5.4C21.9 11.1 18.2 9 14 9 7.4 9 2 14.4 2 21c0 11.9 22 24 22 24s22-12 22-24c0-6.6-5.4-12-12-12z"></path>
-</svg> and
+</svg> y
         </span>
-        <a href="https://www.11ty.dev" title="11ty website" target="_blank" rel="noopener">
+        <a href="https://www.11ty.dev" title="Página oficial de 11ty" target="_blank" rel="noopener">
           <eleventy-icon class="wpsio4mfp"><svg viewBox="0 0 256 214" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid" height="1em" width="1em">
   <path d="M98.329 4.641c2.143 0 3.846 1.213 4.763 3.183.644 1.38.925 3.134.939 5.337v157.715c-.013 2.92-.318 5.202-.987 6.92-.927 2.386-2.696 3.926-5.11 3.966h-.095l-18.186-.023c-2.458 0-4.227-1.574-5.135-4.001-.639-1.706-.93-3.974-.942-6.885V39.145l-4.897 1.24-1.954.49-.571.14-.29.067-.136.028-.05.008-.026.003h-.027l-.003-.002-.001-.003v-.003l.004-.004.031-.03c.012-.012.017-.023-.002-.03l-.011-.004-.057.003c-2.063.077-3.78-1.026-4.719-2.917-.671-1.35-.959-3.076-.972-5.26V21.284c0-2.046.33-3.764 1.076-5.165.85-1.598 2.213-2.695 3.927-3.14l.103-.026.119-.028 31.446-8.093a7.014 7.014 0 0 1 1.478-.187l.147-.004h.138ZM150.842 0c2.253 0 4.048 1.263 5.034 3.344.712 1.505 1.03 3.442 1.043 5.878v46.473l.001.11h13.526c2.124 0 3.87 1.096 4.897 2.965l.048.09.047.09c.743 1.453 1.07 3.307 1.085 5.623v6.593c0 2.356-.328 4.24-1.098 5.712-1.003 1.917-2.75 3.05-4.88 3.084h-13.647v61.196l.004.476.005.47.008.463.005.23.014.566.017.555.021.546.025.535.01.212.023.418.026.41.027.406.03.398.015.196.033.389.017.191.018.19.037.376.04.368.02.182.043.359c.091.746.198 1.449.318 2.108l.04.218.03.154.058.288.059.28.03.139.061.271.063.264.032.13.065.254c.084.323.172.629.262.917l.078.244c.382 1.156.811 2.016 1.265 2.574.842 1.037 1.583 1.663 2.153 1.912l.173.071c.674.269 1.607.422 2.807.432h8.577c2.019 0 3.765.804 4.91 2.383.952 1.311 1.37 2.976 1.388 4.97l.001.14v7.139c0 2.207-.428 4.027-1.427 5.443-1.16 1.645-2.936 2.506-5 2.535h-.11l-12.116.023c-3.359 0-6.29-.236-8.84-.717-2.728-.515-5.501-1.647-8.35-3.381-2.967-1.806-5.4-4.283-7.292-7.404-1.84-3.032-3.277-7.123-4.36-12.284-1.056-5.025-1.595-10.88-1.614-17.546V79.962h-5.592c-2.107 0-3.85-1.068-4.883-2.907l-.048-.088-.048-.09c-.752-1.437-1.083-3.268-1.099-5.547v-6.595c0-2.391.326-4.299 1.086-5.785.996-1.948 2.745-3.108 4.891-3.143l.101-.001h5.591v-.182l2.148-46.374.012-.208c.152-2.397.54-4.284 1.25-5.733.984-2.01 2.671-3.27 4.823-3.309h12.013Zm100.03 55.762c2 0 3.553 1.183 4.356 3.01.544 1.239.772 2.79.772 4.725 0 .071 0 .143-.002.217l-.002.111-.008.23-.005.117-.014.241-.008.124-.02.254c-.016.207-.037.422-.06.646l-.02.17-.033.29-.038.3-.041.311-.033.236-21.207 110.414-.05.271-.105.576-.107.57-.16.844-.108.556-.163.824-.109.542-.11.537-.11.532-.11.526-.111.52-.168.771-.112.507-.113.502-.114.496-.114.49-.114.486-.115.48-.116.474-.116.468-.117.464-.117.457-.118.453-.118.447-.119.441-.119.436-.12.43-.12.426-.12.42-.122.413-.122.409-.123.403-.123.398-.123.392-.124.387-.125.38-.125.377-.063.185-.126.368-.063.182-.063.18-.16.445-.159.437-.064.172-.129.34-.129.335-.173.438-.152.373-.157.38c-.278.66-.56 1.294-.847 1.904l-.124.26-.166.34-.167.336c-1.843 3.664-3.908 6.33-6.281 8.004-2.957 2.104-6.73 3.18-11.291 3.309l-.205.005h-1.26c-7.15 0-12.374-1.962-15.383-6.11l-.09-.126-.078-.111-.04-.05c-.857-1.088-1.281-2.586-1.448-4.68l-.011-.141-.018-.269-.009-.137-.007-.138-.013-.281-.006-.143-.005-.145-.01-.37-.007-.38-.002-.154-.002-.315v-.346l.001-.191.004-.378.003-.186.004-.184.009-.364.005-.179.007-.177.014-.35.017-.342.02-.336.023-.33.012-.16.027-.32.03-.311c.14-1.389.366-2.572.687-3.565.833-2.576 2.49-4.305 4.992-4.346h.09l.098.001.081.004.084.006.087.009.118.015.128.021.172.033.16.034.142.033.279.07.375.098.505.14.534.152.707.206 1.694.497.48.146.431.128.41.119.388.11.366.1.26.07.246.065.308.078.283.069.196.046.181.04.166.036.199.04.13.023.115.018.068.01.06.006.053.005.024.001.042.002a.177.177 0 0 0 .08-.02c.088-.039.206-.119.354-.257.462-.433.98-1.221 1.498-2.368.659-1.457 1.141-3.34 1.433-5.638l.024-.198.04-.344.037-.35.018-.178.017-.179.031-.362a49.99 49.99 0 0 0 .158-3.865l.001-.298-.002-.095-.004-.074-.01-.126-.018-.196-.027-.229-.034-.26-.02-.143-.045-.308-.053-.34-.076-.47-.088-.517-.1-.565-.11-.613-.15-.798-.164-.864-.213-1.092-.27-1.357-.26-1.281-.324-1.57-.343-1.635-23.364-97.108-.04-.291-.038-.277-.034-.267-.032-.257-.035-.309-.03-.295-.011-.114-.02-.222-.016-.215-.007-.104-.013-.203-.009-.195-.003-.095-.005-.186-.001-.09v-.25c.012-1.724.215-3.114.686-4.242.733-1.758 2.187-2.94 4.107-2.977l.091-.001h14.41c1.93 0 3.64.705 4.961 2.066 1.216 1.252 1.941 3.142 2.413 5.776l.027.15.044.262 12.677 67.097 9.9-66.63.016-.127c.36-2.668.968-4.651 1.978-6.02l.061-.081.061-.079c1.223-1.548 2.936-2.405 4.886-2.436h10.097ZM38.456 4.84c2.143 0 3.846 1.213 4.764 3.183.643 1.38.925 3.134.938 5.337v157.528c0 3.01-.304 5.352-.986 7.108-.927 2.385-2.697 3.925-5.108 3.964H19.76c-2.459 0-4.228-1.574-5.136-4.001-.639-1.706-.93-3.974-.942-6.885V39.366l-3.513.888-2.771.693-.657.158-.29.067-.22.046-.125.02-.103.01-.122.01c-2.147.155-3.94-.958-4.908-2.906-.67-1.35-.958-3.076-.972-5.26V21.505c0-2.046.33-3.764 1.076-5.165.85-1.598 2.213-2.695 3.927-3.14l.103-.026.12-.028 31.467-8.115a7.014 7.014 0 0 1 1.478-.188l.147-.003h.138Z"></path>
 </svg>
 </eleventy-icon>
         </a>
+      
       
     </span>
     <small>Ulises Santana &copy; 2019 - 2023</small>

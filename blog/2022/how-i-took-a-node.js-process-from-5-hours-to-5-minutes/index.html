@@ -1,0 +1,695 @@
+<!DOCTYPE html><!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>How I took a Node.js process from 5 hours to 5 minutes | Ulises Santana</title>
+
+
+  <link rel="icon" type="image/x-icon" href="/assets/images/favicon.png">
+
+<meta property="og:type" content="article">
+<meta name="theme-color" content="#F7E018">
+<meta name="author" content="Ulises Santana">
+<meta property="og:title" content="How I took a Node.js process from 5 hours to 5 minutes">
+<meta name="description" property="og:description" content="In a project I had to face a process in Node.js that, after redoing it from scratch to make it more maintainable, was 4400% more inefficient. In this post I explain how I made it more than 20% faster than the original process.">
+<meta property="og:site_name" content="Ulises Santana">
+<meta property="og:image" content="/assets/images/logo.png" ">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@ulisesantana">
+<meta name="twitter:title" content="How I took a Node.js process from 5 hours to 5 minutes">
+<meta name="twitter:description" content="In a project I had to face a process in Node.js that, after redoing it from scratch to make it more maintainable, was 4400% more inefficient. In this post I explain how I made it more than 20% faster than the original process.">
+<meta name="twitter:image" content="/assets/images/logo.png">
+
+
+  <link rel="canonical" href="https://www.ulisesantana.dev/blog/2022/how-i-took-a-node.js-process-from-5-hours-to-5-minutes/">
+
+  <meta name="generator" content="Eleventy v2.0.1">
+  
+  
+  <link rel="stylesheet" href="/styles/index.css">
+  <style>.wyy1elgja h1{color:var(--accent-color);margin:2.25rem 0 0.5rem}.wyy1elgja time{display:inline-block;font-size:var(--font-size-2);font-weight:bold;margin-bottom:1rem}.wyy1elgja img{display:block;margin:0 auto}.wyy1elgja figcaption{text-align:center}.wyy1elgja ol,.wyy1elgja ul{display:flex;flex-direction:column;gap:8px;padding-left:2rem}.wyy1elgja li::marker{color:var(--accent-color);font-weight:bold}.wyy1elgja p,.wyy1elgja li{line-height:var(--line-height-normal-text)}.wyy1elgja .head{margin-bottom:2rem}
+
+  :root {
+    --min-preview-height: 110px;
+    --min-preview-width: 220px;
+  }
+
+  .related-posts>ul {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    gap: 32px;
+    max-width: 80ch;
+    padding: 0;
+    width: 100%;
+  }
+
+  .related-posts>ul>li {
+    list-style: none;
+  }
+
+  .post-card-minimal {
+    display: grid;
+    border-radius: var(--border-radius);
+    gap: 0;
+    grid-template-columns: 1fr;
+    grid-template-rows: var(--min-preview-height) auto;
+    text-shadow: none;
+    width: 100%;
+  }
+
+  .post-card-minimal.draft {
+    border: 4px dashed var(--accent-color);
+  }
+
+  .post-card-minimal h4 {
+    color: var(--accent-color);
+    font-size: var(--font-size-2);
+    margin: 0;
+    margin-bottom: 4px;
+  }
+
+  .post-card-minimal .cover img,
+  .post-card-minimal .cover object {
+    border-radius: var(--border-radius) var(--border-radius) 0 0;
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+  }
+
+  .post-card-minimal.draft .cover img,
+  .post-card-minimal.draft .cover object {
+    height: calc(100% - 8px);
+  }
+
+  .post-card-minimal .content {
+    background-color: var(--bg-alt-color);
+    border-bottom-right-radius: var(--border-radius);
+    border-bottom-left-radius: var(--border-radius);
+    padding: 8px;
+    padding-bottom: 16px;
+  }
+
+  .post-card-minimal .content .excerpt {
+    display: block;
+    color: var(--text-color);
+    font-size: var(--font-size-0);
+    font-weight: 400;
+    margin-bottom: 1rem;
+  }
+
+  .post-card-minimal time {
+    color: var(--text-color);
+    display: block;
+    font-size: var(--font-size-0);
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+
+  @media (min-width: 768px) {
+    .related-posts>ul {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .post-card-minimal {
+      width: auto;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    :root {
+      --min-preview-height: 130px;
+      --min-preview-width: 260px;
+    }
+    .related-posts>ul {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+.ws3sp0wuz b{color:var(--link-color);display:inline-block}.ws3sp0wuz .author-info{align-items:center;display:flex;margin:48px auto;max-width:100%;padding:0 24px;width:80ch}.ws3sp0wuz .description{font-size:var(--font-size-1);line-height:var(--line-height-normal-text);margin:0;text-align:justify}.ws3sp0wuz .info{align-items:flex-start;display:flex;flex-direction:column;gap:1rem;padding-left:30px}.ws3sp0wuz .title{font-size:var(--font-size-3);font-weight:400;font-family:var(--font-family-1);margin:0}@media (max-width:767px){.ws3sp0wuz .author-info{padding:0 25px}.ws3sp0wuz .info{gap:0.5rem}.ws3sp0wuz .description{font-size:var(--font-size-1);line-height:var(--line-height-normal-text);margin:1rem auto}}@media (max-width:575px){.ws3sp0wuz .author-info{display:block;text-align:center}.ws3sp0wuz .info{align-items:center;padding-left:0}.ws3sp0wuz .description{text-align:justify}}
+.wcscm75lq .social-media ul{align-items:center;display:flex;justify-content:space-between;flex-direction:row;flex-wrap:wrap;gap:1rem;margin:0;padding:0;width:100%}.wcscm75lq .social-media ul li{list-style:none}.wcscm75lq .social-media ul li:last-child{margin-right:0}@media screen and (max-width:767px){.wcscm75lq .social-media{width:100%}}@media print{.wcscm75lq .social-media{display:flex;flex-direction:column;margin:0;max-width:90vw}}
+.wuzpprqmy .social-media-item{position:relative}.wuzpprqmy .social-media-item:hover .tooltip{opacity:1;visibility:visible;bottom:calc(100% + 5px)}.wuzpprqmy .social-media-item .only-print-data{display:flex;flex-direction:row;gap:16px}.wuzpprqmy .social-media-item .only-print-data span{display:block}.wuzpprqmy a,.wuzpprqmy a:visited{border:none;color:var(--highlight-color)!important;font-size:var(--font-size-5);padding:0.2rem;display:block}.wuzpprqmy a svg,.wuzpprqmy a:visited svg{display:block}@media print{.wuzpprqmy .social-media-item{align-items:center;display:flex;margin:8px;width:90vw}}.wuzpprqmy .tooltip{position:absolute;background-color:#fff;pointer-events:none;padding:8px;border-radius:3px;color:#333;font-size:var(--font-size-0);bottom:90%;left:50%;opacity:0;white-space:nowrap;visibility:hidden;z-index:var(--z-index-0);box-shadow:0 4px 15px rgba(0,0,0,0.2);transform:translate3d(-50%,0,0);transition:cubic-bezier(0.165,0.84,0.44,1) var(--transition-speed-fast)}.wuzpprqmy .tooltip:after{content:"";position:absolute;width:0;height:0;border-top:6px solid #fff;border-right:6px solid transparent;border-left:6px solid transparent;bottom:-6px;left:50%;transform:translateX(-50%)}
+.wzsx78kcv .flipable-image{background-color:transparent;border:4px solid var(--link-color);border-radius:50%;flex-shrink:0;height:216px;margin:0 auto;padding:24px;perspective:1000px;width:216px}.wzsx78kcv img{width:100%;height:auto;display:block;border-radius:50%}.wzsx78kcv .flip-container{position:relative;width:100%;height:100%;text-align:center;transition:transform var(--transition-speed-regular);transform-style:preserve-3d}.wzsx78kcv .flipable-image:hover .flip-container,.wzsx78kcv .flipable-image:active .flip-container{transform:rotateY(180deg)}.wzsx78kcv .flipable-image:hover .flip-container .flip-front,.wzsx78kcv .flipable-image:active .flip-container .flip-front{opacity:0}.wzsx78kcv .flip-front,.wzsx78kcv .flip-back{background-color:transparent;border-radius:50%;position:absolute;width:100%;height:100%;backface-visibility:hidden;transition:opacity ease-in-out var(--transition-speed-regular)}.wzsx78kcv .flip-back{transform:rotateY(180deg)}@media (max-width:767px){.wzsx78kcv .flipable-image{width:180px;height:180px;padding:20px;margin-bottom:20px}}
+
+  ul.tag-list {
+    align-items: center;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 0;
+    width: 100%;
+  }
+
+  ul.tag-list li {
+    list-style: none;
+    padding: 0;
+  }
+
+
+  span.tag {
+    background-color: var(--accent-color);
+    border-radius: 24px;
+    color: var(--bg-color);
+    font-size: var(--font-size-0);
+    font-weight: bold;
+    padding: 4px 8px;
+  }
+
+.wzhztpn9m footer{align-items:center;color:var(--text-color);display:flex;flex-direction:column;gap:1rem;justify-content:center;margin:0 auto;max-width:960px;overflow:hidden;padding:30px 15px 98px;position:relative;text-align:center;z-index:var(--z-index-0)}.wzhztpn9m .icon{font-size:var(--font-size-3)}.wzhztpn9m .bar{border-top:4px solid var(--link-color);border-radius:var(--border-radius);display:block;margin:16px auto 8px;width:75%}.wzhztpn9m .bottom-text{align-items:center;display:flex;flex-direction:column;font-size:var(--font-size-3);gap:1rem;justify-content:center}.wzhztpn9m .bottom-text svg{font-size:1.25rem;margin-bottom:-0.25rem}.wzhztpn9m .thanks a{margin-left:4px}@media screen and (min-width:768px){.wzhztpn9m footer{padding:30px 15px}.wzhztpn9m .description{width:50%}}
+.wpsio4mfp svg{fill:var(--link-color)}
+.wcscm75lq .social-media ul{align-items:center;display:flex;justify-content:space-between;flex-direction:row;flex-wrap:wrap;gap:1rem;margin:0;padding:0;width:100%}.wcscm75lq .social-media ul li{list-style:none}.wcscm75lq .social-media ul li:last-child{margin-right:0}@media screen and (max-width:767px){.wcscm75lq .social-media{width:100%}}@media print{.wcscm75lq .social-media{display:flex;flex-direction:column;margin:0;max-width:90vw}}
+.wuzpprqmy .social-media-item{position:relative}.wuzpprqmy .social-media-item:hover .tooltip{opacity:1;visibility:visible;bottom:calc(100% + 5px)}.wuzpprqmy .social-media-item .only-print-data{display:flex;flex-direction:row;gap:16px}.wuzpprqmy .social-media-item .only-print-data span{display:block}.wuzpprqmy a,.wuzpprqmy a:visited{border:none;color:var(--highlight-color)!important;font-size:var(--font-size-5);padding:0.2rem;display:block}.wuzpprqmy a svg,.wuzpprqmy a:visited svg{display:block}@media print{.wuzpprqmy .social-media-item{align-items:center;display:flex;margin:8px;width:90vw}}.wuzpprqmy .tooltip{position:absolute;background-color:#fff;pointer-events:none;padding:8px;border-radius:3px;color:#333;font-size:var(--font-size-0);bottom:90%;left:50%;opacity:0;white-space:nowrap;visibility:hidden;z-index:var(--z-index-0);box-shadow:0 4px 15px rgba(0,0,0,0.2);transform:translate3d(-50%,0,0);transition:cubic-bezier(0.165,0.84,0.44,1) var(--transition-speed-fast)}.wuzpprqmy .tooltip:after{content:"";position:absolute;width:0;height:0;border-top:6px solid #fff;border-right:6px solid transparent;border-left:6px solid transparent;bottom:-6px;left:50%;transform:translateX(-50%)}
+
+  .scroll-to-top {
+    align-items: center;
+    background-color: var(--accent-color);
+    border: none;
+    border-radius: 50%;
+    bottom: 32px;
+    cursor: pointer;
+    display: flex;
+    height: 60px;
+    justify-content: center;
+    opacity: 1;
+    position: fixed;
+    right: 48px;
+    transition: ease-in-out var(--transition-speed-fast);
+    width: 60px;
+    z-index: var(--z-index-3);
+  }
+
+  .scroll-to-top:hover {
+    filter: drop-shadow(0 0 0.75rem var(--accent-color));
+  }
+
+  .hidden {
+    opacity: 0;
+  }
+
+  @media print {
+    .scroll-to-top {
+      display: none;
+    }
+  }
+
+
+  .up-icon {
+    align-items: center;
+    display: flex;
+    fill: var(--bg-alt-color);
+    font-size: 2.25rem;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+  }
+
+  .up-icon svg path {
+    stroke: var(--bg-alt-color);
+    stroke-width: 4rem;
+  }
+
+.wodum24hl header{align-items:center;display:flex;flex-direction:row;justify-content:space-between;margin:0 auto 24px;max-width:960px;width:100%}.wodum24hl header .lang{font-size:32px}.wodum24hl .isotype{border:none;color:transparent;font-size:var(--font-size-5);font-weight:600;letter-spacing:1px;-webkit-text-stroke-width:1.5px;-webkit-text-stroke-color:var(--link-color);text-decoration:none}@media screen and (max-width:767px){.wodum24hl header{justify-content:center}}
+.wqra4zvc8 nav{display:block;position:absolute;bottom:0;left:0;width:100%}.wqra4zvc8 .nav-items{align-items:center;background:var(--menu-mobile-bg-color);bottom:-100%;display:flex;flex-direction:column;height:fit-content;left:0;margin:0;padding:16px 16px 104px;position:fixed;transition-property:all;transition-timing-function:ease-in-out;transition-duration:var(--transition-speed-regular);width:100%;z-index:var(--z-index-1)}.wqra4zvc8 .nav-items li:first-child{font-size:32px}.wqra4zvc8 button.mobile-menu{background:var(--link-color);border:none;border-radius:50%;bottom:32px;color:black;display:block;font-size:32px;height:60px;left:calc(50% - 30px);padding-bottom:4px;position:fixed;width:60px;z-index:var(--z-index-5)}.wqra4zvc8 .bar{display:block;position:relative;width:24px;height:4px;border-radius:3px;background-color:var(--bg-color);margin:4px auto 2px;transition:all ease-in-out var(--transition-speed-fast)}.wqra4zvc8 button.mobile-menu.active .bar:nth-child(1){transform:rotate(-45deg);margin-top:14px}.wqra4zvc8 button.mobile-menu.active .bar:nth-child(2){transform:rotate(45deg);margin-top:-6px}.wqra4zvc8 button.mobile-menu.active .bar:nth-child(3){opacity:0;transform:rotate(45deg)}.wqra4zvc8 .nav-items.active{bottom:-4px}.wqra4zvc8 li{font-weight:600;list-style:none;padding:8px}.wqra4zvc8 .nav-items .active{border-bottom:solid var(--accent-color) 4px}.wqra4zvc8 .nav-items a,.wqra4zvc8 .nav-items a:visited{color:var(--text-color)}@media screen and (min-width:768px){.wqra4zvc8 nav{background:transparent;display:inline;padding:0;position:relative}.wqra4zvc8 .nav-items{padding:0;align-items:center;background:transparent;flex-direction:row;position:relative;width:-moz-fit-content;width:fit-content}.wqra4zvc8 button.mobile-menu{display:none}}
+.wk09v1fvl .theme-switch{cursor:pointer;color:var(--black);border-radius:50%;display:block;position:relative}.wk09v1fvl .theme-switch input{opacity:0;position:absolute;width:0;height:0}.wk09v1fvl .theme-switch .icon{align-items:center;background:yellow;border-radius:50%;display:flex;filter:drop-shadow(0 0 8px yellow);height:60px;justify-content:center;transition:all ease-in-out var(--transition-speed-regular);width:60px}.wk09v1fvl .theme-switch input:checked+.icon{background:#656565;filter:none}.wk09v1fvl .theme-switch input+.icon svg{border-radius:50%;fill:yellow;filter:drop-shadow(0 0 1px black);font-size:32px;transition:all ease-in-out var(--transition-speed-regular)}.wk09v1fvl .theme-switch input:checked+.icon svg{background-color:transparent;fill:var(--light-border-color);filter:none}</style>
+  
+  
+  <script type="module" src="/components/index.js"></script>
+  <script></script>
+  <script defer="defer" src="/components/legacy.js"></script>
+</head>
+
+<body class="theme-dark">
+  <site-header class="wodum24hl"><header>
+  <a class="isotype" href="/">ulisesantana.dev</a>
+  
+  <nav-items class="wqra4zvc8"><nav class="no-print">
+  <ul class="nav-items">
+    <li>
+        <a href="/es/">
+        🇪🇸
+        </a>
+      </li>
+<li>
+        <a href="/">
+        ABOUT ME
+        </a>
+      </li>
+<li>
+        <a href="/blog/">
+        BLOG
+        </a>
+      </li>
+    <li><theme-switch class="wk09v1fvl"><div class="theme-switch">
+  <input type="checkbox">
+  
+  <span class="icon">
+    <svg viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg" height="1em" width="1em">
+      <path d="M23.86 29.15H12.11a.8.8 0 1 0 0 1.6h11.75a.8.8 0 0 0 0-1.6Z" class="clr-i-solid clr-i-solid-path-1"></path>
+      <path d="M22 32.15h-8a.8.8 0 1 0 0 1.6h8a.8.8 0 1 0 0-1.6Z" class="clr-i-solid clr-i-solid-path-2"></path>
+      <path d="M18 2.25a11 11 0 0 0-11 11 10.68 10.68 0 0 0 1 4.63 16.36 16.36 0 0 0 1.12 1.78 17 17 0 0 1 2 3.47 16.19 16.19 0 0 1 .59 4h5.69v-5.52l-2.86-3.13 3-3a.8.8 0 0 1 1.13 1.13l-1.89 1.89L19 21v6.17h5.3a16.19 16.19 0 0 1 .59-4 17 17 0 0 1 2-3.47A16.31 16.31 0 0 0 28 17.86a10.68 10.68 0 0 0 1-4.63A11 11 0 0 0 18 2.25Zm.45 9.75-2.73 2.73a.8.8 0 1 1-1.13-1.13l2.73-2.73A.8.8 0 1 1 18.45 12Z" class="clr-i-solid clr-i-solid-path-3"></path>
+      <path fill="none" d="M0 0h36v36H0z"></path>
+    </svg>
+  </span>
+</div>
+
+</theme-switch></li>
+  </ul>
+  <button title="Toggle menu" class="mobile-menu" onclick="(function toggleMenu() {
+      const menu = document.querySelector(':scope .nav-items')
+      const btn = document.querySelector(':scope button')
+      menu.classList.toggle('active')
+      btn.classList.toggle('active')
+    })()">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </button>
+</nav>
+
+</nav-items>
+</header>
+
+</site-header>
+<main><article class="wyy1elgja">
+  <figure class="wyy1elgja">
+    <object data="/assets/en/blog/2022/how-i-took-a-node.js-process-from-5-hours-to-5-minutes/cover.png" title="How I took a Node.js process from 5 hours to 5 minutes" type="image/png">
+  <img src="/assets/images/fallback.png" title="How I took a Node.js process from 5 hours to 5 minutes">
+</object>
+    
+  </figure>
+  <div class="head wyy1elgja">
+    <h1 custom class="wyy1elgja">How I took a Node.js process from 5 hours to 5 minutes</h1>
+    <time datetime="Friday, May 20, 2022" class="wyy1elgja">Friday, May 20, 2022</time>
+    <site-tags url="/blog/2022/how-i-took-a-node.js-process-from-5-hours-to-5-minutes/"><ul class="tag-list">
+    <li>
+            <site-tag><span class="tag">#node.js</span>
+
+</site-tag>
+          </li>
+        
+          <li>
+            <site-tag><span class="tag">#performance</span>
+
+</site-tag>
+          </li>
+        
+</ul>
+
+</site-tags>
+  </div>
+  <article class="wyy1elgja"><p><youtube-video video-id="V4sXNlzJIy8"
+  video-caption="This post was originally a talk I gave at JSDay Canarias 2022">
+</youtube-video></p>
+<h2>The context</h2>
+<p>This story begins with a team of 5 people, of which I had been part for almost a year and the other 4 had joined in the last 3 months. On this team my role was Senior Node.js Developer and I was the only one who had previous experience working with Node.js. In addition, there was another person with experience with JavaScript and Dart, which made it easy for him to adapt to projects in TypeScript, which is the language in which all the projects were written. However, the other three people on the team had very little prior JavaScript experience.</p>
+<p>On the other hand, we were working on the different parts of a billing engine that needed to be adapted for a legislative change. The latter means that the deadline could not be moved, if the change was not made by that date the company could not generate the following month's billing. In case we didn't arrive we would break the cash flow. Cool, no pressure.</p>
+<p>To conclude this contextualization:</p>
+<ol>
+<li>Not the entire team controlled the technology being worked on.</li>
+<li>The deadline is fixed and critical, since we break the company's cash flow if we are late.</li>
+</ol>
+<h2>The calm before the storm</h2>
+<p>Abraham Lincoln is credited with the following phrase: <strong>Give me 6 hours to cut down a tree and I will spend 4 sharpening the axe</strong>. We knew that there was going to be a legislative change that would entail changes in the projects, so 2 months before the deadline we proposed refactoring parts of the projects and one in particular we requested to redo it from scratch, since at that time it was really a working prototype, but it was difficult to maintain and with the legislative change it was going to become more unsustainable. They gave us the green light for this proposal and said prototype was going to be redone from scratch. Let's call this project the <em>Lumberjack Project</em>:</p>
+<p><img src="/assets/en/blog/2022/how-i-took-a-node.js-process-from-5-hours-to-5-minutes/lumberjack.jpeg" alt="Me dressed as a Lumberjack with an ax on my shoulder"></p>
+<p>At <a href="https://leanmind.es/es/" target="_blank" rel="noopener">Lean Mind</a> as a general rule we work doing pair or mob programming, so no one is ever alone and thus we make the code more sustainable, in addition to both authorship of the code as knowledge is shared. However, since we had 5 projects to update, we decided to divide ourselves as much as possible to be able to cover at least 3 projects at a time and be able to have the changes as soon as possible. That works out to 2 people per project and one person alone. That person who was left alone was me and I was in several bands assisting the different teams while working on the project in which I was involved.</p>
+<p>This situation caused me to neglect the code review process due to lack of time and simply focus on resolving the team's doubts, especially in the domain, since I remember that the rest of the team had only been with the client for 3 months and the business domain had an assimilation curve of at least 6 months. Furthermore, since we did TDD, if the tests passed and reflected the business specifications well, there was nothing to worry about.</p>
+<p><em>Project Lumberjack</em> was carried out by team members who did not have much experience in JavaScript and none in TypeScript. This did not pose any problem a priori because they had already been doing pair or mob programming for three months with other members of the team who did have experience and these same people had made contributions to the different projects in TypeScript. They simply asked for help or advice when they needed it and were assisted.</p>
+<p>The reality is that the leap in quality in the <em>Lumberjack Project</em> was more than evident. I didn't see the project in its final state directly, but rather I saw it evolve over the weeks and it really was much clearer in its purpose and there were no surprises in the implementation. I had been part of the team that had made that prototype 9 months ago and the truth is that there were certain parts that were a bit obscure to me, that I didn't fully understand how they worked or what their final purpose was. This was due, among other things, to the fact that the original prototype had not been made entirely in mob or pair programming, but rather there were entire parts that had been made by a developer who was no longer part of the team.</p>
+<p>Going back to <em>Project Lumberjack</em>, I was very proud of what the team had achieved, it really was a much more sustainable project, eliminating surprises. However, when it was finished and I did a more extensive last review with the team, I saw some data flows that had every indication of blocking the Event Loop, or at least part of it, potentially causing performance losses. To check the performance of this new project, I went to the next step we had planned: doing a test comparing the original prototype with the <em>Lumberjack Project</em>.</p>
+<p>The original prototype based on a data set of a few hundred thousand records was able to do everything in about 7 minutes. With the same set of data I tried the <em>Lumberjack Project</em> and the result was that it took nothing more and nothing less than <strong>5 hours 7 minutes and 54 seconds.</strong> We are talking about taking 44 times as long. The actual process in production took about 40 minutes each night, so if we sent this to production the new process would take about 29 hours and 20 minutes, each day. This loss of performance was unacceptable. At that moment my inner self was something like this:</p>
+<p><img src="/assets/en/blog/2022/how-i-took-a-node.js-process-from-5-hours-to-5-minutes/coffin-dance.gif" alt="GIF of the coffin dancers"></p>
+<p>To add more fuel to the fire, this happened about 10 days from the deadline, 10 calendar days. We couldn't rethink the project, we had to optimize it in less than a week, plus there were more things on the grid. I remember that there were 4 other projects that needed to be updated for the legislative change. In this situation, on the one hand I motivated myself by thinking things like <em>I've been preparing for this moment all my life, the workshops on asynchrony in Node.js with <a href="https://twitter.com/matteocollina" target="_blank" rel="noopener">Matteo Collina</a> and <a href="https://twitter.com/jasnell" target="_blank" rel="noopener">James Snell</a> are going to pay off</em>. However, another part of me was a mix of this:</p>
+<p><img src="/assets/en/blog/2022/how-i-took-a-node.js-process-from-5-hours-to-5-minutes/sheldon-bag.gif" alt="GIF of Sheldon breathing compulsively into a paper bag"></p>
+<p><img src="/assets/en/blog/2022/how-i-took-a-node.js-process-from-5-hours-to-5-minutes/pickle-rick.gif" alt="GIF of Pickle Rick about to die of heat stroke"></p>
+<p>The reality is that I went into panic mode and started refactoring the project and trying to improve performance as much as I could. I didn't change any of the logic, I limited myself to changing the asynchronous data flow, which was mostly everything that had to do with reading or writing to the database.</p>
+<h2>Weathering the storm</h2>
+<p>After this refactor I saw certain patterns that I want to highlight and show:</p>
+<h3>1. Avoid unnecessary async</h3>
+<pre class="language-js"><code class="language-js"><span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">randomNumber</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>    <span class="token keyword">return</span> Math<span class="token punctuation">.</span><span class="token function">random</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br><span class="token punctuation">}</span><br><br><span class="token keyword">export</span> <span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">asyncRandomNumber</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>    <span class="token keyword">return</span> Math<span class="token punctuation">.</span><span class="token function">random</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br><span class="token punctuation">}</span></code></pre>
+<p>These two functions are identical except that the second one is asynchronous. For no reason, but it's asynchronous. Every time we use async in a function, we are automatically making it return a promise, and that has to be managed more.</p>
+<p>It may seem silly, but it affects. I made a small demo to demonstrate the extent to which this affects our performance. What the script does is run each of these functions separately a million times.</p>
+<p><img src="/assets/en/blog/2022/how-i-took-a-node.js-process-from-5-hours-to-5-minutes/useless-async.png" alt="Result of running the demo for async comparison"></p>
+<p>As we can see, just by putting that <code>async</code> we have made it take almost six times longer. Applying it to real life, in a test suite we reduced the time it took to execute by 40% just by removing the unnecessary async that we had left after a refactor. We simply removed the async that we had in the arrow functions that we no longer needed. By doing this we went from taking just over 2 minutes to throw the test suit to just under a minute and a half.</p>
+<h3>2. Avoid awaits inside loops.</h3>
+<p>Imagine that you have a task that is: <em>Based on a list of IDs you have to retrieve information from an API</em>. Due to technical limitations, you cannot pass the list of IDs to the API, but rather you have to make a call for each ID. What is the first idea that comes to mind? Probably a loop, stinks of a loop. The implementation could be something like this:</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">fetchUserListInfo</span><span class="token punctuation">(</span><span class="token parameter">ids</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>  <span class="token keyword">const</span> values <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><br>  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">const</span> id <span class="token keyword">of</span> ids<span class="token punctuation">)</span> <span class="token punctuation">{</span><br>    values<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token keyword">await</span> <span class="token function">fetchUserInfo</span><span class="token punctuation">(</span>id<span class="token punctuation">)</span><span class="token punctuation">)</span><br>  <span class="token punctuation">}</span><br>  <span class="token keyword">return</span> values<br><span class="token punctuation">}</span></code></pre>
+<p>It seems simple and if we try it we will see that it works. Get information from all users without problems. No problem? That await inside the <code>for</code> forces each promise to finish completing before processing the next one.</p>
+<img-caption src="/assets/en/blog/2022/how-i-took-a-node.js-process-from-5-hours-to-5-minutes/await-loop.jpeg" alt= "Promises are resolved one by one">
+   Resolving promises with an await inside a for
+</img-caption>
+<p>This means that if on average the API takes 50ms to respond and we have 100 IDS to process, it will take about 5 seconds to complete the task. It's not that it's a drama, but if we implement this other solution things change a lot:</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">fetchUserListInfo</span><span class="token punctuation">(</span><span class="token parameter">ids</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>  <span class="token keyword">const</span> values <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><br>  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">const</span> id <span class="token keyword">of</span> ids<span class="token punctuation">)</span> <span class="token punctuation">{</span><br>    values<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token function">fetchUserInfo</span><span class="token punctuation">(</span>id<span class="token punctuation">)</span><span class="token punctuation">)</span><br>  <span class="token punctuation">}</span><br>  <span class="token keyword">return</span> Promise<span class="token punctuation">.</span><span class="token function">all</span><span class="token punctuation">(</span>values<span class="token punctuation">)</span><br><span class="token punctuation">}</span></code></pre>
+<p>Although it may seem the same, there are three subtle differences here:</p>
+<ol>
+<li>The function is no longer asynchronous, although it does return a promise.</li>
+<li>Within the for we no longer do an await</li>
+<li>We return a Promise.all instead of the values as we did before.</li>
+</ol>
+<p>The big difference with this solution is that within the loop we do not resolve the promises, but we simply add them to our array pending resolution. Any function that returns a promise returns it in this state that until you use <code>await</code> or <code>.then</code> it will not be <em>fulfilled</em> or <em>rejected</em>. We can see it as Schrodinger's cat experiment, until you open the box you don't know if the cat is alive or dead. Something similar happens to promises, until you resolve them they are in <em>pending</em> state and once resolved they can be <em>fulfilled</em>, which is when it has been resolved satisfactorily and what you have is the value, or <em>rejected</em> which is when there has been an error and what it does is throw the exception that you have to catch with a try/catch or with the <code>.catch</code>.</p>
+<p>Returning to the solution, we see that the promises are not resolved, but are stored directly in the <em>Pending</em> state, and the function when returning them resolves them all <em>at once</em>. This now means that the task is done much faster, taking as long as it takes to respond to the slower API call.</p>
+<img-caption src="/assets/en/blog/2022/how-i-took-a-node.js-process-from-5-hours-to-5-minutes/promise-all.jpeg" alt= "Promises are resolved at the same time">
+   Resolving promises with a Promise.all
+</img-caption>
+<p>To see this better I'm going to show another demo in which we use almost the same code, the only thing that changes is that we replace the API call with a simple 1 millisecond wait. What we are going to see is how long each of the solutions takes executing this task for a list of 100 IDS and it will do it 1000 times so that we can see if there really is a performance difference or not.</p>
+<p><img src="/assets/en/blog/2022/how-i-took-a-node.js-process-from-5-hours-to-5-minutes/async-loop.png" alt="Result of running the demo for asynchronous loops"></p>
+<p>As we see, the difference is abysmal. For the same task when we use <code>Promise.all</code> it takes just over 1 second, but when we use <code>await</code> inside the for it takes <strong>almost 2 minutes</strong>. This difference in a real environment is critical and the worst thing is that we usually do not realize that the problem is in these types of sites.</p>
+<p>Something to keep in mind about the <code>Promise.all</code>; If any promise throws an error, it will stop Promise.all, leaving promises unfulfilled. To avoid this, the method that returns the promise must have its own try/catch and handle the error. For example:</p>
+<pre class="language-ts"><code class="language-ts"><span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">fetchUserInfo</span><span class="token punctuation">(</span>id<span class="token punctuation">)</span><span class="token operator">:</span> User <span class="token punctuation">{</span><br>  <span class="token keyword">try</span> <span class="token punctuation">{</span><br>    <span class="token keyword">const</span> response <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">fetch</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">https://api.awesome-project.com/user/</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>id<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><br>    <span class="token keyword">return</span> User<span class="token punctuation">.</span><span class="token function">fromResponse</span><span class="token punctuation">(</span>response<span class="token punctuation">)</span><br>  <span class="token punctuation">}</span> <span class="token keyword">catch</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token punctuation">{</span><br>    <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Error fetching user </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>id<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><br>    <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span>err<span class="token punctuation">.</span>message<span class="token punctuation">)</span><br>    <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span>err<span class="token punctuation">.</span>stack<span class="token punctuation">)</span><br>    <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">NullUser</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<p>There is also <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/allSettled" target="_blank" rel="noopener">Promise.allSettled</a> which prevents the error from stopping the process of resolving all promises. Another difference is that what this structure returns to us:</p>
+<pre class="language-ts"><code class="language-ts"><span class="token keyword">type</span> <span class="token class-name">PromiseAllSettleReturnValue<span class="token operator">&lt;</span><span class="token constant">T</span><span class="token operator">></span></span> <span class="token operator">=</span> <span class="token builtin">Array</span><span class="token operator">&lt;</span><span class="token punctuation">{</span><br>  status<span class="token operator">:</span> <span class="token string">'fulfilled'</span> <span class="token operator">|</span> <span class="token string">'rejected'</span><span class="token punctuation">,</span><br>  value<span class="token operator">?</span><span class="token operator">:</span> <span class="token constant">T</span><span class="token punctuation">,</span><br>  reason<span class="token operator">?</span><span class="token operator">:</span> Error<br><span class="token punctuation">}</span><span class="token operator">></span></code></pre>
+<h3>3. Use Promise.all whenever you can</h3>
+<p>In our daily life developing software solutions we find that on more than one occasion we need several resources from different sites, whether tables, databases or APIs. All of this also has an asynchronous nature and we need to manage it.</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">readAllUserInfo</span><span class="token punctuation">(</span><span class="token parameter">userId</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>  <span class="token keyword">const</span> user <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">readUser</span><span class="token punctuation">(</span>userId<span class="token punctuation">)</span><br>  <span class="token keyword">const</span> contracts <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">readContractsForUser</span><span class="token punctuation">(</span>userId<span class="token punctuation">)</span><br>  <span class="token keyword">const</span> invoices <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">readInvoicesForUser</span><span class="token punctuation">(</span>userId<span class="token punctuation">)</span><br>  <span class="token keyword">return</span> <span class="token punctuation">{</span><br>    <span class="token operator">...</span>user<span class="token punctuation">,</span><br>    contracts<span class="token punctuation">,</span><br>    invoices<br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<p>Here we see a problem similar to the previous one, but without loops. Although it is less dramatic, it is another place where we can improve a little bit of performance if we use <code>Promise.all</code>, since as we see none of the requests depends on the other, so we could request all the information at once and thus reduce the time the function needs to perform the task.</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">readAllUserInfo</span><span class="token punctuation">(</span><span class="token parameter">userId</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>  <span class="token keyword">const</span> <span class="token punctuation">[</span> user<span class="token punctuation">,</span> contracts<span class="token punctuation">,</span> invoices <span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token keyword">await</span> Promise<span class="token punctuation">.</span><span class="token function">all</span><span class="token punctuation">(</span><span class="token punctuation">[</span><br>    <span class="token function">readUser</span><span class="token punctuation">(</span>userId<span class="token punctuation">)</span><span class="token punctuation">,</span><br>    <span class="token function">readContractsForUser</span><span class="token punctuation">(</span>userId<span class="token punctuation">)</span><span class="token punctuation">,</span><br>    <span class="token function">readInvoicesForUser</span><span class="token punctuation">(</span>userId<span class="token punctuation">)</span><br>  <span class="token punctuation">]</span><span class="token punctuation">)</span><br>  <span class="token keyword">return</span> <span class="token punctuation">{</span><br>    <span class="token operator">...</span>user<span class="token punctuation">,</span><br>    contracts<span class="token punctuation">,</span><br>    invoices<br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<p>Here we see how all the calls are passed to <code>Promise.all</code> and we destruct them in the same order in which we passed them. As before, this will take as long as the slowest request takes, instead of having to wait for all of them one after the other.</p>
+<h3>4. Be aware of how many promises you are managing</h3>
+<pre class="language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">fetchUserListInfo</span><span class="token punctuation">(</span><span class="token parameter">ids</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>  <span class="token keyword">return</span> Promise<span class="token punctuation">.</span><span class="token function">all</span><span class="token punctuation">(</span>ids<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span>fetchUserInfo<span class="token punctuation">)</span><span class="token punctuation">)</span><br><span class="token punctuation">}</span></code></pre>
+<p>This would be another way to do the <code>fetchUserListInfo</code> that we saw a couple of slides ago. Both this and the previous solution have a problem, you don't know how many promises you are going to have in the <code>Promise.all</code>. In cases where you do not know the number of promises you are going to manage or this number is very high, it is advisable to use the <code>p-map</code> library and limit concurrency. The reason for doing this is that if you have too many promises you can end up doing a denial of service attack on yourself without realizing it.</p>
+<p>In the <em>Project Lumberjack</em>, more than a denial of service attack, what we were worried about was drowning the database. In these projects, the usual practice was to limit concurrency to the number of connections we had configured for the database, thus avoiding drowning it.</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">import</span> pMap <span class="token keyword">from</span> <span class="token string">'p-map'</span><span class="token punctuation">;</span><br><br><span class="token keyword">function</span> <span class="token function">fetchUserListInfo</span><span class="token punctuation">(</span><span class="token parameter">ids</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>  <span class="token keyword">return</span> <span class="token function">pMap</span><span class="token punctuation">(</span><br>    ids<span class="token punctuation">,</span><br>    fetchUserInfo<span class="token punctuation">,</span><br>    <span class="token punctuation">{</span><span class="token literal-property property">concurrency</span><span class="token operator">:</span> <span class="token number">10</span><span class="token punctuation">}</span><br>  <span class="token punctuation">)</span><br><span class="token punctuation">}</span></code></pre>
+<p>The difference using <code>p-map</code> is that you have to separately pass the list over which you want to iterate, the function that will be executed for each of the elements in the list and finally the <code>p-map</code> options. In this case we only define that we want it to resolve a maximum of 10 promises at a time.</p>
+<p>Finally, keep in mind that <code>p-map</code> in version 5 became of type ESModules and unless your project is done this way it will not work for you. To be able to use it with CommonJS you need to use version 4. The reality is that both versions only differ in whether they work with ESModules or CommonJS. In other words, if you import things into files with <code>import</code> or <code>require</code> respectively.</p>
+<p><img src="/assets/en/blog/2022/how-i-took-a-node.js-process-from-5-hours-to-5-minutes/cjs-to-esm.png" alt="Go from CommonJS to ESModules"></p>
+<h3>5. Pay attention to the warnings</h3>
+<p>I don't know if it happens to anyone else that most of the time you ignore warnings and only give them importance when they are errors. In the console when I ran the process I got this:</p>
+<pre class="language-shell"><code class="language-shell"><span class="token punctuation">(</span>node<span class="token punctuation">)</span> warning: possible EventEmitter memory leak detected.<br><span class="token number">11</span> listeners added.<br>Use emitter.setMaxListeners<span class="token punctuation">(</span><span class="token punctuation">)</span> to increase limit.</code></pre>
+<p>The message tells us that Node.js has detected a possible memory leak due to the <em>Event Emitter</em> because more listeners than recommended are being added. It offers you the option to increase the limit in case you are sure about what you are doing and you need it.</p>
+<p>I thought <em>Meh, it's a warning</em>. In the first instance I simply did what I was told and increased the listeners without giving it much importance. However, the process was still too slow so I investigated the warning.</p>
+<p>The problem was that there were event handlers that were being continuously created with each connection that was requested to the database connection pool, but that were not being eliminated, causing the memory leak. After implementing the fix in which every time a connection is returned to the pool the event handlers associated with the connection are cleaned, we saw an improvement in performance, taking 4 times less than what it took before.</p>
+<h2>Result</h2>
+<p>With all these improvements in the <em>Lumberjack Project</em> we ran it again with the same data set and this time it took <strong>04:52</strong>. It was even faster than the original prototype which took 7 minutes. At that moment my inner self was something like this:</p>
+<p><img src="/assets/en/blog/2022/how-i-took-a-node.js-process-from-5-hours-to-5-minutes/fuck-yeah-dude.gif" alt="GIF of The Dude in the Big Lebowski celebrating in his car"></p>
+<p>I don't remember if it was day, night, or what time it was. I just remember that feeling of <em>FUCK YEAH</em>, that step from anxiety to peace. And because we were completely sure that there was an improvement, we ran a test with a data set similar to what was faced in production every day, which was millions of records in the database. In this case the result was clear:</p>
+<ul>
+<li>Prototype: 41:29 minutes</li>
+<li><em>Lumberjack Project:</em> 31:56 minutes</li>
+</ul>
+<p>Apart from having improved the sustainability of the project, we had improved performance, making the process more than 20% faster. And all this reaching the deadline.</p>
+<h2>Things I learned</h2>
+<p>In the end everything turned out well, but I definitely learned a couple of things from this experience:</p>
+<ul>
+<li><strong>Asynchrony in JS is more misunderstood than I thought.</strong> Asynchrony management in JavaScript is something that not everyone has internalized. Everyone uses promises and async/await and starting to work with JavaScript or TypeScript is not that complicated, what is more complicated is knowing how to manage asynchrony in JavaScript. Clarify that asynchrony itself is something that is not easy to understand, since this also happens in other languages.</li>
+<li><strong>Train your team, share knowledge.</strong> Find time to gradually train it. In my experience, mob programming helps a lot, but it is not enough. Some concepts you need to internalize and for that it is best to do katas or have training with specific objectives. At first it is quite hard to prepare these kinds of formations, but as you have them you can reuse them as new people join or if you change teams you can train that new team.</li>
+<li><strong>Responsibility must be shared.</strong> It is quite typical for the most experienced people on the team to carry things on their shoulders. Responsibility must be shared, both technologically and in relation to software design or methodologies. The idea is that team members learn from each other no matter what level of experience they have. The exchange of ideas from different points of view can greatly enrich the team.</li>
+<li><strong>Be expendable.</strong> If you are expendable you will not be the bottleneck. In this story I was a bottleneck for technical and businness knowledge. It's something I regret, but also something I learned from. Be careful, I say dispensable, not unnecessary. By this I mean that you should not be critical of knowledge, whether it is business, process or technology. Always try to share your knowledge with the team and document it. Everything that has a beginning has an end, so at some point you will no longer be on the team you are on now. When that happens, the important thing is that you do not take knowledge with you, but that you have left it on the team in the form of documentation. This way you will be expendable.</li>
+</ul>
+<p>And this has been the story and learning of how I took a process in Node.js from 5 hours to 5 minutes. Recapping these are my 6 tips when managing async in JavaScript:</p>
+<ol>
+<li>Avoid unnecessary async</li>
+<li>Avoid awaits inside loops</li>
+<li>Use Promise.all whenever you can</li>
+<li>Be aware of how many promises you are managing</li>
+<li>Read and take care of the warnings.</li>
+</ol>
+<h2>A couple more things</h2>
+<p>I have a couple more things in the pipeline that are not a product of this experience with <em>The Lumberjack Project</em>, but rather from day to day life over the last few years and I want to share them.</p>
+<ul>
+<li><strong>Do not mix asynchrony types</strong>: Apart from being more difficult to read, it also ends up affecting performance because most of the time what we do is complicate asynchronous behavior.</li>
+<li><strong>Async generators, that great unknown</strong>: In JavaScript there is a thing called generators, of which its asynchronous version arrived a couple of years ago. Where async generators shine is when managing streams. However, there are other use cases that are also very useful. Lucciano Mammino gave a <a href="https://www.youtube.com/watch?v=uTzBHPpMEhA" target="_blank" rel="noopener">talk about them at NodeCONF EU in 2021</a>.</li>
+<li><strong>Research the Event Loop</strong>: Understanding how JavaScript works below helps you understand why sometimes things don't happen as we expect. In the Node.js documentation there is a guides section in which there is a call <a href="https://nodejs.org/en/docs/guides/event-loop-timers-and-nexttick/" target="_blank" rel="noopener"><em>The Node.js Event Loop, Timers, and process.nextTick()</em></a>. It is a document that took 6 months to write and that explains the different processes and the order in which they are executed in each round of the Event Loop in Node.js.</li>
+</ul>
+<p>I also left here <a href="https://www.nearform.com/blog/optimise-node-js-performance-avoiding-broken-promises/" target="_blank" rel="noopener">this article by James Snell</a> on promise management in Node.js.</p>
+</article>
+  <author-info class="ws3sp0wuz"><section class="author-info">
+  <a href="/en">
+    <flipable-image class="wzsx78kcv"><div class="flipable-image">
+  <div class="flip-container">
+    <div class="flip-front">
+      <img src="/assets/about/author.jpg" alt="Ulises Santana">
+    </div>
+    <div class="flip-back no-print">
+      <img src="/assets/images/logo.png" alt="Ulises Santana">
+    </div>
+  </div>
+</div>
+
+</flipable-image>
+    
+  </a>
+  <div class="info">
+    <h2 class="title" custom>
+      
+      
+        👋 Hi! I'm <b>Ulises Santana</b>
+      
+    </h2>
+    <p class="description">
+      
+      
+        Full Stack Developer with JavaScript as mother tongue
+        and web as my home nation.
+        Based in the Canary Islands 🏝️
+      
+    </p>
+    <social-media class="wcscm75lq"><div class="social-media">
+  <ul>
+    <li>
+      <social-media-item label="Github" url="https://github.com/ulisesantana" class="wuzpprqmy"><div class="social-media-item">
+  <div class="no-print">
+    <a href="https://github.com/ulisesantana" target="_blank" aria-label="social profile" rel="noopener">
+      <svg viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg" height="1em" width="1em">
+  <rect width="256" height="256" rx="60" fill="#F4F2ED"></rect>
+  <path d="M128.001 30C72.779 30 28 74.77 28 130.001c0 44.183 28.653 81.667 68.387 94.89 4.997.926 6.832-2.169 6.832-4.81 0-2.385-.093-10.262-.136-18.618-27.82 6.049-33.69-11.799-33.69-11.799-4.55-11.559-11.104-14.632-11.104-14.632-9.073-6.207.684-6.079.684-6.079 10.042.705 15.33 10.305 15.33 10.305 8.919 15.288 23.394 10.868 29.1 8.313.898-6.464 3.489-10.875 6.349-13.372-22.212-2.529-45.56-11.104-45.56-49.421 0-10.918 3.906-19.839 10.303-26.842-1.039-2.519-4.462-12.69.968-26.464 0 0 8.398-2.688 27.508 10.25 7.977-2.215 16.531-3.326 25.03-3.364 8.498.038 17.06 1.149 25.051 3.365 19.087-12.939 27.473-10.25 27.473-10.25 5.443 13.773 2.019 23.945.98 26.463 6.412 7.003 10.292 15.924 10.292 26.842 0 38.409-23.394 46.866-45.662 49.341 3.587 3.104 6.783 9.189 6.783 18.519 0 13.38-.116 24.149-.116 27.443 0 2.661 1.8 5.779 6.869 4.797C199.383 211.64 228 174.169 228 130.001 228 74.771 183.227 30 128.001 30ZM65.454 172.453c-.22.497-1.002.646-1.714.305-.726-.326-1.133-1.004-.898-1.502.215-.512.999-.654 1.722-.311.727.326 1.141 1.01.89 1.508Zm4.919 4.389c-.477.443-1.41.237-2.042-.462-.654-.697-.777-1.629-.293-2.078.491-.442 1.396-.235 2.051.462.654.706.782 1.631.284 2.078Zm3.374 5.616c-.613.426-1.615.027-2.234-.863-.613-.889-.613-1.955.013-2.383.621-.427 1.608-.043 2.236.84.611.904.611 1.971-.015 2.406Zm5.707 6.504c-.548.604-1.715.442-2.57-.383-.874-.806-1.118-1.95-.568-2.555.555-.606 1.729-.435 2.59.383.868.804 1.133 1.957.548 2.555Zm7.376 2.195c-.242.784-1.366 1.14-2.499.807-1.13-.343-1.871-1.26-1.642-2.052.235-.788 1.364-1.159 2.505-.803 1.13.341 1.871 1.252 1.636 2.048Zm8.394.932c.028.824-.932 1.508-2.121 1.523-1.196.027-2.163-.641-2.176-1.452 0-.833.939-1.51 2.134-1.53 1.19-.023 2.163.639 2.163 1.459Zm8.246-.316c.143.804-.683 1.631-1.864 1.851-1.161.212-2.236-.285-2.383-1.083-.144-.825.697-1.651 1.856-1.865 1.183-.205 2.241.279 2.391 1.097Z" fill="#161614"></path>
+</svg>
+
+
+    </a>
+    <span class="tooltip">Github</span>
+  </div>
+  <span class="only-print">
+    <div class="only-print-data">
+      <span>Github</span>
+      <span>https://github.com/ulisesantana</span>
+    </div>
+  </span>
+</div>
+
+</social-media-item>
+    </li>
+    <li>
+      <social-media-item label="LinkedIn" url="https://www.linkedin.com/in/ulisesantana/" class="wuzpprqmy"><div class="social-media-item">
+  <div class="no-print">
+    <a href="https://www.linkedin.com/in/ulisesantana/" target="_blank" aria-label="social profile" rel="noopener">
+      <svg xmlns="http://www.w3.org/2000/svg" aria-label="LinkedIn" viewBox="0 0 512 512" fill="#fff" height="1em" width="1em">
+  <rect width="512" height="512" rx="15%" fill="#0077b5"></rect>
+  <circle cx="142" cy="138" r="37"></circle>
+  <path stroke="#fff" stroke-width="66" d="M244 194v198M142 194v198"></path>
+  <path d="M276 282c0-20 13-40 36-40 24 0 33 18 33 45v105h66V279c0-61-32-89-76-89-34 0-51 19-59 32"></path>
+</svg>
+
+    </a>
+    <span class="tooltip">LinkedIn</span>
+  </div>
+  <span class="only-print">
+    <div class="only-print-data">
+      <span>LinkedIn</span>
+      <span>https://www.linkedin.com/in/ulisesantana/</span>
+    </div>
+  </span>
+</div>
+
+</social-media-item>
+    </li>
+    <li>
+      <social-media-item label="Twitter" url="https://twitter.com/ulisesantana" class="wuzpprqmy"><div class="social-media-item">
+  <div class="no-print">
+    <a href="https://twitter.com/ulisesantana" target="_blank" aria-label="social profile" rel="noopener">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 209" height="1em" width="1em">
+  <path d="M256 25.45a105.04 105.04 0 0 1-30.166 8.27c10.845-6.5 19.172-16.793 23.093-29.057a105.183 105.183 0 0 1-33.351 12.745C205.995 7.201 192.346.822 177.239.822c-29.006 0-52.523 23.516-52.523 52.52 0 4.117.465 8.125 1.36 11.97-43.65-2.191-82.35-23.1-108.255-54.876-4.52 7.757-7.11 16.78-7.11 26.404 0 18.222 9.273 34.297 23.365 43.716a52.312 52.312 0 0 1-23.79-6.57c-.003.22-.003.44-.003.661 0 25.447 18.104 46.675 42.13 51.5a52.592 52.592 0 0 1-23.718.9c6.683 20.866 26.08 36.05 49.062 36.475-17.975 14.086-40.622 22.483-65.228 22.483-4.24 0-8.42-.249-12.529-.734 23.243 14.902 50.85 23.597 80.51 23.597 96.607 0 149.434-80.031 149.434-149.435 0-2.278-.05-4.543-.152-6.795A106.748 106.748 0 0 0 256 25.45" fill="#55acee"></path>
+</svg>
+
+    </a>
+    <span class="tooltip">Twitter</span>
+  </div>
+  <span class="only-print">
+    <div class="only-print-data">
+      <span>Twitter</span>
+      <span>https://twitter.com/ulisesantana</span>
+    </div>
+  </span>
+</div>
+
+</social-media-item>
+    </li>
+    <li>
+      <social-media-item label="Curriculum Vitae" url="/cv" class="wuzpprqmy"><div class="social-media-item">
+  <div class="no-print">
+    <a href="/cv" target="_blank" aria-label="social profile">
+      <svg version="1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" height="1em" width="1em">
+  <path fill="#90CAF9" d="M40 45H8V3h22l10 10z"></path>
+  <path fill="#E1F5FE" d="M38.5 14H29V4.5z"></path>
+  <path d="M16 21h17v2H16zm0 4h13v2H16zm0 4h17v2H16zm0 4h13v2H16z" fill="#1976D2"></path>
+</svg>
+
+    </a>
+    <span class="tooltip">Curriculum Vitae</span>
+  </div>
+  <span class="only-print">
+    <div class="only-print-data">
+      <span>Curriculum Vitae</span>
+      <span>/cv</span>
+    </div>
+  </span>
+</div>
+
+</social-media-item>
+    </li>
+  </ul>
+</div>
+
+</social-media>
+  </div>
+</section>
+
+</author-info>
+  <related-posts url="/blog/2022/how-i-took-a-node.js-process-from-5-hours-to-5-minutes/"><section class="related-posts">
+  
+</section>
+
+</related-posts>
+</article>
+
+</main>
+<scroll-to-top><button title="Scroll to top" class="scroll-to-top hidden no-print">
+  <up-icon><span class="up-icon">
+  <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 1024 1024" height="1em" width="1em">
+    <path d="M890.5 755.3 537.9 269.2c-12.8-17.6-39-17.6-51.7 0L133.5 755.3A8 8 0 0 0 140 768h75c5.1 0 9.9-2.5 12.9-6.6L512 369.8l284.1 391.6c3 4.1 7.8 6.6 12.9 6.6h75c6.5 0 10.3-7.4 6.5-12.7z"></path>
+  </svg>
+</span>
+
+</up-icon>
+</button>
+
+</scroll-to-top>
+<site-footer class="wzhztpn9m"><footer class="no-print">
+  <span class="bar"></span>
+  <social-media class="wcscm75lq"><div class="social-media">
+  <ul>
+    <li>
+      <social-media-item label="Github" url="https://github.com/ulisesantana" class="wuzpprqmy"><div class="social-media-item">
+  <div class="no-print">
+    <a href="https://github.com/ulisesantana" target="_blank" aria-label="social profile" rel="noopener">
+      <svg viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg" height="1em" width="1em">
+  <rect width="256" height="256" rx="60" fill="#F4F2ED"></rect>
+  <path d="M128.001 30C72.779 30 28 74.77 28 130.001c0 44.183 28.653 81.667 68.387 94.89 4.997.926 6.832-2.169 6.832-4.81 0-2.385-.093-10.262-.136-18.618-27.82 6.049-33.69-11.799-33.69-11.799-4.55-11.559-11.104-14.632-11.104-14.632-9.073-6.207.684-6.079.684-6.079 10.042.705 15.33 10.305 15.33 10.305 8.919 15.288 23.394 10.868 29.1 8.313.898-6.464 3.489-10.875 6.349-13.372-22.212-2.529-45.56-11.104-45.56-49.421 0-10.918 3.906-19.839 10.303-26.842-1.039-2.519-4.462-12.69.968-26.464 0 0 8.398-2.688 27.508 10.25 7.977-2.215 16.531-3.326 25.03-3.364 8.498.038 17.06 1.149 25.051 3.365 19.087-12.939 27.473-10.25 27.473-10.25 5.443 13.773 2.019 23.945.98 26.463 6.412 7.003 10.292 15.924 10.292 26.842 0 38.409-23.394 46.866-45.662 49.341 3.587 3.104 6.783 9.189 6.783 18.519 0 13.38-.116 24.149-.116 27.443 0 2.661 1.8 5.779 6.869 4.797C199.383 211.64 228 174.169 228 130.001 228 74.771 183.227 30 128.001 30ZM65.454 172.453c-.22.497-1.002.646-1.714.305-.726-.326-1.133-1.004-.898-1.502.215-.512.999-.654 1.722-.311.727.326 1.141 1.01.89 1.508Zm4.919 4.389c-.477.443-1.41.237-2.042-.462-.654-.697-.777-1.629-.293-2.078.491-.442 1.396-.235 2.051.462.654.706.782 1.631.284 2.078Zm3.374 5.616c-.613.426-1.615.027-2.234-.863-.613-.889-.613-1.955.013-2.383.621-.427 1.608-.043 2.236.84.611.904.611 1.971-.015 2.406Zm5.707 6.504c-.548.604-1.715.442-2.57-.383-.874-.806-1.118-1.95-.568-2.555.555-.606 1.729-.435 2.59.383.868.804 1.133 1.957.548 2.555Zm7.376 2.195c-.242.784-1.366 1.14-2.499.807-1.13-.343-1.871-1.26-1.642-2.052.235-.788 1.364-1.159 2.505-.803 1.13.341 1.871 1.252 1.636 2.048Zm8.394.932c.028.824-.932 1.508-2.121 1.523-1.196.027-2.163-.641-2.176-1.452 0-.833.939-1.51 2.134-1.53 1.19-.023 2.163.639 2.163 1.459Zm8.246-.316c.143.804-.683 1.631-1.864 1.851-1.161.212-2.236-.285-2.383-1.083-.144-.825.697-1.651 1.856-1.865 1.183-.205 2.241.279 2.391 1.097Z" fill="#161614"></path>
+</svg>
+
+
+    </a>
+    <span class="tooltip">Github</span>
+  </div>
+  <span class="only-print">
+    <div class="only-print-data">
+      <span>Github</span>
+      <span>https://github.com/ulisesantana</span>
+    </div>
+  </span>
+</div>
+
+</social-media-item>
+    </li>
+    <li>
+      <social-media-item label="LinkedIn" url="https://www.linkedin.com/in/ulisesantana/" class="wuzpprqmy"><div class="social-media-item">
+  <div class="no-print">
+    <a href="https://www.linkedin.com/in/ulisesantana/" target="_blank" aria-label="social profile" rel="noopener">
+      <svg xmlns="http://www.w3.org/2000/svg" aria-label="LinkedIn" viewBox="0 0 512 512" fill="#fff" height="1em" width="1em">
+  <rect width="512" height="512" rx="15%" fill="#0077b5"></rect>
+  <circle cx="142" cy="138" r="37"></circle>
+  <path stroke="#fff" stroke-width="66" d="M244 194v198M142 194v198"></path>
+  <path d="M276 282c0-20 13-40 36-40 24 0 33 18 33 45v105h66V279c0-61-32-89-76-89-34 0-51 19-59 32"></path>
+</svg>
+
+    </a>
+    <span class="tooltip">LinkedIn</span>
+  </div>
+  <span class="only-print">
+    <div class="only-print-data">
+      <span>LinkedIn</span>
+      <span>https://www.linkedin.com/in/ulisesantana/</span>
+    </div>
+  </span>
+</div>
+
+</social-media-item>
+    </li>
+    <li>
+      <social-media-item label="Twitter" url="https://twitter.com/ulisesantana" class="wuzpprqmy"><div class="social-media-item">
+  <div class="no-print">
+    <a href="https://twitter.com/ulisesantana" target="_blank" aria-label="social profile" rel="noopener">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 209" height="1em" width="1em">
+  <path d="M256 25.45a105.04 105.04 0 0 1-30.166 8.27c10.845-6.5 19.172-16.793 23.093-29.057a105.183 105.183 0 0 1-33.351 12.745C205.995 7.201 192.346.822 177.239.822c-29.006 0-52.523 23.516-52.523 52.52 0 4.117.465 8.125 1.36 11.97-43.65-2.191-82.35-23.1-108.255-54.876-4.52 7.757-7.11 16.78-7.11 26.404 0 18.222 9.273 34.297 23.365 43.716a52.312 52.312 0 0 1-23.79-6.57c-.003.22-.003.44-.003.661 0 25.447 18.104 46.675 42.13 51.5a52.592 52.592 0 0 1-23.718.9c6.683 20.866 26.08 36.05 49.062 36.475-17.975 14.086-40.622 22.483-65.228 22.483-4.24 0-8.42-.249-12.529-.734 23.243 14.902 50.85 23.597 80.51 23.597 96.607 0 149.434-80.031 149.434-149.435 0-2.278-.05-4.543-.152-6.795A106.748 106.748 0 0 0 256 25.45" fill="#55acee"></path>
+</svg>
+
+    </a>
+    <span class="tooltip">Twitter</span>
+  </div>
+  <span class="only-print">
+    <div class="only-print-data">
+      <span>Twitter</span>
+      <span>https://twitter.com/ulisesantana</span>
+    </div>
+  </span>
+</div>
+
+</social-media-item>
+    </li>
+    <li>
+      <social-media-item label="Curriculum Vitae" url="/cv" class="wuzpprqmy"><div class="social-media-item">
+  <div class="no-print">
+    <a href="/cv" target="_blank" aria-label="social profile">
+      <svg version="1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" height="1em" width="1em">
+  <path fill="#90CAF9" d="M40 45H8V3h22l10 10z"></path>
+  <path fill="#E1F5FE" d="M38.5 14H29V4.5z"></path>
+  <path d="M16 21h17v2H16zm0 4h13v2H16zm0 4h17v2H16zm0 4h13v2H16z" fill="#1976D2"></path>
+</svg>
+
+    </a>
+    <span class="tooltip">Curriculum Vitae</span>
+  </div>
+  <span class="only-print">
+    <div class="only-print-data">
+      <span>Curriculum Vitae</span>
+      <span>/cv</span>
+    </div>
+  </span>
+</div>
+
+</social-media-item>
+    </li>
+  </ul>
+</div>
+
+</social-media>
+  <div class="bottom-text">
+    <span class="thanks">
+      
+      
+        <span>
+          Made with <svg version="1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" height="1em" width="1em">
+  <path fill="#F44336" d="M34 9c-4.2 0-7.9 2.1-10 5.4C21.9 11.1 18.2 9 14 9 7.4 9 2 14.4 2 21c0 11.9 22 24 22 24s22-12 22-24c0-6.6-5.4-12-12-12z"></path>
+</svg> and
+        </span>
+        <a href="https://www.11ty.dev" title="11ty website" target="_blank" rel="noopener">
+          <eleventy-icon class="wpsio4mfp"><svg viewBox="0 0 256 214" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid" height="1em" width="1em">
+  <path d="M98.329 4.641c2.143 0 3.846 1.213 4.763 3.183.644 1.38.925 3.134.939 5.337v157.715c-.013 2.92-.318 5.202-.987 6.92-.927 2.386-2.696 3.926-5.11 3.966h-.095l-18.186-.023c-2.458 0-4.227-1.574-5.135-4.001-.639-1.706-.93-3.974-.942-6.885V39.145l-4.897 1.24-1.954.49-.571.14-.29.067-.136.028-.05.008-.026.003h-.027l-.003-.002-.001-.003v-.003l.004-.004.031-.03c.012-.012.017-.023-.002-.03l-.011-.004-.057.003c-2.063.077-3.78-1.026-4.719-2.917-.671-1.35-.959-3.076-.972-5.26V21.284c0-2.046.33-3.764 1.076-5.165.85-1.598 2.213-2.695 3.927-3.14l.103-.026.119-.028 31.446-8.093a7.014 7.014 0 0 1 1.478-.187l.147-.004h.138ZM150.842 0c2.253 0 4.048 1.263 5.034 3.344.712 1.505 1.03 3.442 1.043 5.878v46.473l.001.11h13.526c2.124 0 3.87 1.096 4.897 2.965l.048.09.047.09c.743 1.453 1.07 3.307 1.085 5.623v6.593c0 2.356-.328 4.24-1.098 5.712-1.003 1.917-2.75 3.05-4.88 3.084h-13.647v61.196l.004.476.005.47.008.463.005.23.014.566.017.555.021.546.025.535.01.212.023.418.026.41.027.406.03.398.015.196.033.389.017.191.018.19.037.376.04.368.02.182.043.359c.091.746.198 1.449.318 2.108l.04.218.03.154.058.288.059.28.03.139.061.271.063.264.032.13.065.254c.084.323.172.629.262.917l.078.244c.382 1.156.811 2.016 1.265 2.574.842 1.037 1.583 1.663 2.153 1.912l.173.071c.674.269 1.607.422 2.807.432h8.577c2.019 0 3.765.804 4.91 2.383.952 1.311 1.37 2.976 1.388 4.97l.001.14v7.139c0 2.207-.428 4.027-1.427 5.443-1.16 1.645-2.936 2.506-5 2.535h-.11l-12.116.023c-3.359 0-6.29-.236-8.84-.717-2.728-.515-5.501-1.647-8.35-3.381-2.967-1.806-5.4-4.283-7.292-7.404-1.84-3.032-3.277-7.123-4.36-12.284-1.056-5.025-1.595-10.88-1.614-17.546V79.962h-5.592c-2.107 0-3.85-1.068-4.883-2.907l-.048-.088-.048-.09c-.752-1.437-1.083-3.268-1.099-5.547v-6.595c0-2.391.326-4.299 1.086-5.785.996-1.948 2.745-3.108 4.891-3.143l.101-.001h5.591v-.182l2.148-46.374.012-.208c.152-2.397.54-4.284 1.25-5.733.984-2.01 2.671-3.27 4.823-3.309h12.013Zm100.03 55.762c2 0 3.553 1.183 4.356 3.01.544 1.239.772 2.79.772 4.725 0 .071 0 .143-.002.217l-.002.111-.008.23-.005.117-.014.241-.008.124-.02.254c-.016.207-.037.422-.06.646l-.02.17-.033.29-.038.3-.041.311-.033.236-21.207 110.414-.05.271-.105.576-.107.57-.16.844-.108.556-.163.824-.109.542-.11.537-.11.532-.11.526-.111.52-.168.771-.112.507-.113.502-.114.496-.114.49-.114.486-.115.48-.116.474-.116.468-.117.464-.117.457-.118.453-.118.447-.119.441-.119.436-.12.43-.12.426-.12.42-.122.413-.122.409-.123.403-.123.398-.123.392-.124.387-.125.38-.125.377-.063.185-.126.368-.063.182-.063.18-.16.445-.159.437-.064.172-.129.34-.129.335-.173.438-.152.373-.157.38c-.278.66-.56 1.294-.847 1.904l-.124.26-.166.34-.167.336c-1.843 3.664-3.908 6.33-6.281 8.004-2.957 2.104-6.73 3.18-11.291 3.309l-.205.005h-1.26c-7.15 0-12.374-1.962-15.383-6.11l-.09-.126-.078-.111-.04-.05c-.857-1.088-1.281-2.586-1.448-4.68l-.011-.141-.018-.269-.009-.137-.007-.138-.013-.281-.006-.143-.005-.145-.01-.37-.007-.38-.002-.154-.002-.315v-.346l.001-.191.004-.378.003-.186.004-.184.009-.364.005-.179.007-.177.014-.35.017-.342.02-.336.023-.33.012-.16.027-.32.03-.311c.14-1.389.366-2.572.687-3.565.833-2.576 2.49-4.305 4.992-4.346h.09l.098.001.081.004.084.006.087.009.118.015.128.021.172.033.16.034.142.033.279.07.375.098.505.14.534.152.707.206 1.694.497.48.146.431.128.41.119.388.11.366.1.26.07.246.065.308.078.283.069.196.046.181.04.166.036.199.04.13.023.115.018.068.01.06.006.053.005.024.001.042.002a.177.177 0 0 0 .08-.02c.088-.039.206-.119.354-.257.462-.433.98-1.221 1.498-2.368.659-1.457 1.141-3.34 1.433-5.638l.024-.198.04-.344.037-.35.018-.178.017-.179.031-.362a49.99 49.99 0 0 0 .158-3.865l.001-.298-.002-.095-.004-.074-.01-.126-.018-.196-.027-.229-.034-.26-.02-.143-.045-.308-.053-.34-.076-.47-.088-.517-.1-.565-.11-.613-.15-.798-.164-.864-.213-1.092-.27-1.357-.26-1.281-.324-1.57-.343-1.635-23.364-97.108-.04-.291-.038-.277-.034-.267-.032-.257-.035-.309-.03-.295-.011-.114-.02-.222-.016-.215-.007-.104-.013-.203-.009-.195-.003-.095-.005-.186-.001-.09v-.25c.012-1.724.215-3.114.686-4.242.733-1.758 2.187-2.94 4.107-2.977l.091-.001h14.41c1.93 0 3.64.705 4.961 2.066 1.216 1.252 1.941 3.142 2.413 5.776l.027.15.044.262 12.677 67.097 9.9-66.63.016-.127c.36-2.668.968-4.651 1.978-6.02l.061-.081.061-.079c1.223-1.548 2.936-2.405 4.886-2.436h10.097ZM38.456 4.84c2.143 0 3.846 1.213 4.764 3.183.643 1.38.925 3.134.938 5.337v157.528c0 3.01-.304 5.352-.986 7.108-.927 2.385-2.697 3.925-5.108 3.964H19.76c-2.459 0-4.228-1.574-5.136-4.001-.639-1.706-.93-3.974-.942-6.885V39.366l-3.513.888-2.771.693-.657.158-.29.067-.22.046-.125.02-.103.01-.122.01c-2.147.155-3.94-.958-4.908-2.906-.67-1.35-.958-3.076-.972-5.26V21.505c0-2.046.33-3.764 1.076-5.165.85-1.598 2.213-2.695 3.927-3.14l.103-.026.12-.028 31.467-8.115a7.014 7.014 0 0 1 1.478-.188l.147-.003h.138Z"></path>
+</svg>
+</eleventy-icon>
+        </a>
+      
+    </span>
+    <small>Ulises Santana &copy; 2019 - 2023</small>
+  </div>
+</footer>
+
+</site-footer>
+
+
+
+</body>
+</html>

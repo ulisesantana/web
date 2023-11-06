@@ -30,12 +30,12 @@ const youTubeVideoStyle = /* html */`
 `
 
 class YouTubeVideo extends HTMLElement {
-  constructor() {
+  constructor () {
     super()
     this.attachShadow({ mode: 'open' })
   }
 
-  connectedCallback() {
+  connectedCallback () {
     const videoId = this.getAttribute('video-id')
     const caption = this.getAttribute('video-caption') || ''
     this.shadowRoot.innerHTML = /* html */`
