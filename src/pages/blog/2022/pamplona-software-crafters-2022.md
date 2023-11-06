@@ -1,9 +1,10 @@
 ---
 title: Pamplona Software Crafters 2022
 date: 2022-06-24
+cover: /assets/es/blog/2022/pamplona-software-crafters-2022/cover.png
 description: El fin de semana pasado tuve la oportunidad de asistir a la Pamplona Software Crafters. Déjame compartir contigo esta experiencia.
 tags: [software,evento,software craftsmanship,comunidad]
-draft: false
+draft: true
 ---
 
 <youtube-video video-id="iJp7iqjWlr8"></youtube-video>
@@ -23,7 +24,7 @@ Estos son los pasos para montar un Open Space:
 
 Al final de estos pasos queda algo tal que así:
 
-<img-caption src="/assets/blog/2022/pamplona-software-crafters-2022/pamplona-open-space.jpg" alt="Tablero con las diferentes sesiones para el segundo día de la Pamplona Software Crafters 2022">
+<img-caption src="/assets/es/blog/2022/pamplona-software-crafters-2022/pamplona-open-space.jpg" alt="Tablero con las diferentes sesiones para el segundo día de la Pamplona Software Crafters 2022">
 En este tablero podemos ver las diferentes sesiones seleccionadas con los puntos asignados y dónde y cuándo van a ocurrir.
 </img-caption>
 

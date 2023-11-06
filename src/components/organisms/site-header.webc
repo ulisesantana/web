@@ -1,6 +1,6 @@
 <header>
-  <a class="isotype" href="/" webc:if="this.locale === 'es'">ulisesantana.dev</a>
-  <a class="isotype" href="/en" webc:if="this.locale !== 'es'">ulisesantana.dev</a>
+  <a class="isotype" href="/" webc:if="this.locale !== 'es'">ulisesantana.dev</a>
+  <a class="isotype" href="/es" webc:if="this.locale === 'es'">ulisesantana.dev</a>
   <nav-items></nav-items>
 </header>
 

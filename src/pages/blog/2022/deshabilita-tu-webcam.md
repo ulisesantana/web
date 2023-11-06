@@ -1,9 +1,10 @@
 ---
 title: Como deshabilitar tu webcam en Linux
 date: 2022-01-05
+cover: /assets/es/blog/2022/deshabilita-tu-webcam/cover.png
 description: En ocasiones es más cómodo deshabilitar la cámara del ordenador mediante software que físicamente. En este articulo te explico como hacerlo en Linux.
 tags: [linux]
-draft: false
+draft: true
 ---
 
 En casi todos mis dispositivo tengo la cámara frontal tapada con la típica pegatina con ventana para poder bloquear la cámara físicamente. Sin embargo, en el sobremesa no puedo porque la ventana y la pegatina me tapan la lente de la cámara haciendo imposible que se me vea cuando quiero.

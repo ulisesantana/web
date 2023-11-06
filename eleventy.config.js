@@ -16,6 +16,9 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ 'src/components/**/*.js': 'components' })
 
   eleventyConfig.addCollection('posts_es', function (collection) {
+    return collection.getFilteredByGlob('./src/pages/es/blog/**/*.md')
+  })
+  eleventyConfig.addCollection('posts_en', function (collection) {
     return collection.getFilteredByGlob('./src/pages/blog/**/*.md')
   })
   eleventyConfig.addDataExtension('yaml', contents => yaml.load(contents))

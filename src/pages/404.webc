@@ -6,33 +6,38 @@ dynamicPermalink: false
 
 <div class="page-not-found">
   <div class="message">
-    <h2 id="message-title">Página no encontrada</h2>
-    <p id="message-body">Vaya, no sé como has llegado hasta aquí, pero no tengo nada para mostrar</p>
+    <h2 id="message-title">Page not found</h2>
+    <p id="message-body">Ups, I don\'t know how do you get here, but I have nothing to show you.</p>
   </div>
   <img 
     src="/assets/images/404.gif" 
-    alt="Vincent Vega en Pulp Fiction validando si drogarse en la habitación de su camello o no."
+    alt="Vincent Vega in Pulp Fiction validating whether to get high in his drug dealer\'s room or not."
   />
   <div class="cta">
     <a href="/">
       <button>
-        Volver a la página principal
+        Go back to the home page
       </button>
     </a>
   </div>
   <script webc:keep>
-    if(window.location.pathname.startsWith('/en/')) {
+    const path = window.location.pathname
+    if (path.startsWith('/blog/') && !path.startsWith('/es/blog')) {
+      const [slug] = path.split('/blog/') 
+      window.location.pathname = '/es/blog/' + slug
+    }
+    if(path.startsWith('/es/')) {
       const title = document.querySelector('#message-title')
       const body = document.querySelector('#message-body')
       const img = document.querySelector('.page-not-found img')
       const ctaLink = document.querySelector('.cta a')
       const ctaButton = document.querySelector('.cta button')
 
-      title.textContent = 'Page not found'
-      body.textContent = 'Ups, I don\'t know how do you get here, but I have nothing to show you.'
-      img.alt = 'Vincent Vega in Pulp Fiction validating whether to get high in his drug dealer\'s room or not.'
-      ctaLink.href = '/en'
-      ctaButton.textContent = 'Go back to the home page'
+      title.textContent = 'Página no encontrada'
+      body.textContent = 'Vaya, no sé como has llegado hasta aquí, pero no tengo nada para mostrar'
+      img.alt = 'Vincent Vega en Pulp Fiction validando si drogarse en la habitación de su camello o no.'
+      ctaLink.href = '/es'
+      ctaButton.textContent = 'Volver a la página principal'
     }
   </script>
 </div>

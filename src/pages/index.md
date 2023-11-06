@@ -1,58 +1,56 @@
 ---
 layout: author.webc
-title: Sobre mí
+title: About me
 ---
 
-# Sobre mí
+# About me
 
 <tldr-section>
 
-Hola, me llamo Ulises Santana y vivo en las islas Canarias 🇮🇨, España 🇪🇸. Trabajaba como Full Stack Developer en [Lean Mind](https://leanmind.es) hasta que decidí cogerme una excedencia. Desde 2014 he estado creando soluciones basadas en tecnología web, algunas de ellas usadas en varios países para millones de usuarios.
+Hi, I'm Ulises Santana, based in the Canary Islands 🇮🇨, Spain 🇪🇸. I worked as Full Stack Developer on [Lean Mind](https://leanmind.es) before taking a sabbatical, which I am doing right now. I have been creating web tech-based solutions since 2014, and some of these solutions have been used in multiple countries by millions of users.
 
-Me apasiona programar, el ecosistema de web apps y aprender algo nuevo cada día. Estoy muy agradecido con la comunidad de desarrolladores y a toda la gente que me ha ayudado en mi senda hasta ser un desarrollador profesional. Así que como quiero devolver esa ayuda, si crees que puedo ayudarte de alguna manera, simplemente escríbeme un mensaje por twitter. Si no puedo ayudarte a lo mejor sé quien puede ayudarte. Por cierto, estoy muy interesado en proyectos con un bien social como fin, por lo que no dudes en contactar conmigo si crees que puedo aportar de alguna manera.
+I am passionate about programming, the web application ecosystem, and learning something new daily. I am very grateful to the developer community and all who have helped me become a professional developer. So since I want to give back that help, if you think I can help you in any way, drop me a message on Twitter. If I can't help you, maybe I know who can help you. By the way, I am very interested in projects with social good as an end, so do not hesitate to contact me if you think I can contribute in any way.
 
 </tldr-section>
 
-Nací en las Islas Canarias, España; concretamente en un pequeño pueblo en el sureste de Gran Canaria, un lugar maravilloso donde crecer. Desde que era niño pasaba horas navegando por internet y foros, por lo que no fue una gran sorpresa cuando me quedé prendado por el ecosistema web cuando estaba comenzando como Social Media Manager. Desde ese momento decidí que la web era esa "cosa" a la que quería dedicar el resto de mi vida.
+I was born in the Canary Islands, Spain, in a sunny small town located southwest of Gran Canaria, a wonderful place to grow up. Since I was a child, I spent hours surfing the internet and forums, so it was not a big surprise when I fell in love with the web ecosystem when I started as a Social Media Manager. From that very moment, I decided that the web was that "thing" to which I wanted to dedicate the rest of my life.
 
-Sin embargo, mi destino con la web parece ser que no sería como Social Media Manager. Después de dos años y medio trabajando en ese rol me dí cuenta que el marketing no era lo mío, pero sí lo era el desarrollo web. Ese fue el punto de partida para convertirme en programador y la motivación para dejar la empresa que había cofundado y comenzar mis estudios en desarrollo de aplicaciones web. Considero que el marketing es muy interesante, pero prefiero programar aplicaciones y dejar a los amantes del marketing trabajar en marketing.
+However, my destiny with the web seems to be that it would not be as a Social Media Manager. After two and a half years working in that role, I realized that marketing was not my thing, but web development was. That was the starting point for me to become a programmer and the motivation to leave the company I had co-founded and start my studies in web application development. I find marketing very interesting, but I prefer to program applications and let marketing lovers work in marketing.
 
 <img src="/assets/about/uli-social-media.jpg" 
-  alt="Ulises en su época como Social Media Manager" 
+  alt="Ulises in his time as Social Media Manager" 
   style="display: block;max-width:300px;margin: 0 auto;"/>
 
-Terminé el Ciclo Superior de Desarrollo de Aplicaciones Web en Junio de 2017. Justo después fui contratado como Backend Developer por [Kentech](https://kentech-sp.com), la empresa donde hice las prácticas. [Kentech](https://kentech-sp.com) es un proveedor de soluciones a medida a lo largo de varios verticales, especializado en la industria del entretenimiento online centrada en los deportes en múltiples países para millones de usuarios. Un año más tarde fui ascendido a Full Stack Developer y la mayoría del tiempo estuve trabajando con [AngularJS](https://angularjs.org), [React](https://reactjs.org) y [Node.js](https://nodejs.org), pero también con [Symfony](https://symfony.com/), [Docker](https://www.docker.com) y [Rancher](https://rancher.com).
+I finished the Higher Technician in Web Application Development training in June 2017. Right after, I was hired as Backend Developer by [Kentech](https://kentech-sp.com), the company where I intern-shipped. [Kentech](https://kentech-sp.com) provides tailored solutions across various verticals, specializing in the sports-focused online entertainment industry in multiple countries for millions of users. A year later, I was promoted to Full Stack Developer working with [AngularJS](https://angularjs.org), [React](https://reactjs.org), and [Node.js](https://nodejs.org), but also with [Symfony](https://symfony.com/), [Docker](https://www.docker.com) and [Rancher](https://rancher.com).
 
-Tres años después pasé a formar parte de [Lean Mind](https://leanmind.es), un lugar increíble donde trabajé durante otros casi 3 años como Full Stack Developer con otros equipos de desarrolladores para diferentes clientes con diferentes tecnologías. Sin embargo, por suerte pude seguir trabajando en [Node.js](https://nodejs.org), permitiéndome profundizar en la plataforma y aumentar mi expertise en ella. También en [Lean Mind](https://leanmind.es) tuve la gran suerte de aprender sobre [código sostenible](https://savvily.es/libros/codigo-sostenible/) y aprender de personas tan maravillosas como [Carlos Blé](https://www.carlosble.com/), [María Soria](https://mariasoria.dev/), [Cristian Suárez](https://criskrus.com/) o [Adrián Ferrera](https://adrianferrera.com). Esta etapa en [Lean Mind](https://leanmind.es) sin duda marcó un antes y un después en mi vida tanto a nivel profesional como personal.
+Three years after, I became part of [Lean Mind](https://leanmind.es), an incredible place where I worked for another almost three years as a Full Stack Developer with other developer teams for different clients with different technologies. However, luckily I was able to continue working on [Node.js](https://nodejs.org), allowing me to deepen the platform and increase my expertise in it. Also in [Lean Mind](https://leanmind.es) I was very lucky to learn about [sustainable code](https://savvily.es/libros/codigo-sostenible/) and learn from people as wonderful as [ Carlos Blé](https://www.carlosble.com/), [María Soria](https://mariasoria.dev/), [Cristian Suárez](https://criskrus.com/) or [Adrián Ferrera](https://adrianferrera.com). This stage in [Lean Mind](https://leanmind.es) undoubtedly marked a before and after in my life, professionally and personally.
 
-## Conferencias & Eventos
+## Conferences & Events
 
-Desde que me gano la vida como desarrollador trato de mantenerme al día en JavaScript y la web, por lo que he intentado ir a todas las conferencias que puedo. Esto se tradujo en asistir a eventos como JSConf EU donde tuve la oportunidad de hacerme una selfie con [Ryan Dahl](https://tinyclouds.org/), el creador de [Node.js](https://nodejs.org) y [Deno](https://deno.land). Fue un momento bastante fanboy.
+Since I've been a developer for a living, I aim to keep up with JavaScript and the web, so I have tried to go to as many conferences as I am able to. This, ended up in attending events like JSConf EU where I had the opportunity to take a selfie with [Ryan Dahl](https://tinyclouds.org/), the creator of [Node.js](https://nodejs.org ) and [Deno](https://deno.land). It was quite a fanboy moment.
 
-<img-caption src="/assets/about/dahl.jpg" alt="En la JSConf 2018 con Ryan Dahl">
-A la izquierda parte del gran equipo con el que trabajé en Kentech y Ryan Dahl justo después de dar <a href="https://www.youtube.com/watch?v=M3BM9TB-8yA" >la charla más épica de JSConf EU 2018.</a>
+<img-caption src="/assets/about/dahl.jpg" alt="At JSConf 2018 with Ryan Dahl">
+On the left part of the great team I worked with at Kentech and Ryan Dahl right after giving <a href="https://www.youtube.com/watch?v=M3BM9TB-8yA" >the most epic talk of JSConf EU 2018.</a>
 </img-caption>
 
-Como agradecimiento hacia la comunidad, he patrocinado  [JSDay Canarias](https://jsdaycanarias.com) de 2018 a 2022 y [PyDay Gran Canaria 2019](https://pythoncanarias.es/events/pydaygc19), aparte de también patrocinar y co-organizar el [Global Day of Coderetreat Canarias 2019](https://twitter.com/GDCR_Canarias). Además, en Noviembre de 2018 tuve la oportunidad de dar una charla en [JS Day Canarias](https://2018.jsdaycanarias.com) sobre [Node.js, npm y cómo publicar y mantener un paquete en un registro npm](https://www.youtube.com/watch?v=Joqdb-oZjC8). Me encantó la experiencia y quiero continuar compartiendo conocimiento con el resto del mundo, ya que gracias a personas desinteresadas yo pude profesionalizarme como desarrollador de software. Quiero aportar a que más personas puedan hacerlo, ya sea dando charlas en eventos, centros educativos o simplemente escribiendo en [mi blog](/blog).
+As a thank you to the community, I have sponsored [JSDay Canarias](https://jsdaycanarias.com) from 2018 to 2022 and [PyDay Gran Canaria 2019](https://pythoncanarias.es/events/pydaygc19), apart from also sponsor and co-organize the [Global Day of Coderetreat Canarias 2019](https://twitter.com/GDCR_Canarias). Also, in November 2018, I had the opportunity to give a talk at [JS Day Canarias](https://2018.jsdaycanarias.com) about [Node.js, npm and how to publish and maintain a package in an npm registry]( https://www.youtube.com/watch?v=Joqdb-oZjC8). I loved the experience, and I want to continue sharing knowledge with the rest of the world. Thanks to selfless people, I became a professional software developer. I want to contribute so that more people can do it by giving talks at events and educational centers or simply writing on [my blog](/blog).
 
-<img-caption src="/assets/about/jsdaycanarias2018.jpg" alt="Foto de Ulises dando una charla en JSDay Canarias de 2018">
-Hablando de cómo crear un paquete de npm en el JSDay Canarias 2018
+<img-caption src="/assets/about/jsdaycanarias2018.jpg" alt="Photo of Ulises giving a talk at JSDay Canarias 2018">
+Talking about how to create an npm package at JSDay Canarias 2018
 </img-caption>
 
-En 2022 volví a preparar una charla. Esta vez sobre el aprendizaje de una experiencia laboral en la que optimicé un proceso en Node.js de 5 horas a 5 minutos. Fue una charla que di en varios eventos, como en [JSDay Canarias](https://youtu.be/V4sXNlzJIy8) o en el open space de [Pamplona Software Crafters](/blog/2022/pamplona-software-crafters-2022/), e incluso convertí en [entrada de blog](/blog/2022/como-pase-un-proceso-en-nodejs-de-5-horas-a-5-minutos).
+In 2022 I prepared a talk again. This time about learning from a work experience in which I optimized a process in Node.js from 5 hours to 5 minutes. It was a talk I gave at various events, such as [JSDay Canarias](https://youtu.be/V4sXNlzJIy8) or in the open space of [Pamplona Software Crafters](/blog/2022/pamplona-software-crafters-2022/), and even wrote it down as a [blog post](/blog/2022/como-pase-un-proceso-en-nodejs-de-5-horas-a-5-minutos).
 
-<img-caption src="/assets/about/jsdaycanarias2022.jpeg" alt="Foto de Ulises dando una charla en JSDay Canarias de 2022">
-Hablando de cómo gestionar la asincronía en Node.js durante JSDay Canarias 2022
+<img-caption src="/assets/about/jsdaycanarias2022.jpeg" alt="Photo of Ulises giving a talk at JSDay Canarias 2022">
+Talking about how to manage asynchrony in Node.js during JSDay Canarias 2022
 </img-caption>
 
-## En lo personal
+## On the personal side
 
-Trato de llevar un día a día sostenible en el que pueda ser creativo, alimentando mi curiosidad innata y permitiéndome tener tiempo para mí y para cosas que no tengan que ver con software. Esto acaba resultando en, por un lado, tener proyectos open source como [git-reporter](https://www.npmjs.com/package/git-reporter), [diff-lines](https://www.npmjs.com/package/@ulisesantana/diff-lines) o [array-analyzer](https://ulisesantana.github.io/array-analyzer/) donde creo herramientas para mí y las pongo a disposición de los demás a la vez que pongo en práctica lo que voy aprendiendo sobre *software crafting*.
+I try to lead a sustainable day to day in which I can be creative, feeding my innate curiosity and allowing me to have time for myself and for things that do not have to do with software. This ends up resulting in, on the one hand, having open source projects like [git-reporter](https://www.npmjs.com/package/git-reporter), [diff-lines](https://www.npmjs.com/package/@ulisesantana/diff-lines) or [array-analyzer](https://ulisesantana.github.io/array-analyzer/) where I create tools for myself and make them available to others at the same time that I put into practice what I am learning about *software crafting*.
 
-Por otro lado, me encanta cocinar, disfrutar de un buen libro, podcast, película o serie. También disfruto caminando por la naturaleza con mi chihuahua Mocha o dedicándole tiempo a mi jardín real. Digo real porque también tengo un [jardín digital](https://maggieappleton.com/garden-history) que mantengo con [Obsidian](https://obsidian.md/), que también me hace las veces de [cerebro digital](https://maggieappleton.com/basb). De hecho, acabé publicando un [plugin](https://github.com/ulisesantana/obsidian-pending-notes) para Obsidian que te permite ver qué notas tienes pendientes de crear.
+On the other hand, I love to cook, enjoy a good book, podcast, movie or series. I also enjoy nature walks with my chihuahua Mocha or spending time in my real garden. I say real because I also have a [digital garden](https://maggieappleton.com/garden-history) which I maintain with [Obsidian](https://obsidian.md/), serving me also as my [digital brain ](https://maggieappleton.com/basb). In fact, I ended up publishing a [plugin](https://github.com/ulisesantana/obsidian-pending-notes) for Obsidian that allows you to see what notes you have pending to create.
 
-Si quieres saber un poco más de mí puedes ver esta entrevista que me hizo [Adrián Ferrera](https://adrianferrera.com) en su podcast [Devs Lives](https://www.youtube.com/channel/UC8hcSq8ZoFG8hZrZ8XFC7Qw).
+If you want to know a little more about me, you can watch this interview that [Adrián Ferrera](https://adrianferrera.com) did to me on his podcast [Devs Lives](https://www.youtube.com/channel/UC8hcSq8ZoFG8hZrZ8XFC7Qw).
 
 <youtube-video video-id="T9Frov6wS7U"></youtube-video>
-
-

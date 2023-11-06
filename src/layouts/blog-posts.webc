@@ -26,12 +26,11 @@ layout: author.webc
 			<ul>
 			`.concat(collection.map((post) => {
 				const locale = this.locale === 'es' ? 'es-ES' : 'en-US'
-				const coverPath = `/assets${post.url}cover.png`
 				return `
 				<li>
 					<post-card 
 						@post-title="${post.data.title}"
-						@image="${coverPath}"
+						@image="${post.data.cover}"
 						@url="${post.url}"
 						@description="${post.data.description}"
 						@date="${this.fefo.dates.toLocaleDateString(post.data.date, locale)}"

@@ -48,7 +48,7 @@ module.exports = {
      * @returns {Post[]} A list of related post
      */
     getRelatedPosts (fromPostUrl, posts) {
-      const { data: { tags } } = posts.find(({ page: { url } }) => url === fromPostUrl)
+      const { data: { tags } } = posts.find(({ page: { url } }) => url === fromPostUrl) || { data: { tags: [] } }
       return posts.filter(post =>
         post.page.url !== fromPostUrl &&
         post.data.tags.some(tag => tags.includes(tag)) &&
@@ -62,7 +62,7 @@ module.exports = {
      * @returns {string[]} Post tags list
      */
     getTags (fromPostUrl, posts) {
-      const { data: { tags } } = posts.find(({ page: { url } }) => url === fromPostUrl)
+      const { data: { tags } } = posts.find(({ page: { url } }) => url === fromPostUrl) || { data: { tags: [] } }
       return tags
     }
   },

@@ -4,7 +4,7 @@ date: 2022-01-09
 description: Llevo años usando Jest para mis proyectos en Node.js, pero cada vez oigo más quejas por parte de la comunidad de Node.js sobre Jest y que no deberías usarlo.
 tags: [node.js,testing,jest]
 cover: ./cover.png
-draft: false
+draft: true
 ---
 
 ## El problema

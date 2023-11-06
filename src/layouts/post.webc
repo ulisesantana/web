@@ -6,7 +6,7 @@ layout: base.webc
 <article>
   <figure>
     <site-image 
-      :img="`/assets${this.page.url}cover.png`" 
+      :img="cover" 
       :img-fallback="fefo.images.fallback"
       :img-title="title">
     </site-image>
@@ -22,7 +22,7 @@ layout: base.webc
     </time>
     <site-tags :url="this.page.url"></site-tags>
   </div>
-  <article @raw="content" webc:nokeep></article>
+  <article @raw="content" webc:keep></article>
   <author-info></author-info>
   <related-posts :url="this.page.url"></related-posts>
 </article>
