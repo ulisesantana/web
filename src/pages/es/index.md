@@ -39,7 +39,7 @@ Como agradecimiento hacia la comunidad, he patrocinado  [JSDay Canarias](https:/
 Hablando de cómo crear un paquete de npm en el JSDay Canarias 2018
 </img-caption>
 
-En 2022 volví a preparar una charla. Esta vez sobre el aprendizaje de una experiencia laboral en la que optimicé un proceso en Node.js de 5 horas a 5 minutos. Fue una charla que di en varios eventos, como en [JSDay Canarias](https://youtu.be/V4sXNlzJIy8) o en el open space de [Pamplona Software Crafters](/blog/2022/pamplona-software-crafters-2022/), e incluso convertí en [entrada de blog](/blog/2022/como-pase-un-proceso-en-nodejs-de-5-horas-a-5-minutos).
+En 2022 volví a preparar una charla. Esta vez sobre el aprendizaje de una experiencia laboral en la que optimicé un proceso en Node.js de 5 horas a 5 minutos. Fue una charla que di en varios eventos, como en [JSDay Canarias](https://youtu.be/V4sXNlzJIy8) o en el open space de [Pamplona Software Crafters](es/blog/2022/pamplona-software-crafters-2022/), e incluso convertí en [entrada de blog](es/blog/2022/como-pase-un-proceso-en-nodejs-de-5-horas-a-5-minutos).
 
 <img-caption src="/assets/about/jsdaycanarias2022.jpeg" alt="Foto de Ulises dando una charla en JSDay Canarias de 2022">
 Hablando de cómo gestionar la asincronía en Node.js durante JSDay Canarias 2022
@@ -47,7 +47,7 @@ Hablando de cómo gestionar la asincronía en Node.js durante JSDay Canarias 202
 
 ## En lo personal
 
-Trato de llevar un día a día sostenible en el que pueda ser creativo, alimentando mi curiosidad innata y permitiéndome tener tiempo para mí y para cosas que no tengan que ver con software. Esto acaba resultando en, por un lado, tener proyectos open source como [git-reporter](https://www.npmjs.com/package/git-reporter), [diff-lines](https://www.npmjs.com/package/@ulisesantana/diff-lines) o [array-analyzer](https://ulisesantana.github.io/array-analyzer/) donde creo herramientas para mí y las pongo a disposición de los demás a la vez que pongo en práctica lo que voy aprendiendo sobre *software crafting*.
+Trato de llevar un día a día sostenible en el que pueda ser creativo, alimentando mi curiosidad innata y permitiéndome tener tiempo y espacio para crecer personalmente y poder expresarme más allá de mi vida profesional. Esto acaba resultando en, por un lado, tener proyectos open source como [git-reporter](https://www.npmjs.com/package/git-reporter), [diff-lines](https://www.npmjs.com/package/@ulisesantana/diff-lines) o [array-analyzer](https://ulisesantana.github.io/array-analyzer/) donde creo herramientas para mí y las pongo a disposición de los demás a la vez que pongo en práctica lo que voy aprendiendo sobre *software crafting*.
 
 Por otro lado, me encanta cocinar, disfrutar de un buen libro, podcast, película o serie. También disfruto caminando por la naturaleza con mi chihuahua Mocha o dedicándole tiempo a mi jardín real. Digo real porque también tengo un [jardín digital](https://maggieappleton.com/garden-history) que mantengo con [Obsidian](https://obsidian.md/), que también me hace las veces de [cerebro digital](https://maggieappleton.com/basb). De hecho, acabé publicando un [plugin](https://github.com/ulisesantana/obsidian-pending-notes) para Obsidian que te permite ver qué notas tienes pendientes de crear.
 
