@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Pamplona Software Crafters 2022 | Ulises Santana</title>
+  <title>Why not use Jest | Ulises Santana</title>
 
 
   <link rel="icon" type="image/x-icon" href="/assets/images/favicon.png">
@@ -12,19 +12,19 @@
 <meta property="og:type" content="article">
 <meta name="theme-color" content="#F7E018">
 <meta name="author" content="Ulises Santana">
-<meta property="og:title" content="Pamplona Software Crafters 2022">
-<meta name="description" property="og:description" content="El fin de semana pasado tuve la oportunidad de asistir a la Pamplona Software Crafters. Déjame compartir contigo esta experiencia.">
+<meta property="og:title" content="Why not use Jest">
+<meta name="description" property="og:description" content="I've been using Jest for my Node.js projects for years, but I'm hearing more and more complaints from the Node.js community about Jest and that you shouldn't use it.">
 <meta property="og:site_name" content="Ulises Santana">
 <meta property="og:image" content="/assets/images/logo.png" ">
 
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@ulisesantana">
-<meta name="twitter:title" content="Pamplona Software Crafters 2022">
-<meta name="twitter:description" content="El fin de semana pasado tuve la oportunidad de asistir a la Pamplona Software Crafters. Déjame compartir contigo esta experiencia.">
+<meta name="twitter:title" content="Why not use Jest">
+<meta name="twitter:description" content="I've been using Jest for my Node.js projects for years, but I'm hearing more and more complaints from the Node.js community about Jest and that you shouldn't use it.">
 <meta name="twitter:image" content="/assets/images/logo.png">
 
 
-  <link rel="canonical" href="https://www.ulisesantana.dev/blog/2022/pamplona-software-crafters-2022/">
+  <link rel="canonical" href="https://www.ulisesantana.dev/blog/2022/why-not-use-jest/">
 
   <meta name="generator" content="Eleventy v2.0.1">
   
@@ -277,35 +277,29 @@
 </site-header>
 <main><article class="wyy1elgja">
   <figure class="wyy1elgja">
-    <object data="/assets/es/blog/2022/pamplona-software-crafters-2022/cover.png" title="Pamplona Software Crafters 2022" type="image/png">
-  <img src="/assets/images/fallback.png" title="Pamplona Software Crafters 2022">
+    <object data="/assets/en/blog/2022/why-not-use-jest/cover.png" title="Why not use Jest" type="image/png">
+  <img src="/assets/images/fallback.png" title="Why not use Jest">
 </object>
     
   </figure>
   <div class="head wyy1elgja">
-    <h1 custom class="wyy1elgja">Pamplona Software Crafters 2022</h1>
-    <time datetime="Friday, June 24, 2022" class="wyy1elgja">Friday, June 24, 2022</time>
-    <site-tags url="/blog/2022/pamplona-software-crafters-2022/"><ul class="tag-list">
+    <h1 custom class="wyy1elgja">Why not use Jest</h1>
+    <time datetime="Sunday, January 9, 2022" class="wyy1elgja">Sunday, January 9, 2022</time>
+    <site-tags url="/blog/2022/why-not-use-jest/"><ul class="tag-list">
     <li>
-            <site-tag><span class="tag">#software</span>
+            <site-tag><span class="tag">#node.js</span>
 
 </site-tag>
           </li>
         
           <li>
-            <site-tag><span class="tag">#evento</span>
+            <site-tag><span class="tag">#testing</span>
 
 </site-tag>
           </li>
         
           <li>
-            <site-tag><span class="tag">#software craftsmanship</span>
-
-</site-tag>
-          </li>
-        
-          <li>
-            <site-tag><span class="tag">#comunidad</span>
+            <site-tag><span class="tag">#jest</span>
 
 </site-tag>
           </li>
@@ -314,46 +308,117 @@
 
 </site-tags>
   </div>
-  <article class="wyy1elgja"><p><youtube-video video-id="iJp7iqjWlr8"></youtube-video></p>
-<p>El fin de semana pasado tuve la suerte de asistir al evento <a href="https://pamplonaswcraft.com" target="_blank" rel="noopener">Pamplona Software Crafters</a>. Sí, mucha suerte porque conseguir entrada fue una odisea. Las más de 150 entradas se agotaron en cuestión de segundos, <strong>SEGUNDOS</strong>. En <a href="https://leanmind.es/es/" target="_blank" rel="noopener">Lean Mind</a> éramos muchos los que queríamos ir, pero solo 5 conseguimos entrada. En esta edición la Pamplona Software Crafters se celebró dentro del <a href="https://almahotels.com/pamplona" target="_blank" rel="noopener">Hotel Alma de Pamplona</a>. Todas las habitaciones estaban ocupadas por asistentes del evento. Esto hacía que no tuvieras que preocuparte de otra cosa que no fuera disfrutar del evento. Además, el Alma es un hotelazo en el que no echabas nada en falta y era muy tranquilo. Pese a que no estás muy lejos del centro la sensación de estar aislado del mundo se hacía notar.</p>
-<p>Este era el escenario perfecto para la Pamplona Software Crafters, ya que es un evento en el que al final lo que importa son las personas que asisten al evento y cómo interaccionan entre ellas. Esto lo digo porque aunque el evento eran 2 días non-stop, solo había 8 charlas y 4 talleres fijos. El resto del evento estaba formado por espacios dedicados a Open Space.</p>
-<h2>¿Qué es un Open Space?</h2>
-<p>Explicado brevemente, es un espacio en el que los propios asistentes del evento definen de qué se va a hablar y cómo va a ser el evento. Pueden ser varios formatos, desde charlas a debates o talleres. Sin embargo, lo más atractivo suelen ser los debates o cualquier otro formato que no sea unidireccional. Como comentaba antes, lo importante es la interacción entre las personas.</p>
-<p>Estos son los pasos para montar un Open Space:</p>
-<ol>
-<li><strong>Propuestas</strong>: Quien quiera propone una o varias sesiones para ese día. Todo vale, puedes hasta pedir que alguien te cuente su experiencia sobre lo que sea. He visto sesiones desde dar paseos por la playa a conversaciones en la piscina, pasando por cómo hacer juegos de mesa.</li>
-<li><strong>Votación</strong>: Cada participante del Open Space tiene 3 votos para administrarlos libremente entre todas las sesiones.</li>
-<li><strong>Organizar el día</strong>: Las sesiones más votadas son las seleccionadas para ese día y se organizan en base a los espacios disponibles y los slots de tiempo que necesiten.</li>
-</ol>
-<p>Al final de estos pasos queda algo tal que así:</p>
-<img-caption src="/assets/es/blog/2022/pamplona-software-crafters-2022/pamplona-open-space.jpg" alt="Tablero con las diferentes sesiones para el segundo día de la Pamplona Software Crafters 2022">
-En este tablero podemos ver las diferentes sesiones seleccionadas con los puntos asignados y dónde y cuándo van a ocurrir.
-</img-caption>
-<p>Aparte de estos pasos para montar el Open Space, está la <strong>Ley de los dos Pies</strong> seguida de 4 principios para que el Open Space pueda ser llevado a cabo satisfactoriamente. La Ley de los dos Pies nos dice que si en algún lugar o momento sientes que no te está aportando o no estás aportando, puedes irte a otro lugar sin problemas. Esto choca mucho cuando venimos de los congresos tradicionales en los que está mal visto que alguien entre o salga una vez la charla/taller ha comenzado. Por último, los 4 principios que se siguen en un Open Space son:</p>
-<ol>
-<li><strong>Cualquiera que viene es la persona adecuada</strong>: Cualquier persona es la correcta para aprender y compartir.</li>
-<li><strong>Cualquier cosa que pudo suceder es lo único que podía haber pasado</strong>: Cero expectativas, disfruta del momento en el que estás y aprende de él.</li>
-<li><strong>Cualquier momento en el que empieza es el adecuado</strong>: Puede pasar que existan retrasos o que ciertas conversaciones empiecen mientras se espera para entrar al espacio. Si no te ajustas al horario no es el fin del mundo.</li>
-<li><strong>Cuando se acaba, se acaba</strong>: Si el debate, charla o actividad no da más de sí se puede cortar y pasar a otra cosa. No importa que no hayamos ocupado todo el tiempo destinado.</li>
-</ol>
-<p>Si quieres ahondar más sobre qué es un Open Space, te recomiendo que escuches este podcast de Carlos Blé con Adrian Perreau titulado <a href="https://podcast.carlosble.com/podcast/e35-que-es-un-open-space/" target="_blank" rel="noopener"><em>¿Qué es un Open Space?</em></a>.</p>
-<h2>Mi experiencia en la Pamplona Software Crafters 2022</h2>
-<p>Ahora que tenemos más o menos claro qué es un Open Space quiero hablar de cómo fue mi experiencia en la Pamplona Software Crafters 2022. Puedo resumirlo en una palabra: <strong>INCREÍBLE</strong>. Me permitió encontrarme en persona a personas que hasta ahora solo conocía a través de una webcam. También tuve la oportunidad de volver a dar mi charla sobre <a href="https://www.youtube.com/watch?v=V4sXNlzJIy8" target="_blank" rel="noopener">cómo pasé un proceso en Node.js de 5 horas a 5 minutos</a> en un ambiente más tranquilo. Los asistentes preguntaban sobre la marcha haciendo que no fuera un monólogo, sino algo más conversacional. Aparte, fue un fin de semana en el que conocí a personas maravillosas (un saludo desde aquí a toda esa gente bonita con la que tuve la oportunidad de hablar) y que me permitió reafirmar que el Open Space es mi formato favorito.</p>
-<p>Por un lado, por las sesiones que ofrece la comunidad. No todo es técnico, había bastantes sesiones que tenían más que ver con las personas que con los profesionales. Tenían un sentido más filosófico que técnico. Sinceramente, me enamoró. Algunas de ellas me recordaban a lo que decía en <a href="/blog/2021/la-ansiedad-de-evolucionar-como-profesional-del-software">mi artículo sobre la ansiedad en la industria</a>. Otras hablaban sobre los privilegios que tenemos en la industria y cuál es nuestra responsabilidad social.</p>
-<p>Por otro lado, por lo que pasa fuera de las salas destinadas al Open Space. Es maravilloso. Durante el evento siempre podías conseguir café, agua, cerveza, refresco o comida en cualquier momento. Además, había mucho espacio al margen del evento para sentarte al aire libre para hablar con otras personas.</p>
-<p>Gracias a esto era muy normal ver siempre gente al aire libre o cerca de la zona de comidas y bebidas hablando en pequeños grupos. Podías unirte libremente si no querías ir a ninguna de las sesiones que estaban ocurriendo en ese momento. O simplemente esa charla que estaba pasando ahí en ese momento te parecía más interesante.</p>
-<p>También comentar que la organización del evento me pareció espectacular. Aparte que de por sí el evento estaba bien montado, al final del primer día tuvimos una retrospectiva en la que trasladábamos a la organización cosas que nos habían gustado y cosas que se podían mejorar. Al día siguiente todas las mejoras que se podían aplicar fueron aplicadas. Sin duda mostraron de qué va el Agile.</p>
-<p>Por último, tuve la oportunidad de conocer a más personas de la comunidad de <em>Software Crafters</em>. Este tipo de eventos son los que permiten a la comunidad definirse y asentarse, además de compartir aprendizaje, ya sea profesional o vital.</p>
-<h2>Referencias que me llevo de la Pamplona Software Crafters 2022</h2>
-<p>A lo largo del evento diferentes personas recomendaron varios libros. Estos son los que tengo apuntados y me quiero leer en algún momento:</p>
+  <article class="wyy1elgja"><h2>The problem</h2>
+<p>I have been reading complaints for some time from the community and members of the Node.js core about <a href="https://jestjs.io" target="_blank" rel="noopener">Jest</a>. Until now I have always used Jest because I find it to be a very complete and comfortable tool. Also, when I do frontend I also use Jest, since it is the <em>test framework</em> that comes with <a href="https://create-react-app.dev" target="_blank" rel="noopener">Create React App</a> by default.</p>
+<p>A couple of months ago I tried <a href="https://node-tap.org" target="_blank" rel="noopener">Node Tap</a>, which is the <em>test framework</em> that <a href="https://twitter.com/matteocollina" target="_blank" rel="noopener">Matteo Collina</a> recommends as an alternative to Jest to test your code. Although I found it to be a great tool, I was not convinced by the way the tests were organized and since so far I have not encountered any problems with Jest, I did not fight much with it. However, I keep seeing tweets in which they do not recommend its use and until now I had not started to investigate why. In this tweet we can see what I mean:</p>
+<blockquote class="twitter-tweet" data-lang="es" data-theme="light" data-align="center"><p lang="en" dir="ltr">Yep. Twice last week. Two separate conversations: &quot;Can you help, this Node.js thing isn&#39;t working... We&#39;re using Jest...&quot;<br><br>Me, &quot;I&#39;m going to stop you right there.&quot;<br><br>I generally do not disparage other open source projects but using jest is not something I could ever recommend. <a href="https://t.co/bC7h6oRykY" target="_blank" rel="noopener">https://t.co/bC7h6oRykY</a></p>&mdash; James M Snell (@jasnell) <a href="https://twitter.com/jasnell/status/1458048635405438979?ref_src=twsrc%5Etfw" target="_blank" rel="noopener">November 9, 2021</a></blockquote>
+<p>First of all we see Matteo Collina complaining about the fact that he receives issues on Github for the packages he maintains (<a href="https://www.npmjs.com/~matteo.collina" target="_blank" rel="noopener">almost 500 on npm</a>) in which The problem is Jest and how it alters the execution environment. Secondly, [James Snell] (https://twitter.com/jasnell), although he does not usually disparage Open Source projects, would never recommend using Jest.</p>
+<p>In the tweet thread they talk about this <a href="https://github.com/serverless/serverless/pull/6517" target="_blank" rel="noopener">issue on serverless Github</a> where they discuss the reasons why they ended up switching from Jest to Mocha:</p>
 <ul>
-<li><a href="https://www.goodreads.com/book/show/61036049-c-digo-sostenible" target="_blank" rel="noopener">Código Sostenible</a> de Carlos Blé.</li>
-<li><a href="https://www.goodreads.com/book/show/40973334-7-habitos-de-la-gente-altamente-efectiva-los-b" target="_blank" rel="noopener">Los 7 Hábitos De La Gente Altamente Efectiva</a> de Stephen R. Covey.</li>
-<li><a href="https://www.goodreads.com/book/show/16208052-stop-starting-start-finishing" target="_blank" rel="noopener">Stop Starting, Start Finishing!</a> de Arne Rock.</li>
-<li><a href="https://www.goodreads.com/book/show/17927630-la-abolici-n-del-trabajo" target="_blank" rel="noopener">La abolición del trabajo</a> de Bob Black.</li>
-<li><a href="https://www.goodreads.com/book/show/49656893-al-menos-tienes-trabajo" target="_blank" rel="noopener">Al menos tienes trabajo</a> de Naiara Puertas.</li>
-<li><a href="https://www.goodreads.com/book/show/7304853-la-f-brica-de-la-infelicidad" target="_blank" rel="noopener">La fábrica de la infelicidad</a> de Franco Berardi.</li>
+<li>Run the tests in a modified Node.js environment that presents some problems:
+<ul>
+<li>The <em>outputs</em> of <code>stdout</code> and <code>stderr</code> are not printed in the same order in which they are executed. <code>stderr</code> is prioritized before <code>stdout</code>.</li>
+<li>Some public Node.js APIs are replaced with non-standard alternatives.</li>
+<li>Due to module cache management in a non-standard and uneven manner, it is prone to memory leaks.</li>
 </ul>
+</li>
+<li>Test progress is not shown until they are finished, which is not ideal for time-consuming tests such as integration tests.</li>
+<li>Any <em>output</em> <code>stdout</code> / <code>stderr</code> is hidden until the test finishes.</li>
+<li>The default <em>test runner</em> has several bugs (can be patched by using <code>jest-circus</code> the alternative <em>test runner</em>, which works by default as of Jest 27):
+<ul>
+<li>Failures in beforeAll do not prevent the execution of tests.</li>
+<li>Bugs in afterAll are not exposed.</li>
+<li>only and skip are not fully respected.</li>
+</ul>
+</li>
+<li>The source code is the result of transpilation, which makes it difficult to debug possible problems in the <em>test runner</em>.</li>
+</ul>
+<p>Además, he visto a Matteo Collina comentar una y mil veces que el problema que tiene con Jest es que no estás testeando tu aplicación corriendo en Node.js, sino corriendo en Jest. ¿Por qué afirma esto Matteo? Porque Jest se ejecuta en un contexto de V8 diferente, esto es porque Jest por debajo usa <a href="https://nodejs.org/api/vm.html" target="_blank" rel="noopener"><em>vm</em></a>, un módulo nativo de Node.js. En <a href="https://www.youtube.com/watch?v=3YDiloj8_d0" target="_blank" rel="noopener">este vídeo se explica la arquitectura de Jest</a> y concretamente en el <a href="https://youtu.be/3YDiloj8_d0?t=2252" target="_blank" rel="noopener">minuto 37:32</a> se habla de <code>jest-runtime</code>, que es la parte de <strong>Jest</strong> que se encarga de <strong>simular entornos de ejecución</strong>, ya sea <code>jest-dom</code> o lo que Christoph llama <em>like a fake node environment</em> que sería la parte de Node.js. Entre otras cosas <strong>este <em>entorno simulado</em> tiene su propia implementación de <em>require</em> permitiéndonos mockear módulos</strong>, que en la práctica significa que podemos mockear dependencias con Jest. Parafraseando lo que dice Matteo en el tweet que tenemos debajo: <strong>Esto permite una experiencia de desarrollo increíble, pero nuestros tests son menos útiles porque no se están ejecutando en el entorno real.</strong></p>
+<blockquote class="twitter-tweet" data-lang="es" data-theme="light" data-align="center"><p lang="en" dir="ltr">The major downsides is <a href="https://t.co/Cc1z15gqEH" target="_blank" rel="noopener">https://t.co/Cc1z15gqEH</a>. Essentially you are not running your code on top of Node or a Browser, but on top of Jest. They do it because it allows a HUGE amount of great DX. On the other hand… your test are less useful because it’s not the real env.</p>&mdash; Matteo Collina (@matteocollina) <a href="https://twitter.com/matteocollina/status/1479955450179301382?ref_src=twsrc%5Etfw" target="_blank" rel="noopener">January 8, 2022</a></blockquote>
+<p>In the tweet he shares a <a href="https://github.com/facebook/jest/issues/2549" target="_blank" rel="noopener">Jest Github issue opened by Thomas Huston</a>. This issue talks about how global variables in Jest differ from those in Node.js. Additionally, reference is made to this <a href="https://github.com/facebook/jest/issues/2048" target="_blank" rel="noopener">Jest Github issue opened by Kent C. Dodds</a> which talks about how Jest global variables differ from Jest global variables of the source code. <a href="https://twitter.com/kentcdodds" target="_blank" rel="noopener">Kent C. Dodds</a> discovered and managed to reproduce this bug for the first time. From this fact they did small tests to see how far the error went and discovered that the problem is mostly when running Jest with the configuration for <code>testEnvironment</code> as <code>node</code>, which is the default value. However, when running it with <code>testEnvironment</code> as <code>jsdom</code> the error stops occurring. If you want to check it you can do it in <a href="https://github.com/kentcdodds/jest-globals-bug/tree/json" target="_blank" rel="noopener">this repository</a>.</p>
+<p>Thinking about this test, and the issue opened by Thomas Huston, it seems that the problems with Jest occur when you test code for Node.js and not when you are testing code for the browser. Anyway, it's a false feeling because if you take the Kent repository where the bug is reproduced and change <code>jest-cli</code> to <code>jest</code> in the latest version, you will see that the bug is fixed. However, with the issue that Thomas Huston comments on, if you update Jest in the <a href="https://github.com/thomas-huston-zocdoc/jest-fetch-array-bug" target="_blank" rel="noopener">test repository</a> the error persists. If we read the comments in this issue, it seems that the problem is in the libraries and modules that we use in our code, but that are not in our project. Specifically in this part where they talk about big.js as a hypothetical third-party library:</p>
+<blockquote>
+<p>using big.js directly in the test suite will work, having code in another project/module which imports big.js and then also importing big.js into your test project and passing them between functions will result in errors when performing instanceof checks.
+<small>Craig McNicholas, <a href="https://github.com/facebook/jest/issues/2549#issuecomment-911359464" target="_blank" rel="noopener">comment on Jest issue number 2549</a> </small></p>
+</blockquote>
+<p>Without a doubt we have problems testing code in Node.js. The issue started by Thomas Huston in 2017 is still open as of the publication of this article and with the last update less than a week ago. If you are reading this and want to know more about the specific problems that other people have encountered with Jest in Node.js, I highly recommend you to do yourself a ☕️ and spend a morning reading the issue from top to bottom. This issue is referenced in 50 others, so you can make yourself an idea.You can also reproduce the bug mentioned in the issue in <a href="https://github.com/thomas-huston-zocdoc/jest-fetch-array-bug" target="_blank" rel="noopener">this repository</a>.</p>
+<h2>Alternatives</h2>
+<h3>Mocha</h3>
+<p><a href="https://mochajs.org" target="_blank" rel="noopener">Mocha</a> with <a href="https://www.chaijs.com" target="_blank" rel="noopener">Chai</a> have been a good option for testing your JavaScript code for almost 10 years. It is a fast and light tandem: Mocha is the <em>test runner</em> and chai is the <em>assertion library</em>. However, as I mentioned before, being lightweight means that if you want to add mocks, spies or test coverage reports you need to install new packages.</p>
+<h3>Node Tap</h3>
+<p><a href="https://node-tap.org" target="_blank" rel="noopener">Node Tap</a> has also been around for 10 years, but it's not as popular. Unlike Mocha, it is not a <em>test runner</em>, but a <em>test framework</em> and as its website says: <strong>it comes with batteries included</strong>. Like Jest, it allows you to mock modules, includes its <em>assertion library</em> and can generate test coverage reports. It is quite complete, follows the <a href="https://testanything.org" target="_blank" rel="noopener">TAP protocol</a> and is the <em>test framework</em> that Matteo Collina recommends. By the way, the person who created Node Tap is <a href="https://twitter.com/izs" target="_blank" rel="noopener">Isaac Schlueter</a>, the same one who created npm. The big difference with Mocha and Jest is that with Node Tap you run the file in which you have the tests with Node.js directly, not with the <em>test runner</em>. In other words, to run the tests you do not run <code>tap add.test.js</code>, but rather you run <code>node add.test.js</code>.</p>
+<h3>Tape</h3>
+<p><a href="https://github.com/substack/tape" target="_blank" rel="noopener">Tape</a> has also been around for almost 10 years and is influenced by <em>Node Tap</em>. In the latest edition of Node Cookbook, the book they recommend to get your Node.js certification, it is the first <em>test framework</em> with which they teach you how to do a test. It should be added that they also teach you how to test with Mocha and Jest. Although it is very similar to Node Tap, it is less powerful and you will probably need extra libraries, but it is also lighter. On the other hand, the documentation is nothing more than the README of the project. Lastly, also follow the <a href="https://testanything.org" target="_blank" rel="noopener">TAP protocol</a>.</p>
+<h2>Comparativa</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th style="text-align:center">Jest</th>
+<th style="text-align:center">Mocha</th>
+<th style="text-align:center">Node Tap</th>
+<th style="text-align:center">Tape</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Weekly downloads</td>
+<td style="text-align:center"><a href="https://www.npmjs.com/package/jest" target="_blank" rel="noopener">12,305,334</a></td>
+<td style="text-align:center"><a href="https://www.npmjs.com/package/mocha" target="_blank" rel="noopener">4,765,970</a></td>
+<td style="text-align:center"><a href="https://www.npmjs.com/package/tap" target="_blank" rel="noopener">153,919</a></td>
+<td style="text-align:center"><a href="https://www.npmjs.com/package/tape" target="_blank" rel="noopener">531,791</a></td>
+</tr>
+<tr>
+<td>Node Cookbook</td>
+<td style="text-align:center">✅</td>
+<td style="text-align:center">✅</td>
+<td style="text-align:center">❌</td>
+<td style="text-align:center">✅</td>
+</tr>
+<tr>
+<td>Assertion library</td>
+<td style="text-align:center">✅</td>
+<td style="text-align:center">❌</td>
+<td style="text-align:center">✅</td>
+<td style="text-align:center">✅</td>
+</tr>
+<tr>
+<td>Test coverage reports</td>
+<td style="text-align:center">✅</td>
+<td style="text-align:center">❌</td>
+<td style="text-align:center">✅</td>
+<td style="text-align:center">❌</td>
+</tr>
+<tr>
+<td>Mock Modules</td>
+<td style="text-align:center">✅</td>
+<td style="text-align:center">❌</td>
+<td style="text-align:center">✅</td>
+<td style="text-align:center">❌</td>
+</tr>
+<tr>
+<td>Mock &amp; Code Spies</td>
+<td style="text-align:center">✅</td>
+<td style="text-align:center">❌</td>
+<td style="text-align:center">❌</td>
+<td style="text-align:center">❌</td>
+</tr>
+<tr>
+<td>Runs with Node.js natively</td>
+<td style="text-align:center">❌</td>
+<td style="text-align:center">❌</td>
+<td style="text-align:center">✅</td>
+<td style="text-align:center">✅</td>
+</tr>
+</tbody>
+</table>
+<h2>My experience</h2>
+<p>I have used Jest in more than 50 projects, from CLI to REST API to PWA or libraries and so far I have not had any problems. What's more, it has always been a pleasure to test my applications with Jest. What I love is that I only need <code>jest</code> and nothing else. Inside that package I have everything I need: mocks, spies, coverage reports, watchers, etc. It is true that it is a generous package in terms of weight, but the reality is that it is a development dependency so it will never be in the final device.</p>
+<p>Also, since Jest is the default <em>test framework</em> with React, anyone who develops React knows Jest. Not to mention that, due to the pleasant development experience it has, it has made its way into the community. This means that when you join a development team, the tests will most likely be written with Jest.</p>
+<p>On the other hand, what I used before Jest came into my life was <a href="https://mochajs.org" target="_blank" rel="noopener">Mocha</a> and <a href="https://www.chaijs.com" target="_blank" rel="noopener">Chai</a>, which if you wanted to add mocks or spies you needed to install <a href="https://sinonjs.org" target="_blank" rel="noopener">Sinon</a>. Do you want a report on test coverage? More of the same, you need to install <a href="https://istanbul.js.org" target="_blank" rel="noopener">Istanbul</a> and configure it. With Jest all this is included.</p>
+<h2>Conclusion</h2>
+<p>If you are looking for a devastating answer that tells you what solution you should use to test with JavaScript, I'm afraid you won't find it here. Despite everything we have seen, Jest is still a package with more than <strong>12 million downloads per week</strong> and if you land on a JavaScript team, the tests will most likely be in Jest. In addition, the book <em>Node Cookbook</em>, which is the one recommended to prepare for the Node.js certification, teaches you how to test with Jest, Mocha and Tape. It's hard for me to say that you should stop using Jest, but I do want you to be clear that <strong>you are not running your tests in the same environment in which they will be run in production</strong>. The latter means that you cannot be 100% sure that everything will work as you expect, maybe 99%, but never 100%. Be careful, that 99% may be valid for what you are going to do. It is like the test coverage of a project, in many cases having 90% is enough, but it would probably be better to have 100% if the sustainability of the project is respected.</p>
+<p>For my part, I have proposed two things. The first is that I want to give <em>Node Tap</em> a second chance, for the simple fact of understanding the tool and seeing in which cases it can be useful. The second is that in each new team that joins I am going to explain this Jest problem so that as a team we know what problems can appear when we use Jest in our projects. Another story will be whether or not we use Jest for new projects or consider changing <em>test framework</em>.</p>
 </article>
   <author-info class="ws3sp0wuz"><section class="author-info">
   <a href="/en">
@@ -487,8 +552,44 @@ En este tablero podemos ver las diferentes sesiones seleccionadas con los puntos
 </section>
 
 </author-info>
-  <related-posts url="/blog/2022/pamplona-software-crafters-2022/"><section class="related-posts">
+  <related-posts url="/blog/2022/why-not-use-jest/"><section class="related-posts">
   
+      <h3>Related posts</h3>
+      <ul>
+      
+          <li>
+            <a href="/blog/2022/how-i-took-a-node.js-process-from-5-hours-to-5-minutes/">
+              <article class="post-card-minimal">
+                <div class="cover">
+                  <object data="/assets/en/blog/2022/how-i-took-a-node.js-process-from-5-hours-to-5-minutes/cover.png" title="How I took a Node.js process from 5 hours to 5 minutes" type="image/png">
+                    <img src="/assets/images/fallback.png" title="How I took a Node.js process from 5 hours to 5 minutes">
+                  </object>
+                </div>
+                <div class="content">
+                  <h4 custom>How I took a Node.js process from 5 hours to 5 minutes</h4>
+                  <time datetime="Friday, May 20, 2022">Friday, May 20, 2022</time>
+                  <span class="excerpt">In a project I had to face a process in Node.js that, after redoing it from scratch to make it more maintainable, was 4400% more inefficient. In this post I explain how I made it more than 20% faster than the original process.</span>
+                  <site-tags url="/blog/2022/how-i-took-a-node.js-process-from-5-hours-to-5-minutes/"><ul class="tag-list">
+    <li>
+            <site-tag><span class="tag">#node.js</span>
+
+</site-tag>
+          </li>
+        
+          <li>
+            <site-tag><span class="tag">#performance</span>
+
+</site-tag>
+          </li>
+        
+</ul>
+
+</site-tags>
+                </div>
+              </article>
+            </a>
+          </li>
+        </ul>
 </section>
 
 </related-posts>
