@@ -11,7 +11,7 @@ images: [starship.png, cover.png]
 Trabajar desde una [Raspberry Pi](https://www.raspberrypi.org/products) puede parecer una locura, pero la realidad es
 que para cierto tipo de tareas es más que suficiente. Además, al ser tan pequeña la puedes llevar a cualquier lado y
 usarla tanto como un ordenador como a través de ssh con tu tablet o móvil como explico
-en [este post](/blog/2021/raspberry-pi-en-tu-ipad). Por otro lado, también es una forma muy barata de acceder a un
+en [este post](/es/blog/2021/raspberry-pi-en-tu-ipad). Por otro lado, también es una forma muy barata de acceder a un
 ordenador con el que poder programar, aunque tenga sus limitaciones, ya que al final no deja de ser un procesador de 4
 núcleos a 1.5 GHz en el mejor de los casos.
 

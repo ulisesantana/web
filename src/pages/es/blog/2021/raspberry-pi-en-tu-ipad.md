@@ -316,7 +316,7 @@ de 2.4 GHz.
 Ahora que ya puedes llevarte la Raspberry a cualquier lugar y conectarla con tu iPad sólo te queda convertirla en el
 entorno de desarrollo que necesitas. Como mis conexiones a la Raspberry se basan en ssh pues uso todo lo que necesito
 con herramientas de terminal y el editor de texto que uso es [neovim](https://neovim.io). Si quieres ver cómo lo hice con mi
-Raspberry te recomiendo que leas [este post](/blog/2021/convierte-tu-raspberry-pi-en-un-ide-espartano).
+Raspberry te recomiendo que leas [este post](/es/blog/2021/convierte-tu-raspberry-pi-en-un-ide-espartano).
 
 También es cierto que puedes conectarte a la Raspberry por VNC y usar Visual Studio Code o cualquier otro editor de
 texto o IDE que se arranque en un entorno visual, pero la verdad es que prefiero la ligereza que me otorga la terminal.
