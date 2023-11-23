@@ -13,6 +13,7 @@ module.exports = function (eleventyConfig) {
   })
   eleventyConfig.addPassthroughCopy({ 'src/styles': 'styles' })
   eleventyConfig.addPassthroughCopy({ 'src/assets': 'assets' })
+  eleventyConfig.addPassthroughCopy({ 'src/docs': 'docs' })
   eleventyConfig.addPassthroughCopy({ 'src/components/**/*.js': 'components' })
 
   eleventyConfig.addCollection('posts_es', function (collection) {
