@@ -1,0 +1,56 @@
+---
+import { nav } from "../data/nav";
+import ThemeSwitch from "./ThemeSwitch.astro";
+import LanguageSwitch from "./LanguageSwitch.astro";
+export interface Props {
+  locale: "en" | "es";
+  currentUrl?: string;
+}
+const { locale, currentUrl = "/" } = Astro.props;
+const navItems = nav[locale];
+---
+
+<style>
+  nav.desktop-nav {
+    display: flex;
+    width: 100%;
+  }
+
+  .nav-items {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    gap: 2rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+
+  @media (max-width: 767px) {
+    nav.desktop-nav {
+      display: none;
+    }
+  }
+</style>
+
+<nav class="no-print desktop-nav">
+  <ul class="nav-items">
+    <li>
+      <LanguageSwitch />
+    </li>
+    {
+      navItems.map(({ url, label }) => (
+        <li>
+          <a href={url} class={currentUrl === url ? "active" : ""}>
+            {label}
+          </a>
+        </li>
+      ))
+    }
+    <li>
+      <ThemeSwitch />
+    </li>
+  </ul>
+</nav>

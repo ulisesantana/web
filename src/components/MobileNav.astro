@@ -1,0 +1,142 @@
+---
+import ThemeSwitch from "./ThemeSwitch.astro";
+import LanguageSwitch from "./LanguageSwitch.astro";
+export interface Props {
+  locale: "en" | "es";
+  currentUrl?: string;
+}
+const { locale, currentUrl = "/" } = Astro.props;
+const nav = {
+  en: [
+    { url: "/blog/", label: "Blog" },
+    { url: "/about/", label: "About" },
+  ],
+  es: [
+    { url: "/blog/", label: "Blog" },
+    { url: "/sobre-mi/", label: "Sobre mí" },
+  ],
+};
+const navItems = nav[locale];
+---
+
+<style>
+  nav {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+  }
+
+  .nav-items {
+    align-items: center;
+    background: var(--black);
+    border-top: solid var(--yellow) 4px;
+    border-right: solid var(--yellow) 4px;
+    border-left: solid var(--yellow) 4px;
+    border-radius: 24px 24px 0 0;
+    bottom: -100%;
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    left: 0;
+    margin: 0;
+    padding: 16px 16px 104px;
+    position: fixed;
+    transition: all ease-in-out var(--transition-speed-regular);
+    width: 100%;
+    z-index: var(--z-index-1);
+  }
+
+  button.mobile-menu {
+    background: var(--yellow);
+    border: none;
+    border-radius: 50%;
+    bottom: 32px;
+    color: black;
+    display: block;
+    font-size: 32px;
+    height: 60px;
+    left: calc(50% - 30px);
+    padding-bottom: 4px;
+    position: fixed;
+    width: 60px;
+    z-index: var(--z-index-5);
+  }
+
+  .bar {
+    display: block;
+    position: relative;
+    width: 24px;
+    height: 4px;
+    border-radius: 3px;
+    background-color: var(--black);
+    margin: 4px auto 2px;
+    transition: all ease-in-out var(--transition-speed-fast);
+  }
+
+  button.mobile-menu.active .bar:nth-child(1) {
+    transform: rotate(-45deg);
+    margin-top: 14px;
+  }
+
+  button.mobile-menu.active .bar:nth-child(2) {
+    transform: rotate(45deg);
+    margin-top: -6px;
+  }
+
+  button.mobile-menu.active .bar:nth-child(3) {
+    opacity: 0;
+    transform: rotate(45deg);
+  }
+
+  .nav-items.active {
+    bottom: -4px;
+  }
+
+  li {
+    font-weight: 600;
+    list-style: none;
+    padding: 8px;
+  }
+
+  .nav-items .active {
+    border-bottom: solid var(--accent) 4px;
+  }
+
+  .nav-items a,
+  .nav-items a:visited {
+    color: var(--white);
+  }
+
+  @media (min-width: 768px) {
+    nav .mobile-nav, nav button.mobile-menu {
+      display: none;
+    }
+  }
+</style>
+
+<nav class="no-print mobile-nav">
+  <ul class="nav-items">
+    <li>
+      <LanguageSwitch />
+    </li>
+    {
+      navItems.map(({ url, label }) => (
+        <li>
+          <a href={url} class={currentUrl === url ? "active" : ""}>
+            {label}
+          </a>
+        </li>
+      ))
+    }
+    <li>
+      <ThemeSwitch />
+    </li>
+  </ul>
+  <button title="Toggle menu" class="mobile-menu" id="mobileMenuBtn">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </button>
+</nav>
