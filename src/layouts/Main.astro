@@ -1,6 +1,7 @@
 ---
 import Breadcrumb from "@/components/Breadcrumb.astro";
 import { SITE } from "@/config";
+import GoToTopButton from "@/components/GoToTopButton.astro";
 
 interface StringTitleProp {
   pageTitle: string;
@@ -40,6 +41,7 @@ const backUrl = SITE.showBackButton ? Astro.url.pathname : "/";
   }
   <p class="mt-2 mb-6 italic">{props.pageDesc}</p>
   <slot />
+  <GoToTopButton />
 </main>
 
 <script>

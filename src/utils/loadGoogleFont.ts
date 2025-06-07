@@ -29,7 +29,7 @@ async function loadGoogleFont(
   return res.arrayBuffer();
 }
 
-async function loadGoogleFonts(
+export async function loadGoogleFonts(
   text: string
 ): Promise<
   Array<{ name: string; data: ArrayBuffer; weight: number; style: string }>

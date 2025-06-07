@@ -2,6 +2,8 @@
 import Hr from "./Hr.astro";
 import MobileNav from "./MobileNav.astro";
 import DesktopNav from "./DesktopNav.astro";
+import { getLanguageFromPath } from "../utils/getLanguageFromPath";
+import { Languages } from "../types";
 
 const { pathname } = Astro.url;
 
@@ -10,55 +12,62 @@ const currentPath =
   pathname.endsWith("/") && pathname !== "/" ? pathname.slice(0, -1) : pathname;
 
 // Detect current language
-const currentLang = currentPath.startsWith("/es") ? "es" : "en";
+const currentLang = getLanguageFromPath(Astro.url.pathname);
+const isSpanish = currentLang === Languages.Spanish;
 ---
 
 <style>
   header {
+    align-items: center;
+    background: var(--background);
+    display: flex;
+    justify-content: center;
     position: sticky;
     top: 0;
+    margin: 0 auto;
+    height: 50px;
+    width: 100%;
+    max-width: 48rem;
     z-index: 1000;
+
+    #nav-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+    }
+
+    .isotype {
+      display: inline-block;
+      border: none;
+      color: var(--accent);
+      font-size: var(--font-size-2);
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-decoration: none;
+    }
   }
 
-  #skip-to-content {
-    position: absolute;
-    top: -100%;
-    left: 16px;
-    z-index: 50;
-    background-color: var(--background);
-    padding: 0.5rem 1rem;
-    color: var(--accent);
-    backdrop-filter: blur(10px);
-    transition: top 0.3s ease-in-out;
-  }
+  @media screen and (min-width: 768px) {
+    header {
+      height: 80px;
 
-  #skip-to-content:focus {
-    top: 4px;
+      .isotype {
+        font-size: var(--font-size-1);
+      }
+    }
+
+    #nav-container {
+      justify-content: space-between;
+    }
   }
 </style>
 
 <header>
-  <a
-    id="skip-to-content"
-    href="#main-content"
-    class="absolute -top-full left-16 z-50 bg-background px-3 py-2 text-accent backdrop-blur-lg transition-all focus:top-4"
-  >
-    Skip to content
-  </a>
-  <div
-    id="nav-container"
-    class="mx-auto flex max-w-3xl flex-col items-center justify-between sm:flex-row"
-  >
-    <div
-      id="top-nav-wrap"
-      class="relative flex w-full items-baseline justify-between bg-background p-4 sm:items-center sm:py-6"
-    >
-      <a class="isotype" href={currentLang === "es" ? "/es" : "/"}
-        >ulisesantana.dev</a
-      >
-      <DesktopNav locale={currentLang} currentUrl={currentPath} />
-      <MobileNav locale={currentLang} currentUrl={currentPath} />
-    </div>
+  <div id="nav-container">
+    <a class="isotype" href={isSpanish ? "/es" : "/"}>ulisesantana.dev</a>
+    <DesktopNav locale={currentLang} currentUrl={currentPath} />
+    <MobileNav locale={currentLang} currentUrl={currentPath} />
   </div>
-  <Hr />
 </header>
+<Hr />

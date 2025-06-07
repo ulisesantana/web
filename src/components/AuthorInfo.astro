@@ -1,7 +1,11 @@
 ---
 import Socials from "./Socials.astro";
+import FlipableImage from "./FlipableImage.astro";
+import authorImg from "@/assets/images/about/author.jpg";
+import logo from "@/assets/images/logo.png";
+import type { Language } from "@/types";
 export interface Props {
-  locale: "en" | "es";
+  locale: Language;
 }
 const locale = Astro.props.locale || "en";
 const isSpanish = locale === "es";
@@ -12,19 +16,19 @@ const isSpanish = locale === "es";
     <FlipableImage>
       <img
         slot="front-image"
-        :src="this.fefo.images.author"
+        src={authorImg.src}
+        style="border-radius: 50%;"
         alt="Ulises Santana"
       />
       <img
         slot="back-image"
-        :src="this.fefo.images.logo"
+        src={logo.src}
         alt="Ulises Santana"
       />
     </FlipableImage>
-    <!--TODO: Añadir imagen y transición para tema claro y tema oscuro-->
   </a>
   <div class="info">
-    <h2 class="title" custom>
+    <h2 class="title">
       {
         isSpanish ? (
           <span>
@@ -66,7 +70,7 @@ const isSpanish = locale === "es";
   .author-info {
     align-items: center;
     display: flex;
-    margin: 48px auto;
+    margin: 1rem auto;
     max-width: 100%;
     padding: 0 24px;
     width: 80ch;

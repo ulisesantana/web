@@ -1,43 +1,56 @@
 ---
-import IconArrowUp from '@/assets/icons/IconArrowUp.svg';
+import IconArrowUp from "@/assets/icons/IconArrowUp.svg";
 ---
+<button
+  id="go-to-top-btn"
+  class="go-to-top-btn"
+  aria-label="Go to top"
+  onclick="window.scrollToTop()"
+>
+  <IconArrowUp class="inline-block" />
+</button>
 
 <style>
-.go-to-top-btn {
-  position: fixed;
-  bottom: 2rem;
-  right: 2rem;
-  background: var(--yellow);
-  color: var(--black);
-  border: none;
-  border-radius: 50%;
-  width: 60px;
-  height: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  filter: drop-shadow(0 1px 0.15rem var(--black));
-  cursor: pointer;
-  z-index: var(--z-index-5);
-  font-size: 1.5rem;
-  transition: opacity var(--transition-speed-fast);
-}
-.go-to-top-btn:hover {
-  opacity: 1;
-}
+  .go-to-top-btn {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background: var(--yellow);
+    color: var(--black);
+    border: none;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    opacity: 0;
+    align-items: center;
+    justify-content: center;
+    filter: drop-shadow(0 1px 0.15rem var(--black));
+    cursor: pointer;
+    z-index: var(--z-index-5);
+    font-size: 1.5rem;
+    transition: opacity var(--transition-speed-fast);
+  }
+
+  .go-to-top-btn.active {
+    opacity: 1;
+  }
+
+  @media screen and (min-width: 1200px) {
+    .go-to-top-btn {
+      right: calc(25dvw);
+    }
+  }
 </style>
 
 <script type="module" client:load>
   let show = false;
   const handleScroll = () => {
-    show = window.scrollY > 200;
-    document.getElementById('go-to-top-btn').style.display = show ? 'flex' : 'none';
+    show = window.scrollY > 100;
+    document.getElementById("go-to-top-btn")?.classList.toggle("active", show);
   };
-  window.addEventListener('scroll', handleScroll);
+  window.addEventListener("scroll", handleScroll);
   handleScroll();
 </script>
 
-<button id="go-to-top-btn" class="go-to-top-btn" aria-label="Ir arriba" style="display:none;" onclick="window.scrollTo({top:0,behavior:'smooth'})">
-  <IconArrowUp class="inline-block" />
-</button>
 
