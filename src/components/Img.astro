@@ -1,0 +1,26 @@
+---
+import { Image } from 'astro:assets';
+const {
+  src,
+  alt,
+  caption = '',
+  widths = [400, 800, 1200],
+  sizes = '(max-width: 768px) 100vw, 768px',
+  className = '',
+} = Astro.props;
+---
+
+<figure class={`w-full max-w-4xl mx-auto ${className}`}>
+  <Image
+    src={src}
+    alt={alt}
+    widths={widths}
+    sizes={sizes}
+    class="rounded-xl shadow-md"
+  />
+  {caption && (
+    <figcaption class="mt-2 text-center text-sm text-gray-500 italic">
+      {caption}
+    </figcaption>
+  )}
+</figure>

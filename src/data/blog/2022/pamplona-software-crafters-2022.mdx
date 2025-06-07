@@ -1,13 +1,15 @@
 ---
 title: Pamplona Software Crafters 2022
 pubDatetime: 2022-06-24
-cover: /assets/es/blog/2022/pamplona-software-crafters-2022/cover.png
+og: /assets/es/blog/2022/pamplona-software-crafters-2022/cover.png
 description: El fin de semana pasado tuve la oportunidad de asistir a la Pamplona Software Crafters. Déjame compartir contigo esta experiencia.
 tags: [software,evento,software craftsmanship,comunidad]
 draft: false
 ---
+import YouTubeVideo from "@/components/YouTubeVideo.astro"
+import Img from "@/components/Img.astro"
 
-<youtube-video video-id="iJp7iqjWlr8"></youtube-video>
+<YouTubeVideo videoId="iJp7iqjWlr8" />
 
 El fin de semana pasado tuve la suerte de asistir al evento [Pamplona Software Crafters](https://pamplonaswcraft.com). Sí, mucha suerte porque conseguir entrada fue una odisea. Las más de 150 entradas se agotaron en cuestión de segundos, **SEGUNDOS**. En [Lean Mind](https://leanmind.es/es/) éramos muchos los que queríamos ir, pero solo 5 conseguimos entrada. En esta edición la Pamplona Software Crafters se celebró dentro del [Hotel Alma de Pamplona](https://almahotels.com/pamplona). Todas las habitaciones estaban ocupadas por asistentes del evento. Esto hacía que no tuvieras que preocuparte de otra cosa que no fuera disfrutar del evento. Además, el Alma es un hotelazo en el que no echabas nada en falta y era muy tranquilo. Pese a que no estás muy lejos del centro la sensación de estar aislado del mundo se hacía notar.
 
@@ -24,9 +26,11 @@ Estos son los pasos para montar un Open Space:
 
 Al final de estos pasos queda algo tal que así:
 
-<img-caption src="/assets/es/blog/2022/pamplona-software-crafters-2022/pamplona-open-space.jpg" alt="Tablero con las diferentes sesiones para el segundo día de la Pamplona Software Crafters 2022">
-En este tablero podemos ver las diferentes sesiones seleccionadas con los puntos asignados y dónde y cuándo van a ocurrir.
-</img-caption>
+<Img
+  src={import("@/assets/images/blog/2022/pamplona-software-crafters-2022/pamplona-open-space.jpg")}
+  alt="Tablero con las diferentes sesiones para el segundo día de la Pamplona Software Crafters 2022"
+  caption="En este tablero podemos ver las diferentes sesiones seleccionadas con los puntos asignados y dónde y cuándo van a ocurrir."
+/>
 
 Aparte de estos pasos para montar el Open Space, está la **Ley de los dos Pies** seguida de 4 principios para que el Open Space pueda ser llevado a cabo satisfactoriamente. La Ley de los dos Pies nos dice que si en algún lugar o momento sientes que no te está aportando o no estás aportando, puedes irte a otro lugar sin problemas. Esto choca mucho cuando venimos de los congresos tradicionales en los que está mal visto que alguien entre o salga una vez la charla/taller ha comenzado. Por último, los 4 principios que se siguen en un Open Space son:
 1. **Cualquiera que viene es la persona adecuada**: Cualquier persona es la correcta para aprender y compartir.
