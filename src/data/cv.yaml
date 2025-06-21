@@ -5,25 +5,19 @@ jobs:
     from: 01/2024
     to: Present
     description:
-      - At Kentech, I’ve been responsible for leading the technical foundation of several
-        frontend initiatives within a high-traffic environment serving millions of users
-        worldwide. My day-to-day involves designing maintainable architecture, refactoring
-        legacy code to align with Clean Architecture principles, and ensuring that performance
-        and clarity remain at the core of every solution. I frequently work on technical spikes
-        and maintain internal documentation that helps reduce knowledge silos and improves
-        onboarding across the team.
-      - I’ve also contributed to fostering a Test-Driven Development (TDD) mindset among developers.
-        Through pair programming sessions and offering support when teammates reach out for guidance,
-        I’ve helped normalize testing as a natural part of the development workflow. Since adopting
-        this approach, the test coverage of our main project has increased by more than 1000%,
-        transforming the codebase into a more stable and predictable foundation. This shift has
-        not only improved product reliability but also enhanced our ability to refactor with confidence
-        and iterate faster.
-      - Also, I was involved in the recruitment process, interviewing candidates
-        for frontend backend positions. I focused on assessing not just technical skills,
-        but also cultural fit and alignment with our values of collaboration, continuous learning,
-        and craftsmanship. Furthermore, I proposed a new technical test for candidates, focusing on a
-        way to evaluate their problem-solving skills and understanding of software design in an objective way.
+      - At Kentech, I’ve contributed to the development and maintenance of several frontend
+        projects in a high-traffic environment. My responsibilities include working on
+        architecture improvements, refactoring legacy code with a focus on maintainability,
+        and writing technical documentation to support team knowledge sharing and reduce
+        silos. I also handle technical spikes and collaborate regularly with other
+        developers to improve workflows.
+      - I’ve been actively encouraging the adoption of Test-Driven Development (TDD) across
+        the team. Through pair programming and one-on-one support, I’ve helped make testing
+        a more natural and consistent part of our workflow. As a result, test coverage in
+        one of our key projects has increased significantly, leading to better code
+        stability and confidence when refactoring. Additionally, I’ve supported the
+        recruitment process by interviewing candidates and proposing a new technical test
+        aimed at evaluating problem-solving and design skills more effectively.
     skills:
       - TDD
       - Clean Architecture
@@ -382,7 +376,7 @@ sponsored:
   - when: 11/2019
     location: San Cristóbal de la La Laguna, Spain
     title: JSDay Canarias
-  - when: 10/2018
+  - when: 11/2018
     location: San Cristóbal de la La Laguna, Spain
     title: JSDay Canarias
 attended:
@@ -431,6 +425,9 @@ attended:
   - when: 04/2018
     location: Las Palmas de Gran Canaria, Spain
     title: Socracan
+  - when: 11/2017
+    location: Santa Cruz de Tenerife, Spain
+    title: JSDay Canarias
 stuff:
   - title: Bizenter
     url:
