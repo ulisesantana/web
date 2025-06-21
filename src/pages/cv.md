@@ -6,8 +6,8 @@ metaImage: /assets/about/author.jpg
 
 # Who I am
 
-I was thinking about defining myself in a sentence, but I concluded that's an impossible task. So let me simply describe myself. I am a  lifelong learner passionate about tech, focused on the web with JavaScript as my native programming language and I solve problems with tech based on JavaScript.
+I bring over eight years of hands-on experience designing, building, and maintaining software systems that scale. My focus is on writing clean, testable code, and I’ve consistently embraced tools and practices that support long-term maintainability such as Clean Architecture, Test-Driven Development, and thorough documentation.
 
-I believe that for a healthy industry the professionals must share their experience. Committed to this, I try to give at least one talk/workshop per year in vocational schools, at least before COVID. Moreover, I co-organized and sponsored Global Day of Coderetreat 2019 in Gran Canaria, which is an awesome event for coding students.
+Beyond coding, I’m passionate about growing through community. I actively contribute to open-source projects, deliver internal trainings, and give talks at conferences and vocational schools. I co-organized and sponsored the Global Day of Coderetreat in Gran Canaria, and I’ve supported several community-driven tech events as a way of giving back to the same ecosystem that helped me grow professionally.
 
-I also sponsored other events during the last years as a way to say thanks to the software community. There is no doubt that software communities and open source have been crucial for my professional growth, so I am just paying the favor.
+After realizing I was suffering a burnout in late 2022, I took a step back to reset. That period helped me reconnect with what matters: people, building sustainable workflows, fostering inclusive team dynamics, and delivering value through simplicity and focus.
