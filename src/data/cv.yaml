@@ -182,17 +182,17 @@ jobs:
     from: 03/2017
     to: 05/2017
     description:
-      - The last part of the Higher Technician in development of web application
-        certification is doing an internship in a company of your choice. I chose
-        Kentech because was the only company I found in Gran Canaria who was
-        using Node.js at that time. Also, was a really good opportunity to test
-        my English skills because the communication on Kentech is full in English.
-      - I started as a QA, but after some weeks testing the main web app, they
-        gave me some tasks related to UI optimization for Opera Mini and creating
-        a Wordpress theme for a corporative site. In the last weeks, my mentor
-        explained the microservices architecture and some basics about high
-        availability concepts. Also, he challenged me to do a proof of concept
-        about a cache system with a distributed lock with MySQL and Redis.
+      - As part of my final year in the Web Application Development program, I chose
+        to do my internship at Kentech—one of the few companies in Gran Canaria working
+        with Node.js at the time. It was also a great opportunity to practice professional
+        English, as the company operated fully in that language.
+      - I began as a QA tester for the company’s main web application, but soon earned
+        the opportunity to take on development tasks. I worked on UI performance optimizations
+        for Opera Mini and developed a custom WordPress theme for a corporate site. Toward the
+        end of the internship, my mentor introduced me to their microservices architecture and
+        challenged me to build a proof of concept for a distributed cache-locking mechanism
+        using MySQL and Redis. That hands-on exposure sparked my interest in backend
+        architecture and laid the foundation for my transition to a full-time backend role.
     skills:
       - Opera Mini Optimization
       - Node.js
@@ -210,10 +210,15 @@ jobs:
     from: 04/2016
     to: 09/2016
     description:
-      - I was the web developer in a small studio of web development and digital
-        marketing. Also, I took care of everything related to new technologies
-        and information management in the company, managing customers, project
-        management and making wireframes for the different web projects.
+      - After Mokaps, I joined Cmas Digital, a two-person studio where I applied much
+        of what I had learned about content, project flow, and client interaction.
+        As the sole developer, I designed and built websites using WordPress, HTML5,
+        and CSS3, created wireframes, and helped organize project information.
+      - The role required a great deal of independence and initiative. My experience
+        at Mokaps helped me transition smoothly into a more technical role, taking
+        ownership of full web projects from conception to delivery. This was the period
+        where I fully committed to becoming a developer and started preparing for
+        formal technical training.
     skills:
       - HTML5
       - CSS3
@@ -231,18 +236,16 @@ jobs:
     from: 02/2013
     to: 06/2015
     description:
-      - For two and a half years I worked creating content and executing
-        digital marketing plans in different channels based on customer objectives,
-        interacting with communities, following active listening and resolving reputation
-        crises with a community manager under my charge. As a copywriter, I wrote all
-        the content for the different blogs that we managed. I also made the content
-        insertion in web projects using HTML and CSS.
-      - As co-founder, I was involved in managing customers, products, and projects.
-        Furthermore, a lot of problems come up on the daily basis of a business
-        and somebody needs to handle it. On the other hand, trying to do the math
-        to pay employee salaries, company debts and the taxes of being a small
-        business in Spain. This kind of experience gave me more perspective about
-        the cost of a digital product.
+      - At Mokaps Studio, a small creative agency I co-founded, I led digital marketing
+        efforts while gaining my first hands-on experience with web technologies.
+        I planned and executed content strategies across multiple channels, managed
+        online communities, and handled crisis communication when needed. As a copywriter,
+        I was responsible for all blog content and also worked directly on websites,
+        inserting and styling content using HTML and CSS.
+      - Running a business also meant wearing many hats. I dealt with
+        client relationships, product planning, budgeting, taxes, and day-to-day
+        problem-solving. This experience gave me a broader perspective on digital products
+        and sparked my interest in programming, which later became my full-time path.
     skills:
       - Digital Marketing
       - Social Media Strategy
@@ -264,10 +267,14 @@ education:
     from: 10/2015
     to: 05/2017
     description:
-      - 2-years course of Web Application Development.
-        Equivalent to a Certificate of Higher Education related to
-        web application development.
-
+      - This two-year vocational program provided me with a solid foundation in
+        web technologies, including HTML5, CSS3, JavaScript, Java, PHP, SQL,
+        and frameworks like Angular and Express. I learned both frontend and
+        backend development, as well as methodologies such as MVC and Agile.
+      - The program also included a professional internship, which I completed
+        at Kentech. That opportunity allowed me to apply everything I had learned
+        in a real-world setting and confirmed my decision to pursue
+        software development as a long-term career.
     skills:
       - HTML5
       - CSS3
@@ -290,9 +297,12 @@ education:
     from: 09/2011
     to: 11/2012
     description:
-      - 1400-hours course of bussiness management and marketing.
-        Equivalent to a Certificate of Higher Education related to
-        bussiness management and marketing.
+      - Before entering the tech world, I completed a 1,400-hour vocational course in
+        business management and marketing. I studied areas such as customer management,
+        logistics, sales, and reporting with Excel.
+      - While not directly technical, this training gave me a strong understanding of
+        how businesses operate, which has proven valuable when collaborating with stakeholders,
+        understanding product goals, and navigating cross-functional environments.
     skills:
       - Marketing
       - Customer management
@@ -301,33 +311,38 @@ education:
       - Business management
       - Office automation
       - Excel reporting
-      - CRM
 milestones:
-  - when: 12/2023
+  - when: 10/2022 - 03/2023
     location: Las Palmas de Gran Canaria, Spain
     title: Overcame professional burnout
-    description: After experiencing professional burnout due to sustained
-      overwork and lack of boundaries, I took time to recover and reflect.
-      This led me to rebuild healthier work habits, prioritize sustainability,
-      and reconnect with my passion for software development.
+    description: After experiencing professional burnout due to sustained overwork
+      and blurred boundaries, I decided to take a step back to recover and reflect.
+      This period allowed me to rebuild healthier work habits, prioritize sustainability,
+      and reconnect with the kind of software development that brings long-term value—both
+      to users and to developers. It marked a key turning point in how I approach work,
+      collaboration, and growth.
   - when: 05/2022
     location: San Cristóbal de la La Laguna, Spain
     title: Talk at JSDay Canarias 2022
     youtube: V4sXNlzJIy8
-    description: A story about how I passed a Node.js process from 5 hours to
-      5 minutes. Tips about handling asynchrony included.
+    description: In this talk, I shared how we drastically optimized a heavy Node.js
+      process, reducing its runtime from several hours to just minutes. I discussed
+      strategies for handling async workflows and simplifying code to achieve measurable
+      performance gains.
   - when: 11/2019
     location: Las Palmas de Gran Canaria, Spain
-    title: Global Day of Coderetreat
-    description: I co-organized and hosted a Global Day of Coderetreat.
-      Coderetreat is a day-long stress-free, intensive practice event, focusing
-      on the fundamentals of software development and design.
+    title: Organizer & Host - Global Day of Coderetreat
+    description: I co-organized and hosted the Gran Canaria edition of the Global Day
+      of Coderetreat, a full-day, hands-on event focused on software design fundamentals.
+      It provided a safe, collaborative space for developers to practice and reflect on
+      their craft—something I deeply value and continue to promote.
   - when: 10/2019
     location: Las Palmas de Gran Canaria, Spain
     title: Workshop for React Canarias community
     youtube: gkTAlgsr4tg
-    description: I ran and organized an introductory workshop about Cypress and
-      react-testing-library.
+    description: I ran a hands-on workshop introducing frontend developers to modern
+      testing strategies using Cypress and React Testing Library. The session focused
+      on practical examples and encouraging a test-first mindset.
   - when: 11/2018
     location: San Cristóbal de la La Laguna, Spain
     title: Talk at JSDay Canarias 2018
@@ -337,25 +352,23 @@ milestones:
     location: Kilkenny, Ireland
     title: Compile Node.js project on a Chromebook
     twitter: https://twitter.com/ulisesantana/status/1059825362220261376
-    description: During a workshop on NodeConf EU I compiled Node.js on a Chromebook, improve some
-      tests and contribute to the project. With an Acer Chromebook R11 in a virtual Debian. Took
-      almost 2 hours only to compile.
+    description: During a workshop on NodeConf EU I compiled Node.js on a Chromebook,
+      improve some tests and contribute to the project. With an Acer Chromebook R11
+      in a virtual Debian. Took almost 2 hours only to compile.
   - when: 03/2017
     location: Las Palmas de Gran Canaria, Spain
     title: Second prize at Hack for Good hackaton
     twitter: https://twitter.com/H4GCAN/status/840609174404886531?s=20
-    description: A 36-hours-long hackathon to create a tech solution for social
-      good. The project was Aprende con Amidi, a question quiz for learning
-      Canarian culture build as a progressive web app. Canarian culture is losing
-      diffusion, so we try to increment the diffusion making a multiplatform
-      app for being used for everybody who wants to learn or for teaching on schools.
+    description: In a 36-hour hackathon focused on social good, my team and I developed
+      Aprende con Amidi, a Progressive Web App to help teach and preserve Canarian culture
+      through interactive quizzes.
   - when: 03/2016
     location: Las Palmas de Gran Canaria, Spain
     title: First prize at Startup Weekend hackaton
     twitter: https://twitter.com/IGROCA/status/709106699530080258?s=20
-    description: A 54-hours-long hackathon for creating a startup. I worked in an
-      English-speaking team and our project was BasketUp, a big data basketball
-      analytics web app using just 3 smartphones for ball tracking.
+    description: I joined an English-speaking team during this 54-hour startup hackathon,
+      where we built BasketUp, a basketball analytics platform using just three smartphones
+      for ball tracking and visualization.
 sponsored:
   - when: 05/2022
     location: San Cristóbal de la La Laguna, Spain
@@ -373,6 +386,18 @@ sponsored:
     location: San Cristóbal de la La Laguna, Spain
     title: JSDay Canarias
 attended:
+  - when: 05/2025
+    location: Las Palmas de Gran Canaria, Spain
+    title: Socracan
+  - when: 07/2022
+    location: Santa Cruz de Tenerife, Spain
+    title: Tenerife GG
+  - when: 06/2022
+    location: Pamplona, Spain
+    title: Pamplona Software Crafters
+  - when: 05/2022
+    location: San Cristóbal de la La Laguna, Spain
+    title: JSDay Canarias
   - when: 02/2020
     location: Santa Cruz de Tenerife, Spain
     title: Socracan

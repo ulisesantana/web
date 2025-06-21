@@ -1,0 +1,76 @@
+<script webc:type="render" webc:is="template">
+  function CV() {
+    const collection = this.cv.attended
+
+
+    return `
+			<ul class="page-break-after">
+			`.concat(collection.map(({ when, location, title }) => {
+      return /* html */`
+				<li class="attended-event">
+          <div class="attended-event-data">
+            <span class="icon">🗣️</span>
+            <span>${title}</span>
+          </div>
+          <div class="attended-event-data">
+            <span class="icon">📆</span>
+            <span>${when}</span>
+          </div>
+          <div class="attended-event-data">
+            <span class="icon">📍</span>
+            <span>${location}</span>
+          </div>
+				</li>
+      `})
+      .join(""))
+      .concat(`
+			</ul>
+			`);
+  }
+</script>
+
+<style webc:scoped>
+  .attended-event {
+    background-color: #0fa202;
+    border-radius: var(--border-radius);
+    color: var(--white);
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+    gap: 8px;
+    padding: 1rem;
+  }
+
+  .attended-event-data {
+    align-items: center;
+    display: grid;
+    gap: 24px;
+    grid-template-columns: 1rem auto;
+  }
+
+  .attended-event-data .icon {
+    font-size: 1.75rem;
+  }
+
+  ul {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    gap: 1rem;
+    width: 100%;
+  }
+
+  li {
+    list-style: none;
+    padding: 0;
+  }
+
+  @media (min-width: 768px) {
+    ul {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+</style>

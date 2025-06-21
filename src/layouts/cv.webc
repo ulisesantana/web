@@ -27,6 +27,9 @@ locale: en
 			<h2>💰 Sponsored events</h2>
 			<cv-sponsored-events></cv-sponsored-events>
 
+			<h2>👥 Attended events</h2>
+			<cv-attended-events></cv-attended-events>
+
 			`;
 		}
 	</script>
