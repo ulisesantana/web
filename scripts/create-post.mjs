@@ -32,7 +32,7 @@ async function createPost(rl, fs) {
 function generatePost({ title, description, tags, assetsPath }) {
   return `---
 title: ${title}
-cover: ${assetsPath}
+cover: ${assetsPath.replace('src', '')}
 date: ${new Date().toISOString().split('T')[0]}
 description: ${description}
 tags: [${tags.split(',')}]
