@@ -4,112 +4,128 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Blog | Ulises Santana</title>
+  <title>Después del burnout | Ulises Santana</title>
 
 
   <link rel="icon" type="image/x-icon" href="/assets/images/favicon.png">
 
-<meta property="og:type" content="blog">
+<meta property="og:type" content="article">
 <meta name="theme-color" content="#F7E018">
 <meta name="author" content="Ulises Santana">
-<meta property="og:title" content="Blog">
-<meta name="description" property="og:description" content="Ingeniero con JavaScript como lengua materna y la web como patria. Trasteando con tecnologías desde las Islas Canarias 🏝️">
+<meta property="og:title" content="Después del burnout">
+<meta name="description" property="og:description" content="Después de casi tres años sin publicar, vuelvo al blog tras atravesar un burnout. En esta entrada comparto cómo fue el proceso de parar, recuperarme y volver.">
 <meta property="og:site_name" content="Ulises Santana">
-<meta property="og:image" content="/assets/logo.png" ">
+<meta property="og:image" content="/assets/images/logo.png" ">
 
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@ulisesantana">
-<meta name="twitter:title" content="Blog">
-<meta name="twitter:description" content="Ingeniero con JavaScript como lengua materna y la web como patria. Trasteando con tecnologías desde las Islas Canarias 🏝️">
-<meta name="twitter:image" content="/assets/logo.png">
+<meta name="twitter:title" content="Después del burnout">
+<meta name="twitter:description" content="Después de casi tres años sin publicar, vuelvo al blog tras atravesar un burnout. En esta entrada comparto cómo fue el proceso de parar, recuperarme y volver.">
+<meta name="twitter:image" content="/assets/images/logo.png">
 
 
-  <link rel="canonical" href="https://www.ulisesantana.dev/es/blog/">
+  <link rel="canonical" href="https://www.ulisesantana.dev/es/blog/2025/despues-del-burnout/">
 
   <meta name="generator" content="Eleventy v2.0.1">
   
   
   <link rel="stylesheet" href="/styles/index.css">
-  <style>.wu9s7qaes ul{display:flex;flex-direction:column;height:100%;margin:0;padding:0;gap:32px;width:100%}.wu9s7qaes li{list-style:none;padding:0}
+  <style>.wyy1elgja h1{color:var(--accent-color);margin:2.25rem 0 0.5rem}.wyy1elgja time{display:inline-block;font-size:var(--font-size-2);font-weight:bold;margin-bottom:1rem}.wyy1elgja img{display:block;margin:0 auto}.wyy1elgja figcaption{text-align:center}.wyy1elgja ol,.wyy1elgja ul{display:flex;flex-direction:column;gap:8px;padding-left:2rem}.wyy1elgja li::marker{color:var(--accent-color);font-weight:bold}.wyy1elgja p,.wyy1elgja li{line-height:var(--line-height-normal-text)}.wyy1elgja .head{margin-bottom:2rem}
 
   :root {
-    --min-preview-height: 220px;
+    --min-preview-height: 110px;
     --min-preview-width: 220px;
-    --content-height: calc(var(--min-preview-height) * 1.5)
   }
 
-  .post-card {
+  .related-posts>ul {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    gap: 32px;
+    max-width: 80ch;
+    padding: 0;
+    width: 100%;
+  }
+
+  .related-posts>ul>li {
+    list-style: none;
+  }
+
+  .post-card-minimal {
     display: grid;
     border-radius: var(--border-radius);
+    gap: 0;
     grid-template-columns: 1fr;
     grid-template-rows: var(--min-preview-height) auto;
     text-shadow: none;
+    width: 100%;
   }
 
-  .post-card.draft {
+  .post-card-minimal.draft {
     border: 4px dashed var(--accent-color);
   }
 
-  .post-card .content {
-    background-color: var(--bg-alt-color);
-    border-bottom-left-radius: var(--border-radius);
-    border-bottom-right-radius: var(--border-radius);
-    padding: 16px;
-  }
-
-  .post-card h2 {
+  .post-card-minimal h4 {
     color: var(--accent-color);
-    font-size: var(--font-size-3);
+    font-size: var(--font-size-2);
     margin: 0;
     margin-bottom: 4px;
   }
 
-  .post-card p {
-    margin: 0;
-    font-size: var(--font-size-1);
-  }
-
-  .post-card .cover img,
-  .post-card .cover object {
+  .post-card-minimal .cover img,
+  .post-card-minimal .cover object {
     border-radius: var(--border-radius) var(--border-radius) 0 0;
     height: 100%;
     object-fit: cover;
     width: 100%;
   }
 
-  .post-card.draft .cover img,
-  .post-card.draft .cover object {
-    height: 100%;
+  .post-card-minimal.draft .cover img,
+  .post-card-minimal.draft .cover object {
+    height: calc(100% - 8px);
   }
 
-  .post-card time {
+  .post-card-minimal .content {
+    background-color: var(--bg-alt-color);
+    border-bottom-right-radius: var(--border-radius);
+    border-bottom-left-radius: var(--border-radius);
+    padding: 8px;
+    padding-bottom: 16px;
+  }
+
+  .post-card-minimal .content .excerpt {
+    display: block;
+    color: var(--text-color);
+    font-size: var(--font-size-0);
+    font-weight: 400;
+    margin-bottom: 1rem;
+  }
+
+  .post-card-minimal time {
     color: var(--text-color);
     display: block;
+    font-size: var(--font-size-0);
     font-weight: bold;
-    margin-bottom: 8px;
+    margin-bottom: 1rem;
   }
 
   @media (min-width: 768px) {
-    .post-card {
-      gap: 0;
-      grid-template-columns: var(--min-preview-width) 1fr;
-      grid-template-rows: 1fr;
-      height: var(--min-preview-height);
+    .related-posts>ul {
+      grid-template-columns: repeat(2, 1fr);
     }
-
-    .post-card .content {
-      border-top-right-radius: var(--border-radius);
-      border-bottom-right-radius: var(--border-radius);
-      padding: 8px;
-      min-height: calc(var(--min-preview-height) - 16px);
-      overflow-y: hidden;
+    .post-card-minimal {
+      width: auto;
     }
+  }
 
-    .post-card .cover img,
-    .post-card .cover object {
-      border-radius: var(--border-radius) 0 0 var(--border-radius);
-      transition: all ease-in-out var(--transition-speed-fast);
-      width: var(--min-preview-height);
+  @media (min-width: 1024px) {
+    :root {
+      --min-preview-height: 130px;
+      --min-preview-width: 260px;
+    }
+    .related-posts>ul {
+      grid-template-columns: repeat(3, 1fr);
     }
   }
 
@@ -117,6 +133,33 @@
 .wcscm75lq .social-media ul{align-items:center;display:flex;justify-content:space-between;flex-direction:row;flex-wrap:wrap;gap:1rem;margin:0;padding:0;width:100%}.wcscm75lq .social-media ul li{list-style:none}.wcscm75lq .social-media ul li:last-child{margin-right:0}@media screen and (max-width:767px){.wcscm75lq .social-media{width:100%}}@media print{.wcscm75lq .social-media{display:flex;flex-direction:column;margin:0;max-width:90vw}}
 .wuzpprqmy .social-media-item{position:relative}.wuzpprqmy .social-media-item:hover .tooltip{opacity:1;visibility:visible;bottom:calc(100% + 5px)}.wuzpprqmy .social-media-item .only-print-data{display:flex;flex-direction:row;gap:16px}.wuzpprqmy .social-media-item .only-print-data span{display:block}.wuzpprqmy a,.wuzpprqmy a:visited{border:none;color:var(--highlight-color)!important;font-size:var(--font-size-5);padding:0.2rem;display:block}.wuzpprqmy a svg,.wuzpprqmy a:visited svg{display:block}@media print{.wuzpprqmy .social-media-item{align-items:center;display:flex;margin:8px;width:90vw}}.wuzpprqmy .tooltip{position:absolute;background-color:#fff;pointer-events:none;padding:8px;border-radius:3px;color:#333;font-size:var(--font-size-0);bottom:90%;left:50%;opacity:0;white-space:nowrap;visibility:hidden;z-index:var(--z-index-0);box-shadow:0 4px 15px rgba(0,0,0,0.2);transform:translate3d(-50%,0,0);transition:cubic-bezier(0.165,0.84,0.44,1) var(--transition-speed-fast)}.wuzpprqmy .tooltip:after{content:"";position:absolute;width:0;height:0;border-top:6px solid #fff;border-right:6px solid transparent;border-left:6px solid transparent;bottom:-6px;left:50%;transform:translateX(-50%)}
 .wzsx78kcv .flipable-image{background-color:transparent;border:4px solid var(--link-color);border-radius:50%;flex-shrink:0;height:216px;margin:0 auto;padding:24px;perspective:1000px;width:216px}.wzsx78kcv img{width:100%;height:auto;display:block;border-radius:50%}.wzsx78kcv .flip-container{position:relative;width:100%;height:100%;text-align:center;transition:transform var(--transition-speed-regular);transform-style:preserve-3d}.wzsx78kcv .flipable-image:hover .flip-container,.wzsx78kcv .flipable-image:active .flip-container{transform:rotateY(180deg)}.wzsx78kcv .flipable-image:hover .flip-container .flip-front,.wzsx78kcv .flipable-image:active .flip-container .flip-front{opacity:0}.wzsx78kcv .flip-front,.wzsx78kcv .flip-back{background-color:transparent;border-radius:50%;position:absolute;width:100%;height:100%;backface-visibility:hidden;transition:opacity ease-in-out var(--transition-speed-regular)}.wzsx78kcv .flip-back{transform:rotateY(180deg)}@media (max-width:767px){.wzsx78kcv .flipable-image{width:180px;height:180px;padding:20px;margin-bottom:20px}}
+
+  ul.tag-list {
+    align-items: center;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 0;
+    width: 100%;
+  }
+
+  ul.tag-list li {
+    list-style: none;
+    padding: 0;
+  }
+
+
+  span.tag {
+    background-color: var(--accent-color);
+    border-radius: 24px;
+    color: var(--bg-color);
+    font-size: var(--font-size-0);
+    font-weight: bold;
+    padding: 4px 8px;
+  }
+
 .wzhztpn9m footer{align-items:center;color:var(--text-color);display:flex;flex-direction:column;gap:1rem;justify-content:center;margin:0 auto;max-width:960px;overflow:hidden;padding:30px 15px 98px;position:relative;text-align:center;z-index:var(--z-index-0)}.wzhztpn9m .icon{font-size:var(--font-size-3)}.wzhztpn9m .bar{border-top:4px solid var(--link-color);border-radius:var(--border-radius);display:block;margin:16px auto 8px;width:75%}.wzhztpn9m .bottom-text{align-items:center;display:flex;flex-direction:column;font-size:var(--font-size-3);gap:1rem;justify-content:center}.wzhztpn9m .bottom-text svg{font-size:1.25rem;margin-bottom:-0.25rem}.wzhztpn9m .thanks a{margin-left:4px}@media screen and (min-width:768px){.wzhztpn9m footer{padding:30px 15px}.wzhztpn9m .description{width:50%}}
 .wpsio4mfp svg{fill:var(--link-color)}
 .wcscm75lq .social-media ul{align-items:center;display:flex;justify-content:space-between;flex-direction:row;flex-wrap:wrap;gap:1rem;margin:0;padding:0;width:100%}.wcscm75lq .social-media ul li{list-style:none}.wcscm75lq .social-media ul li:last-child{margin-right:0}@media screen and (max-width:767px){.wcscm75lq .social-media{width:100%}}@media print{.wcscm75lq .social-media{display:flex;flex-direction:column;margin:0;max-width:90vw}}
@@ -197,7 +240,7 @@
         </a>
       </li>
 <li>
-        <a href="/es/blog/" class="active">
+        <a href="/es/blog/">
         BLOG
         </a>
       </li>
@@ -232,7 +275,76 @@
 </header>
 
 </site-header>
-<main><author-info class="ws3sp0wuz"><section class="author-info">
+<main><article class="wyy1elgja">
+  <figure class="wyy1elgja">
+    <object data="/assets/es/blog/2025/despues-del-burnout/cover.png" title="Después del burnout" type="image/png">
+  <img src="/assets/images/fallback.png" title="Después del burnout">
+</object>
+    
+  </figure>
+  <div class="head wyy1elgja">
+    <h1 custom class="wyy1elgja">Después del burnout</h1>
+    <time datetime="martes, 24 de junio de 2025" class="wyy1elgja">martes, 24 de junio de 2025</time>
+    <site-tags url="/es/blog/2025/despues-del-burnout/"><ul class="tag-list">
+    <li>
+            <site-tag><span class="tag">#burnout</span>
+
+</site-tag>
+          </li>
+        
+          <li>
+            <site-tag><span class="tag">#salud mental</span>
+
+</site-tag>
+          </li>
+        
+          <li>
+            <site-tag><span class="tag">#vida</span>
+
+</site-tag>
+          </li>
+        
+          <li>
+            <site-tag><span class="tag">#software</span>
+
+</site-tag>
+          </li>
+        
+</ul>
+
+</site-tags>
+  </div>
+  <article class="wyy1elgja"><p>Llevo casi tres años sin publicar nada en este blog. Durante este tiempo pasaron muchas cosas, muchísimas, pero una de las más importantes —y también de las más difíciles de aceptar— fue que atravesé un burnout. Perdí la motivación, la energía y, durante una larga temporada, también las ganas de seguir haciendo lo que tanto me gustaba.</p>
+<p>Tuve que parar. No por descanso superficial, sino por una necesidad profunda de detenerme y reconectar conmigo mismo. Dejé el trabajo y me dediqué a mí mismo. Tiré de mis ahorros para poder parar completamente durante un par de meses. Y no lo hice con culpa. Aprendí que el descanso no es solo dejar de hacer, sino un descanso activo: un espacio para sanar, para escuchar lo que mi cuerpo y mente realmente necesitan. Me sentía roto y fue un tiempo necesario para aprender a respetar mis propios ritmos, a soltar la autoexigencia que tanto me pesaba y a distinguir lo que realmente quería hacer de lo que sentía que debía hacer por presión externa o interna.</p>
+<p>En el último año y meido he ido regresando a la industria del software, pero lo he hecho desde otro lugar. Con más calma, más conciencia, y sobre todo, con más cuidado hacia mí. He aprendido a no correr, a no estar siempre en modo <em>“rendimiento”</em>. También he remarcado el aprendizaje de lo dañina que puede ser la comparación constante con otros. Cada camino es único, y cada proceso de recuperación también.</p>
+<p>Poco a poco, he vuelto a algunas de esas cosas que me hacían feliz: escribir, programar, aprender, compartir experiencias. Pero esta vez con una diferencia fundamental: ahora lo hago porque me apetece, porque lo disfruto, no porque crea que tengo que hacerlo para seguir creciendo profesionalmente o para cumplir con expectativas ajenas.</p>
+<p>Parte de esta vuelta a la normalidad incluye retomar este blog. No tengo un plan definido, ni una agenda estricta de publicaciones. Simplemente quiero escribir cuando sienta que tengo algo que compartir, sin presiones ni expectativas. Quiero que este espacio sea un lugar donde pueda expresarme libremente, sin miedo a no cumplir con estándares o métricas.</p>
+<p>Otra parte ha sido volver a ir a eventos como la <a href="https://x.com/socracan" target="_blank" rel="noopener">Socracan 2025</a>, donde pude reencontrarme con colegas y amigos de la comunidad. Fue un momento de alegría, de conexión, y de reafirmar que, a pesar de las dificultades, sigo aquí, aprendiendo y creciendo. Además, fue una oportunidad maravillosa para hablar con otros sobre el burnout, sobre cómo afecta a nuestra salud mental y profesional, y sobre la importancia de cuidar de nosotros mismos en un entorno que a menudo prioriza el rendimiento por encima del bienestar.</p>
+<p><img src="/assets/images/socracan2025.jpeg" alt="Socracan 2025"></p>
+<p>En esas conversaciones hablamos también de cómo, a veces, el burnout no nace de una carga desmesurada de tareas, sino de una impaciencia silenciosa, de una vida que gira únicamente en torno al trabajo. Cuando el resto de tu existencia desaparece y solo queda la productividad, cualquier pequeño obstáculo se convierte en una montaña. Te sientes vacío, pero no sabes por qué. Tu día gira en torno a cumplir, pero ya no recuerdas qué te hacía ilusión.</p>
+<p>Uno de los testimonios que más me impactó fue el de alguien que decidió dejar su trabajo en software y pasar cuatro meses podando setos y limpiando piscinas. Contaba que fue las mejores <em>“vacaciones”</em> de su vida. Ese cambio de ritmo, de entorno, de propósito, le devolvió el placer de las cosas simples. Lo curioso es que, después de aquello, volvió a programar y lleva años trabajando en la industria del software.</p>
+<p>Esto derivó en la idea de lo absurdo que es tratar de descansar de un trabajo mental y sedentario con actividades igual de mentales y sedentarias. Lo que realmente ayuda es mover el cuerpo, sentirlo, usarlo. Caminar, sudar, respirar con intención. Descansar de verdad no se parece al trabajo: se le opone. Además, tu cuerpo necesita moverse, no solo sentarse a pensar. Necesita actividad física, no solo mental. Y eso es algo que a menudo olvidamos.</p>
+<p>También hablamos de lo mucho que pesa la autoexigencia. Ese <em>“tengo que estar mejor ya”</em> o <em>“debería rendir más”</em> que no te deja respirar. Y de la comparación constante, esa que convierte cada logro ajeno en una fuente de frustración. Se nos olvida que cada quien tiene su propio ritmo, su historia, sus heridas. Medirnos con la regla de otro solo nos aleja de nuestro propio camino.</p>
+<p>En medio de todo eso, pasamos por alto algo tan sencillo como celebrar nuestros logros. A veces cuesta reconocer lo que hemos conseguido porque estamos demasiado ocupados persiguiendo lo siguiente. Pero detenerse, mirar atrás y decir <strong>“esto lo logré”</strong> es también una forma de sanar.</p>
+<p>Reconocer los síntomas del burnout también fue parte de la conversación. Desde esa sensación de no querer levantarse aunque te guste tu trabajo, hasta las tardes de domingo que te roban la energía. O la creciente dificultad para concentrarte, para mantener el foco, para disfrutar. Son señales sutiles al principio, pero que terminan por silenciarte por dentro.</p>
+<p>Y entonces, ¿qué ayuda? Separar físicamente el trabajo del resto de tu vida. Crear fronteras, aunque sean simbólicas. Reconectar con lo que realmente quieres, no con lo que crees que deberías querer. Hacer ejercicio no como obligación, sino como medicina. Escucharte con honestidad. Y sobre todo, recordarte que no tienes que estar al 100% todo el tiempo. A veces, simplemente estar ya es suficiente.</p>
+<p>Hoy, después de casi tres años sin escribir, vuelvo a este blog. No porque sienta que debo hacerlo, sino porque quiero. Porque he aprendido que escribir es una forma de cuidar de mí mismo, de expresar lo que siento y de conectar con los demás. Y eso es lo que quiero compartir hoy: la importancia de volver a hacer las cosas desde el deseo, no desde la obligación.</p>
+<p>Si tú también estás en pausa, o en proceso de volver, o incluso plateándote parar, te mando un abrazo. A veces parar es la forma más valiente —y más honesta— de seguir adelante. Y está bien no estar bien todo el tiempo. La vida, con sus altibajos, nos invita a aprender a cuidarnos y a encontrar nuestro propio ritmo, sin prisa y sin culpa.</p>
+<h3>Conclusiones</h3>
+<ul>
+<li>Parar no es rendirse, es una forma de cuidarse.</li>
+<li>La recuperación no es lineal, y está bien que así sea.</li>
+<li>El burnout no siempre viene por exceso de trabajo, a veces viene por tener <em>solo</em> trabajo en tu vida.</li>
+<li>Descansar no es no hacer nada; es hacer algo diferente que te nutra.</li>
+<li>Si tu trabajo es mental y sedentario, tu descanso debería ser físico y reparador.</li>
+<li>La comparación constante puede ser tóxica; cada camino es único.</li>
+<li>La autoexigencia y la comparación constante pueden romperte por dentro.</li>
+<li>Celebra tus logros, incluso los pequeños: seguir adelante también es un éxito.</li>
+<li>Reconocer los síntomas a tiempo puede ayudarte a evitar el colapso.</li>
+<li>Cuidarte es más importante que rendir.</li>
+</ul>
+</article>
+  <author-info class="ws3sp0wuz"><section class="author-info">
   <a href="/">
     <flipable-image class="wzsx78kcv"><div class="flipable-image">
   <div class="flip-container">
@@ -364,324 +476,139 @@
 </section>
 
 </author-info>
-<div><div class="blog-posts wu9s7qaes">
-	<h1 class="wu9s7qaes">
-				
-					Últimos artículos
-				
-				
-			</h1>
-			<ul class="wu9s7qaes">
-			
-				<li class="wu9s7qaes">
-					<post-card><a href="/es/blog/2025/despues-del-burnout/">
-  <article class="post-card">
-    <div class="cover">
-      <object data="/assets/es/blog/2025/despues-del-burnout/cover.png" title="Después del burnout" type="image/png">
-        <img src="/assets/images/fallback.png" title="Después del burnout">
-      </object>
-    </div>
-    <div class="content">
-      <h2 custom>Después del burnout</h2>
-      <time datetime="martes, 24 de junio de 2025">martes, 24 de junio de 2025</time>
-      <p class="excerpt">Después de casi tres años sin publicar, vuelvo al blog tras atravesar un burnout. En esta entrada comparto cómo fue el proceso de parar, recuperarme y volver.</p>
-    </div>
-  </article>
-</a>
-
-</post-card>
-				</li>
+  <related-posts url="/es/blog/2025/despues-del-burnout/"><section class="related-posts">
+  <h3>Artículos relacionados</h3>
       
-				<li class="wu9s7qaes">
-					<post-card><a href="/es/blog/2022/pamplona-software-crafters-2022/">
-  <article class="post-card">
-    <div class="cover">
-      <object data="/assets/es/blog/2022/pamplona-software-crafters-2022/cover.png" title="Pamplona Software Crafters 2022" type="image/png">
-        <img src="/assets/images/fallback.png" title="Pamplona Software Crafters 2022">
-      </object>
-    </div>
-    <div class="content">
-      <h2 custom>Pamplona Software Crafters 2022</h2>
-      <time datetime="viernes, 24 de junio de 2022">viernes, 24 de junio de 2022</time>
-      <p class="excerpt">El fin de semana pasado tuve la oportunidad de asistir a la Pamplona Software Crafters. Déjame compartir contigo esta experiencia.</p>
-    </div>
-  </article>
-</a>
-
-</post-card>
-				</li>
+      <ul>
       
-				<li class="wu9s7qaes">
-					<post-card><a href="/es/blog/2022/como-pase-un-proceso-en-nodejs-de-5-horas-a-5-minutos/">
-  <article class="post-card">
-    <div class="cover">
-      <object data="/assets/es/blog/2022/como-pase-un-proceso-en-nodejs-de-5-horas-a-5-minutos/cover.png" title="Cómo pasé un proceso en Node.js de 5 horas a 5 minutos" type="image/png">
-        <img src="/assets/images/fallback.png" title="Cómo pasé un proceso en Node.js de 5 horas a 5 minutos">
-      </object>
-    </div>
-    <div class="content">
-      <h2 custom>Cómo pasé un proceso en Node.js de 5 horas a 5 minutos</h2>
-      <time datetime="viernes, 20 de mayo de 2022">viernes, 20 de mayo de 2022</time>
-      <p class="excerpt">En un proyecto me tuve que enfrentar a un proceso en Node.js que después de rehacerlo de cero para hacerlo más sostenible era un 4400% más ineficiente. En este post te explico como conseguí que fuera más de 20% más rápido que el proceso original.</p>
-    </div>
-  </article>
-</a>
+          <li>
+            <a href="/es/blog/2021/la-ansiedad-de-evolucionar-como-profesional-del-software/">
+              <article class="post-card-minimal">
+                <div class="cover">
+                  <object data="/assets/es/blog/2021/la-ansiedad-de-evolucionar-como-profesional-del-software/cover.png" title="Que la ansiedad no te devore por querer crecer como profesional del software" type="image/png">
+                    <img src="/assets/images/fallback.png" title="Que la ansiedad no te devore por querer crecer como profesional del software">
+                  </object>
+                </div>
+                <div class="content">
+                  <h4 custom>Que la ansiedad no te devore por querer crecer como profesional del software</h4>
+                  <time datetime="viernes, 9 de abril de 2021">viernes, 9 de abril de 2021</time>
+                  <span class="excerpt">Da la sensación de que en la industria del software tienes que estar en un continuo non stop de aprendizaje y hacer cosas. Sin embargo, creo que esto no es así.</span>
+                  <site-tags url="/es/blog/2021/la-ansiedad-de-evolucionar-como-profesional-del-software/"><ul class="tag-list">
+    <li>
+            <site-tag><span class="tag">#software</span>
 
-</post-card>
-				</li>
-      
-				<li class="wu9s7qaes">
-					<post-card><a href="/es/blog/2022/por-que-no-usar-jest/">
-  <article class="post-card">
-    <div class="cover">
-      <object data="/assets/es/blog/2022/por-que-no-usar-jest/cover.png" title="Por qué no usar Jest" type="image/png">
-        <img src="/assets/images/fallback.png" title="Por qué no usar Jest">
-      </object>
-    </div>
-    <div class="content">
-      <h2 custom>Por qué no usar Jest</h2>
-      <time datetime="domingo, 9 de enero de 2022">domingo, 9 de enero de 2022</time>
-      <p class="excerpt">Llevo años usando Jest para mis proyectos en Node.js, pero cada vez oigo más quejas por parte de la comunidad de Node.js sobre Jest y que no deberías usarlo.</p>
-    </div>
-  </article>
-</a>
+</site-tag>
+          </li>
+        
+          <li>
+            <site-tag><span class="tag">#aprendizaje</span>
 
-</post-card>
-				</li>
-      
-				<li class="wu9s7qaes">
-					<post-card><a href="/es/blog/2022/deshabilita-tu-webcam/">
-  <article class="post-card">
-    <div class="cover">
-      <object data="/assets/es/blog/2022/deshabilita-tu-webcam/cover.png" title="Como deshabilitar tu webcam en Linux" type="image/png">
-        <img src="/assets/images/fallback.png" title="Como deshabilitar tu webcam en Linux">
-      </object>
-    </div>
-    <div class="content">
-      <h2 custom>Como deshabilitar tu webcam en Linux</h2>
-      <time datetime="miércoles, 5 de enero de 2022">miércoles, 5 de enero de 2022</time>
-      <p class="excerpt">En ocasiones es más cómodo deshabilitar la cámara del ordenador mediante software que físicamente. En este articulo te explico como hacerlo en Linux.</p>
-    </div>
-  </article>
-</a>
+</site-tag>
+          </li>
+        
+          <li>
+            <site-tag><span class="tag">#vida</span>
 
-</post-card>
-				</li>
-      
-				<li class="wu9s7qaes">
-					<post-card><a href="/es/blog/2021/array-destructuring/">
-  <article class="post-card">
-    <div class="cover">
-      <object data="/assets/es/blog/2021/array-destructuring/cover.png" title="Array Destructuring en JavaScript" type="image/png">
-        <img src="/assets/images/fallback.png" title="Array Destructuring en JavaScript">
-      </object>
-    </div>
-    <div class="content">
-      <h2 custom>Array Destructuring en JavaScript</h2>
-      <time datetime="sábado, 9 de octubre de 2021">sábado, 9 de octubre de 2021</time>
-      <p class="excerpt">El destructuring es una funcionalidad que se añadió a JavaScript en ES2015 y que desde que llegó se ha convertido en un recurso increíblemente útil.</p>
-    </div>
-  </article>
-</a>
+</site-tag>
+          </li>
+        
+</ul>
 
-</post-card>
-				</li>
-      
-				<li class="wu9s7qaes">
-					<post-card><a href="/es/blog/2021/oclif/">
-  <article class="post-card">
-    <div class="cover">
-      <object data="/assets/es/blog/2021/oclif/cover.png" title="oclif: el framework para hacer CLIs en Node.js y TypeScript" type="image/png">
-        <img src="/assets/images/fallback.png" title="oclif: el framework para hacer CLIs en Node.js y TypeScript">
-      </object>
-    </div>
-    <div class="content">
-      <h2 custom>oclif: el framework para hacer CLIs en Node.js y TypeScript</h2>
-      <time datetime="domingo, 3 de octubre de 2021">domingo, 3 de octubre de 2021</time>
-      <p class="excerpt">oclif se define como el framework abierto para CLIs en Node.js. Te cuento sus bondades y por qué deberías planteártelo para tu próximo CLI.</p>
-    </div>
-  </article>
-</a>
+</site-tags>
+                </div>
+              </article>
+            </a>
+          </li>
+        
+          <li>
+            <a href="/es/blog/2021/gitmoji/">
+              <article class="post-card-minimal">
+                <div class="cover">
+                  <object data="/assets/es/blog/2021/gitmoji/cover.png" title="Gitmoji: una forma más visual de commitear" type="image/png">
+                    <img src="/assets/images/fallback.png" title="Gitmoji: una forma más visual de commitear">
+                  </object>
+                </div>
+                <div class="content">
+                  <h4 custom>Gitmoji: una forma más visual de commitear</h4>
+                  <time datetime="sábado, 25 de septiembre de 2021">sábado, 25 de septiembre de 2021</time>
+                  <span class="excerpt">Gitmoji es una guía de emojis para los mensajes de los commits que permite ver la historia de un proyecto git de una manera muy visual.</span>
+                  <site-tags url="/es/blog/2021/gitmoji/"><ul class="tag-list">
+    <li>
+            <site-tag><span class="tag">#software</span>
 
-</post-card>
-				</li>
-      
-				<li class="wu9s7qaes">
-					<post-card><a href="/es/blog/2021/gitmoji/">
-  <article class="post-card">
-    <div class="cover">
-      <object data="/assets/es/blog/2021/gitmoji/cover.png" title="Gitmoji: una forma más visual de commitear" type="image/png">
-        <img src="/assets/images/fallback.png" title="Gitmoji: una forma más visual de commitear">
-      </object>
-    </div>
-    <div class="content">
-      <h2 custom>Gitmoji: una forma más visual de commitear</h2>
-      <time datetime="sábado, 25 de septiembre de 2021">sábado, 25 de septiembre de 2021</time>
-      <p class="excerpt">Gitmoji es una guía de emojis para los mensajes de los commits que permite ver la historia de un proyecto git de una manera muy visual.</p>
-    </div>
-  </article>
-</a>
+</site-tag>
+          </li>
+        
+          <li>
+            <site-tag><span class="tag">#git</span>
 
-</post-card>
-				</li>
-      
-				<li class="wu9s7qaes">
-					<post-card><a href="/es/blog/2021/como-construir-arrays-en-js/">
-  <article class="post-card">
-    <div class="cover">
-      <object data="/assets/es/blog/2021/como-construir-arrays-en-js/cover.png" title="Cómo construir arrays en JavaScript" type="image/png">
-        <img src="/assets/images/fallback.png" title="Cómo construir arrays en JavaScript">
-      </object>
-    </div>
-    <div class="content">
-      <h2 custom>Cómo construir arrays en JavaScript</h2>
-      <time datetime="viernes, 24 de septiembre de 2021">viernes, 24 de septiembre de 2021</time>
-      <p class="excerpt">En JavaScript hay más de una forma de construir un array. En este artículo podrás ver a base de ejemplos cada una de las maneras posibles.</p>
-    </div>
-  </article>
-</a>
+</site-tag>
+          </li>
+        
+          <li>
+            <site-tag><span class="tag">#workflow</span>
 
-</post-card>
-				</li>
-      
-				<li class="wu9s7qaes">
-					<post-card><a href="/es/blog/2021/truthy-falsy-javascript/">
-  <article class="post-card">
-    <div class="cover">
-      <object data="/assets/es/blog/2021/truthy-falsy-javascript/cover.png" title="Truthy y Falsy en JavaScript" type="image/png">
-        <img src="/assets/images/fallback.png" title="Truthy y Falsy en JavaScript">
-      </object>
-    </div>
-    <div class="content">
-      <h2 custom>Truthy y Falsy en JavaScript</h2>
-      <time datetime="domingo, 19 de septiembre de 2021">domingo, 19 de septiembre de 2021</time>
-      <p class="excerpt">En JavaScript existe el concepto de Truthy y Falsy values. Déjame explicarte en este artículo de qué se trata.</p>
-    </div>
-  </article>
-</a>
+</site-tag>
+          </li>
+        
+</ul>
 
-</post-card>
-				</li>
-      
-				<li class="wu9s7qaes">
-					<post-card><a href="/es/blog/2021/corepack/">
-  <article class="post-card">
-    <div class="cover">
-      <object data="/assets/es/blog/2021/corepack/cover.png" title="Corepack: el puente entre gestores de paquetes para Node.js" type="image/png">
-        <img src="/assets/images/fallback.png" title="Corepack: el puente entre gestores de paquetes para Node.js">
-      </object>
-    </div>
-    <div class="content">
-      <h2 custom>Corepack: el puente entre gestores de paquetes para Node.js</h2>
-      <time datetime="viernes, 10 de septiembre de 2021">viernes, 10 de septiembre de 2021</time>
-      <p class="excerpt">Node.js acaba de sacar Corepack como solución nativa para los diferentes gestores de paquetes que existen en el ecosistema de Node.js.</p>
-    </div>
-  </article>
-</a>
+</site-tags>
+                </div>
+              </article>
+            </a>
+          </li>
+        
+          <li>
+            <a href="/es/blog/2022/pamplona-software-crafters-2022/">
+              <article class="post-card-minimal">
+                <div class="cover">
+                  <object data="/assets/es/blog/2022/pamplona-software-crafters-2022/cover.png" title="Pamplona Software Crafters 2022" type="image/png">
+                    <img src="/assets/images/fallback.png" title="Pamplona Software Crafters 2022">
+                  </object>
+                </div>
+                <div class="content">
+                  <h4 custom>Pamplona Software Crafters 2022</h4>
+                  <time datetime="viernes, 24 de junio de 2022">viernes, 24 de junio de 2022</time>
+                  <span class="excerpt">El fin de semana pasado tuve la oportunidad de asistir a la Pamplona Software Crafters. Déjame compartir contigo esta experiencia.</span>
+                  <site-tags url="/es/blog/2022/pamplona-software-crafters-2022/"><ul class="tag-list">
+    <li>
+            <site-tag><span class="tag">#software</span>
 
-</post-card>
-				</li>
-      
-				<li class="wu9s7qaes">
-					<post-card><a href="/es/blog/2021/micro-frontends-intro/">
-  <article class="post-card">
-    <div class="cover">
-      <object data="/assets/es/blog/2021/micro-frontends-intro/cover.png" title="Introducción a micro frontends" type="image/png">
-        <img src="/assets/images/fallback.png" title="Introducción a micro frontends">
-      </object>
-    </div>
-    <div class="content">
-      <h2 custom>Introducción a micro frontends</h2>
-      <time datetime="viernes, 10 de septiembre de 2021">viernes, 10 de septiembre de 2021</time>
-      <p class="excerpt">Micro frontends es una arquitectura que cada vez suena más y se usa más por parte de las empresas. En este artículo explico algunos de los porqués.</p>
-    </div>
-  </article>
-</a>
+</site-tag>
+          </li>
+        
+          <li>
+            <site-tag><span class="tag">#evento</span>
 
-</post-card>
-				</li>
-      
-				<li class="wu9s7qaes">
-					<post-card><a href="/es/blog/2021/convierte-tu-raspberry-pi-en-un-ide-espartano/">
-  <article class="post-card">
-    <div class="cover">
-      <object data="/assets/es/blog/2021/convierte-tu-raspberry-pi-en-un-ide-espartano/cover.png" title="Cómo convertir tu Raspberry Pi en un entorno de desarrollo espartano" type="image/png">
-        <img src="/assets/images/fallback.png" title="Cómo convertir tu Raspberry Pi en un entorno de desarrollo espartano">
-      </object>
-    </div>
-    <div class="content">
-      <h2 custom>Cómo convertir tu Raspberry Pi en un entorno de desarrollo espartano</h2>
-      <time datetime="viernes, 3 de septiembre de 2021">viernes, 3 de septiembre de 2021</time>
-      <p class="excerpt">Tu Raspberry Pi puede ser un entorno de desarrollo muy interesante para llevar encima cuando viajas. En este post explico cómo lo he hecho con la mía.</p>
-    </div>
-  </article>
-</a>
+</site-tag>
+          </li>
+        
+          <li>
+            <site-tag><span class="tag">#software craftsmanship</span>
 
-</post-card>
-				</li>
-      
-				<li class="wu9s7qaes">
-					<post-card><a href="/es/blog/2021/raspberry-pi-en-tu-ipad/">
-  <article class="post-card">
-    <div class="cover">
-      <object data="/assets/es/blog/2021/raspberry-pi-en-tu-ipad/cover.png" title="Cómo convertir tu iPad o tablet en un entorno de desarrollo" type="image/png">
-        <img src="/assets/images/fallback.png" title="Cómo convertir tu iPad o tablet en un entorno de desarrollo">
-      </object>
-    </div>
-    <div class="content">
-      <h2 custom>Cómo convertir tu iPad o tablet en un entorno de desarrollo</h2>
-      <time datetime="viernes, 3 de septiembre de 2021">viernes, 3 de septiembre de 2021</time>
-      <p class="excerpt">Descubre cómo desarrollar y experimentar en cualquier lugar con tu tablet y tu Raspberry Pi.</p>
-    </div>
-  </article>
-</a>
+</site-tag>
+          </li>
+        
+          <li>
+            <site-tag><span class="tag">#comunidad</span>
 
-</post-card>
-				</li>
-      
-				<li class="wu9s7qaes">
-					<post-card><a href="/es/blog/2021/la-ansiedad-de-evolucionar-como-profesional-del-software/">
-  <article class="post-card">
-    <div class="cover">
-      <object data="/assets/es/blog/2021/la-ansiedad-de-evolucionar-como-profesional-del-software/cover.png" title="Que la ansiedad no te devore por querer crecer como profesional del software" type="image/png">
-        <img src="/assets/images/fallback.png" title="Que la ansiedad no te devore por querer crecer como profesional del software">
-      </object>
-    </div>
-    <div class="content">
-      <h2 custom>Que la ansiedad no te devore por querer crecer como profesional del software</h2>
-      <time datetime="viernes, 9 de abril de 2021">viernes, 9 de abril de 2021</time>
-      <p class="excerpt">Da la sensación de que en la industria del software tienes que estar en un continuo non stop de aprendizaje y hacer cosas. Sin embargo, creo que esto no es así.</p>
-    </div>
-  </article>
-</a>
+</site-tag>
+          </li>
+        
+</ul>
 
-</post-card>
-				</li>
-      
-				<li class="wu9s7qaes">
-					<post-card><a href="/es/blog/2020/como-convertir-array-like-objects-a-array/">
-  <article class="post-card">
-    <div class="cover">
-      <object data="/assets/es/blog/2020/como-convertir-array-like-objects-a-array/cover.png" title="Cómo convertir array-like objects a array" type="image/png">
-        <img src="/assets/images/fallback.png" title="Cómo convertir array-like objects a array">
-      </object>
-    </div>
-    <div class="content">
-      <h2 custom>Cómo convertir array-like objects a array</h2>
-      <time datetime="sábado, 10 de octubre de 2020">sábado, 10 de octubre de 2020</time>
-      <p class="excerpt">Los array-like objects pueden parecerse a un array e incluso algunos se pueden iterar, pero no tienen el mismo comportamiento que un array. Convertirlos  arrays te permitirá trabajar mejor con ellos.</p>
-    </div>
-  </article>
-</a>
+</site-tags>
+                </div>
+              </article>
+            </a>
+          </li>
+        </ul>
+</section>
 
-</post-card>
-				</li>
-      
-			</ul>
-			
-</div>
+</related-posts>
+</article>
 
-</div>
 </main>
 <scroll-to-top><button title="Scroll to top" class="scroll-to-top hidden no-print">
   <up-icon><span class="up-icon">
