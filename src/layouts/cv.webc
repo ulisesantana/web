@@ -13,21 +13,50 @@ locale: en
 			return /* html*/`
       <author-info></author-info>
 
+      Table of contents:
+      <ol>
+        <li>
+          <a href="#who-i-am">👤 <span>Who I am</span></a>
+        </li>
+        <li>
+          <a href="#work-experience">💼 <span>Work experience</span></a>
+        </li>
+        <li>
+          <a href="#education-and-training">🎓 <span>Education & Training</span></a>
+        </li>
+        <li>
+          <a href="#milestones">🏆 <span>Milestones</span></a>
+        </li>
+        <li>
+          <a href="#sponsored-events">💰 <span>Sponsored events</span></a>
+        </li>
+        <li>
+          <a href="#attended-events">👥 <span>Attended events</span></a>
+        </li>
+      </ol>
+
+      <p>
+        <blockquote>
+          If you want to check my résumé for a shorter version, you can find it <a href="/docs/resume.pdf" target="_blank">here</a>.
+        </blockquote>
+      </p>
+
+			<h2 id="who-i-am">👤 Who I am</h2>
       <div @raw="content"></div>
 
-			<h2>💼 Work experience</h2>
+			<h2 id="work-experience">💼 Work experience</h2>
 			<cv-jobs></cv-jobs>
 
-			<h2>🎓 Education & Training</h2>
+			<h2 id="education-and-training">🎓 Education & Training</h2>
 			<cv-education></cv-education>
 
-			<h2>🏆 Milestones</h2>
+			<h2 id="milestones">🏆 Milestones</h2>
 			<cv-milestones></cv-milestones>
 
-			<h2>💰 Sponsored events</h2>
+			<h2 id="sponsored-events">💰 Sponsored events</h2>
 			<cv-sponsored-events></cv-sponsored-events>
 
-			<h2>👥 Attended events</h2>
+			<h2 id="attended-events">👥 Attended events</h2>
 			<cv-attended-events></cv-attended-events>
 
 			`;
@@ -36,7 +65,7 @@ locale: en
 </div>
 
 <style webc:scoped>
-	ul {
+	ul, ol {
 		display: flex;
 		flex-direction: column;
 		height: 100%;
@@ -47,7 +76,22 @@ locale: en
 	}
 
 	li {
-		list-style: none;
+    list-style: none;
 		padding: 0;
 	}
+
+  ol {
+    gap: 16px;
+    padding-left: 24px;
+  }
+
+  ol li {
+		list-style: decimal;
+    font-weight: bold;
+  }
+
+  ol li span {
+    text-decoration: underline;
+    color: var(--link-color);
+  }
 </style>
