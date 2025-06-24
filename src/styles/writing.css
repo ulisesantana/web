@@ -16,16 +16,18 @@
 p {
   color: inherit;
   text-align: justify;
+  hyphens: auto;
+  text-align-last: left;
   line-height: 1.5;
   font-size: var(--font-size-1);
   margin: 2rem auto;
 }
 
-h1:not([custom]), 
-h2:not([custom]), 
-h3:not([custom]), 
-h4:not([custom]), 
-h5:not([custom]), 
+h1:not([custom]),
+h2:not([custom]),
+h3:not([custom]),
+h4:not([custom]),
+h5:not([custom]),
 h6:not([custom]) {
   margin: 2rem 0;
   border-left: solid var(--link-color) 4px;
