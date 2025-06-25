@@ -18,7 +18,7 @@ Poco a poco, he vuelto a algunas de esas cosas que me hacían feliz: escribir, p
 
 Parte de esta vuelta a la normalidad incluye retomar este blog. No tengo un plan definido, ni una agenda estricta de publicaciones. Simplemente quiero escribir cuando sienta que tengo algo que compartir, sin presiones ni expectativas. Quiero que este espacio sea un lugar donde pueda expresarme libremente, sin miedo a no cumplir con estándares o métricas.
 
-Otra parte ha sido volver a ir a eventos como la [Socracan 2025](https://x.com/socracan), donde pude reencontrarme con colegas y amigos de la comunidad. Fue un momento de alegría, de conexión, y de reafirmar que, a pesar de las dificultades, sigo aquí, aprendiendo y creciendo. Además, fue una oportunidad maravillosa para hablar con otros sobre el burnout, sobre cómo afecta a nuestra salud mental y profesional, y sobre la importancia de cuidar de nosotros mismos en un entorno que a menudo prioriza el rendimiento por encima del bienestar.
+Otra parte ha sido volver a ir a eventos como la [Socracan 2025](https://www.socracan.org), donde pude reencontrarme con colegas y amigos de la comunidad. Fue un momento de alegría, de conexión, y de reafirmar que, a pesar de las dificultades, sigo aquí, aprendiendo y creciendo. Además, fue una oportunidad maravillosa para hablar con otros sobre el burnout, sobre cómo afecta a nuestra salud mental y profesional, y sobre la importancia de cuidar de nosotros mismos en un entorno que a menudo prioriza el rendimiento por encima del bienestar.
 
 ![Socracan 2025](/assets/images/socracan2025.jpeg)
 

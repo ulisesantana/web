@@ -17,7 +17,7 @@ Little by little, I have returned to some of the things that made me happy: writ
 
 Part of this return to normality includes resuming this blog. I don't have a set plan or a strict publishing schedule. I just want to write when I feel I have something to share, without pressure or expectations. I want this space to be a place where I can express myself freely, without fear of not meeting standards or metrics.
 
-Another part has been going back to events like [Socracan 2025](https://x.com/socracan), where I was able to reconnect with colleagues and friends from the community. It was a moment of joy, of connection, and of reaffirming that, despite the difficulties, I'm still here, learning and growing. It was also a wonderful opportunity to talk with others about burnout, about how it affects our mental and professional health, and about the importance of taking care of ourselves in an environment that often prioritizes performance over well-being.
+Another part has been going back to events like [Socracan 2025](https://www.socracan.org), where I was able to reconnect with colleagues and friends from the community. It was a moment of joy, of connection, and of reaffirming that, despite the difficulties, I'm still here, learning and growing. It was also a wonderful opportunity to talk with others about burnout, about how it affects our mental and professional health, and about the importance of taking care of ourselves in an environment that often prioritizes performance over well-being.
 
 ![Socracan 2025](/assets/images/socracan2025.jpeg)
 
