@@ -2,17 +2,17 @@
 title: Después del burnout
 cover: /assets/es/blog/2025/despues-del-burnout/cover.png
 date: 2025-06-24
-description: Después de casi tres años sin publicar, vuelvo al blog tras atravesar un burnout. En esta entrada comparto cómo fue el proceso de parar, recuperarme y volver.
+description: Reflexiono sobre cómo el burnout me obligó a parar, recuperarme y volver a conectar con lo que realmente quiero, sin recetas mágicas ni promesas vacías.
 tags: [burnout,salud mental,vida,software]
 draft: false
 coverCopyright: null
 ---
 
-Llevo casi tres años sin publicar nada en este blog. Durante este tiempo pasaron muchas cosas, muchísimas, pero una de las más importantes —y también de las más difíciles de aceptar— fue que atravesé un burnout. Perdí la motivación, la energía y, durante una larga temporada, también las ganas de seguir haciendo lo que tanto me gustaba.
+Llevo tres años sin publicar nada en este blog. Durante este tiempo pasaron muchas cosas, muchísimas, pero una de las más importantes —y también de las más difíciles de aceptar— fue que atravesé un burnout. Perdí la motivación, la energía y, durante una larga temporada, también las ganas de seguir haciendo lo que tanto me gustaba, tanto dentro como fuera del trabajo.
 
-Tuve que parar. No por descanso superficial, sino por una necesidad profunda de detenerme y reconectar conmigo mismo. Dejé el trabajo y me dediqué a mí mismo. Tiré de mis ahorros para poder parar completamente durante un par de meses. Y no lo hice con culpa. Aprendí que el descanso no es solo dejar de hacer, sino un descanso activo: un espacio para sanar, para escuchar lo que mi cuerpo y mente realmente necesitan. Me sentía roto y fue un tiempo necesario para aprender a respetar mis propios ritmos, a soltar la autoexigencia que tanto me pesaba y a distinguir lo que realmente quería hacer de lo que sentía que debía hacer por presión externa o interna.
+Tuve que parar. No por descanso superficial, sino por una necesidad profunda de detenerme y reconectar conmigo mismo. Empecé a recibir terapia psicológica. Dejé el trabajo y me dediqué a mí mismo. Tiré de mis ahorros para poder parar completamente durante un par de meses, con suerte medio año. Y no lo hice con culpa. Aprendí que el descanso no es solo dejar de hacer, sino un descanso activo: un espacio para sanar, para escuchar lo que mi cuerpo y mente realmente necesitan. Me sentía roto y fue un tiempo necesario para aprender a respetar mis propios ritmos, a soltar la autoexigencia que tanto me pesaba y a distinguir lo que realmente quería hacer de lo que sentía que debía hacer por presión externa o interna.
 
-En el último año y meido he ido regresando a la industria del software, pero lo he hecho desde otro lugar. Con más calma, más conciencia, y sobre todo, con más cuidado hacia mí. He aprendido a no correr, a no estar siempre en modo _“rendimiento”_. También he remarcado el aprendizaje de lo dañina que puede ser la comparación constante con otros. Cada camino es único, y cada proceso de recuperación también.
+En el último año y medio he ido regresando a la industria del software, pero lo he hecho desde otro lugar. Con más calma, más conciencia, y sobre todo, con más cuidado hacia mí. He aprendido a no correr, a no estar siempre en modo _“rendimiento”_. También he remarcado el aprendizaje de lo dañina que puede ser la comparación constante con otros. Cada camino es único, y cada proceso de recuperación también.
 
 Poco a poco, he vuelto a algunas de esas cosas que me hacían feliz: escribir, programar, aprender, compartir experiencias. Pero esta vez con una diferencia fundamental: ahora lo hago porque me apetece, porque lo disfruto, no porque crea que tengo que hacerlo para seguir creciendo profesionalmente o para cumplir con expectativas ajenas.
 
@@ -28,15 +28,15 @@ Uno de los testimonios que más me impactó fue el de alguien que decidió dejar
 
 Esto derivó en la idea de lo absurdo que es tratar de descansar de un trabajo mental y sedentario con actividades igual de mentales y sedentarias. Lo que realmente ayuda es mover el cuerpo, sentirlo, usarlo. Caminar, sudar, respirar con intención. Descansar de verdad no se parece al trabajo: se le opone. Además, tu cuerpo necesita moverse, no solo sentarse a pensar. Necesita actividad física, no solo mental. Y eso es algo que a menudo olvidamos.
 
-También hablamos de lo mucho que pesa la autoexigencia. Ese _“tengo que estar mejor ya”_ o _“debería rendir más”_ que no te deja respirar. Y de la comparación constante, esa que convierte cada logro ajeno en una fuente de frustración. Se nos olvida que cada quien tiene su propio ritmo, su historia, sus heridas. Medirnos con la regla de otro solo nos aleja de nuestro propio camino.
+También hablamos de lo mucho que pesa la autoexigencia. Ese _“tengo que estar mejor ya”_ o _“debería rendir más”_ que no te deja respirar. Y de la comparación constante, esa que convierte cada logro ajeno en una fuente de frustración. Se nos olvida que cada quien tiene su propio ritmo, su historia, su mochila. Medirnos con la regla de otro solo nos aleja de nuestro propio camino.
 
 En medio de todo eso, pasamos por alto algo tan sencillo como celebrar nuestros logros. A veces cuesta reconocer lo que hemos conseguido porque estamos demasiado ocupados persiguiendo lo siguiente. Pero detenerse, mirar atrás y decir **“esto lo logré”** es también una forma de sanar.
 
-Reconocer los síntomas del burnout también fue parte de la conversación. Desde esa sensación de no querer levantarse aunque te guste tu trabajo, hasta las tardes de domingo que te roban la energía. O la creciente dificultad para concentrarte, para mantener el foco, para disfrutar. Son señales sutiles al principio, pero que terminan por silenciarte por dentro.
+Reconocer los síntomas del burnout también fue parte de la conversación. Desde esa sensación de no querer levantarse aunque te guste tu trabajo, hasta las tardes de domingo que te roban la energía porque sabes que al día siguiente toca volver al ruedo. También la creciente dificultad para concentrarte, para mantener el foco, para disfrutar. Son señales sutiles al principio, pero que terminan por silenciarte por dentro.
 
-Y entonces, ¿qué ayuda? Separar físicamente el trabajo del resto de tu vida. Crear fronteras, aunque sean simbólicas. Reconectar con lo que realmente quieres, no con lo que crees que deberías querer. Hacer ejercicio no como obligación, sino como medicina. Escucharte con honestidad. Y sobre todo, recordarte que no tienes que estar al 100% todo el tiempo. A veces, simplemente estar ya es suficiente.
+Y entonces, ¿qué ayuda? Separar físicamente el trabajo del resto de tu vida. Crear fronteras, aunque sean simbólicas. Permítete que el trabajo sea solo eso, trabajo. Reconecta con lo que realmente quieres, no con lo que crees que deberías querer. Escúchate con honestidad, creando el tiempo y el espacio para que tu mente se tranquilice y puedas escucharte detrás del ruido. Haz ejercicio no como obligación, sino como medicina. Ignoras lo beneficioso que es mantener el cuerpo en movimiento. Y sobre todo, recordarte que no tienes que estar al 100% todo el tiempo. A veces, simplemente estar ya es suficiente.
 
-Hoy, después de casi tres años sin escribir, vuelvo a este blog. No porque sienta que debo hacerlo, sino porque quiero. Porque he aprendido que escribir es una forma de cuidar de mí mismo, de expresar lo que siento y de conectar con los demás. Y eso es lo que quiero compartir hoy: la importancia de volver a hacer las cosas desde el deseo, no desde la obligación.
+Hoy, después de tres años sin escribir, vuelvo a este blog. No porque sienta que debo hacerlo, sino porque quiero. Porque he aprendido que escribir es una forma de cuidar de mí mismo, de expresar lo que siento y de conectar con los demás. Y eso es lo que quiero compartir hoy: la importancia de volver a hacer las cosas desde el deseo, no desde la obligación.
 
 Si tú también estás en pausa, o en proceso de volver, o incluso plateándote parar, te mando un abrazo. A veces parar es la forma más valiente —y más honesta— de seguir adelante. Y está bien no estar bien todo el tiempo. La vida, con sus altibajos, nos invita a aprender a cuidarnos y a encontrar nuestro propio ritmo, sin prisa y sin culpa.
 
