@@ -1,31 +1,43 @@
 <script webc:type="render" webc:is="template">
   function CV() {
-    const collection = this.cv.attended
+    const collection = Object.entries(this.cv.attended.reduce((dict, item) => {
+      const year = item.when.split("/")[1];
+      if (dict[year]) {
+        dict[year].push(item);
+      } else {
+        dict[year] = [item];
+      }
+      return dict;
+    }, {}));
 
 
     return `
 			<ul class="page-break-after">
-			`.concat(collection.map(({ when, location, title }) => {
+			`.concat(collection.map(([year, events]) => {
       return /* html */`
-				<li class="attended-event">
-          <div class="attended-event-data">
-            <span class="icon">🗣️</span>
-            <span>${title}</span>
-          </div>
-          <div class="attended-event-data">
-            <span class="icon">📆</span>
-            <span>${when}</span>
-          </div>
-          <div class="attended-event-data">
-            <span class="icon">📍</span>
-            <span>${location}</span>
-          </div>
-				</li>
-      `})
-      .join(""))
-      .concat(`
+        <ul class="year-events">
+            <h4>${year}</h4>
+            <ul class="event-list">${events.map(({ title, when, location }) => { return /* html */`
+              <li class="attended-event">
+                <div class="attended-event-data">
+                <span class="icon">🗣️</span>
+                <span>${title}</span>
+              </div>
+                <div class="attended-event-data">
+                  <span class="icon">📆</span>
+                  <span>${when}</span>
+                </div>
+                <div class="attended-event-data">
+                  <span class="icon">📍</span>
+                  <span>${location}</span>
+                </div>
+              </li>`}).join("")}
+            </ul>
+        </li>
 			</ul>
-			`);
+      `})
+      .reverse()
+      .join(""))
   }
 </script>
 
@@ -52,12 +64,21 @@
     font-size: 1.75rem;
   }
 
-  ul {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
+  ul.year-events {
+    align-items: start;
+    display: flex;
+    flex-direction: column;
     height: 100%;
     margin: 0;
+    padding: 0;
+    gap: 0.5rem;
+    width: 100%;
+  }
+
+  ul.event-list {
+    display: grid;
+    height: 100%;
+    margin: 0 0 2rem;
     padding: 0;
     gap: 1rem;
     width: 100%;
@@ -66,6 +87,10 @@
   li {
     list-style: none;
     padding: 0;
+  }
+
+  h4 {
+    margin: 0;
   }
 
   @media (min-width: 768px) {
