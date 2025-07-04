@@ -1,21 +1,38 @@
 ---
 title: Deja de usar var en JavaScript
-date: 2021-11-17
-description: Pese a que ES2015 salió hace más de 6 años, todavía me encuentro con código nuevo usando var. Déjame explicarte por qué es una mala praxis usar var hoy en día.
+date: 2025-07-04
+description: Descubre por qué `var` está obsoleto en JavaScript moderno y cómo `let` y `const` mejoran la legibilidad, seguridad y mantenimiento del código.
 tags: [javascript,node.js]
 cover: ../../preview.png
 draft: true
 ---
 
-Pese a que ES2015 salió hace más de 6 años, todavía me encuentro con código nuevo usando var. Sospecho que su uso es por el desconocimiento de let y const, ya que es bastante común que la gente que trabaja con JavaScript no es realmente su lenguaje fuerte, sino que hacen otras cosas en otros lenguajes y a veces les toca trabajar con JavaScript en el frontend.
+Aunque ES2015 (ES6) salió hace 10 años, todavía me encuentro con código nuevo que usa `var`. En muchos casos, esto no es por nostalgia o decisión consciente, sino porque quienes lo escriben no dominan JavaScript como su lenguaje principal: trabajan con otros stacks y simplemente “les toca” lidiar con el frontend.
 
-Sea como fuere no vengo aquí a hacer de policía de JavaScript, sino de explicar por qué es una mala praxis y por qué debería de dejar de usarse.
+Sea cual sea la razón, **no vengo a hacer de policía del código**, sino a explicar por qué `var` **es una mala elección en 2025** y qué alternativas mejores existen.
+
+---
+
+## 😬 Los problemas de `var`
+
+`var` fue durante años la única forma de declarar variables en JavaScript. Pero tiene comportamientos que hoy resultan peligrosos en proyectos modernos:
+
+1. **Ámbito de función (no de bloque)**  
+   Una variable declarada con `var` es visible en toda la función en la que se declara, incluso **fuera del bloque `{}`** donde la defines. Esto puede causar conflictos difíciles de depurar.
+
+2. **Hoisting**  
+   Puedes usar una variable con `var` **antes de declararla**, y no te dará error: simplemente valdrá `undefined`.
+
+3. **Redefinición silenciosa**  
+   Puedes declarar una misma variable con `var` varias veces en el mismo ámbito, y el lenguaje no se quejará.
+
+Veamos un ejemplo con consecuencias reales:
 
 ```js
-function printMatrix (matrix) {
+function printMatrix(matrix) {
   for (var i = 0; i < matrix.length; i++) {
     var line = matrix[i];
-    for (var i = 0; i < line.length; i++) {
+    for (var i = 0; i < line.length; i++) { // 👈 Aquí se pisa el 'i' del bucle externo
       var element = line[i];
       console.log(element);
     }
@@ -28,25 +45,62 @@ var matrix = [
   [7, 8, 9]
 ];
 
-printMatrix(matrix)
+printMatrix(matrix); // 1 2 3
 ```
 
-Por los problemas que da con aplicaciones complejas y porque hay opciones mejores, en este caso: let y const.
+El resultado parece correcto… pero en realidad, el segundo bucle está sobrescribiendo el índice i del primero, y eso rompe el flujo lógico del programa. Este tipo de errores pueden pasar desapercibidos en funciones más grandes y producir bugs difíciles de detectar.
 
-Var tiene ámbito global de manera que cualquier punto de la aplicación puede acceder a su contenido así como modificarlo. Eso en aplicaciones complicadas (y no tan complicadas tmb), puede ser un desastre a nivel de funcionamiento, mantenibilidad y depuración.
+## ✅ La alternativa moderna: let y const
 
-Otra cosa que tiene var es que se puede redefinir (que no asignar otro valor), en cualquier parte del código y siempre hará referencia a la misma variable.
+Desde ES2015, tenemos dos nuevas formas de declarar variables:
 
-Con var sucede que puedes usar la variable ANTES de definirla y en ese momento, la variable valdrá undefined.
+### let
+- Tiene ámbito de bloque: sólo es visible dentro de {} donde se declara.
+- No se puede redeclarar dentro del mismo bloque.
+- No se puede usar antes de su declaración: da ReferenceError.
 
-Ahora hablemos de let.
+#### const
+- Igual que let, pero no permite reasignar el valor.
+- Ideal para declarar variables que no deberían cambiar (por ejemplo, referencias a funciones, arrays o strings).
 
-Let tiene ámbito de bloque, es decir, su contexto está limitado al interior de una pareja {} y por lo tanto, a su contenido sólo se podrá acceder desde el interior de dicho bloque.
+Reescribamos el ejemplo anterior usando let y const:
+```js
+function printMatrix(matrix) {
+  for (let i = 0; i < matrix.length; i++) {
+    const line = matrix[i];
+    for (let j = 0; j < line.length; j++) {
+      const element = line[j];
+      console.log(element);
+    }
+  }
+}
 
-Dentro de un mismo bloque, a diferencia de lo que sucede con var, no se puede redefinir la variable, pero obviamente sí modificar su valor.
+var matrix = [
+  [1, 2, 3],
+  [4, 5, 6],
+  [7, 8, 9]
+];
 
-Y me dirás, pero sí puedo redefinir una variable con let dentro de una función que se encuentre dentro de un bloque {} que ya poseía dicha variable. Sí y no porque realmente, dado que la función en sí misma es un bloque independiente, ésta está delimitada por si propia pareja {} y por lo tanto, no sería una redefinición sino una declaración dentro de un bloque anidado.
+printMatrix(matrix); // 1 2 3 4 5 6 7 8 9
+```
 
-A nivel de uso pre-definición, al contrario de lo q sucede con var, si usas la variable antes de declararla, ésta no tendrá el valor por defecto de undefined como sucede con var, sino que la ejecución de la aplicación dará un Reference Error.
+- Usamos let para los índices (i y j) porque cambian.
+- Usamos const para line y element, ya que no se reasignan dentro del bucle.
 
-Por todas estas razones es por lo que, desde su definición en el ES6, unido al incremento de la complejidad de las aplicaciones y la tendencia a modularizar y desacoplar los elementos que conforman las aplicaciones actuales basadas en JS, se prefiere el uso de let frente a var.
+Así no sólo evitamos conflictos entre variables, sino que dejamos más claro al lector qué se puede cambiar y qué no.
+
+⸻
+
+## 🧠 Consejo práctico
+
+**Usa const por defecto**. Sólo usa let cuando sepas que vas a cambiar el valor.
+
+**Evita var por completo**. No sólo es innecesario: es una fuente de errores.
+
+⸻
+
+## 🧾 Conclusión
+
+El uso de var no tiene cabida en el JavaScript moderno. No aporta nada que no puedas hacer mejor con let o const, y sus peculiaridades son fuente constante de errores.
+
+Adoptar let y const no es sólo una cuestión de sintaxis: es adoptar una forma más clara, segura y predecible de escribir código. Un pequeño cambio que marca una gran diferencia en la calidad de tus programas.
