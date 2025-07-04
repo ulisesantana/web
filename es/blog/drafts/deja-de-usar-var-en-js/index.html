@@ -13,14 +13,14 @@
 <meta name="theme-color" content="#F7E018">
 <meta name="author" content="Ulises Santana">
 <meta property="og:title" content="Deja de usar var en JavaScript">
-<meta name="description" property="og:description" content="Pese a que ES2015 salió hace más de 6 años, todavía me encuentro con código nuevo usando var. Déjame explicarte por qué es una mala praxis usar var hoy en día.">
+<meta name="description" property="og:description" content="Descubre por qué `var` está obsoleto en JavaScript moderno y cómo `let` y `const` mejoran la legibilidad, seguridad y mantenimiento del código.">
 <meta property="og:site_name" content="Ulises Santana">
 <meta property="og:image" content="/assets/images/logo.png" ">
 
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@ulisesantana">
 <meta name="twitter:title" content="Deja de usar var en JavaScript">
-<meta name="twitter:description" content="Pese a que ES2015 salió hace más de 6 años, todavía me encuentro con código nuevo usando var. Déjame explicarte por qué es una mala praxis usar var hoy en día.">
+<meta name="twitter:description" content="Descubre por qué `var` está obsoleto en JavaScript moderno y cómo `let` y `const` mejoran la legibilidad, seguridad y mantenimiento del código.">
 <meta name="twitter:image" content="/assets/images/logo.png">
 
 
@@ -284,7 +284,7 @@
   </figure>
   <div class="head wyy1elgja">
     <h1 custom class="wyy1elgja">Deja de usar var en JavaScript</h1>
-    <time datetime="miércoles, 17 de noviembre de 2021" class="wyy1elgja">miércoles, 17 de noviembre de 2021</time>
+    <time datetime="viernes, 4 de julio de 2025" class="wyy1elgja">viernes, 4 de julio de 2025</time>
     <site-tags url="/es/blog/drafts/deja-de-usar-var-en-js/"><ul class="tag-list">
     <li>
             <site-tag><span class="tag">#javascript</span>
@@ -302,19 +302,56 @@
 
 </site-tags>
   </div>
-  <article class="wyy1elgja"><p>Pese a que ES2015 salió hace más de 6 años, todavía me encuentro con código nuevo usando var. Sospecho que su uso es por el desconocimiento de let y const, ya que es bastante común que la gente que trabaja con JavaScript no es realmente su lenguaje fuerte, sino que hacen otras cosas en otros lenguajes y a veces les toca trabajar con JavaScript en el frontend.</p>
-<p>Sea como fuere no vengo aquí a hacer de policía de JavaScript, sino de explicar por qué es una mala praxis y por qué debería de dejar de usarse.</p>
-<pre class="language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">printMatrix</span> <span class="token punctuation">(</span><span class="token parameter">matrix</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> matrix<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>    <span class="token keyword">var</span> line <span class="token operator">=</span> matrix<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span><br>    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> line<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>      <span class="token keyword">var</span> element <span class="token operator">=</span> line<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span><br>      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>element<span class="token punctuation">)</span><span class="token punctuation">;</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span><br><br><span class="token keyword">var</span> matrix <span class="token operator">=</span> <span class="token punctuation">[</span><br>  <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">,</span><br>  <span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">]</span><span class="token punctuation">,</span><br>  <span class="token punctuation">[</span><span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">]</span><br><span class="token punctuation">]</span><span class="token punctuation">;</span><br><br><span class="token function">printMatrix</span><span class="token punctuation">(</span>matrix<span class="token punctuation">)</span></code></pre>
-<p>Por los problemas que da con aplicaciones complejas y porque hay opciones mejores, en este caso: let y const.</p>
-<p>Var tiene ámbito global de manera que cualquier punto de la aplicación puede acceder a su contenido así como modificarlo. Eso en aplicaciones complicadas (y no tan complicadas tmb), puede ser un desastre a nivel de funcionamiento, mantenibilidad y depuración.</p>
-<p>Otra cosa que tiene var es que se puede redefinir (que no asignar otro valor), en cualquier parte del código y siempre hará referencia a la misma variable.</p>
-<p>Con var sucede que puedes usar la variable ANTES de definirla y en ese momento, la variable valdrá undefined.</p>
-<p>Ahora hablemos de let.</p>
-<p>Let tiene ámbito de bloque, es decir, su contexto está limitado al interior de una pareja {} y por lo tanto, a su contenido sólo se podrá acceder desde el interior de dicho bloque.</p>
-<p>Dentro de un mismo bloque, a diferencia de lo que sucede con var, no se puede redefinir la variable, pero obviamente sí modificar su valor.</p>
-<p>Y me dirás, pero sí puedo redefinir una variable con let dentro de una función que se encuentre dentro de un bloque {} que ya poseía dicha variable. Sí y no porque realmente, dado que la función en sí misma es un bloque independiente, ésta está delimitada por si propia pareja {} y por lo tanto, no sería una redefinición sino una declaración dentro de un bloque anidado.</p>
-<p>A nivel de uso pre-definición, al contrario de lo q sucede con var, si usas la variable antes de declararla, ésta no tendrá el valor por defecto de undefined como sucede con var, sino que la ejecución de la aplicación dará un Reference Error.</p>
-<p>Por todas estas razones es por lo que, desde su definición en el ES6, unido al incremento de la complejidad de las aplicaciones y la tendencia a modularizar y desacoplar los elementos que conforman las aplicaciones actuales basadas en JS, se prefiere el uso de let frente a var.</p>
+  <article class="wyy1elgja"><p>Aunque ES2015 (ES6) salió hace 10 años, todavía me encuentro con código nuevo que usa <code>var</code>. En muchos casos, esto no es por nostalgia o decisión consciente, sino porque quienes lo escriben no dominan JavaScript como su lenguaje principal: trabajan con otros stacks y simplemente “les toca” lidiar con el frontend.</p>
+<p>Sea cual sea la razón, <strong>no vengo a hacer de policía del código</strong>, sino a explicar por qué <code>var</code> <strong>es una mala elección en 2025</strong> y qué alternativas mejores existen.</p>
+<hr>
+<h2>😬 Los problemas de <code>var</code></h2>
+<p><code>var</code> fue durante años la única forma de declarar variables en JavaScript. Pero tiene comportamientos que hoy resultan peligrosos en proyectos modernos:</p>
+<ol>
+<li>
+<p><strong>Ámbito de función (no de bloque)</strong><br>
+Una variable declarada con <code>var</code> es visible en toda la función en la que se declara, incluso <strong>fuera del bloque <code>{}</code></strong> donde la defines. Esto puede causar conflictos difíciles de depurar.</p>
+</li>
+<li>
+<p><strong>Hoisting</strong><br>
+Puedes usar una variable con <code>var</code> <strong>antes de declararla</strong>, y no te dará error: simplemente valdrá <code>undefined</code>.</p>
+</li>
+<li>
+<p><strong>Redefinición silenciosa</strong><br>
+Puedes declarar una misma variable con <code>var</code> varias veces en el mismo ámbito, y el lenguaje no se quejará.</p>
+</li>
+</ol>
+<p>Veamos un ejemplo con consecuencias reales:</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">printMatrix</span><span class="token punctuation">(</span><span class="token parameter">matrix</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> matrix<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>    <span class="token keyword">var</span> line <span class="token operator">=</span> matrix<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span><br>    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> line<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// 👈 Aquí se pisa el 'i' del bucle externo</span><br>      <span class="token keyword">var</span> element <span class="token operator">=</span> line<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span><br>      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>element<span class="token punctuation">)</span><span class="token punctuation">;</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span><br><br><span class="token keyword">var</span> matrix <span class="token operator">=</span> <span class="token punctuation">[</span><br>  <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">,</span><br>  <span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">]</span><span class="token punctuation">,</span><br>  <span class="token punctuation">[</span><span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">]</span><br><span class="token punctuation">]</span><span class="token punctuation">;</span><br><br><span class="token function">printMatrix</span><span class="token punctuation">(</span>matrix<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 1 2 3</span></code></pre>
+<p>El resultado parece correcto… pero en realidad, el segundo bucle está sobrescribiendo el índice i del primero, y eso rompe el flujo lógico del programa. Este tipo de errores pueden pasar desapercibidos en funciones más grandes y producir bugs difíciles de detectar.</p>
+<h2>✅ La alternativa moderna: let y const</h2>
+<p>Desde ES2015, tenemos dos nuevas formas de declarar variables:</p>
+<h3>let</h3>
+<ul>
+<li>Tiene ámbito de bloque: sólo es visible dentro de {} donde se declara.</li>
+<li>No se puede redeclarar dentro del mismo bloque.</li>
+<li>No se puede usar antes de su declaración: da ReferenceError.</li>
+</ul>
+<h4>const</h4>
+<ul>
+<li>Igual que let, pero no permite reasignar el valor.</li>
+<li>Ideal para declarar variables que no deberían cambiar (por ejemplo, referencias a funciones, arrays o strings).</li>
+</ul>
+<p>Reescribamos el ejemplo anterior usando let y const:</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">printMatrix</span><span class="token punctuation">(</span><span class="token parameter">matrix</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> matrix<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>    <span class="token keyword">const</span> line <span class="token operator">=</span> matrix<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span><br>    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> line<span class="token punctuation">.</span>length<span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>      <span class="token keyword">const</span> element <span class="token operator">=</span> line<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">;</span><br>      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>element<span class="token punctuation">)</span><span class="token punctuation">;</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span><br><br><span class="token keyword">var</span> matrix <span class="token operator">=</span> <span class="token punctuation">[</span><br>  <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">,</span><br>  <span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">]</span><span class="token punctuation">,</span><br>  <span class="token punctuation">[</span><span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">]</span><br><span class="token punctuation">]</span><span class="token punctuation">;</span><br><br><span class="token function">printMatrix</span><span class="token punctuation">(</span>matrix<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 1 2 3 4 5 6 7 8 9</span></code></pre>
+<ul>
+<li>Usamos let para los índices (i y j) porque cambian.</li>
+<li>Usamos const para line y element, ya que no se reasignan dentro del bucle.</li>
+</ul>
+<p>Así no sólo evitamos conflictos entre variables, sino que dejamos más claro al lector qué se puede cambiar y qué no.</p>
+<p>⸻</p>
+<h2>🧠 Consejo práctico</h2>
+<p><strong>Usa const por defecto</strong>. Sólo usa let cuando sepas que vas a cambiar el valor.</p>
+<p><strong>Evita var por completo</strong>. No sólo es innecesario: es una fuente de errores.</p>
+<p>⸻</p>
+<h2>🧾 Conclusión</h2>
+<p>El uso de var no tiene cabida en el JavaScript moderno. No aporta nada que no puedas hacer mejor con let o const, y sus peculiaridades son fuente constante de errores.</p>
+<p>Adoptar let y const no es sólo una cuestión de sintaxis: es adoptar una forma más clara, segura y predecible de escribir código. Un pequeño cambio que marca una gran diferencia en la calidad de tus programas.</p>
 </article>
   <author-info class="ws3sp0wuz"><section class="author-info">
   <a href="/">
