@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Reviviendo mi chromebook | Ulises Santana</title>
+  <title>Aprendí a programar en un chromebook | Ulises Santana</title>
 
 
   <link rel="icon" type="image/x-icon" href="/assets/images/favicon.png">
@@ -12,19 +12,19 @@
 <meta property="og:type" content="article">
 <meta name="theme-color" content="#F7E018">
 <meta name="author" content="Ulises Santana">
-<meta property="og:title" content="Reviviendo mi chromebook">
-<meta name="description" property="og:description" content="Mi chromebook ya no va a recibir más actualizaciones de ChromeOS, así que he decidido reconvertirlo instalando Xubuntu">
+<meta property="og:title" content="Aprendí a programar en un chromebook">
+<meta name="description" property="og:description" content="Mis inicios en la programación vinieron de manos de un chromebook que tuve que manipular para poder tener un linux en el que poder realmente programar. Las limitaciones son el alimento de la creatividad.">
 <meta property="og:site_name" content="Ulises Santana">
 <meta property="og:image" content="/assets/images/logo.png" ">
 
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@ulisesantana">
-<meta name="twitter:title" content="Reviviendo mi chromebook">
-<meta name="twitter:description" content="Mi chromebook ya no va a recibir más actualizaciones de ChromeOS, así que he decidido reconvertirlo instalando Xubuntu">
+<meta name="twitter:title" content="Aprendí a programar en un chromebook">
+<meta name="twitter:description" content="Mis inicios en la programación vinieron de manos de un chromebook que tuve que manipular para poder tener un linux en el que poder realmente programar. Las limitaciones son el alimento de la creatividad.">
 <meta name="twitter:image" content="/assets/images/logo.png">
 
 
-  <link rel="canonical" href="https://www.ulisesantana.dev/es/blog/drafts/reviviendo-mi-chromebook/">
+  <link rel="canonical" href="https://www.ulisesantana.dev/es/blog/drafts/aprendi-a-programar-en-un-chromebook/">
 
   <meta name="generator" content="Eleventy v2.0.1">
   
@@ -277,15 +277,15 @@
 </site-header>
 <main><article class="wyy1elgja">
   <figure class="wyy1elgja">
-    <object data="../../preview.png" title="Reviviendo mi chromebook" type="image/png">
-  <img src="/assets/images/fallback.png" title="Reviviendo mi chromebook">
+    <object data="/assets/es/blog/2025/aprendi-a-programar-en-un-chromebook/cover.png" title="Aprendí a programar en un chromebook" type="image/png">
+  <img src="/assets/images/fallback.png" title="Aprendí a programar en un chromebook">
 </object>
     
   </figure>
   <div class="head wyy1elgja">
-    <h1 custom class="wyy1elgja">Reviviendo mi chromebook</h1>
-    <time datetime="martes, 20 de diciembre de 2022" class="wyy1elgja">martes, 20 de diciembre de 2022</time>
-    <site-tags url="/es/blog/drafts/reviviendo-mi-chromebook/"><ul class="tag-list">
+    <h1 custom class="wyy1elgja">Aprendí a programar en un chromebook</h1>
+    <time datetime="sábado, 2 de agosto de 2025" class="wyy1elgja">sábado, 2 de agosto de 2025</time>
+    <site-tags url="/es/blog/drafts/aprendi-a-programar-en-un-chromebook/"><ul class="tag-list">
     <li>
             <site-tag><span class="tag">#chromebook</span>
 
@@ -296,11 +296,44 @@
 
 </site-tags>
   </div>
-  <article class="wyy1elgja"><p>En 2018 compré un Acer Chromebook R11.</p>
-<p>Lejos de entrar en cólera o criticar el hecho de que mi chromebook se me haya quedado obsoleto después de apenas 4 años de haberlo comprado, me dispuse a revivir y tratar de seguir aprovechándolo.</p>
-<p>El problema es que si quieres quitar ChromeOS e instalar cualquier distro necesitas actualizar el firmware para poder hacer lo que te dé la gana con tu chromebook.Por suerte es un proceso bastante sencillo. En mi caso doble suerte porque cuando aprendí a programar lo hice con otro chromebook al cual tuve que hacerle cosas parecidas, como por ejemplo quitarle el tornillo de protección de escritura o ponerlo en modo desarrollo.</p>
-<p>Mi primera opción fue GaliumOS, una distro de Xubuntu adaptada para los chromebook. Es maravilloso, está hecho pensando en que la experiencia sea lo más aparecido a usar ChromeOS, pero con la libertad de estar un Linux al completo, no virtualizado como pasa en ChromeOS. Sin embargo, tiene 2 problemas. Primero, está desatendido, por lo que ya no van a sacar más versiones del sistema. Segundo, la última release está creada en base a Xubuntu 18.04, por lo que está algo obsoleta en cuanto a paquetes y su soporte LTS se cierra el año que viene.</p>
-<p>Con estas limitaciones, las cuales me di cuenta después de haber instalado GaliumOS y configurarlo a mi gusto, decidí ir a por algo más clásico.</p>
+  <article class="wyy1elgja"><p>Cuando empecé a programar, allá por 2015, no tenía un ordenador potente, ni siquiera un portátil normal. Lo que tenía era un Chromebook, un dispositivo que en teoría estaba diseñado para navegar por internet y usar aplicaciones web. Era más una tablet que un portátil y no tenía presupuesto para un portátil decente. Lo único que tenía era un <em>Chromebook Acer C720</em>, una máquina muy básica con:</p>
+<ul>
+<li>Procesador Intel Celeron 2955U a 1.4 GHz</li>
+<li>4GB de RAM</li>
+<li>32GB de almacenamiento SSD</li>
+<li>Pantalla de 11,6 pulgadas</li>
+<li>Cero expectativas de convertirse en una máquina de desarrollo</li>
+</ul>
+<p>Y sin embargo, lo fue.</p>
+<h2>Hackeando mi primer chromebook: el tornillo de la libertad</h2>
+<p>Los Chromebooks no están pensados para instalar Linux así como así. Tenía que <em>hackearlo</em> para hacerlo mínimamente útil para desarrollo. Literalmente: tuve que abrirlo con destornillador y quitar <em>un tornillo de seguridad</em> que impedía el modo escritura del firmware. Lo quité siguiendo un tutorial de un foro sin tener muy claro qué estaba haciendo. Era todo esperanza. La esperanza de no dejar el Chromebook como un pisapapeles.</p>
+<img-caption src="/assets/es/blog/2025/aprendi-a-programar-en-un-chromebook/c720-chromebook-board.png" alt="Placa del Chromebook C720 en el que se pueden ver los diferentes tornillos y componentes. El tornillo que tuve que quitar es el que está marcado con un 7">
+Placa del Chromebook C720. El tornillo que tuve que quitar es el que está marcado con un 7. Un pequeño tornillo que separaba la frustración de las posibilidades infinitas.
+</img-caption>
+<p>Tras eso, activé el Developer Mode, y le metí <a href="https://github.com/dnschneid/crouton" target="_blank" rel="noopener"><em>Crouton</em></a>, que básicamente te permite correr Linux (Ubuntu, en mi caso) como una especie de VM dentro de ChromeOS. Limitado, sí, pero funcional. Lo bastante como para tirar de <em>IntelliJ</em>, aunque todo fuera a pedales. Además, recalco que eran 32GB de almacenamiento SSD, así que no es que hubiera mucho espacio para instalar cosas. Era un linux muy minimalista, con lo justo para programar.</p>
+<p>Ese era mi único ordenador. Un Chromebook con Linux corriendo en una VM, y aún así, me las arreglé para aprender a programar. Con ese Chromebook aprendí JavaScript, HTML, CSS, y más tarde, Node.js. Aprendí a usar Git, a hacer mis primeros proyectos y a colaborar en otros. Con ese Chromebook pasé la mayoría de los 2 años que duró el ciclo superior de Desarrollo de Aplicaciones Web.</p>
+<p>Las limitaciones no fueron mi enemigo, fueron mi maestro. Me enseñaron a ser eficiente con los recursos, a valorar cada megabyte de almacenamiento, a optimizar el código no por hobby sino por necesidad. <strong>Las limitaciones son el alimento de la creatividad</strong>, y ese Chromebook me enseñó a ser creativo con lo que tenía.</p>
+<h2>Mi primera hackathon: Moneyball en tiempo real</h2>
+<p>Con esa especie de tablet vitaminada fui a una hackathon que organizaban en Las Palmas. Allí me uní al equipo de un estadounidense con una idea que me llamó mucho la atención: <em>usar iPhones distribuidos por una cancha de baloncesto para analizar partidos en tiempo real</em>. Triangulación, estadísticas, toma de decisiones sobre la marcha… puro <a href="https://en.wikipedia.org/wiki/Moneyball_(film)" target="_blank" rel="noopener"><em>Moneyball</em></a>, pero en vivo y en directo. Además de ser barato, porque tres iPhones de segunda mano eran más asequibles que un sistema profesional de análisis de partidos.</p>
+<p>Yo me encargué de la web. Mientras que el americano se curró una prueba de concepto a la cual le pasabas un vídeo y era capaz de reconocer el movimiento de la pelota, sentando las bases del producto que estábamos planteando. Al final ganamos el primer premio de la hackathon, aunque la startup no salió adelante por falta de financiación.</p>
+<h3>El gesto que me cambió la perspectiva</h3>
+<p>Antes de quedarnos sin opciones de financiación, seguíamos reuniéndonos semanalmente para trabajar en el producto, los siguientes pasos, ir a eventos, hacer contactos y demás. En uno de esos eventos pasó algo curioso. Necesitábamos formatear un pendrive, pero mi entorno Linux no tenía acceso completo al hardware porque, como dije antes, era más una VM dentro de ChromeOS que un sistema real. Y yo no tenía ni idea de cómo solucionarlo.</p>
+<p>El americano, días después, me llevó a <em>El Corte Inglés</em> y me dijo que eligiera un portátil. Yo flipé lo que no está escrito. Elegí un Acer de gama alta al que le iba a meter Ubuntu. Él lo pagó sin pensarlo. Dijo: <em>&quot;No puede ser que estemos intentando montar una startup y tú no tengas un ordenador de verdad.&quot;</em></p>
+<p>Ese gesto me marcó profundamente. No solo por la generosidad, sino por lo que representaba: reconocer el potencial en alguien y apostar por él sin esperar nada a cambio.</p>
+<h3>Pay it forward: el ciclo de la generosidad</h3>
+<p>Más adelante, cuando por fin me compré mi primer MacBook, decidí regalar ese portátil a un amigo que lo necesitaba más que yo. Era una forma de continuar el gesto que tuvo aquel americano conmigo. Porque creo firmemente en el concepto de <em>pay it forward</em>: cuando alguien te ayuda sin esperar nada a cambio, tu responsabilidad no es devolvérselo a esa persona, sino ayudar a otra que lo necesite.</p>
+<h2>La evolución: mi segundo Chromebook</h2>
+<p>A pesar de todo, le cogí cariño al Chromebook. Era <em>pequeño, ligero, manejable</em>. Un buen compañero de aventuras. Tanto fue así que, con el tiempo, acabé pillándome otro: el <em>Acer Chromebook R11</em>.</p>
+<p>Este era un paso adelante: ya traía <em>soporte nativo para aplicaciones Linux</em>, algo similar a WSL en Windows, y además permitía instalar apps de Android. Más versátil, menos parches para que funcionara todo.</p>
+<p>Con ese segundo Chromebook, compilé Node.js desde cero en 2018 (sí, se puede, aunque hay que tener fe, café y paciencia) y también di mi primera charla en un evento, el JSDay Canarias 2018.</p>
+<img-caption src="/assets/es/blog/2025/aprendi-a-programar-en-un-chromebook/chromebook-node-conf-2018.jpeg" alt="El chromebook R11 compilando Node.js en la NodeCONF EU 2018">
+Mi Chromebook R11 compilando Node.js en la NodeCONF EU 2018. Tardó casi 2 horas, pero lo conseguimos. A veces la paciencia es la virtud más importante de un programador.
+</img-caption>
+<h2>Reflexiones de un programador que empezó con limitaciones</h2>
+<p>Mirando atrás, ese Chromebook me enseñó lecciones que ningún MacBook Pro de última generación me habría enseñado. Me enseñó que la programación no es sobre tener el mejor hardware, sino sobre resolver problemas con lo que tienes. Me enseñó que las limitaciones no son excusas, son oportunidades de ser más ingenioso.</p>
+<p>Hoy en día, cuando veo a estudiantes preocupados porque no tienen el último modelo de portátil o la configuración perfecta para empezar a programar, les recuerdo mi historia aunque suene como el abuelo de turno. No necesitas una máquina perfecta para escribir código perfecto. Solo necesitas curiosidad, paciencia y las ganas de convertir cada obstáculo en una oportunidad de aprender algo nuevo.</p>
+<p><strong>Las mejores historias no nacen de las mejores condiciones, sino de la determinación de hacer algo extraordinario con lo ordinario.</strong> Mi Chromebook fue mi compañero de aventuras durante los años más formativos de mi carrera, y por eso siempre tendrá un lugar especial en mi memoria y en mi corazón.</p>
+<p>Muchas veces lo importante no es lo que tienes, sino lo que haces con ello.</p>
 </article>
   <author-info class="ws3sp0wuz"><section class="author-info">
   <a href="/">
@@ -434,38 +467,8 @@
 </section>
 
 </author-info>
-  <related-posts url="/es/blog/drafts/reviviendo-mi-chromebook/"><section class="related-posts">
-  <h3>Artículos relacionados</h3>
-      
-      <ul>
-      
-          <li>
-            <a href="/es/blog/drafts/aprendi-a-programar-en-un-chromebook/">
-              <article class="post-card-minimal">
-                <div class="cover">
-                  <object data="/assets/es/blog/2025/aprendi-a-programar-en-un-chromebook/cover.png" title="Aprendí a programar en un chromebook" type="image/png">
-                    <img src="/assets/images/fallback.png" title="Aprendí a programar en un chromebook">
-                  </object>
-                </div>
-                <div class="content">
-                  <h4 custom>Aprendí a programar en un chromebook</h4>
-                  <time datetime="sábado, 2 de agosto de 2025">sábado, 2 de agosto de 2025</time>
-                  <span class="excerpt">Mis inicios en la programación vinieron de manos de un chromebook que tuve que manipular para poder tener un linux en el que poder realmente programar. Las limitaciones son el alimento de la creatividad.</span>
-                  <site-tags url="/es/blog/drafts/aprendi-a-programar-en-un-chromebook/"><ul class="tag-list">
-    <li>
-            <site-tag><span class="tag">#chromebook</span>
-
-</site-tag>
-          </li>
-        
-</ul>
-
-</site-tags>
-                </div>
-              </article>
-            </a>
-          </li>
-        </ul>
+  <related-posts url="/es/blog/drafts/aprendi-a-programar-en-un-chromebook/"><section class="related-posts">
+  
 </section>
 
 </related-posts>
