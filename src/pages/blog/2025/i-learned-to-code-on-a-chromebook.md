@@ -4,7 +4,7 @@ cover: /assets/blog/2025/i-learned-to-code-on-a-chromebook/cover.png
 date: 2025-08-02
 description: My programming journey began with a Chromebook that I had to hack to install Linux. Limitations are the fuel of creativity.
 tags: [chromebook]
-draft: true
+draft: false
 coverCopyright: null
 ---
 
