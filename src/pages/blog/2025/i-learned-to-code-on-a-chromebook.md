@@ -22,7 +22,7 @@ And yet, it did.
 
 Chromebooks aren't designed to install Linux just like that. I had to *hack it* to make it minimally useful for development. Literally: I had to open it with a screwdriver and remove *a security screw* that prevented write mode on the firmware. I removed it following a forum tutorial without being very clear about what I was doing. It was all hope. The hope of not turning the Chromebook into a paperweight.
 
-<img-caption src="/assets/blog/2025/i-learned-to-code-on-a-chromebook/c720-chromebook-board.png" alt="Chromebook C720 motherboard showing different screws and components. The screw I had to remove is marked with a 7">
+<img-caption src="/assets/en/blog/2025/i-learned-to-code-on-a-chromebook/c720-chromebook-board.png" alt="Chromebook C720 motherboard showing different screws and components. The screw I had to remove is marked with a 7">
 Chromebook C720 motherboard. The screw I had to remove is the one marked with a 7. A small screw that separated frustration from infinite possibilities.
 </img-caption>
 
@@ -58,7 +58,7 @@ This was a step forward: it already came with *native support for Linux applicat
 
 With that second Chromebook, I compiled Node.js from scratch in 2018 (yes, it can be done, though you need faith, coffee and patience) and also gave my first talk at an event, JSDay Canarias 2018.
 
-<img-caption src="/assets/blog/2025/i-learned-to-code-on-a-chromebook/chromebook-node-conf-2018.jpeg" alt="The R11 chromebook compiling Node.js at NodeCONF EU 2018">
+<img-caption src="/assets/en/blog/2025/i-learned-to-code-on-a-chromebook/chromebook-node-conf-2018.jpeg" alt="The R11 chromebook compiling Node.js at NodeCONF EU 2018">
 My Chromebook R11 compiling Node.js at NodeCONF EU 2018. It took almost 2 hours, but we made it. Sometimes patience is a programmer's most important virtue.
 </img-caption>
 
