@@ -1,0 +1,30 @@
+---
+/**
+ * JsRepl Component (Legacy compatibility)
+ *
+ * Renders the legacy <js-repl> Web Component tag as raw HTML.
+ * This is needed because MDX would otherwise try to parse the custom element
+ * attributes (which contain backticks) as JSX expressions.
+ *
+ * Usage in MDX:
+ *   import JsRepl from "@/components/JsRepl.astro"
+ *   <JsRepl title="Example" init={`[...]`} />
+ */
+export interface Props {
+  title?: string;
+  init?: string;
+  "load-to-scope"?: string;
+}
+
+const { title, init, "load-to-scope": loadToScope } = Astro.props;
+
+const attrs: string[] = [];
+if (title) attrs.push(`title="${title}"`);
+if (init) attrs.push(`init="${init}"`);
+if (loadToScope) attrs.push(`load-to-scope="${loadToScope}"`);
+
+const html = `<js-repl ${attrs.join(" ")}></js-repl>`;
+---
+
+<Fragment set:html={html} />
+

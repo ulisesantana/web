@@ -5,9 +5,12 @@ description: En JavaScript hay más de una forma de construir un array. En este 
 tags: [javascript, arrays, basics]
 cover: /assets/es/blog/2021/como-construir-arrays-en-js/cover.png
 draft: false
+lang: es
 ---
+import Tldr from "@/components/Tldr.astro"
+import JsRepl from "@/components/JsRepl.astro"
 
-<tldr-section>
+<Tldr>
 
   Hay varias formas de crear arrays en JavaScript:
 
@@ -40,7 +43,7 @@ Array.from({ length: 4, 0: "foo" }); // [ 'foo', , , ]
 Array.of(5); // [ 5 ]
 ```
 
-</tldr-section>
+</Tldr>
 
 ## ¿Qué es un array?
 
@@ -54,10 +57,10 @@ Un array se puede crear de diferentes maneras:
 
 Directamente expresando el array con los valores que queramos incluir. También al tener longitud variable podemos instanciarlo vacío para posteriormente rellenarlo, ya que el rellenarlo su longitud irá aumentando.
 
-<js-repl
+<JsRepl
   title="Array literal"
-  init="[`const food = ['pizza', 'sandwich']`,'food.length','const emptyArray = []','emptyArray.length']">
-</js-repl>
+  init={`[\`const food = ['pizza', 'sandwich']\`,'food.length','const emptyArray = []','emptyArray.length']`}
+/>
 
 ### Usando el constructor Array
 
@@ -65,35 +68,35 @@ El constructor de Array se comporta de una manera u otra dependiendo del número
 
 En caso de que le pasemos más de un parámetro o si el único parámetro que le pasamos no es un número, instanciará un nuevo array con los elementos que le hemos pasado y su longitud será igual al número de parámetros que le hemos pasado. Por cierto, usar la palabra reservada **_new_ es completamente opcional**.
 
-<js-repl
+<JsRepl
   title="Constructor de Array"
-  init="['const numberArray = new Array(5)',`const stringArray = new Array('foo')`,`const fibonacciNumbers = new Array(1,1,2,3,5,8,13)`]">
-</js-repl>
+  init={`['const numberArray = new Array(5)',\`const stringArray = new Array('foo')\`,\`const fibonacciNumbers = new Array(1,1,2,3,5,8,13)\`]`}
+/>
 
 ### Array.from
 
 Este método fue introducido en ES2015 y funciona a modo de factoría convirtiendo iterables y cosas parecidas a un array (también conocidos como array-like objects) como los NodeList a un array para poder usar sus métodos y trabajar con ellos con mayor comodidad.
 
-<js-repl
+<JsRepl
   title="Array.from"
-  init="[`const mapExample = new Map().set('first',1).set('second',2)`,`Array.from(mapExample)`,`Array.from(mapExample.values())`,`Array.from('Hola!')`,`Array.from(new Set([1,2,3,4,5,4,3,2,1]))`,]">
-</js-repl>
+  init={`[\`const mapExample = new Map().set('first',1).set('second',2)\`,\`Array.from(mapExample)\`,\`Array.from(mapExample.values())\`,\`Array.from('Hola!')\`,\`Array.from(new Set([1,2,3,4,5,4,3,2,1]))\`]`}
+/>
 
 Un array no deja de ser un objeto con una propiedad `length` y claves numéricas para los índices, por lo que no es tan extraño pensar que puedes hacer esto con `Array.from`:
 
-<js-repl
+<JsRepl
   title="Array.from"
-  init="[`Array.from({length: 4, 0: 'foo'})`]">
-</js-repl>
+  init={`[\`Array.from({length: 4, 0: 'foo'})\`]`}
+/>
 
 ### Array.of
 
 Funciona exactamente igual que el constructor Array, pero con una sutil diferencia que lo hace más coherente: cuando le pasas un número como único argumento en vez de crear un array con una longitud igual al número dado, creará un array con ese número como único elemento.
 
-<js-repl
+<JsRepl
   title="Array.of"
-  init="[`const numberArray = Array.of(5)`, `const stringArray = Array.of('foo')`, `const fibonacciNumbers = Array.of(1,1,2,3,5,8,13)`]">
-</js-repl>
+  init={`[\`const numberArray = Array.of(5)\`, \`const stringArray = Array.of('foo')\`, \`const fibonacciNumbers = Array.of(1,1,2,3,5,8,13)\`]`}
+/>
 
 ## Conclusión
 
@@ -101,9 +104,9 @@ Como vemos tenemos varias opciones a la hora de crear un array en JavaScript. En
 
 El `Array.from` lo uso sobre todo cuando necesito pasar un iterable o array-like object a array para trabajar con él. También lo uso para hacer cosas como esta y tratar de parecer más inteligente ☕️🧐:
 
-<js-repl
+<JsRepl
   title="Array.from fancy"
-  init="[`Array.from({length: 5}).map((_, index) => \`${'*'.repeat(index + 1)}\`)`]">
-</js-repl>
+  init={`[\`Array.from({length: 5}).map((_, index) => \\\`\${'*'.repeat(index + 1)}\\\`)\`]`}
+/>
 
 Además, `Array.from` es bastante legible, lo puedes leer casi como si fuera lenguaje natural. Y si no has entendido de qué va ese `.map` no te preocupes, estoy preparando más entradas en las que explicaré todo lo que sé sobre los arrays en JavaScript.

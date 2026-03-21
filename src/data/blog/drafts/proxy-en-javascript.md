@@ -5,6 +5,7 @@ description: Desde 2015 tenemos un prototipo llamado Proxy JavaScript al que seg
 tags: [javascript]
 cover: ../../preview.png
 draft: true
+lang: es
 ---
 
 

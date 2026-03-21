@@ -4,6 +4,7 @@ pubDatetime: 2023-03-08
 description: Hace un par de años monté mi web con Gatsby y le acabé añadiendo un blog. Déjame contarte cómo y por qué acabé migrándolo a 11ty.
 tags: [11ty,legacy]
 draft: true
+lang: es
 coverCopyright: null
 ---
 

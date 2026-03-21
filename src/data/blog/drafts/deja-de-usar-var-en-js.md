@@ -5,6 +5,7 @@ description: Pese a que ES2015 salió hace más de 6 años, todavía me encuentr
 tags: [javascript,node.js]
 cover: ../../preview.png
 draft: true
+lang: es
 ---
 
 Pese a que ES2015 salió hace más de 6 años, todavía me encuentro con código nuevo usando var. Sospecho que su uso es por el desconocimiento de let y const, ya que es bastante común que la gente que trabaja con JavaScript no es realmente su lenguaje fuerte, sino que hacen otras cosas en otros lenguajes y a veces les toca trabajar con JavaScript en el frontend.

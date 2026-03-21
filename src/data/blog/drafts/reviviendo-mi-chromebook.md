@@ -5,6 +5,7 @@ description: Mi chromebook ya no va a recibir más actualizaciones de ChromeOS, 
 tags: [chromebook]
 cover: ../../preview.png
 draft: true
+lang: es
 ---
 
 En 2018 compré un Acer Chromebook R11.

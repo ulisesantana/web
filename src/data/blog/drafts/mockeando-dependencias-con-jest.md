@@ -4,6 +4,7 @@ pubDatetime: 2021-02-08
 description: Mockeando dependencias con Jest
 tags: [jest,test]
 draft: true
+lang: es
 coverCopyright: null
 ---
 

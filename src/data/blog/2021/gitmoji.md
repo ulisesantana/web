@@ -6,6 +6,7 @@ tags: [software,git,workflow]
 images: [gitmoji.png,gitmoji-cli.gif,gitlog.png]
 cover: /assets/es/blog/2021/gitmoji/cover.png
 draft: false
+lang: es
 ---
 
 La idea detrás de [gitmoji](https://gitmoji.dev) es muy simple: usar emojis en los mensajes de commit proporcionando una manera fácil de identificar el propósito o la intención de un commit con sólo mirar los emojis utilizados.

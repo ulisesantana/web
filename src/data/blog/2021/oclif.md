@@ -5,6 +5,7 @@ description: oclif se define como el framework abierto para CLIs en Node.js. Te 
 tags: [node.js,cli]
 cover: /assets/es/blog/2021/oclif/cover.png
 draft: false
+lang: es
 ---
 
 Tengo un pequeño proyecto que se trata de un CLI (*Command Line Interface* o en otras palabras una aplicación de terminal) con el que puedes generar informes sobre las contribuciones (commits) en un proyecto git. Hasta ahora había usado [stdio](https://www.npmjs.com/package/stdio), que para algo simple y pequeño está muy bien. Sin embargo, quería mejorar la [UX](https://es.wikipedia.org/wiki/Experiencia_de_usuario) del CLI y para esto stdio se me quedaba corto. Por otro lado, hacía tiempo que había leído sobre [oclif](https://oclif.io) y quería probarlo.

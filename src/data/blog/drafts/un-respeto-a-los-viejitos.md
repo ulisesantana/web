@@ -5,6 +5,7 @@ description: A nadie le gusta trabajar en un proyecto legacy, pero tenemos que e
 tags: [software,legacy]
 coverCopyright: Foto de <a href="https://unsplash.com/@vladsargu?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Vlad Sargu</a> en <a href="https://unsplash.com/es/fotos/ItphH2lGzuI?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 draft: true
+lang: es
 ---
 
 Por lo general cuando dices que estás trabajando en un proyecto *legacy* la gente te dice con la mirada cosas del tipo *no todos los héroes llevan capa* o les da la sensación de que mi día a día es como sobrevivir en Vietnam.

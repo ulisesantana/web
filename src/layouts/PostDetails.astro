@@ -13,6 +13,7 @@ import { slugifyStr } from "@/utils/slugify";
 import IconChevronLeft from "@/assets/icons/IconChevronLeft.svg";
 import IconChevronRight from "@/assets/icons/IconChevronRight.svg";
 import { SITE } from "@/config";
+import { t, type Locale } from "@/config/i18n";
 
 export interface Props {
   post: CollectionEntry<"blog">;
@@ -32,6 +33,7 @@ const {
   timezone,
   tags,
   hideEditPost,
+  lang = "en",
 } = post.data;
 
 const { Content } = await render(post);
@@ -47,7 +49,7 @@ if (typeof initOgImage === "string") {
 
 // Use dynamic OG image if enabled and no remote|local ogImage
 if (!ogImageUrl && SITE.dynamicOgImage) {
-  ogImageUrl = `${getPath(post.id, post.filePath)}/index.png`;
+  ogImageUrl = `${getPath(post.id, post.filePath, true, lang)}/index.png`;
 }
 
 // Resolve OG image URL (or fallback to SITE.ogImage / default `og.png`)
@@ -68,16 +70,21 @@ const layoutProps = {
 
 /* ========== Prev/Next Posts ========== */
 
-const allPosts = posts.map(({ data: { title }, id }) => ({
-  slug: id,
-  title,
-}));
+const locale = lang as Locale;
+
+const allPosts = posts
+  .filter(p => !p.data.draft)
+  .map(({ data: { title }, id, filePath }) => ({
+    slug: id,
+    title,
+    filePath,
+  }));
 
 const currentPostIndex = allPosts.findIndex(a => a.slug === post.id);
 
-const prevPost = currentPostIndex !== 0 ? allPosts[currentPostIndex - 1] : null;
+const prevPost = currentPostIndex > 0 ? allPosts[currentPostIndex - 1] : null;
 const nextPost =
-  currentPostIndex !== allPosts.length ? allPosts[currentPostIndex + 1] : null;
+  currentPostIndex < allPosts.length - 1 ? allPosts[currentPostIndex + 1] : null;
 ---
 
 <Layout {...layoutProps}>
@@ -123,7 +130,7 @@ const nextPost =
         class="focus-outline py-1 whitespace-nowrap hover:opacity-75"
       >
         <IconChevronLeft class="inline-block rotate-90" />
-        <span>Back to Top</span>
+        <span>{t(locale, "backToTop")}</span>
       </button>
     </div>
 
@@ -134,12 +141,12 @@ const nextPost =
       {
         prevPost && (
           <a
-            href={`/blog/${prevPost.slug}`}
+            href={getPath(prevPost.slug, prevPost.filePath, true, lang)}
             class="flex w-full gap-1 hover:opacity-75"
           >
             <IconChevronLeft class="inline-block flex-none" />
             <div>
-              <span>Previous Post</span>
+              <span>{t(locale, "previousPost")}</span>
               <div class="text-sm text-accent/85">{prevPost.title}</div>
             </div>
           </a>
@@ -148,11 +155,11 @@ const nextPost =
       {
         nextPost && (
           <a
-            href={`/blog/${nextPost.slug}`}
+            href={getPath(nextPost.slug, nextPost.filePath, true, lang)}
             class="flex w-full justify-end gap-1 text-right hover:opacity-75 sm:col-start-2"
           >
             <div>
-              <span>Next Post</span>
+              <span>{t(locale, "nextPost")}</span>
               <div class="text-sm text-accent/85">{nextPost.title}</div>
             </div>
             <IconChevronRight class="inline-block flex-none" />

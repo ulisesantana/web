@@ -5,6 +5,7 @@ description: Ayuda entender los diferentes tipos que hay en JavaScript y en Type
 tags: [JavaScript,TypeScript,Bases]
 cover: ../../preview.png
 draft: true
+lang: es
 ---
 
 

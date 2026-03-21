@@ -5,6 +5,7 @@ description: Durante los últimos 5 años los arrays en JavaScript han experimen
 tags: [javascript, arrays, basics]
 cover: ./js-arrays-basic.png
 draft: true
+lang: es
 ---
 
 

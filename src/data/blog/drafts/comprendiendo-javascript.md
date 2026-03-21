@@ -5,6 +5,7 @@ description: JavaScript es un lenguaje que es nativamente asíncrono y es clave 
 tags: [asincronía,callbacks,promesas,javascript,node.js]
 cover: ../../preview.png
 draft: true
+lang: es
 ---
 
 JavaScript es un lenguaje bastante incomprendido entre otras cosas porque no es lo normal que sea tu primer lenguaje de programación, o al menos no tu lenguaje *nativo*. Lo normal es que tu primer lenguaje de programación o el lenguaje que sientes que dominas sea un lenguaje de backend como Java, Python o PHP. Entre otras cosas porque la mayoría de las veces los algoritmos más complicados se hacen del lado del servidor. Digo todo esto desde el respeto, sé que en frontend también hay retos, que no se limita simplemente a *pintar APIs* y mucho menos en la web moderna.

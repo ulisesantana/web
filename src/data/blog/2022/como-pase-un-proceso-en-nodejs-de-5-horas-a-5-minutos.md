@@ -5,6 +5,7 @@ description: En un proyecto me tuve que enfrentar a un proceso en Node.js que de
 tags: [node.js,performance]
 cover: /assets/es/blog/2022/como-pase-un-proceso-en-nodejs-de-5-horas-a-5-minutos/cover.png
 draft: false
+lang: es
 ---
 
 <youtube-video 

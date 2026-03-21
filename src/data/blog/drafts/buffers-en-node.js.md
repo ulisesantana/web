@@ -4,6 +4,7 @@ pubDatetime: 2021-10-16
 description: Buffers en Node.js
 tags: [node.js]
 draft: true
+lang: es
 ---
 
 Cuando trabajas del lado del servidor hay ocasiones en las que vas a necesitar trabajar con datos en formato binario. En Node.js los datos binarios se gestionan con la clase Buffer.

@@ -5,9 +5,11 @@ description: Los array-like objects pueden parecerse a un array e incluso alguno
 tags: [javascript,array,array-like objects]
 cover: /assets/es/blog/2020/como-convertir-array-like-objects-a-array/cover.png
 draft: false
+lang: es
 ---
+import Tldr from "@/components/Tldr.astro"
 
-<tldr-section>
+<Tldr>
 
 Estas son las tres maneras posibles de convertir un array-like object a array en JavaScript, siendo el `Array.prototype.slice` el que mejor rendimiento ofrece:
 
@@ -17,7 +19,7 @@ const charsArray2 = Array.from('Hola Mundo!')
 const charsArray3 = [...'Hola Mundo!']
 ```
 
-</tldr-section>
+</Tldr>
 
 En JavaScript existen los array-like objects que pueden parecerse a un array e incluso algunos se pueden iterar,
 pero no tienen el mismo comportamiento que un array. Por ello en ocasiones es necesario convertirlo en un array para
@@ -145,3 +147,4 @@ Por lo que vemos en los resultados, *Array.from* y la sintaxis extendida (spread
 aunque de nada que pasamos a una lista de 1.000 elementos *Array.prototype.slice* se mantiene como la opción con mejor
 rendimiento. La diferencia no es abismal, pero es bueno saber que el viejo *Array.prototype.slice* es la mejor opción
 si necesitas afinar el rendimiento del proceso al máximo y sabes que te vas a enfrentar a listas de más de 100 elementos.
+

@@ -5,6 +5,7 @@ description: El destructuring es una funcionalidad que se añadió a JavaScript 
 cover: /assets/es/blog/2021/array-destructuring/cover.png
 tags: [javascript, arrays, basics]
 draft: false
+lang: es
 ---
 
 ## Conceptos básicos

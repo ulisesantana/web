@@ -5,6 +5,7 @@ description: Todas las funcionalidades y mejoras de JavaScript desde 2015
 tags: [javascript]
 cover: ../../preview.png
 draft: true
+lang: es
 ---
 
 # What is ECMAScript?

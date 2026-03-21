@@ -5,6 +5,7 @@ description: Llevo años usando Jest para mis proyectos en Node.js, pero cada ve
 tags: [node.js,testing,jest]
 cover: /assets/es/blog/2022/por-que-no-usar-jest/cover.png
 draft: false
+lang: es
 ---
 
 ## El problema

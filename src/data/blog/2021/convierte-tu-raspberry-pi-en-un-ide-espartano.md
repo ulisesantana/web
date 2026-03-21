@@ -5,6 +5,7 @@ description: Tu Raspberry Pi puede ser un entorno de desarrollo muy interesante 
 tags: [desarrollo,raspberry pi]
 cover: /assets/es/blog/2021/convierte-tu-raspberry-pi-en-un-ide-espartano/cover.png
 draft: false
+lang: es
 images: [starship.png, cover.png]
 ---
 

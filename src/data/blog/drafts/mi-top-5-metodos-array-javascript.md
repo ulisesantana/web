@@ -5,6 +5,7 @@ description: Continuamente estoy trabajando con listas de datos y he acabado des
 tags: [javascript,array,node.js]
 cover: ../../preview.png
 draft: true
+lang: es
 ---
 
 La realidad es que en el día a día mayormente trabajo con listas de datos. Es muy raro que trabaje con algún dato que al final no acabe o salga de un array. Por esto, con el paso del tiempo he ido usando cada uno de los diferentes métodos que tiene el prototipo de Array en JavaScript. La finalidad de este artículo es compartir contigo cuáles me parecen más útiles.

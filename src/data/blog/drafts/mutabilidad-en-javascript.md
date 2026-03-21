@@ -5,6 +5,7 @@ description: JavaScript puede ser un pelín especial a la hora de copiar variabl
 tags: [javascript,basics]
 cover: ../../preview.png
 draft: true
+lang: es
 ---
 
 En JavaScript a veces pasan cosas que no esperamos cuando estamos copiando valores, ya que cuando creas una variable a partir de otra esperas que sean dos variables diferentes con el mismo valor. Sin embargo, lo que pasa realmente es que tienes dos variables cuyo valor está asignado a la misma posición de memoria.

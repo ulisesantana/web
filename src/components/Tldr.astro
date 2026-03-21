@@ -1,0 +1,187 @@
+---
+/**
+ * TLDR Component
+ *
+ * Displays a "TL;DR 🔥" button that opens a modal overlay with a summary.
+ * Content is passed via the default slot.
+ *
+ * Usage in MDX:
+ *   import Tldr from "@/components/Tldr.astro"
+ *
+ *   <Tldr>
+ *     This is the short summary of the post.
+ *   </Tldr>
+ */
+---
+
+<div class="tldr">
+  <button title="Open TL;DR" class="tldr-button">
+    <span>TL;DR 🔥</span>
+  </button>
+  <div class="tldr-overlay tldr-closed">
+    <div class="tldr-backdrop">
+      <div class="tldr-text">
+        <slot />
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .tldr {
+    padding: 0;
+  }
+
+  .tldr-button {
+    align-items: center;
+    background-color: var(--accent);
+    border: none;
+    border-radius: 0.5rem;
+    color: var(--background);
+    cursor: pointer;
+    display: flex;
+    font-size: var(--font-size-3);
+    font-weight: bold;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+    padding: 0.5rem 1rem;
+    text-align: center;
+    transition: opacity var(--transition-speed-fast);
+    width: 140px;
+  }
+
+  .tldr-button:hover {
+    opacity: 0.85;
+  }
+
+  .tldr-overlay.tldr-open {
+    display: block;
+  }
+
+  .tldr-overlay.tldr-closed {
+    display: none;
+  }
+
+  .tldr-overlay {
+    left: 0;
+    position: fixed;
+    top: 0;
+    z-index: var(--z-index-6);
+  }
+
+  .tldr-backdrop {
+    align-items: center;
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    z-index: var(--z-index-6);
+  }
+
+  .tldr-text {
+    background-color: var(--accent);
+    border-radius: 0.5rem;
+    color: var(--background);
+    max-height: 65%;
+    max-width: 80ch;
+    overflow-y: auto;
+    padding: 3rem;
+    width: 80%;
+    z-index: var(--z-index-6);
+  }
+
+  .tldr-text :global(:first-child) {
+    margin-top: 0;
+  }
+
+  .tldr-text :global(:last-child) {
+    margin-bottom: 0;
+  }
+
+  .tldr-text :global(p) {
+    color: var(--background);
+  }
+
+  .tldr-text :global(a) {
+    color: var(--background);
+    text-decoration: underline;
+  }
+
+  .tldr-text :global(strong) {
+    background-color: var(--background);
+    color: var(--accent);
+  }
+
+  .tldr-text :global(code) {
+    background-color: var(--background);
+    color: var(--accent);
+  }
+
+  @media print {
+    .tldr {
+      display: none;
+    }
+  }
+
+  @media (max-width: 575px) {
+    .tldr-button {
+      font-size: var(--font-size-2);
+    }
+
+    .tldr-text {
+      padding: 1.5rem;
+    }
+  }
+</style>
+
+<script>
+  function initTldr() {
+    document.querySelectorAll<HTMLDivElement>(".tldr").forEach(tldr => {
+      const button = tldr.querySelector<HTMLButtonElement>(".tldr-button");
+      const overlay = tldr.querySelector<HTMLDivElement>(".tldr-overlay");
+      const text = tldr.querySelector<HTMLDivElement>(".tldr-text");
+
+      if (!button || !overlay || !text) return;
+      // Avoid attaching listeners twice after view transitions
+      if (button.dataset.tldrInit) return;
+      button.dataset.tldrInit = "true";
+
+      function open() {
+        overlay!.classList.remove("tldr-closed");
+        overlay!.classList.add("tldr-open");
+      }
+
+      function close() {
+        overlay!.classList.add("tldr-closed");
+        overlay!.classList.remove("tldr-open");
+      }
+
+      function handleOverlayClick(event: MouseEvent) {
+        // Close only when clicking outside the text box
+        if (!text!.contains(event.target as Node)) {
+          close();
+        }
+      }
+
+      button.addEventListener("click", open);
+      overlay.addEventListener("click", handleOverlayClick);
+
+      // Close on Escape key
+      document.addEventListener("keydown", (e: KeyboardEvent) => {
+        if (e.key === "Escape" && overlay!.classList.contains("tldr-open")) {
+          close();
+        }
+      });
+    });
+  }
+
+  // Run on initial load and after Astro view transitions
+  initTldr();
+  document.addEventListener("astro:after-swap", initTldr);
+</script>
+

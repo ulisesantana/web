@@ -1,6 +1,7 @@
 export * from "./generateOgImages";
 export * from "./getPath";
 export * from "./getPostsByGroupCondition";
+export * from "./getPostsByLang";
 export * from "./getPostsByTag";
 export * from "./getSortedPosts";
 export * from "./getUniqueTags";

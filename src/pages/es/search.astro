@@ -1,0 +1,121 @@
+---
+import "@pagefind/default-ui/css/ui.css";
+import Main from "@/layouts/Main.astro";
+import Layout from "@/layouts/Layout.astro";
+import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
+import { SITE } from "@/config";
+
+const backUrl = SITE.showBackButton ? `${Astro.url.pathname}` : "/";
+---
+
+<Layout title={`Buscar | ${SITE.title}`}>
+  <Header />
+  <Main pageTitle="Buscar" pageDesc="Busca cualquier artículo ...">
+    <div id="pagefind-search" transition:persist data-backurl={backUrl}></div>
+  </Main>
+  <Footer />
+</Layout>
+
+<script>
+  function initSearch() {
+    const pageFindSearch: HTMLElement | null =
+      document.querySelector("#pagefind-search");
+
+    if (!pageFindSearch) return;
+
+    const params = new URLSearchParams(window.location.search);
+
+    const onIdle = window.requestIdleCallback || (cb => setTimeout(cb, 1));
+
+    onIdle(async () => {
+      // @ts-expect-error — Missing types for @pagefind/default-ui package.
+      const { PagefindUI } = await import("@pagefind/default-ui");
+
+      // Display warning in dev mode
+      if (import.meta.env.DEV) {
+        pageFindSearch.innerHTML = `
+            <div class="bg-muted/75 rounded p-4 space-y-4 mb-4">
+              <p><strong>Advertencia en modo DEV:</strong> Necesitas construir el proyecto al menos una vez para ver los resultados de búsqueda durante el desarrollo.</p>
+              <code class="block bg-black text-white px-2 py-1 rounded">npm run build</code>
+            </div>
+          `;
+        return;
+      }
+
+      const search = new PagefindUI({
+        element: "#pagefind-search",
+        bundlePath: "/pagefind/",
+        resetStyles: false,
+        showImages: false,
+        showEmptyFilters: false,
+        translations: {
+          placeholder: "Buscar artículos...",
+          clear_search: "Limpiar",
+          load_more: "Cargar más resultados",
+          search_label: "Buscar en este sitio",
+          filters_label: "Filtros",
+          zero_results: "No se encontraron resultados para [SEARCH_TERM]",
+          many_results: "[COUNT] resultados para [SEARCH_TERM]",
+          one_result: "[COUNT] resultado para [SEARCH_TERM]",
+          alt_search: "No se encontraron resultados para [SEARCH_TERM]. Mostrando resultados para [DIFFERENT_TERM] en su lugar",
+          search_suggestion: "No se encontraron resultados para [SEARCH_TERM]. Intenta una de las siguientes búsquedas:",
+          searching: "Buscando [SEARCH_TERM]...",
+        },
+      });
+
+      const query = params.get("q");
+      if (query) {
+        search.triggerSearch(query);
+      }
+    });
+  }
+
+  // Initial search
+  initSearch();
+
+  // View Transition
+  document.addEventListener("astro:after-swap", () => {
+    initSearch();
+  });
+
+  // Search persistence
+  document.addEventListener("astro:page-load", () => {
+    const search = document.querySelector("#pagefind-search");
+    const backUrl = search?.getAttribute("data-backurl");
+    if (backUrl) {
+      sessionStorage.setItem("backUrl", backUrl);
+    }
+  });
+</script>
+
+<style is:global>
+  :root {
+    --pagefind-ui-scale: 1;
+    --pagefind-ui-primary: var(--accent);
+    --pagefind-ui-text: var(--text);
+    --pagefind-ui-background: var(--card);
+    --pagefind-ui-border: var(--border);
+    --pagefind-ui-tag: var(--muted);
+    --pagefind-ui-border-width: 1px;
+    --pagefind-ui-border-radius: 0.5rem;
+    --pagefind-ui-image-border-radius: 0.5rem;
+    --pagefind-ui-image-box-ratio: 3 / 2;
+    --pagefind-ui-font: inherit;
+  }
+
+  #pagefind-search .pagefind-ui__search-input {
+    font-weight: 400;
+  }
+
+  #pagefind-search .pagefind-ui__result-title,
+  #pagefind-search .pagefind-ui__result-excerpt {
+    font-weight: 400;
+  }
+
+  #pagefind-search mark {
+    font-weight: 600;
+    padding: 0;
+  }
+</style>
+

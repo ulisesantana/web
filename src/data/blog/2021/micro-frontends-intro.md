@@ -5,6 +5,7 @@ description: Micro frontends es una arquitectura que cada vez suena más y se us
 cover: /assets/es/blog/2021/micro-frontends-intro/cover.png
 tags: [micro frontends,arquitectura,frontend]
 draft: false
+lang: es
 ---
 
 Cada vez se habla más de micro frontends, una arquitectura inspirada en la

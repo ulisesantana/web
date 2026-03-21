@@ -5,6 +5,7 @@ description: El 14 de Julio di una charla en Tenerife GG
 tags: [evento,software]
 cover: ../../preview.png
 draft: true
+lang: es
 ---
 
 

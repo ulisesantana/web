@@ -5,6 +5,7 @@ description: En ocasiones es más cómodo deshabilitar la cámara del ordenador 
 tags: [linux]
 cover: /assets/es/blog/2022/deshabilita-tu-webcam/cover.png
 draft: false
+lang: es
 ---
 
 En casi todos mis dispositivo tengo la cámara frontal tapada con la típica pegatina con ventana para poder bloquear la cámara físicamente. Sin embargo, en el sobremesa no puedo porque la ventana y la pegatina me tapan la lente de la cámara haciendo imposible que se me vea cuando quiero.

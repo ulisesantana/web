@@ -5,6 +5,7 @@ description: Descubre cómo desarrollar y experimentar en cualquier lugar con tu
 tags: [desarrollo,raspberry pi]
 cover: /assets/es/blog/2021/raspberry-pi-en-tu-ipad/cover.png
 draft: false
+lang: es
 ---
 
 ## El problema: cargar con un portátil para uso ocasional

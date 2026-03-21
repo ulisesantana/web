@@ -5,6 +5,7 @@ description: Node.js acaba de sacar Corepack como solución nativa para los dife
 cover: /assets/es/blog/2021/corepack/cover.png
 tags: [node.js,development,npm]
 draft: false
+lang: es
 ---
 
 En el mundo de Node.js el gestor por defecto es [npm](https://www.npmjs.com), sin embargo existen otros gestores de
