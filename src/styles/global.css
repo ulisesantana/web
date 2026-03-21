@@ -24,6 +24,7 @@ html[data-theme="light"] {
     --accent: var(--green);
     --accent-alt: var(--yellow);
     --link-color: var(--accent);
+    --code-bg: #ffffff;
     --text-color: #292929;
     --text-color-alt: #F7F7F7;
     --transition-speed-fast: 0.3s;
@@ -44,6 +45,7 @@ html[data-theme="dark"] {
     --accent: var(--yellow);
     --accent-alt: var(--green);
     --muted: #343f60bf;
+    --code-bg: #011627;
     --text-color: #F7F7F7;
     --text-color-alt: #292929;
 }

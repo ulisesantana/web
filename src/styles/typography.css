@@ -4,24 +4,29 @@
     :root {
         --font-family-1: 'Fira Sans', sans-serif;
         --font-family-2: 'Fira Code', monospace;
-        --font-size-0: 1rem;
-        --font-size-1: 1.25rem;
-        --font-size-2: 1.5rem;
-        --font-size-3: 1.75rem;
-        --font-size-4: 2rem;
-        --font-size-5: 2.5rem;
-        --font-size-6: 3rem;
+        --font-size-0: 0.9rem;
+        --font-size-1: 1.1rem;
+        --font-size-2: 1.25rem;
+        --font-size-3: 1.5rem;
+        --font-size-4: 1.75rem;
+        --font-size-5: 2rem;
+        --font-size-6: 2.5rem;
         --line-height-normal: 1.25;
         --line-height-normal-text: 1.5;
         --line-height-title: 2;
     }
 
     .prose {
-        @apply prose-headings:mb-3 prose-headings:text-foreground prose-h3:italic prose-p:text-foreground prose-a:text-foreground prose-a:decoration-dashed prose-a:underline-offset-8 hover:prose-a:text-accent prose-blockquote:border-l-accent/50 prose-blockquote:opacity-80 prose-figcaption:text-foreground prose-figcaption:opacity-70 prose-code:rounded prose-code:bg-muted/75 prose-code:p-1 prose-code:text-foreground prose-code:before:content-none prose-code:after:content-none prose-ol:text-foreground prose-ul:overflow-x-clip prose-ul:text-foreground prose-li:marker:text-accent prose-table:text-foreground prose-th:border prose-th:border-border prose-td:border prose-td:border-border prose-img:mx-auto prose-img:my-2 prose-img:border-2 prose-img:border-border prose-hr:border-border;
+        @apply prose-headings:mb-3 prose-headings:text-foreground prose-h3:italic prose-p:text-foreground prose-a:text-foreground hover:prose-a:text-accent prose-blockquote:border-l-accent/50 prose-blockquote:opacity-80 prose-figcaption:text-foreground prose-figcaption:opacity-70 prose-code:rounded prose-code:p-1 prose-code:text-foreground prose-code:before:content-none prose-code:after:content-none prose-ol:text-foreground prose-ul:overflow-x-clip prose-ul:text-foreground prose-li:marker:text-accent prose-table:text-foreground prose-th:border prose-th:border-border prose-td:border prose-td:border-border prose-img:mx-auto prose-img:my-2 prose-img:border-2 prose-img:border-border prose-hr:border-border;
+        font-size: var(--font-size-1) !important;
+        font-weight: var(--font-weight-normal) !important;
     }
 
     .prose a {
         @apply break-words hover:text-accent;
+        color: var(--accent) !important;
+        text-decoration: none !important;
+        border-bottom: 1px dashed var(--accent) !important;
     }
 
     .prose thead th:first-child,
@@ -56,6 +61,17 @@
         @apply break-words;
     }
 
+    /* Inline code (not inside pre blocks) */
+    :not(pre) > code {
+        color: var(--foreground) !important;
+        background-color: var(--code-bg) !important;
+    }
+
+    :not(pre) > code::before,
+    :not(pre) > code::after {
+        content: none !important;
+    }
+
     .prose table code {
         /* add line breaks whenever necessary for codes under table */
         @apply break-all sm:break-normal;
@@ -63,6 +79,7 @@
 
     pre > code {
         white-space: pre;
+        background-color: pink !important;
     }
 
     /* Apply Dark Theme (if multi-theme specified) */
@@ -78,6 +95,10 @@
     body {
         font-family: var(--font-family-1);
         font-size: var(--font-size-2);
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        font-feature-settings: "kern" 1, "liga" 1;
     }
 
     h1, h2, h3, h4, h5, h6 {
@@ -101,3 +122,10 @@
         padding: 0.25rem 0.5rem;
     }
 }
+
+/* Override typography plugin marker colors (must be outside @layer to win specificity) */
+.prose ol > li::marker,
+.prose ul > li::marker {
+    color: var(--accent) !important;
+}
+

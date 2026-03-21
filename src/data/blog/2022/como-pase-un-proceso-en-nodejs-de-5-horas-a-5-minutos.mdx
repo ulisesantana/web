@@ -7,11 +7,13 @@ cover: /assets/es/blog/2022/como-pase-un-proceso-en-nodejs-de-5-horas-a-5-minuto
 draft: false
 lang: es
 ---
+import YouTubeVideo from "@/components/YouTubeVideo.astro"
+import Img from "@/components/Img.astro"
 
-<youtube-video 
-  video-id="V4sXNlzJIy8"
-  video-caption="Esta entrada fue originalmente una charla que di en JSDay Canarias 2022">
-</youtube-video>
+<YouTubeVideo
+  videoId="V4sXNlzJIy8"
+  caption="Esta entrada fue originalmente una charla que di en JSDay Canarias 2022"
+/>
 
 ## El contexto
 
@@ -26,9 +28,9 @@ Por concluir esta contextualización:
 
 ## La calma antes de la tormenta
 
-A Abraham Lincoln se le atribuye la siguiente frase: **Dame 6 horas para cortar un árbol y pasaré 4 afilando el hacha**. Sabíamos que iba a haber un cambio legislativo que conllevarían cambios en los proyectos, así que desde 2 meses antes del deadline propusimos refactorizar partes de los proyectos y uno en concreto solicitamos rehacerlo desde 0, ya que en ese entonces era realmente un prototipo que funcionaba, pero costaba mantener y con el cambio legislativo se iba a hacer más insostenible. Nos dieron luz verde a esta propuesta y dicho prototipo iba a ser rehecho desde cero. Vamos a llamar a este proyecto el *Proyecto Leñador*:
+A Abraham Lincoln se le atribuye la siguiente frase: **Dame 6 horas para cortar un árbol y pasaré 4 afilando el hacha**. Sabíamos que iba a haber un cambio legislativo que conllevaría cambios en los proyectos, así que desde 2 meses antes del deadline propusimos refactorizar partes de los proyectos y uno en concreto solicitamos rehacerlo desde 0, ya que en ese entonces era realmente un prototipo que funcionaba, pero costaba mantener y con el cambio legislativo se iba a hacer más insostenible. Nos dieron luz verde a esta propuesta y dicho prototipo iba a ser rehecho desde cero. Vamos a llamar a este proyecto el *Proyecto Leñador*:
 
-![Yo vestido de Leñador con hacha al hombro](/assets/es/blog/2022/como-pase-un-proceso-en-nodejs-de-5-horas-a-5-minutos/lumberjack.jpeg)
+<Img src="/assets/es/blog/2022/como-pase-un-proceso-en-nodejs-de-5-horas-a-5-minutos/lumberjack.jpeg" alt="Yo vestido de Leñador con hacha al hombro" />
 
 En [Lean Mind](https://leanmind.es/es/) por regla general trabajamos haciendo pair o mob programming, por lo que nadie nunca está solo y así facilitamos que el código sea más sostenible, además de que tanto la autoría del código como el conocimiento se comparta. Sin embargo, como teníamos 5 proyectos que actualizar decidimos dividirnos lo máximo posible para poder abarcar al menos 3 proyectos a la vez y poder tener los cambios lo antes posible. Eso sale a 2 personas por proyecto y una persona sola. Esa persona que se quedó sola fui yo y estuve a varias bandas asistiendo a los diferentes equipos a la par que trabajaba en el proyecto en el que me tocaba.
 
@@ -42,13 +44,13 @@ Volviendo al *Proyecto Leñador*, estaba muy orgulloso de lo que el equipo habí
 
 El prototipo original basándose en un set de datos de unos cientos de miles de registros era capaz de hacerlo todo en unos 7 minutos. Con el mismo set de datos probé con el *Proyecto Leñador* y el resultado fue que tardó nada más y nada menos que **5 horas 7 minutos y 54 segundos.** Estamos hablando de que tardaba 44 veces más. El proceso real en producción tardaba cada noche unos 40 minutos, por lo que si mandábamos esto a producción el nuevo proceso tardaría unas 29 horas y 20 minutos, cada día. Esta pérdida de performance era inasumible. En ese momento mi yo interno era algo así:
 
-![GIF de los bailarines del ataúd](/assets/es/blog/2022/como-pase-un-proceso-en-nodejs-de-5-horas-a-5-minutos/coffin-dance.gif)
+<Img src="/assets/es/blog/2022/como-pase-un-proceso-en-nodejs-de-5-horas-a-5-minutos/coffin-dance.gif" alt="GIF de los bailarines del ataúd" />
 
-Por meter más leña al fuego [¿lo pillas? Leña, *Proyecto Leñador* 🤣], esto pasó a unos 10 días del deadline, 10 días naturales. No podíamos replantear el proyecto, había que optimizarlo en menos de una semana, además de que había más cosas en la parrilla. Recuerdo que habían otros 4 proyectos que necesitaban ser actualizados para el cambio legislativo. En esta situación, por un lado me motivaba a mí mismo pensando cosas del tipo *Llevo toda mi vida preparándome para este momento, los talleres sobre asincronía en Node.js con [Matteo Collina](https://twitter.com/matteocollina) y [James Snell](https://twitter.com/jasnell) van a dar sus frutos*. Sin embargo, otra parte de mí era una mezcla de esto:
+Por meter más leña al fuego [¿lo pillas? Leña, *Proyecto Leñador* 🤣], esto pasó a unos 10 días del deadline, 10 días naturales. No podíamos replantear el proyecto, había que optimizarlo en menos de una semana, además de que había más cosas en la parrilla. Recuerdo que había otros 4 proyectos que necesitaban ser actualizados para el cambio legislativo. En esta situación, por un lado me motivaba a mí mismo pensando cosas del tipo *Llevo toda mi vida preparándome para este momento, los talleres sobre asincronía en Node.js con [Matteo Collina](https://twitter.com/matteocollina) y [James Snell](https://twitter.com/jasnell) van a dar sus frutos*. Sin embargo, otra parte de mí era una mezcla de esto:
 
-![GIF de Sheldon respirando compulsivamente en una bolsa de papel](/assets/es/blog/2022/como-pase-un-proceso-en-nodejs-de-5-horas-a-5-minutos/sheldon-bag.gif)
+<Img src="/assets/es/blog/2022/como-pase-un-proceso-en-nodejs-de-5-horas-a-5-minutos/sheldon-bag.gif" alt="GIF de Sheldon respirando compulsivamente en una bolsa de papel" />
 
-![GIF de Pickle Rick a punto de morir de insolación](/assets/es/blog/2022/como-pase-un-proceso-en-nodejs-de-5-horas-a-5-minutos/pickle-rick.gif)
+<Img src="/assets/es/blog/2022/como-pase-un-proceso-en-nodejs-de-5-horas-a-5-minutos/pickle-rick.gif" alt="GIF de Pickle Rick a punto de morir de insolación" />
 
 La realidad es que entré en modo pánico y empecé a refactorizar el proyecto y tratar de mejorar en performance todo lo que podía. No cambié nada de lógica, me limité a cambiar el flujo de datos asíncrono, que era mayormente todo lo que tuviera que ver con leer o escribir en base de datos.
 
@@ -72,12 +74,12 @@ Estas dos funciones son idénticas a excepción de que la segunda es asíncrona.
 
 Puede parecer una tontería, pero afecta. Hice una pequeña demo para demostrar hasta qué punto esto afecta a nuestro performance. Lo que hace el script es ejecutar cada una de estas funciones por separado un millón de veces.
 
-![Resultado de ejecutar la demo para la comparación del async](/assets/es/blog/2022/como-pase-un-proceso-en-nodejs-de-5-horas-a-5-minutos/useless-async.png)
+<Img src="/assets/es/blog/2022/como-pase-un-proceso-en-nodejs-de-5-horas-a-5-minutos/useless-async.png" alt="Resultado de ejecutar la demo para la comparación del async" />
 
-Como podemos ver, sólo por poner ese `async` hemos hecho que tarde casi seis veces más. Aplicándolo a la vida real, en una suite de test reducimos un 40% el tiempo que tardaba en ejecutarse sólo quitando los async innecesarios que se nos habían quedado después de un refactor. Simplemente quitamos los async que teníamos en las arrow functions que ya no nos hacía falta. Haciendo esto pasamos de tardar algo más de 2 minutos en tirar la suit de test a poco menos de minuto y medio.
+Como podemos ver, sólo por poner ese `async` hemos hecho que tarde casi seis veces más. Aplicándolo a la vida real, en una suite de test reducimos un 40% el tiempo que tardaba en ejecutarse sólo quitando los async innecesarios que se nos habían quedado después de un refactor. Simplemente quitamos los async que teníamos en las arrow functions que ya no nos hacía falta. Haciendo esto pasamos de tardar algo más de 2 minutos en tirar la suite de test a poco menos de minuto y medio.
 
 
-### 2. Evita los await dentro de los bucles.
+### 2. Evita los await dentro de los bucles
 
 Imagina que tienes una tarea que sea: *En base a una lista de IDs tienes que recuperar información de una API*. Por limitaciones técnicas no puedes pasarle a la API la lista de IDs, sino que tienes que hacer una llamada por cada ID. ¿Cuál es la primera idea que se nos viene a la cabeza? Probablemente un bucle, apesta a bucle. La implementación podría ser algo así:
 
@@ -93,9 +95,7 @@ async function fetchUserListInfo(ids) {
 
 Parece sencillo y además si lo probamos veremos que funciona. Consigue la información de todos los usuarios sin problemas. ¿Sin problemas? Ese await dentro del `for` fuerza a que se termine de completar cada promesa antes de procesar la siguiente.
 
-<img-caption src="/assets/es/blog/2022/como-pase-un-proceso-en-nodejs-de-5-horas-a-5-minutos/await-loop.jpeg" alt="Las promesas se resuelven una a una">
-  Resolviendo las promesas con un await dentro de un for
-</img-caption>
+<Img src="/assets/es/blog/2022/como-pase-un-proceso-en-nodejs-de-5-horas-a-5-minutos/await-loop.jpeg" alt="Las promesas se resuelven una a una" caption="Resolviendo las promesas con un await dentro de un for" />
 
 Esto significa que si de media la API tarda en responder 50ms y tenemos 100 IDS que procesar, tardaremos unos 5 segundos en realizar la tarea. No es que sea un drama, pero si implementamos esta otra solución la cosa cambia bastante:
 
@@ -118,13 +118,11 @@ La gran diferencia de esta solución es que dentro del bucle no resolvemos las p
 
 Volviendo a la solución, vemos que las promesas no se resuelven, sino que se almacenan directamente en estado *Pending*, y la función al devolverlas las resuelve todas *a la vez*. Esto hace que ahora la tarea se haga mucho más rápido, tardando lo que tarde en responder la llamada a la API más lenta.
 
-<img-caption src="/assets/es/blog/2022/como-pase-un-proceso-en-nodejs-de-5-horas-a-5-minutos/promise-all.jpeg" alt="Las promesas se resuelven a la vez">
-  Resolviendo las promesas con un Promise.all
-</img-caption>
+<Img src="/assets/es/blog/2022/como-pase-un-proceso-en-nodejs-de-5-horas-a-5-minutos/promise-all.jpeg" alt="Las promesas se resuelven a la vez" caption="Resolviendo las promesas con un Promise.all" />
 
 Para ver esto mejor voy a mostrar otra demo en la que usamos casi el mismo código, lo único que cambia es que sustituimos la llamada a la API por una simple espera de 1 milisegundo. Lo que vamos a ver es cuanto tarda cada una de las soluciones ejecutando esta tarea para una lista de 100 IDS y lo va a hacer 1000 veces para que podamos ver si realmente hay una diferencia de performance o no.
 
-![Resultado de ejecutar la demo para bucles asíncronos](/assets/es/blog/2022/como-pase-un-proceso-en-nodejs-de-5-horas-a-5-minutos/async-loop.png)
+<Img src="/assets/es/blog/2022/como-pase-un-proceso-en-nodejs-de-5-horas-a-5-minutos/async-loop.png" alt="Resultado de ejecutar la demo para bucles asíncronos" />
 
 Como vemos la diferencia es abismal. Para la misma tarea cuando usamos `Promise.all` tarda poco más de 1 segundo, pero cuando usamos `await` dentro del for tarda **casi 2 minutos**. Esta diferencia en un entorno real es crítica y lo peor es que por lo general no nos damos cuenta de que el problema está en esta clase de sitios.
 
@@ -144,7 +142,7 @@ async function fetchUserInfo(id): User {
 }
 ```
 
-También existe el [Promise.allSettled](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/allSettled) que evita que el error pare el proceso de resolver todas las promesas. Otra diferencia es que lo que nos devuelve esta estructura:
+También existe el [Promise.allSettled](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/allSettled) que evita que el error pare el proceso de resolver todas las promesas. Otra diferencia es que nos devuelve esta estructura:
 
 ```ts
 type PromiseAllSettleReturnValue<T> = Array<{
@@ -198,7 +196,7 @@ function fetchUserListInfo(ids) {
 }
 ```
 
-Esta sería otra forma de hacer el `fetchUserListInfo` que hemos visto un par de diapositivas atrás. Tanto esta como la anterior solución tienen un problema, no sabes cuántas promesas vas a tener en el `Promise.all`. En casos en los que no sabes el número de promesas que vas a gestionar o este número es muy alto es recomendable usar la librería `p-map` y limitar la concurrencia. La razón para hacer esto es que si tienes demasiadas promesas puedes acabar haciéndote un ataque de denegación de servicio a ti mismo sin darte cuenta.
+Esta sería otra forma de hacer el `fetchUserListInfo` que hemos visto un par de secciones atrás. Tanto esta como la anterior solución tienen un problema, no sabes cuántas promesas vas a tener en el `Promise.all`. En casos en los que no sabes el número de promesas que vas a gestionar o este número es muy alto es recomendable usar la librería `p-map` y limitar la concurrencia. La razón para hacer esto es que si tienes demasiadas promesas puedes acabar haciéndote un ataque de denegación de servicio a ti mismo sin darte cuenta.
 
 En el *Proyecto Leñador* más que un ataque de denegación de servicio lo que nos preocupaba era ahogar la base de datos. En estos proyectos la práctica habitual era limitar la concurrencia al número de conexiones que teníamos configurado para la base de datos, evitando así ahogarla.
 
@@ -218,7 +216,7 @@ La diferencia usando `p-map` es que tienes que pasar por separado la lista sobre
 
 Por último, tener en cuenta que `p-map` en su versión 5 pasó a ser de tipo ESModules y a menos que tu proyecto esté hecho de esta manera no te va a funcionar. Para poder usarlo con CommonJS necesitas tirar de la versión 4. La realidad es que ambas versiones sólo difieren en si funcionan con ESModules o con CommonJS. Vamos, que si importas cosas en ficheros con `import` o con `require` respectivamente.
 
-![Pasar de CommonJS to ESModules](/assets/es/blog/2022/como-pase-un-proceso-en-nodejs-de-5-horas-a-5-minutos/cjs-to-esm.png)
+<Img src="/assets/es/blog/2022/como-pase-un-proceso-en-nodejs-de-5-horas-a-5-minutos/cjs-to-esm.png" alt="Pasar de CommonJS to ESModules" />
 
 ### 5. Haz caso de los warnings
 
@@ -238,9 +236,9 @@ El problema era que había event handlers que se estaban creando continuamente c
 
 ## Resultado
 
-Con todas estas mejoras en el *Proyecto Leñador* lo volvimos a ejecutar con el mismo set de datos y en esta ocasión tardó **04:52**. Era incluso más rápido que el prototipo original que tardaba 7 minutos. En ese momento mi yo interior era algo así:
+Con todas estas mejoras en el *Proyecto Leñador* lo volvimos a ejecutar con el mismo set de datos y en esta ocasión tardó **04:52**. Era incluso más rápido que el prototipo original que tardaba 7 minutos. En ese momento mi yo interno era algo así:
 
-![GIF de El Nota en el Gran Lebowski dándolo todo](/assets/es/blog/2022/como-pase-un-proceso-en-nodejs-de-5-horas-a-5-minutos/fuck-yeah-dude.gif)
+<Img src="/assets/es/blog/2022/como-pase-un-proceso-en-nodejs-de-5-horas-a-5-minutos/fuck-yeah-dude.gif" alt="GIF de El Nota en el Gran Lebowski dándolo todo" />
 
 No recuerdo si era de día, de noche, ni qué hora era. Sólo recuerdo ese sentimiento de *FUCK YEAH*, ese paso de la ansiedad a la paz. Y ya por estar completamente seguros de que había una mejora, ejecutamos una prueba con un set de datos semejante al que se enfrentaba en producción día a día, que eran millones de registros en la base de datos. En este caso el resultado quedó claro:
 
@@ -258,19 +256,19 @@ Al final todo salió bien, pero sin duda aprendí un par de cosas de esta experi
 - **La responsabilidad debe ser compartida.** Es bastante típico que las personas con más experiencia del equipo se echen las cosas a la espalda. La responsabilidad debe ser compartida, tanto tecnológica como en lo relativo a diseño de software o metodologías. La idea es que los miembros del equipo aprendan unos de otros sin importar el nivel de experiencia que tengan. El intercambio de ideas desde distintos puntos de vista puede enriquecer mucho al equipo.
 - **Sé prescindible.** Si eres prescindible no serás el cuello de botella. En esta historia yo fui un cuello de botella por conocimiento y por dominio. Es algo de lo que me arrepiento, pero también algo de lo que aprendí. Ojo, digo prescindible que no innecesario. Con esto quiero decir que no seas crítico por conocimiento, ya sea de dominio, procesos o tecnología. Trata siempre de compartir tu conocimiento con el equipo y documentarlo. Todo lo que tiene un inicio tiene un fin, por lo que algún momento dejarás de estar en el equipo en el que estás ahora. Cuando eso pase lo importante es que no te lleves conocimiento contigo, sino que lo hayas dejado en el equipo en forma de documentación. De esta manera serás prescindible.
 
-Y esta ha sido la historia y el aprendizaje de cómo pasé un proceso en Node.js de 5 horas a 5 minutos. Recapitulando estos son mis 6 consejos cuando gestionas asincronía en JavaScript:
+Y esta ha sido la historia y el aprendizaje de cómo pasé un proceso en Node.js de 5 horas a 5 minutos. Recapitulando estos son mis 5 consejos cuando gestionas asincronía en JavaScript:
 1. Evita los async innecesarios
 2. Evita los await dentro de los bucles
 3. Usa Promise.all siempre que puedas
 4. Sé consciente de cuantas promesas estás gestionando
-5. Haz casos de los warnings.
+5. Haz caso de los warnings
 
 ## Un par de cosas más
 
 Tengo un par de cosas más en el tintero que no son producto de esta experiencia con *El Proyecto Leñador*, sino del día a día durante los últimos años y quiero compartirlas.
 
 - **No mezcles tipos de asincronía**: Aparte de ser más difícil de leer, también acaba afectando al performance porque la mayoría de las veces lo que hacemos es complicar el comportamiento asíncrono.
-- **Async generators, ese gran desconocido**: En JavaScript existe una cosa llamada generators, de la cual llegó hace un par de años su versión asíncrona. Los async generators donde brillan es al gestionar streams. Sin embargo, hay otros casos de uso que también son muy útiles. Lucciano Mammino dió una [charla sobre ellos en la NodeCONF EU en 2021](https://www.youtube.com/watch?v=uTzBHPpMEhA).
+- **Async generators, ese gran desconocido**: En JavaScript existe una cosa llamada generators, de la cual llegó hace un par de años su versión asíncrona. Los async generators donde brillan es al gestionar streams. Sin embargo, hay otros casos de uso que también son muy útiles. Luciano Mammino dio una [charla sobre ellos en la NodeCONF EU en 2021](https://www.youtube.com/watch?v=uTzBHPpMEhA).
 - **Investiga sobre el Event Loop**: Entender cómo funciona JavaScript por debajo te ayuda a entender por qué a veces las cosas no pasan como esperamos. En la documentación de Node.js hay un apartado de guías en la cual hay una llamada [*The Node.js Event Loop, Timers, and process.nextTick()*](https://nodejs.org/en/docs/guides/event-loop-timers-and-nexttick/). Es un documento que tardaron 6 meses en escribir y que explica los diferentes procesos y el orden en el que se ejecutan en cada vuelta del Event Loop en Node.js.
 
 También dejo por aquí [este artículo de James Snell](https://www.nearform.com/blog/optimise-node-js-performance-avoiding-broken-promises/) sobre gestión de promesas en Node.js.

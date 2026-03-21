@@ -8,18 +8,30 @@ const {
   sizes = '(max-width: 768px) 100vw, 768px',
   className = '',
 } = Astro.props;
+
+const isStringPath = typeof src === 'string';
 ---
 
 <figure class={`w-full max-w-4xl mx-auto ${className}`}>
-  <Image
-    src={src}
-    alt={alt}
-    widths={widths}
-    sizes={sizes}
-    class="rounded-xl shadow-md"
-  />
+  {isStringPath ? (
+    <img
+      src={src}
+      alt={alt}
+      class="rounded-xl shadow-md"
+      loading="lazy"
+      decoding="async"
+    />
+  ) : (
+    <Image
+      src={src}
+      alt={alt}
+      widths={widths}
+      sizes={sizes}
+      class="rounded-xl shadow-md"
+    />
+  )}
   {caption && (
-    <figcaption class="mt-2 text-center text-sm text-gray-500 italic">
+    <figcaption class="mt-2 text-center text-sm italic text-accent">
       {caption}
     </figcaption>
   )}
