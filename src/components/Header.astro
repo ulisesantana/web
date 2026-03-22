@@ -40,21 +40,19 @@ const isSpanish = currentLang === Languages.Spanish;
     .isotype {
       display: inline-block;
       border: none;
-      color: var(--accent);
-      font-size: var(--font-size-2);
+      color: transparent;
+      font-size: var(--font-size-5);
       font-weight: 600;
       letter-spacing: 1px;
       text-decoration: none;
+      -webkit-text-stroke-width: 1.5px;
+      -webkit-text-stroke-color: var(--link-color);
     }
   }
 
   @media screen and (min-width: 768px) {
     header {
       height: 80px;
-
-      .isotype {
-        font-size: var(--font-size-1);
-      }
     }
 
     #nav-container {

@@ -73,7 +73,7 @@ const isSpanish = locale === "es";
     margin: 1rem auto;
     max-width: 768px;
     padding: 0 24px;
-    width: 80ch;
+    width: auto;
   }
 
   .description {
@@ -92,10 +92,13 @@ const isSpanish = locale === "es";
   }
 
   .title {
+    border-left: none;
+    color: var(--text-color);
     font-size: var(--font-size-3);
     font-weight: 400;
     font-family: var(--font-family-1);
     margin: 0;
+    padding: 0;
   }
 
   @media (max-width: 767px) {
