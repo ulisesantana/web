@@ -17,7 +17,7 @@
     }
 
     .prose {
-        @apply prose-headings:mb-3 prose-headings:text-foreground prose-h3:italic prose-p:text-foreground prose-a:text-foreground hover:prose-a:text-accent prose-blockquote:border-l-accent/50 prose-blockquote:opacity-80 prose-figcaption:text-foreground prose-figcaption:opacity-70 prose-code:rounded prose-code:p-1 prose-code:text-foreground prose-code:before:content-none prose-code:after:content-none prose-ol:text-foreground prose-ul:overflow-x-clip prose-ul:text-foreground prose-li:marker:text-accent prose-table:text-foreground prose-th:border prose-th:border-border prose-td:border prose-td:border-border prose-img:mx-auto prose-img:my-2 prose-img:border-2 prose-img:border-border prose-hr:border-border;
+        @apply prose-headings:mb-3 prose-h3:italic prose-p:text-foreground prose-a:text-foreground hover:prose-a:text-accent prose-blockquote:border-l-accent/50 prose-blockquote:opacity-80 prose-figcaption:text-foreground prose-figcaption:opacity-70 prose-code:rounded prose-code:p-1 prose-code:text-foreground prose-code:before:content-none prose-code:after:content-none prose-ol:text-foreground prose-ul:overflow-x-clip prose-ul:text-foreground prose-li:marker:text-accent prose-table:text-foreground prose-th:border prose-th:border-border prose-td:border prose-td:border-border prose-img:mx-auto prose-img:my-2 prose-img:border-2 prose-img:border-border prose-hr:border-border;
         font-size: var(--font-size-1) !important;
         font-weight: var(--font-weight-normal) !important;
     }
@@ -79,7 +79,6 @@
 
     pre > code {
         white-space: pre;
-        background-color: pink !important;
     }
 
     /* Apply Dark Theme (if multi-theme specified) */
@@ -112,7 +111,7 @@
         padding-left: 0.5rem;
     }
 
-    pre, code {
+    .prose h2#table-of-contents {
         font-family: var(--font-family-2) !important;
     }
 
@@ -122,6 +121,19 @@
         font-weight: 700;
         padding: 0.25rem 0.5rem;
     }
+}
+
+/* Outside @layer so these beat the typography plugin's layered styles */
+.prose h1 {
+    color: var(--accent);
+}
+
+.prose h2,
+.prose h3,
+.prose h4,
+.prose h5,
+.prose h6 {
+    color: var(--text-color);
 }
 
 /* Override typography plugin marker colors (must be outside @layer to win specificity) */
