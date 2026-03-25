@@ -16,6 +16,7 @@ import IconChevronRight from "@/assets/icons/IconChevronRight.svg";
 import { SITE } from "@/config";
 import { t, type Locale } from "@/config/i18n";
 import AuthorInfo from "@/components/AuthorInfo.astro";
+import GoToTopButton from "@/components/GoToTopButton.astro";
 
 export interface Props {
   post: CollectionEntry<"blog">;
@@ -137,14 +138,6 @@ const translatedPostUrl = getTranslatedPostUrl(post, translatedPosts);
       class="flex flex-col items-center justify-between gap-6 sm:flex-row sm:items-end sm:gap-4"
     >
       <ShareLinks {locale} />
-
-      <button
-        id="back-to-top"
-        class="focus-outline py-1 whitespace-nowrap hover:opacity-75"
-      >
-        <IconChevronLeft class="inline-block rotate-90" />
-        <span>{t(locale, "backToTop")}</span>
-      </button>
     </div>
 
     <hr class="my-6 border-dashed" />
@@ -184,6 +177,7 @@ const translatedPostUrl = getTranslatedPostUrl(post, translatedPosts);
         )
       }
     </div>
+    <GoToTopButton />
   </main>
   <Footer />
 </Layout>
