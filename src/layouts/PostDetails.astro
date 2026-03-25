@@ -15,6 +15,7 @@ import IconChevronLeft from "@/assets/icons/IconChevronLeft.svg";
 import IconChevronRight from "@/assets/icons/IconChevronRight.svg";
 import { SITE } from "@/config";
 import { t, type Locale } from "@/config/i18n";
+import AuthorInfo from "@/components/AuthorInfo.astro";
 
 export interface Props {
   post: CollectionEntry<"blog">;
@@ -145,6 +146,10 @@ const translatedPostUrl = getTranslatedPostUrl(post, translatedPosts);
         <span>{t(locale, "backToTop")}</span>
       </button>
     </div>
+
+    <hr class="my-6 border-dashed" />
+
+    <AuthorInfo locale={locale} />
 
     <hr class="my-6 border-dashed" />
 
