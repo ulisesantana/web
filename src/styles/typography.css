@@ -17,14 +17,13 @@
     }
 
     .prose {
-        @apply prose-headings:mb-3 prose-h3:italic prose-p:text-foreground prose-a:text-foreground hover:prose-a:text-accent prose-blockquote:border-l-accent/50 prose-blockquote:opacity-80 prose-figcaption:text-foreground prose-figcaption:opacity-70 prose-code:rounded prose-code:p-1 prose-code:text-foreground prose-code:before:content-none prose-code:after:content-none prose-ol:text-foreground prose-ul:overflow-x-clip prose-ul:text-foreground prose-li:marker:text-accent prose-table:text-foreground prose-th:border prose-th:border-border prose-td:border prose-td:border-border prose-img:mx-auto prose-img:my-2 prose-img:border-2 prose-img:border-border prose-hr:border-border;
+        @apply prose-headings:mb-3 prose-h3:italic prose-p:text-foreground prose-a:text-foreground hover:prose-a:text-accent prose-blockquote:border-l-accent prose-figcaption:text-accent prose-figcaption:opacity-70 prose-code:rounded prose-code:p-1 prose-code:text-foreground prose-code:before:content-none prose-code:after:content-none prose-ol:text-foreground prose-ul:overflow-x-clip prose-ul:text-foreground prose-li:marker:text-accent prose-table:text-foreground prose-th:border prose-th:border-border prose-td:border prose-td:border-border prose-img:mx-auto prose-img:my-2 prose-img:border-2 prose-img:border-border prose-hr:border-border;
         font-size: var(--font-size-1) !important;
         font-weight: var(--font-weight-normal) !important;
     }
 
     .prose a {
         @apply break-words hover:text-accent;
-        color: var(--accent) !important;
         text-decoration: none !important;
         border-bottom: 1px dashed var(--accent) !important;
     }
@@ -60,6 +59,8 @@
     .prose blockquote {
         @apply break-words;
     }
+
+
 
     /* Inline code (not inside pre blocks) */
     :not(pre) > code {
@@ -136,9 +137,32 @@
     color: var(--text-color);
 }
 
+.prose a {
+    color: var(--accent);
+    border-bottom: 1px dashed var(--accent);
+}
+
 /* Override typography plugin marker colors (must be outside @layer to win specificity) */
 .prose ol > li::marker,
 .prose ul > li::marker {
     color: var(--accent) !important;
 }
 
+/* Blockquote with accent background and background-color text */
+.prose blockquote {
+    background-color: var(--accent);
+    color: var(--background);
+    font-weight: var(--font-weight-bold);
+    border-radius: 0.25rem;
+    padding: 0.75rem 1rem;
+    border-left: 0.25rem solid var(--text-color);
+}
+
+.prose blockquote p,
+.prose blockquote p strong,
+.prose blockquote p a {
+    color: var(--background);
+}
+.prose blockquote p a {
+    border-bottom: 1px dashed var(--background) !important;
+}
