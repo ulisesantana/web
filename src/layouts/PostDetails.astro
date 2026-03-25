@@ -34,6 +34,7 @@ const {
   tags,
   hideEditPost,
   lang = "en",
+  slug: postSlug,
 } = post.data;
 
 const { Content } = await render(post);
@@ -49,7 +50,7 @@ if (typeof initOgImage === "string") {
 
 // Use dynamic OG image if enabled and no remote|local ogImage
 if (!ogImageUrl && SITE.dynamicOgImage) {
-  ogImageUrl = `${getPath(post.id, post.filePath, true, lang)}/index.png`;
+  ogImageUrl = `${getPath(post.id, post.filePath, true, lang, postSlug)}/index.png`;
 }
 
 // Resolve OG image URL (or fallback to SITE.ogImage / default `og.png`)
@@ -74,10 +75,11 @@ const locale = lang as Locale;
 
 const allPosts = posts
   .filter(p => !p.data.draft)
-  .map(({ data: { title }, id, filePath }) => ({
+  .map(({ data: { title, slug: dataSlug }, id, filePath }) => ({
     slug: id,
     title,
     filePath,
+    dataSlug,
   }));
 
 const currentPostIndex = allPosts.findIndex(a => a.slug === post.id);
@@ -141,7 +143,7 @@ const nextPost =
       {
         prevPost && (
           <a
-            href={getPath(prevPost.slug, prevPost.filePath, true, lang)}
+            href={getPath(prevPost.slug, prevPost.filePath, true, lang, prevPost.dataSlug)}
             class="flex w-full gap-1 hover:opacity-75"
           >
             <IconChevronLeft class="inline-block flex-none" />
@@ -155,7 +157,7 @@ const nextPost =
       {
         nextPost && (
           <a
-            href={getPath(nextPost.slug, nextPost.filePath, true, lang)}
+            href={getPath(nextPost.slug, nextPost.filePath, true, lang, nextPost.dataSlug)}
             class="flex w-full justify-end gap-1 text-right hover:opacity-75 sm:col-start-2"
           >
             <div>

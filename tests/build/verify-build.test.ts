@@ -45,13 +45,20 @@ describe('Build Output - Separación de idiomas', () => {
   });
 
   describe('Posts en inglés', () => {
-    it('posts en inglés están en /blog/', async () => {
+    it('bilingual post exists in /blog/2022/ with English slug', async () => {
+      const enPostsDir = join(DIST_DIR, 'blog/2022');
+      const enPosts = await readdir(enPostsDir);
+
+      expect(enPosts).toContain('how-i-took-a-nodejs-process-from-5-hours-to-5-minutes');
+    });
+
+    it('template posts no longer exist in /blog/', async () => {
       const enPostsDir = join(DIST_DIR, 'blog');
       const enPosts = await readdir(enPostsDir);
 
-      expect(enPosts).toContain('adding-new-posts-in-astropaper-theme');
-      expect(enPosts).toContain('astro-paper-2');
-      expect(enPosts).toContain('how-to-configure-astropaper-theme');
+      expect(enPosts).not.toContain('adding-new-posts-in-astropaper-theme');
+      expect(enPosts).not.toContain('astro-paper-2');
+      expect(enPosts).not.toContain('how-to-configure-astropaper-theme');
     });
 
     it('posts en español NO están en /blog/', async () => {
@@ -61,6 +68,14 @@ describe('Build Output - Separación de idiomas', () => {
       expect(enPosts).not.toContain('gitmoji');
       expect(enPosts).not.toContain('por-que-no-usar-jest');
       expect(enPosts).not.toContain('como-construir-arrays-en-js');
+    });
+
+    it('bilingual post exists in both languages', async () => {
+      const enPath = join(DIST_DIR, 'blog/2022/how-i-took-a-nodejs-process-from-5-hours-to-5-minutes/index.html');
+      const esPath = join(DIST_DIR, 'es/blog/2022/como-pase-un-proceso-en-nodejs-de-5-horas-a-5-minutos/index.html');
+
+      await access(enPath);
+      await access(esPath);
     });
   });
 
@@ -92,14 +107,19 @@ describe('Build Output - Separación de idiomas', () => {
   });
 
   describe('Assets', () => {
-    it('assets de posts españoles están en public/assets/es/blog/', async () => {
-      const assetsDir = join(process.cwd(), 'public/assets/es/blog');
-      const years = await readdir(assetsDir);
+    it('blog post images are co-located in src/data/blog/', async () => {
+      const blogDir = join(process.cwd(), 'src/data/blog');
+      const contents = await readdir(blogDir);
 
-      expect(years).toContain('2020');
-      expect(years).toContain('2021');
-      expect(years).toContain('2022');
-      expect(years).toContain('2023');
+      expect(contents).toContain('2020');
+      expect(contents).toContain('2021');
+      expect(contents).toContain('2022');
+
+      // Verify co-located images exist next to posts
+      const postDir = join(blogDir, '2022/pamplona-software-crafters-2022');
+      const postFiles = await readdir(postDir);
+      expect(postFiles).toContain('es.mdx');
+      expect(postFiles).toContain('cover.png');
     });
   });
 

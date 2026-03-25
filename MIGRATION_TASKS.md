@@ -25,8 +25,8 @@
    - ✅ Añadido `lang: "es"` a todos los borradores en `drafts/` (16 posts)
 
 4. **Migración de assets**
-   - ✅ Copiados assets de `/blog/2020/`, `/blog/2021/`, `/blog/2022/`, `/blog/2023/` a `public/assets/es/blog/`
-   - ✅ Las rutas `cover:` en frontmatter ya apuntan a `/assets/es/blog/...`
+   - ✅ Imágenes co-localizadas en `src/data/blog/{year}/{slug}/` junto a los posts
+   - ✅ Las rutas `ogImage:` en frontmatter usan rutas relativas (`./cover.png`)
 
 5. **Filtrado por idioma implementado**
    - ✅ `src/pages/index.astro` filtra posts en inglés
@@ -86,7 +86,8 @@
 - [x] Pagefind indexa correctamente posts en ambos idiomas
 
 #### 8. Limpieza final
-- [ ] Eliminar carpeta `/blog/` completa tras verificar que todo funciona
+- [x] Eliminar carpeta `/blog/` completa tras verificar que todo funciona
+- [x] Eliminar archivos legacy de 11ty (`blog.json`, `index.webc`)
 - [ ] Actualizar `README.md` con documentación del sistema bilingüe
 
 #### 9. Testing ✅
@@ -114,8 +115,9 @@
 - Posts con `lang: "es"` → Español
 
 ### Assets
-- Assets en español: `public/assets/es/blog/[año]/[post-slug]/[imagen]`
-- Referencia en frontmatter: `cover: /assets/es/blog/2022/por-que-no-usar-jest/cover.png`
+- Images are co-located with posts in `src/data/blog/{year}/{slug}/`
+- Referenced in frontmatter via relative paths: `ogImage: ./cover.png`
+- Referenced in post content via relative paths: `![alt](./image.png)`
 
 ### Posts actuales
 - **Inglés**: Examples, releases, docs de AstroPaper (sin `lang` o `lang: "en"`)
@@ -129,7 +131,7 @@
 4. ⚠️ **Mejorar navegación prev/next** - Filtrar por idioma y traducir textos
 5. 🔜 Crear RSS feeds por idioma
 6. 🔜 Probar navegación completa en ambos idiomas
-7. 🔜 Eliminar carpeta `/blog/` obsoleta
+7. ✅ ~~Eliminar carpeta `/blog/` obsoleta~~ — completado, imágenes co-localizadas en `src/data/blog/`
 
 ## Resumen del Estado Actual
 
@@ -137,11 +139,13 @@
 - Sistema i18n base con campo `lang` en schema
 - Páginas duplicadas para español (/es/*)
 - Posts con frontmatter actualizado (lang: "es")
-- Assets migrados a public/assets/es/blog/
+- Imágenes co-localizadas con posts en `src/data/blog/{year}/{slug}/`
 - Filtrado por idioma en listados y tags
 - Build exitoso generando rutas correctas
 - Archivo de traducciones i18n.ts creado
 - Página de búsqueda en español
+- Limpieza de carpeta `/blog/` obsoleta y archivos legacy de 11ty
+- Tests unitarios para `getPath`, `getPostsByLang`, `i18n`, y build
 
 ### ⚠️ Funcionalidades Parciales
 - Navegación prev/next (falta filtrar por idioma)

@@ -12,7 +12,7 @@ export async function GET() {
     description: "Full Stack Developer con JavaScript como lengua materna y la web como patria. Basado en las Islas Canarias 🏝️.",
     site: `${SITE.website}es/`,
     items: sortedPosts.map(({ data, id, filePath }) => ({
-      link: getPath(id, filePath, true, "es"),
+      link: getPath(id, filePath, true, "es", data.slug),
       title: data.title,
       description: data.description,
       pubDate: new Date(data.modDatetime ?? data.pubDatetime),

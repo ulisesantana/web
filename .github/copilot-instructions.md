@@ -25,13 +25,18 @@ src/
 ├── content.config.ts      # Content collection schema (blog, pages)
 ├── data/
 │   ├── nav.ts             # Navigation items per locale
-│   └── blog/              # Blog posts (actual content)
+│   └── blog/              # Blog posts (co-located with images)
 │       ├── 2020/          # Posts organized by year
+│       │   └── my-post/   # Each post is a folder
+│       │       ├── es.md  # Spanish version
+│       │       ├── en.md  # English version (if translated)
+│       │       ├── cover.png  # Images shared between translations
+│       │       └── photo.jpg
 │       ├── 2021/
 │       ├── 2022/
 │       ├── drafts/        # Drafts (draft: true)
 │       └── _releases/     # AstroPaper release posts (excluded by _ prefix)
-├── components/            # Reusable Astro components
+```
 ├── layouts/               # Layouts (Layout, Main, PostDetails, AboutLayout)
 ├── pages/
 │   ├── index.astro        # Home EN
@@ -103,12 +108,19 @@ z.object({
 
 ## Conventions for Creating / Editing Posts
 
+### Co-located folder structure
+
+Each post lives in its own folder: `src/data/blog/{year}/{slug}/`. The folder contains the post file(s) named by language (`es.md`, `en.md`, `es.mdx`, etc.) and all related images. Images are shared between translations of the same post.
+
 ### Creating a new Spanish post
 
-1. Create the file at `src/data/blog/{year}/{slug}.md` (or `.mdx` if it uses components)
-2. Always include `lang: es` in the frontmatter
-3. Use `pubDatetime` as the date (type `Date`, format `YYYY-MM-DD`)
-4. Tags are an array of lowercase strings
+1. Create the folder at `src/data/blog/{year}/{slug}/`
+2. Create the post file as `es.md` (or `es.mdx` if it uses components)
+3. Place images directly in the same folder
+4. Always include `lang: es` in the frontmatter
+5. Use `pubDatetime` as the date (type `Date`, format `YYYY-MM-DD`)
+6. Tags are an array of lowercase strings
+7. Reference images with relative paths: `./cover.png`
 
 Frontmatter example:
 
@@ -118,6 +130,7 @@ title: Mi nuevo post
 pubDatetime: 2026-03-21
 description: Descripción corta del post.
 tags: [javascript, astro]
+ogImage: ./cover.png
 draft: false
 lang: es
 ---
@@ -125,7 +138,15 @@ lang: es
 
 ### Creating a new English post
 
-Same as Spanish but with `lang: en` (or omit the `lang` field entirely, since `"en"` is the default).
+Same as Spanish but name the file `en.md` (or `en.mdx`) and use `lang: en` (or omit the `lang` field entirely, since `"en"` is the default).
+
+### Referencing images in posts
+
+Since images are co-located with the post, always use **relative paths**:
+
+- In Markdown: `![alt text](./my-image.png)`
+- In MDX with `Img` component: `<Img src={import("./my-image.png")} alt="..." />`
+- In frontmatter `ogImage`: `ogImage: ./cover.png`
 
 ### Using Components in Posts
 
@@ -137,16 +158,20 @@ title: My post
 pubDatetime: 2026-03-21
 description: Short description.
 tags: [javascript]
+ogImage: ./cover.png
 lang: es
 ---
 import Tldr from "@/components/Tldr.astro"
 import YouTubeVideo from "@/components/YouTubeVideo.astro"
+import Img from "@/components/Img.astro"
 
 <Tldr>
   Short summary of the post.
 </Tldr>
 
 Post content...
+
+<Img src={import("./diagram.png")} alt="A diagram" />
 
 <YouTubeVideo videoId="abc123" />
 ```

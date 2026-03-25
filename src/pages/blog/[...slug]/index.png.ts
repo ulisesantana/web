@@ -14,7 +14,7 @@ export async function getStaticPaths() {
   );
 
   return posts.map(post => ({
-    params: { slug: getPath(post.id, post.filePath, false, "en") },
+    params: { slug: getPath(post.id, post.filePath, false, "en", post.data.slug) },
     props: post,
   }));
 }
