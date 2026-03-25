@@ -4,8 +4,9 @@ import LanguageSwitch from "./LanguageSwitch.astro";
 export interface Props {
   locale: "en" | "es";
   currentUrl?: string;
+  translatedUrl?: string;
 }
-const { locale, currentUrl = "/" } = Astro.props;
+const { locale, currentUrl = "/", translatedUrl } = Astro.props;
 const nav = {
   en: [
     { url: "/blog/", label: "Blog" },
@@ -120,7 +121,7 @@ const navItems = nav[locale];
 <nav class="no-print mobile-nav">
   <ul class="nav-items">
     <li>
-      <LanguageSwitch />
+      <LanguageSwitch translatedUrl={translatedUrl} />
     </li>
     {
       navItems.map(({ url, label }) => (

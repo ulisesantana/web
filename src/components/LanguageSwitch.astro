@@ -1,15 +1,22 @@
 ---
+export interface Props {
+  /** Explicit URL for the translated version of the current page.
+   *  When provided it takes precedence over the pathname-toggle heuristic. */
+  translatedUrl?: string;
+}
+
+const { translatedUrl } = Astro.props;
 const { pathname } = Astro.url;
 const isSpanish = pathname.startsWith('/es');
 let targetPath = '';
 let emoji = '';
 if (isSpanish) {
-  // Cambiar a inglés: quitar '/es' del principio
-  targetPath = pathname.replace(/^\/es/, '') || '/';
+  // Switch to English: remove '/es' prefix or use provided URL
+  targetPath = translatedUrl ?? (pathname.replace(/^\/es/, '') || '/');
   emoji = '🇬🇧';
 } else {
-  // Cambiar a español: agregar '/es' al principio
-  targetPath = '/es' + (pathname === '/' ? '' : pathname);
+  // Switch to Spanish: add '/es' prefix or use provided URL
+  targetPath = translatedUrl ?? ('/es' + (pathname === '/' ? '' : pathname));
   emoji = '🇪🇸';
 }
 ---

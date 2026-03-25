@@ -5,6 +5,12 @@ import DesktopNav from "./DesktopNav.astro";
 import { getLanguageFromPath } from "../utils/getLanguageFromPath";
 import { Languages } from "../types";
 
+export interface Props {
+  /** URL of the translated version of the current page (posts only). */
+  translatedUrl?: string;
+}
+
+const { translatedUrl } = Astro.props;
 const { pathname } = Astro.url;
 
 // Remove trailing slash from current pathname if exists
@@ -64,8 +70,8 @@ const isSpanish = currentLang === Languages.Spanish;
 <header>
   <div id="nav-container">
     <a class="isotype" href={isSpanish ? "/es" : "/"}>ulisesantana.dev</a>
-    <DesktopNav locale={currentLang} currentUrl={currentPath} />
-    <MobileNav locale={currentLang} currentUrl={currentPath} />
+    <DesktopNav locale={currentLang} currentUrl={currentPath} translatedUrl={translatedUrl} />
+    <MobileNav locale={currentLang} currentUrl={currentPath} translatedUrl={translatedUrl} />
   </div>
 </header>
 <Hr />
