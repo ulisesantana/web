@@ -105,6 +105,7 @@ export default async post => {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
+          fontFamily: "Fira Sans",
         },
         children: [
           {

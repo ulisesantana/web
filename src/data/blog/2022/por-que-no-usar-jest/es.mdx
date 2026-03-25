@@ -7,16 +7,15 @@ ogImage: ./cover.png
 draft: false
 lang: es
 ---
+import XEmbed from "@/components/XEmbed.astro"
 
 ## El problema
 
 Llevo tiempo leyendo quejas desde la comunidad y miembros del core de Node.js sobre [Jest](https://jestjs.io). Hasta ahora siempre he usado Jest porque me parece una herramienta muy completa y cómoda. Además, cuando hago frontend también uso Jest, ya que es el *test framework* que viene con [Create React App](https://create-react-app.dev) por defecto.
 
-Hace un par de meses probé [Node Tap](https://node-tap.org), que es el *test framework* que recomienda [Matteo Collina](https://twitter.com/matteocollina) como alternativa a Jest para testear tu código. Aunque me pareció una gran herramienta, no me terminó de convencer la forma de organizar los test y como hasta ahora no me he encontrado ningún problema con Jest, pues no me peleé mucho con él. Sin embargo, sigo viendo tweets en los que no recomiendan su uso y hasta ahora no me había puesto a indagar en el por qué. En este tweet podemos ver a lo que me refiero:
+Hace un par de meses probé [Node Tap](https://node-tap.org), que es el *test framework* que recomienda [Matteo Collina](https://twitter.com/matteocollina) como alternativa a Jest para testear tu código. Aunque me pareció una gran herramienta, no me terminó de convencer la forma de organizar los test y como hasta ahora no me he encontrado ningún problema con Jest, pues no me peleé mucho con él. Sin embargo, sigo viendo tweets en los que no recomiendan su uso y hasta ahora no me había puesto a indagar en el por qué.
 
-<blockquote class="twitter-tweet" data-lang="es" data-theme="light" data-align="center"><p lang="en" dir="ltr">Yep. Twice last week. Two separate conversations: &quot;Can you help, this Node.js thing isn&#39;t working... We&#39;re using Jest...&quot;<br></br><br></br>Me, &quot;I&#39;m going to stop you right there.&quot;<br></br><br></br>I generally do not disparage other open source projects but using jest is not something I could ever recommend. <a href="https://t.co/bC7h6oRykY">https://t.co/bC7h6oRykY</a></p>&mdash; James M Snell (@jasnell) <a href="https://twitter.com/jasnell/status/1458048635405438979?ref_src=twsrc%5Etfw">9 de Noviembre de 2021</a></blockquote>
-
- En primer lugar vemos a Matteo Collina quejándose sobre el hecho de que le llegan issues en Github a los paquetes que mantiene ([casi 500 en npm](https://www.npmjs.com/~matteo.collina)) en los que el problema es Jest y como este altera el entorno de ejecución. En segundo lugar, [James Snell](https://twitter.com/jasnell), pese a que no suele menospreciar los proyectos Open Source, nunca recomendaría usar Jest.
+En un tweet que ya no está disponible Matteo Collina se quejaba sobre el hecho de que le llegan issues en Github a los paquetes que mantiene ([casi 500 en npm](https://www.npmjs.com/~matteo.collina)) en los que el problema es Jest y como este altera el entorno de ejecución. En segundo lugar, [James Snell](https://twitter.com/jasnell), pese a que no suele menospreciar los proyectos Open Source, respondía a Matteo confirmando que no recomendaría usar Jest.
 
 En el hilo del tweet hablan de este [issue en Github de serverless](https://github.com/serverless/serverless/pull/6517) donde se comenta las razones por las que acabaron pasando de Jest a Mocha:
 
@@ -34,7 +33,14 @@ En el hilo del tweet hablan de este [issue en Github de serverless](https://gith
 
 Además, he visto a Matteo Collina comentar una y mil veces que el problema que tiene con Jest es que no estás testeando tu aplicación corriendo en Node.js, sino corriendo en Jest. ¿Por qué afirma esto Matteo? Porque Jest se ejecuta en un contexto de V8 diferente, esto es porque Jest por debajo usa [*vm*](https://nodejs.org/api/vm.html), un módulo nativo de Node.js. En [este vídeo se explica la arquitectura de Jest](https://www.youtube.com/watch?v=3YDiloj8_d0) y concretamente en el [minuto 37:32](https://youtu.be/3YDiloj8_d0?t=2252) se habla de `jest-runtime`, que es la parte de **Jest** que se encarga de **simular entornos de ejecución**, ya sea `jest-dom` o lo que Christoph llama *like a fake node environment* que sería la parte de Node.js. Entre otras cosas **este *entorno simulado* tiene su propia implementación de *require* permitiéndonos mockear módulos**, que en la práctica significa que podemos mockear dependencias con Jest. Parafraseando lo que dice Matteo en el tweet que tenemos debajo: **Esto permite una experiencia de desarrollo increíble, pero nuestros tests son menos útiles porque no se están ejecutando en el entorno real.**
 
-<blockquote class="twitter-tweet" data-lang="es" data-theme="light" data-align="center"><p lang="en" dir="ltr">The major downsides is <a href="https://t.co/Cc1z15gqEH">https://t.co/Cc1z15gqEH</a>. Essentially you are not running your code on top of Node or a Browser, but on top of Jest. They do it because it allows a HUGE amount of great DX. On the other hand… your test are less useful because it’s not the real env.</p>&mdash; Matteo Collina (@matteocollina) <a href="https://twitter.com/matteocollina/status/1479955450179301382?ref_src=twsrc%5Etfw">8 de Enero de 2022</a></blockquote>
+<XEmbed
+  url="https://x.com/matteocollina/status/1479955450179301382"
+  handle="matteocollina"
+  name="Matteo Collina"
+  date="8 de enero de 2022"
+>
+  The major downsides is https://github.com/facebook/jest/issues/2549. Essentially you are not running your code on top of Node or a Browser, but on top of Jest. They do it because it allows a HUGE amount of great DX. On the other hand… your test are less useful because it's not the real env.
+</XEmbed>
 
 En el tweet comparte un [issue en Github de Jest abierto por Thomas Huston](https://github.com/facebook/jest/issues/2549). En este issue se habla sobre que las variables globales en Jest difieren de las de Node.js. Además, se hace referencia a este [issue en Github de Jest abierto por Kent C. Dodds](https://github.com/facebook/jest/issues/2048) donde se habla sobre como las variables globales de Jest difieren de las del código fuente. [Kent C. Dodds](https://twitter.com/kentcdodds) descubrió y consiguió reproducir este error por primera vez. A partir de este hecho hicieron pequeñas pruebas para ver hasta dónde llegaba el error y descubrieron que el problema mayormente está al ejecutar Jest con la configuración para `testEnvironment` como `node`, que es el valor por defecto. Sin embargo, al ejecutarlo con `testEnvironment` como `jsdom` el error deja de ocurrir. Si quieres comprobarlo puedes hacerlo en [este repositorio](https://github.com/kentcdodds/jest-globals-bug/tree/json).
 

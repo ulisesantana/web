@@ -25,6 +25,7 @@ export const i18n = {
     "toggleMenu": "Toggle menu",
     "searchTitle": "Search",
     "searchDesc": "Search any article ...",
+    "viewOnX": "View on X",
   },
   es: {
     "featured": "Destacado",
@@ -52,6 +53,7 @@ export const i18n = {
     "toggleMenu": "Abrir menú",
     "searchTitle": "Buscar",
     "searchDesc": "Busca cualquier artículo ...",
+    "viewOnX": "Ver en X",
   },
 } as const;
 

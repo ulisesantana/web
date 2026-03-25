@@ -14,6 +14,7 @@ export default async () => {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
+          fontFamily: "Fira Sans",
         },
         children: [
           {

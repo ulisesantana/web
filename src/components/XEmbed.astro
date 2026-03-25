@@ -1,0 +1,187 @@
+---
+/**
+ * Renders a static X (formerly Twitter) post card.
+ * Works fully without any external API or runtime script.
+ *
+ * Usage:
+ *   <XEmbed url="https://x.com/handle/status/ID" handle="handle" name="Display Name" date="9 Nov 2021">
+ *     Tweet text content here
+ *   </XEmbed>
+ */
+import { getLanguageFromPath } from "@/utils/getLanguageFromPath";
+import { t } from "@/config/i18n";
+
+interface Props {
+  url: string;
+  handle: string;
+  name: string;
+  date: string;
+}
+
+const { url, handle, name, date } = Astro.props;
+const xUrl = url.replace("twitter.com", "x.com");
+const locale = getLanguageFromPath(Astro.url.pathname);
+const viewOnX = t(locale, "viewOnX");
+---
+
+<div class="not-prose my-6 flex justify-center">
+  <div class="x-card">
+    <div class="x-card__header">
+      <div class="x-card__author">
+        <div class="x-card__avatar" aria-hidden="true">{name[0]}</div>
+        <div>
+          <span class="x-card__name">{name}</span>
+          <span class="x-card__handle">@{handle}</span>
+        </div>
+      </div>
+      <a href={xUrl} target="_blank" rel="noopener noreferrer" aria-label={viewOnX} class="x-card__logo">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20" aria-hidden="true">
+          <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.747l7.73-8.835L1.254 2.25H8.08l4.213 5.567 5.951-5.567Zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+        </svg>
+      </a>
+    </div>
+
+    <div class="x-card__body"><slot /></div>
+
+    <a href={xUrl} target="_blank" rel="noopener noreferrer" class="x-card__footer">
+      <time>{date}</time> · {viewOnX}
+    </a>
+  </div>
+</div>
+
+<style>
+  /* ── Base (light) ── */
+  .x-card {
+    width: 100%;
+    max-width: 550px;
+    border: 1px solid #cfd9de;
+    border-radius: 16px;
+    padding: 16px;
+    background: #fff;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    color: #0f1419;
+  }
+
+  /* ── Dark: follows the site's html[data-theme="dark"] ── */
+  :global(html[data-theme="dark"]) .x-card {
+    background: #15202b;
+    border-color: #38444d;
+    color: #f7f9f9;
+  }
+
+  /* Header */
+  .x-card__header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 12px;
+  }
+
+  .x-card__author {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .x-card__avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #1d9bf0;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 18px;
+    flex-shrink: 0;
+  }
+
+  .x-card__name {
+    display: block;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 1.2;
+  }
+
+  .x-card__handle {
+    display: block;
+    font-size: 14px;
+    color: #536471;
+    line-height: 1.2;
+  }
+
+  :global(html[data-theme="dark"]) .x-card__handle {
+    color: #8b98a5;
+  }
+
+  .x-card__logo {
+    color: #536471;
+    flex-shrink: 0;
+    opacity: 0.8;
+    transition: opacity 0.15s;
+  }
+
+  .x-card__logo:hover {
+    opacity: 1;
+    color: #0f1419;
+  }
+
+  :global(html[data-theme="dark"]) .x-card__logo {
+    color: #8b98a5;
+  }
+
+  :global(html[data-theme="dark"]) .x-card__logo:hover {
+    color: #f7f9f9;
+  }
+
+  /* Body */
+  .x-card__body {
+    font-size: 15px;
+    line-height: 1.5;
+    margin: 0 0 12px;
+    word-break: break-word;
+  }
+
+  .x-card__body :global(p) {
+    margin: 0 0 8px;
+  }
+
+  .x-card__body :global(p:last-child) {
+    margin-bottom: 0;
+  }
+
+  /* Links inside the tweet body use X blue */
+  .x-card__body :global(a) {
+    color: #1d9bf0;
+    text-decoration: none;
+  }
+
+  .x-card__body :global(a:hover) {
+    text-decoration: underline;
+  }
+
+  /* Footer */
+  .x-card__footer {
+    font-size: 14px;
+    color: #536471;
+    text-decoration: none;
+    display: block;
+    padding-top: 12px;
+    border-top: 1px solid #eff3f4;
+    transition: color 0.15s;
+  }
+
+  .x-card__footer:hover {
+    color: #1d9bf0;
+  }
+
+  :global(html[data-theme="dark"]) .x-card__footer {
+    color: #8b98a5;
+    border-top-color: #38444d;
+  }
+
+  :global(html[data-theme="dark"]) .x-card__footer:hover {
+    color: #1d9bf0;
+  }
+</style>

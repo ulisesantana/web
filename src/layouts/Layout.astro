@@ -50,7 +50,7 @@ const structuredData = {
 ---
 
 <!doctype html>
-<html lang=`${SITE.lang ?? "en"}` class={`${scrollSmooth && "scroll-smooth"}`}>
+<html lang={getLanguageFromPath(Astro.url.pathname)} class={`${scrollSmooth && "scroll-smooth"}`}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
@@ -149,7 +149,7 @@ const structuredData = {
   html,
   body {
     margin: 0;
-    width: 100 %;
-    height: 100 %;
+    width: 100%;
+    height: 100%;
   }
 </style>
