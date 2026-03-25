@@ -9,6 +9,10 @@ export interface Props {
 }
 
 const { locale = "en" } = Astro.props;
+const home = locale === "es" ? "/es/" : "/";
+const blog = locale === "es" ? "/es/blog" : "/blog/";
+const URL = Astro.url;
+const link = URL.toString().includes(blog) ? blog : home;
 ---
 
 {
@@ -16,7 +20,7 @@ const { locale = "en" } = Astro.props;
     <div class="mx-auto flex w-full max-w-3xl items-center justify-start px-2">
       <LinkButton
         id="back-button"
-        href="/"
+        href={link}
         class="focus-outline mt-8 mb-2 flex hover:text-foreground/75"
       >
         <IconChevronLeft class="inline-block size-6" />
