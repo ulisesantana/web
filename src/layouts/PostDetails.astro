@@ -101,7 +101,7 @@ const translatedPostUrl = getTranslatedPostUrl(post, translatedPosts);
 
 <Layout {...layoutProps}>
   <Header translatedUrl={translatedPostUrl} />
-  <BackButton />
+  <BackButton {locale} />
   <main
     id="main-content"
     class:list={[
@@ -117,10 +117,10 @@ const translatedPostUrl = getTranslatedPostUrl(post, translatedPosts);
       {title}
     </h1>
     <div class="flex items-center gap-4">
-      <Datetime {pubDatetime} {modDatetime} {timezone} size="lg" class="my-2" />
+      <Datetime {pubDatetime} {modDatetime} {timezone} size="lg" class="my-2" {locale} />
       <EditPost class="max-sm:hidden" {hideEditPost} {post} />
     </div>
-    <article id="article" class="mx-auto prose mt-8 max-w-3xl">
+    <article id="article" class="mx-auto prose mt-8 max-w-3xl" data-lang={locale}>
       <Content />
     </article>
 
@@ -129,13 +129,13 @@ const translatedPostUrl = getTranslatedPostUrl(post, translatedPosts);
     <EditPost class="sm:hidden" {hideEditPost} {post} />
 
     <ul class="mt-4 mb-8 sm:my-8">
-      {tags.map(tag => <Tag tag={slugifyStr(tag)} tagName={tag} />)}
+      {tags.map(tag => <Tag tag={slugifyStr(tag)} tagName={tag} {locale} />)}
     </ul>
 
     <div
       class="flex flex-col items-center justify-between gap-6 sm:flex-row sm:items-end sm:gap-4"
     >
-      <ShareLinks />
+      <ShareLinks {locale} />
 
       <button
         id="back-to-top"
@@ -250,7 +250,10 @@ const translatedPostUrl = getTranslatedPostUrl(post, translatedPosts);
   /** Attaches copy buttons to code blocks in the document,
    * allowing users to copy code easily. */
   function attachCopyButtons() {
-    const copyButtonLabel = "Copy";
+    const article = document.querySelector("#article");
+    const lang = article?.getAttribute("data-lang") ?? "en";
+    const copyButtonLabel = lang === "es" ? "Copiar" : "Copy";
+    const copiedLabel = lang === "es" ? "¡Copiado!" : "Copied!";
     const codeBlocks = Array.from(document.querySelectorAll("pre"));
 
     for (const codeBlock of codeBlocks) {
@@ -280,7 +283,7 @@ const translatedPostUrl = getTranslatedPostUrl(post, translatedPosts);
       await navigator.clipboard.writeText(text ?? "");
 
       // visual feedback that task is completed
-      button.innerText = "Copied";
+      button.innerText = copiedLabel;
 
       setTimeout(() => {
         button.innerText = copyButtonLabel;

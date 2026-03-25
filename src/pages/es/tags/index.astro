@@ -7,19 +7,20 @@ import Header from "@/components/Header.astro";
 import Footer from "@/components/Footer.astro";
 import getUniqueTags from "@/utils/getUniqueTags";
 import { SITE } from "@/config";
+import { t } from "@/config/i18n";
 
 const posts = await getCollection("blog", ({ data }) => data.lang === "es");
+const locale = "es";
 
 let tags = getUniqueTags(posts);
 ---
 
-<Layout title={`Etiquetas | ${SITE.title}`}>
+<Layout title={`${t(locale, "tags")} | ${SITE.title}`}>
   <Header />
-  <Main pageTitle="Etiquetas" pageDesc="Todas las etiquetas usadas en las entradas.">
+  <Main pageTitle={t(locale, "tags")} pageDesc={t(locale, "allTagsUsed")}>
     <ul>
-      {tags.map(({ tag, tagName }) => <Tag {tag} {tagName} size="lg" />)}
+      {tags.map(({ tag, tagName }) => <Tag {tag} {tagName} size="lg" {locale} />)}
     </ul>
   </Main>
   <Footer />
 </Layout>
-

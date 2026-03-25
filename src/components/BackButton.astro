@@ -2,6 +2,13 @@
 import IconChevronLeft from "@/assets/icons/IconChevronLeft.svg";
 import LinkButton from "./LinkButton.astro";
 import { SITE } from "@/config";
+import { t, type Locale } from "@/config/i18n";
+
+export interface Props {
+  locale?: Locale;
+}
+
+const { locale = "en" } = Astro.props;
 ---
 
 {
@@ -13,7 +20,7 @@ import { SITE } from "@/config";
         class="focus-outline mt-8 mb-2 flex hover:text-foreground/75"
       >
         <IconChevronLeft class="inline-block size-6" />
-        <span>Go back</span>
+        <span>{t(locale, "goBack")}</span>
       </LinkButton>
     </div>
   )

@@ -4,6 +4,7 @@ import utc from "dayjs/plugin/utc";
 import timezone from "dayjs/plugin/timezone";
 import IconCalendar from "@/assets/icons/IconCalendar.svg";
 import { SITE } from "@/config";
+import { t, type Locale } from "@/config/i18n";
 
 dayjs.extend(utc);
 dayjs.extend(timezone);
@@ -14,6 +15,7 @@ export interface Props {
   timezone: string | undefined;
   pubDatetime: string | Date;
   modDatetime: string | Date | undefined | null;
+  locale?: Locale;
 }
 
 const {
@@ -22,6 +24,7 @@ const {
   size = "sm",
   class: className = "",
   timezone: postTimezone,
+  locale = "en",
 } = Astro.props;
 
 /* ========== Formatted Datetime ========== */
@@ -42,10 +45,10 @@ const date = datetime.format("D MMM, YYYY"); // e.g., '22 Mar, 2025'
   {
     modDatetime && modDatetime > pubDatetime ? (
       <span class:list={["text-sm italic", { "sm:text-base": size === "lg" }]}>
-        Updated:
+        {t(locale, "updated")}
       </span>
     ) : (
-      <span class="sr-only">Published:</span>
+      <span class="sr-only">{t(locale, "published")}</span>
     )
   }
   <span class:list={["text-sm italic", { "sm:text-base": size === "lg" }]}>

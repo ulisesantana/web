@@ -4,6 +4,7 @@ import Footer from "@/components/Footer.astro";
 import Breadcrumb from "@/components/Breadcrumb.astro";
 import Layout from "./Layout.astro";
 import { SITE } from "@/config";
+import { getLanguageFromPath } from "@/utils/getLanguageFromPath";
 
 export interface Props {
   frontmatter: {
@@ -13,10 +14,12 @@ export interface Props {
 }
 
 const { frontmatter } = Astro.props;
+const locale = getLanguageFromPath(Astro.url.pathname);
+const translatedUrl = locale === "es" ? "/about/" : "/es/sobre-mi/";
 ---
 
 <Layout title={`${frontmatter.title} | ${SITE.title}`}>
-  <Header />
+  <Header {translatedUrl} />
   <Breadcrumb />
   <main id="main-content">
     <section id="about" class="prose mb-28 max-w-3xl prose-img:border-0">

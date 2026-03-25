@@ -1,10 +1,21 @@
 ---
+import { getLanguageFromPath } from "@/utils/getLanguageFromPath";
+import { t } from "@/config/i18n";
+
+const locale = getLanguageFromPath(Astro.url.pathname);
+const homeHref = locale === "es" ? "/es" : "/";
+
 // Remove current url path and remove trailing slash if exists
 const currentUrlPath = Astro.url.pathname.replace(/\/+$/, "");
 
+// Strip the /es prefix for breadcrumb segment parsing
+const pathForBreadcrumb = locale === "es"
+  ? currentUrlPath.replace(/^\/es/, "") || "/"
+  : currentUrlPath;
+
 // Get url array from path
 // eg: /tags/tailwindcss => ['tags', 'tailwindcss']
-const breadcrumbList = currentUrlPath.split("/").slice(1);
+const breadcrumbList = pathForBreadcrumb.split("/").slice(1);
 
 // if breadcrumb is Home > Posts > 1 <etc>
 // replace Posts with Posts (page number)
@@ -21,6 +32,15 @@ if (breadcrumbList[0] === "tags" && !isNaN(Number(breadcrumbList[2]))) {
     `${breadcrumbList[1]} ${Number(breadcrumbList[2]) === 1 ? "" : "(page " + breadcrumbList[2] + ")"}`
   );
 }
+
+// Build segment URLs relative to the locale root
+const segmentBase = locale === "es" ? "/es" : "";
+
+// Humanize a URL segment: replace hyphens with spaces and capitalize first letter
+// e.g. "sobre-mi" → "Sobre mi", "about" → "About"
+function humanize(segment: string): string {
+  return decodeURIComponent(segment).replace(/-/g, " ").replace(/^\w/, c => c.toUpperCase());
+}
 ---
 
 <nav class="mx-auto mt-8 mb-1 w-full max-w-3xl px-4" aria-label="breadcrumb">
@@ -28,7 +48,7 @@ if (breadcrumbList[0] === "tags" && !isNaN(Number(breadcrumbList[2]))) {
     class="font-light [&>li]:inline [&>li:not(:last-child)>a]:hover:opacity-100"
   >
     <li>
-      <a href="/" class="opacity-80">Home</a>
+      <a href={homeHref} class="opacity-80">{t(locale, "home")}</a>
       <span aria-hidden="true" class="opacity-80">&raquo;</span>
     </li>
     {
@@ -39,14 +59,13 @@ if (breadcrumbList[0] === "tags" && !isNaN(Number(breadcrumbList[2]))) {
               class:list={["capitalize opacity-75", { lowercase: index > 0 }]}
               aria-current="page"
             >
-              {/* make the last part lowercase in Home > Tags > some-tag */}
-              {decodeURIComponent(breadcrumb)}
+              {humanize(breadcrumb)}
             </span>
           </li>
         ) : (
           <li>
-            <a href={`/${breadcrumb}/`} class="capitalize opacity-70">
-              {breadcrumb}
+            <a href={`${segmentBase}/${breadcrumb}/`} class="capitalize opacity-70">
+              {humanize(breadcrumb)}
             </a>
             <span aria-hidden="true">&raquo;</span>
           </li>

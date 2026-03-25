@@ -1,13 +1,16 @@
 ---
 import IconHash from "@/assets/icons/IconHash.svg";
+import type { Locale } from "@/config/i18n";
 
 export interface Props {
   tag: string;
   tagName: string;
   size?: "sm" | "lg";
+  locale?: Locale;
 }
 
-const { tag, tagName, size = "sm" } = Astro.props;
+const { tag, tagName, size = "sm", locale = "en" } = Astro.props;
+const tagBase = locale === "es" ? "/es/tags/" : "/tags/";
 ---
 
 <li
@@ -17,7 +20,7 @@ const { tag, tagName, size = "sm" } = Astro.props;
   ]}
 >
   <a
-    href={`/tags/${tag}/`}
+    href={`${tagBase}${tag}/`}
     transition:name={tag}
     class:list={[
       "relative pr-2 text-lg underline decoration-dashed group-hover:-top-0.5 group-hover:text-accent focus-visible:p-1",

@@ -5,6 +5,6 @@ export const nav = {
   ],
   es: [
     { url: "/es/blog/", label: "Blog" },
-    { url: "/es/about/", label: "Sobre mí" },
+    { url: "/es/sobre-mi/", label: "Sobre mí" },
   ],
 };

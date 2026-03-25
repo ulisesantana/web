@@ -2,12 +2,15 @@
 import { SOCIALS } from "@/constants";
 import LinkButton from "./LinkButton.astro";
 import IconRss from "@/assets/icons/IconRss.svg";
+import { getLanguageFromPath } from "@/utils/getLanguageFromPath";
 
 export interface Props {
   centered?: boolean;
 }
 
 const { centered = false } = Astro.props;
+const locale = getLanguageFromPath(Astro.url.pathname);
+const rssHref = locale === "es" ? "/es/rss.xml" : "/rss.xml";
 ---
 
 <div class:list={["flex-wrap justify-center gap-1", { flex: centered }]}>
@@ -25,7 +28,7 @@ const { centered = false } = Astro.props;
   }
   <LinkButton
     target="_blank"
-    href="/rss.xml"
+    href={rssHref}
     class="inline-block"
     aria-label="rss feed"
     title="RSS Feed"

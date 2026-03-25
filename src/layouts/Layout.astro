@@ -2,6 +2,7 @@
 import { ClientRouter } from "astro:transitions";
 import { SITE } from "@/config";
 import "@/styles/global.css";
+import { getLanguageFromPath } from "@/utils/getLanguageFromPath";
 
 const googleSiteVerification = import.meta.env.PUBLIC_GOOGLE_SITE_VERIFICATION;
 
@@ -116,7 +117,7 @@ const structuredData = {
       rel="alternate"
       type="application/rss+xml"
       title={SITE.title}
-      href={new URL("rss.xml", Astro.site)}
+      href={new URL(getLanguageFromPath(Astro.url.pathname) === "es" ? "es/rss.xml" : "rss.xml", Astro.site)}
     />
 
     <meta name="theme-color" content="" />

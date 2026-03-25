@@ -5,13 +5,15 @@ import Layout from "@/layouts/Layout.astro";
 import Header from "@/components/Header.astro";
 import Footer from "@/components/Footer.astro";
 import { SITE } from "@/config";
+import { t } from "@/config/i18n";
 
 const backUrl = SITE.showBackButton ? `${Astro.url.pathname}` : "/";
+const locale = "es";
 ---
 
-<Layout title={`Buscar | ${SITE.title}`}>
+<Layout title={`${t(locale, "searchTitle")} | ${SITE.title}`}>
   <Header />
-  <Main pageTitle="Buscar" pageDesc="Busca cualquier artículo ...">
+  <Main pageTitle={t(locale, "searchTitle")} pageDesc={t(locale, "searchDesc")}>
     <div id="pagefind-search" transition:persist data-backurl={backUrl}></div>
   </Main>
   <Footer />
