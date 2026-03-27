@@ -2,23 +2,20 @@
 import type { Locale } from "@/config/i18n";
 import en from "@/data/cv/en.yaml";
 import es from "@/data/cv/es.yaml";
+import CvEntryHeader from "./CvEntryHeader.astro";
+import CvSectionTitle from "./CvSectionTitle.astro";
 
 const { locale = "en" } = Astro.props as { locale?: Locale };
 const { milestones } = locale === "es" ? es : en;
 ---
 
 <section class="mb-12">
-  <h2 class="mb-6 border-b pb-2 text-2xl font-semibold">
-    {locale === "es" ? "Hitos" : "Milestones"}
-  </h2>
-  <ul class="space-y-6">
+  <CvSectionTitle title={locale === "es" ? "Hitos" : "Milestones"} />
+  <ul class="list-none px-0">
     {
       milestones.map((m: any) => (
-        <li>
-          <div class="flex flex-wrap items-baseline justify-between gap-x-4">
-            <h3 class="font-semibold">{m.title}</h3>
-            <span class="text-sm text-muted">{m.when}</span>
-          </div>
+        <li class="px-0">
+          <CvEntryHeader title={m.title} dateRange={m.when} small />
           <p class="mt-1 text-sm leading-relaxed">{m.description}</p>
           {m.youtube && (
             <a

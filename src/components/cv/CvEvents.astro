@@ -2,16 +2,15 @@
 import type { Locale } from "@/config/i18n";
 import en from "@/data/cv/en.yaml";
 import es from "@/data/cv/es.yaml";
+import CvSectionTitle from "./CvSectionTitle.astro";
 
 const { locale = "en" } = Astro.props as { locale?: Locale };
 const { sponsored, attended } = locale === "es" ? es : en;
 ---
 
 <section class="mb-12">
-  <h2 class="mb-6 border-b pb-2 text-2xl font-semibold">
-    {locale === "es" ? "Eventos Patrocinados" : "Sponsored Events"}
-  </h2>
-  <ul class="space-y-2">
+  <CvSectionTitle title={locale === "es" ? "Eventos Patrocinados" : "Sponsored Events"} />
+  <ul class="px-0">
     {
       sponsored.map((e: any) => (
         <li class="flex flex-wrap justify-between gap-x-4 text-sm">
@@ -26,10 +25,8 @@ const { sponsored, attended } = locale === "es" ? es : en;
 </section>
 
 <section class="mb-12">
-  <h2 class="mb-6 border-b pb-2 text-2xl font-semibold">
-    {locale === "es" ? "Eventos Asistidos" : "Events Attended"}
-  </h2>
-  <ul class="space-y-2">
+  <CvSectionTitle title={locale === "es" ? "Eventos Asistidos" : "Events Attended"} />
+  <ul class="px-0">
     {
       attended.map((e: any) => (
         <li class="flex flex-wrap justify-between gap-x-4 text-sm">

@@ -19,7 +19,7 @@ html[data-theme="light"] {
 
     --background: var(--white);
     --foreground: var(--black);
-    --muted: #e6e6e6;
+    --muted: #343f60bf;
     --border: var(--accent);
     --accent: var(--green);
     --accent-alt: var(--yellow);
@@ -44,10 +44,10 @@ html[data-theme="dark"] {
     --foreground: var(--white);
     --accent: var(--yellow);
     --accent-alt: var(--green);
-    --muted: #343f60bf;
     --code-bg: #011627;
     --text-color: #F7F7F7;
     --text-color-alt: #292929;
+    --muted: #8f8f8f;
 }
 
 @theme inline {

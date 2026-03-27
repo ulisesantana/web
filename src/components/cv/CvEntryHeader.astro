@@ -1,0 +1,38 @@
+---
+interface Props {
+  title: string;
+  subtitle?: string;
+  dateRange: string;
+  location?: string;
+  small?: boolean;
+}
+
+const {
+  title,
+  subtitle,
+  dateRange,
+  location,
+  small = false,
+} = Astro.props;
+const TitleTag = small ? "h4" : "h3";
+---
+
+<div class="flex flex-wrap items-baseline justify-between gap-x-4">
+  <TitleTag class="mb-0 text-lg font-bold">
+    <span class="text-accent">{title}</span>
+    {
+      subtitle && (
+        <>
+          {" "}
+          · <span class="text-accent/75">{subtitle}</span>
+        </>
+      )
+    }
+  </TitleTag>
+  <span
+    class="text-sm font-medium text-accent/75"
+  >
+    {dateRange}
+  </span>
+</div>
+{location && <p class="mt-0.5 mb-2 text-sm text-muted italic">{location}</p>}
