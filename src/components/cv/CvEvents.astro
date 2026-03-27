@@ -13,7 +13,7 @@ const { sponsored, attended } = locale === "es" ? es : en;
   <ul class="px-0">
     {
       sponsored.map((e: any) => (
-        <li class="flex flex-wrap justify-between gap-x-4 text-sm">
+        <li class="flex flex-wrap justify-between gap-x-4">
           <span class="font-medium">{e.title}</span>
           <span class="text-muted">
             {e.location} · {e.when}
@@ -29,7 +29,7 @@ const { sponsored, attended } = locale === "es" ? es : en;
   <ul class="px-0">
     {
       attended.map((e: any) => (
-        <li class="flex flex-wrap justify-between gap-x-4 text-sm">
+        <li class="flex flex-wrap justify-between gap-x-4">
           <span class="font-medium">{e.title}</span>
           <span class="text-muted">
             {e.location} · {e.when}

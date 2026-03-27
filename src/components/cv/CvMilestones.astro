@@ -16,7 +16,7 @@ const { milestones } = locale === "es" ? es : en;
       milestones.map((m: any) => (
         <li class="px-0">
           <CvEntryHeader title={m.title} dateRange={m.when} small />
-          <p class="mt-1 text-sm leading-relaxed">{m.description}</p>
+          <p class="mt-1 leading-relaxed">{m.description}</p>
           {m.youtube && (
             <a
               href={`https://www.youtube.com/watch?v=${m.youtube}`}

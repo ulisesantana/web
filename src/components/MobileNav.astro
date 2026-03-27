@@ -112,9 +112,6 @@ const navItems = nav[locale];
 
 <nav class="no-print mobile-nav">
   <ul class="nav-items">
-    <li>
-      <LanguageSwitch translatedUrl={translatedUrl} />
-    </li>
     {
       navItems.map(({ url, label }) => {
         const navPath = url.endsWith("/") ? url.slice(0, -1) : url;
@@ -128,6 +125,9 @@ const navItems = nav[locale];
         );
       })
     }
+    <li>
+      <LanguageSwitch translatedUrl={translatedUrl} />
+    </li>
     <li>
       <ThemeSwitch />
     </li>

@@ -3,7 +3,7 @@ import Hr from "./Hr.astro";
 import MobileNav from "./MobileNav.astro";
 import DesktopNav from "./DesktopNav.astro";
 import { getLanguageFromPath } from "../utils/getLanguageFromPath";
-import { Languages } from "../types";
+import { Languages } from "@/types";
 
 export interface Props {
   /** URL of the translated version of the current page (posts only). */
@@ -31,6 +31,7 @@ const isSpanish = currentLang === Languages.Spanish;
     position: sticky;
     top: 0;
     margin: 0 auto;
+    padding: 1rem 0;
     height: 50px;
     width: 100%;
     z-index: 1000;

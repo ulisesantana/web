@@ -22,7 +22,7 @@ const { jobs } = locale === "es" ? es : en;
           location={job.location}
         />
         {job.description.map((p: string) => (
-          <p class="mb-2 text-sm leading-relaxed">{p}</p>
+          <p class="mb-2 leading-relaxed">{p}</p>
         ))}
         <CvSkills skills={job.skills} />
       </article>
