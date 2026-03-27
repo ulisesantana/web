@@ -18,8 +18,8 @@ const { locale = "en" } = Astro.props as { locale?: Locale };
     position: fixed;
     bottom: 2rem;
     right: 2rem;
-    background: var(--yellow);
-    color: var(--black);
+    background: var(--accent);
+    color: var(--background);
     border: none;
     border-radius: 50%;
     width: 60px;
@@ -41,7 +41,7 @@ const { locale = "en" } = Astro.props as { locale?: Locale };
 
   @media screen and (min-width: 1200px) {
     .go-to-top-btn {
-      bottom: 6rem;
+      bottom: 4rem;
       right: 20dvw;
     }
   }
