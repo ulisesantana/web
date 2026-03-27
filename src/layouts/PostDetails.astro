@@ -77,7 +77,7 @@ const layoutProps = {
 const locale = lang as Locale;
 
 const allPosts = posts
-  .filter(p => !p.data.draft)
+  .filter(p => !p.data.draft && p.data.lang === lang)
   .map(({ data: { title, slug: dataSlug }, id, filePath }) => ({
     slug: id,
     title,
@@ -177,7 +177,7 @@ const translatedPostUrl = getTranslatedPostUrl(post, translatedPosts);
         )
       }
     </div>
-    <GoToTopButton />
+    <GoToTopButton {locale} />
   </main>
   <Footer />
 </Layout>

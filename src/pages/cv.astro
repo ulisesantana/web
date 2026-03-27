@@ -1,0 +1,276 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
+import Breadcrumb from "@/components/Breadcrumb.astro";
+import { SITE } from "@/config";
+
+const jobs = [
+  {
+    employer: "Kentech",
+    location: "Las Palmas de Gran Canaria, Las Palmas, Spain (Hybrid)",
+    position: "Frontend Developer",
+    from: "01/2024",
+    to: "Present",
+    description: [
+      "At Kentech, I've contributed to the development and maintenance of several frontend projects in a high-traffic environment. My responsibilities include working on architecture improvements, refactoring legacy code with a focus on maintainability, and writing technical documentation to support team knowledge sharing and reduce knowledge silos. I also handle technical spikes and collaborate regularly with other developers to improve workflows.",
+      "I've been actively encouraging the adoption of Test-Driven Development (TDD) across the team. Through pair programming and one-on-one support, I've helped make testing a more natural and consistent part of our workflow. As a result, test coverage in one of our key projects has increased significantly, leading to better code stability and confidence when refactoring. Additionally, I've supported the recruitment process by interviewing candidates and proposing a new technical test aimed at evaluating problem-solving and design skills more effectively.",
+    ],
+    skills: ["TDD", "Clean Architecture", "TypeScript with ESNext", "React", "NestJS", "Node.js", "Jest", "JavaScript with ES5", "AngularJS", "Husky", "Socket.io", "PHP7", "MySQL", "Backend For Frontend", "Microfrontends", "Docker", "Gitlab", "Express", "Technical Documentation"],
+  },
+  {
+    employer: "Triditive",
+    location: "Meres, Asturias, Spain (Remote)",
+    position: "Senior Programmer",
+    from: "04/2023",
+    to: "06/2023",
+    description: [
+      "At Triditive, I contributed remotely to the development of a platform designed to manage additive manufacturing workflows. During my time there, I supported various technical tasks and looked for opportunities to add value in a dynamic and rapidly evolving environment. Despite the short engagement, I remained committed to writing clean code, collaborating asynchronously, and documenting my work to support the broader team.",
+    ],
+    skills: ["Python", "JavaScript", "Docker", "Additive Manufacturing", "Github", "Vue", "jQuery", "Flask", "Async communication"],
+  },
+  {
+    employer: "Lean Mind",
+    location: "San Cristóbal de La Laguna, Santa Cruz de Tenerife, Spain (Remote)",
+    position: "Full Stack Developer",
+    from: "03/2020",
+    to: "10/2022",
+    description: [
+      "At Lean Mind, I worked remotely as part of multidisciplinary teams for various clients, contributing to products ranging from e-learning platforms to billing systems and audience intelligence tools. The company operates with a strong commitment to Software Craftsmanship and eXtreme Programming, which aligned deeply with my own values as a developer. Our work focused not just on delivering features, but on building maintainable, well-tested, and meaningful software.",
+      "I was involved in full-stack development using technologies such as Node.js, TypeScript, React, and occasionally PHP when maintaining legacy systems. I regularly practiced pair programming and Test-Driven Development (TDD), and helped guide architectural decisions with long-term sustainability in mind. In one of the projects, our team was able to deliver features to production with zero bug reports thanks to a robust testing strategy and a focus on simplicity. We also achieved significant performance improvements by optimizing data-heavy processes that previously took weeks to run, reducing them to a single day. Beyond client work, I mentored apprentices—one of whom later joined the company—and led internal training sessions to foster continuous learning within the team.",
+    ],
+    skills: ["Node.js", "JavaScript", "TypeScript", "Hexagonal Architecture", "eXtreme Programming (XP)", "Test-driven Development (TDD)", "React", "PHP5", "MySQL", "MongoDB", "Docker", "Gitlab", "Github", "Bitbucket", "Technical documentation", "Async communication"],
+  },
+  {
+    employer: "Kentech",
+    location: "Las Palmas de Gran Canaria, Las Palmas, Spain",
+    position: "Full Stack Developer",
+    from: "08/2018",
+    to: "03/2020",
+    description: [
+      "After being promoted within Kentech, I took on broader responsibilities across both backend and frontend development. I would alternate between building backend services in Node.js or PHP, and implementing frontend features with frameworks like AngularJS and React depending on the team's needs. I often collaborated closely with solution architects and team leaders to design scalable, practical solutions aligned with project goals.",
+      "During this time, I played an active role in modernizing our development practices. I introduced several tools and methodologies to the team, including TypeScript, NestJS, Storybook, Microfrontends, Cypress, Husky, and the creation of internal npm packages. These efforts contributed to a more cohesive and maintainable codebase, as well as improved testing and documentation standards.",
+    ],
+    skills: ["Node.js", "AngularJS", "React", "TypeScript", "Storybook", "Jest", "Husky", "Socket.io", "PHP7", "MySQL", "MongoDB", "Microservices", "Microfrontends", "Redis", "Docker", "Gitlab", "Express", "NestJS", "Technical Documentation"],
+  },
+  {
+    employer: "Kentech",
+    location: "Las Palmas de Gran Canaria, Las Palmas, Spain",
+    position: "Backend Developer",
+    from: "06/2017",
+    to: "07/2018",
+    description: [
+      "I was hired as a Backend Developer due to my interest and performance in Node.js tasks during my internship. In the first six months, my main tasks were coding new features on Node.js microservices, helping the infrastructure area and handling deployments on our environments before CI/CD came to our lives. That meant handling web servers with Nginx and pm2 processes for Node.js, besides handling all the files on servers for other services.",
+      "During the following six months, I gradually stopped working on infrastructure and started creating new features across all the stack. I also evangelized best practices about ES2017 Promises with async/await.",
+    ],
+    skills: ["Node.js", "AngularJS", "Socket.io", "PHP7", "MySQL", "MongoDB", "Microservices", "Redis", "Docker", "Gitlab", "WordPress Development", "Technical Documentation"],
+  },
+  {
+    employer: "Kentech",
+    location: "Las Palmas de Gran Canaria, Las Palmas, Spain",
+    position: "Web Developer Intern",
+    from: "03/2017",
+    to: "05/2017",
+    description: [
+      "As part of my final year in the Web Application Development studies, I chose to do my internship at Kentech—one of the few companies in Gran Canaria working with Node.js at the time. I began as a QA tester for the company's main web application, but soon earned the opportunity to take on development tasks. Toward the end of the internship, my mentor introduced me to their microservices architecture and challenged me to build a proof of concept for a distributed cache-locking mechanism using MySQL and Redis.",
+    ],
+    skills: ["Opera Mini Optimization", "Node.js", "AngularJS", "Quality Assurance", "PHP7", "MongoDB", "Gitlab", "Docker", "WordPress Development"],
+  },
+  {
+    employer: "Cmas Digital",
+    location: "Maspalomas, Las Palmas, Spain (Partial remote)",
+    position: "Web Developer",
+    from: "04/2016",
+    to: "09/2016",
+    description: [
+      "While I was in the middle of my Web Application Development studies I joined Cmas Digital, a two-person studio. As the sole developer, I designed and built websites using WordPress, HTML5, and CSS3, created wireframes, and helped organize project information. The role required a great deal of independence and initiative.",
+    ],
+    skills: ["HTML5", "CSS3", "JavaScript", "PHP5", "WordPress Development", "Scrum", "Kanban", "UI/UX"],
+  },
+  {
+    employer: "Mokaps Studio",
+    location: "Las Palmas de Gran Canaria, Las Palmas, Spain (Partial remote)",
+    position: "Social Media Manager / Co-founder",
+    from: "02/2013",
+    to: "06/2015",
+    description: [
+      "At Mokaps Studio, a small creative agency I co-founded, I led digital marketing efforts while gaining my first hands-on experience with web technologies. I planned and executed content strategies across multiple channels, managed online communities, and handled crisis communication. Running a business also meant wearing many hats: client relationships, product planning, budgeting, and day-to-day problem-solving.",
+    ],
+    skills: ["Digital Marketing", "Social Media Strategy", "Content Generation", "Community Management", "HTML5", "CSS3", "WordPress"],
+  },
+];
+
+const education = [
+  {
+    institution: "CIFP Villa de Agüimes",
+    location: "Cruce de Arinaga, Las Palmas, Spain",
+    position: "Higher Technician in Web Application Development",
+    from: "10/2015",
+    to: "05/2017",
+    description: [
+      "This two-year vocational program provided me with a solid foundation in web technologies, including HTML5, CSS3, JavaScript, Java, PHP, SQL, and frameworks like Angular and Express. I learned both frontend and backend development, as well as methodologies such as MVC and Agile.",
+      "The program also included a professional internship, which I completed at Kentech.",
+    ],
+    skills: ["HTML5", "CSS3", "SQL", "Java", "PHP5", "JavaScript", "jQuery", "Node.js", "Express", "MongoDB", "Angular 2", "Bootstrap 3"],
+  },
+  {
+    institution: "IES José Zerpa",
+    location: "Vecindario, Las Palmas, Spain",
+    position: "Higher Technician in Business Management and Marketing",
+    from: "09/2011",
+    to: "11/2012",
+    description: [
+      "Before entering the tech world, I completed a vocational course in business management and marketing covering customer management, logistics, sales, and reporting. This training gave me a strong understanding of how businesses operate, which has proven valuable when collaborating with stakeholders and understanding product goals.",
+    ],
+    skills: ["Marketing", "Customer management", "Logistics", "Sales", "Business management"],
+  },
+];
+
+const milestones = [
+  { when: "10/2022 – 03/2023", title: "Overcame professional burnout", description: "After experiencing professional burnout due to sustained overwork and blurred boundaries, I decided to take a step back to recover and reflect. This period marked a key turning point in how I approach work, collaboration, and growth." },
+  { when: "05/2022", title: "Talk at JSDay Canarias 2022", youtube: "V4sXNlzJIy8", description: "Shared how we drastically optimized a heavy Node.js process, reducing its runtime from several hours to just minutes." },
+  { when: "11/2019", title: "Organizer & Host – Global Day of Coderetreat", description: "Co-organized and hosted the Gran Canaria edition of the Global Day of Coderetreat, a full-day event focused on software design fundamentals." },
+  { when: "10/2019", title: "Workshop for React Canarias community", youtube: "gkTAlgsr4tg", description: "Ran a hands-on workshop introducing frontend developers to modern testing strategies using Cypress and React Testing Library." },
+  { when: "11/2018", title: "Talk at JSDay Canarias 2018", youtube: "Joqdb-oZjC8", description: "An introductory talk to npm and how to publish on it." },
+  { when: "11/2018", title: "Compiled Node.js on a Chromebook at NodeConf EU", description: "During a workshop at NodeConf EU, compiled Node.js from scratch on an Acer Chromebook R11 running virtual Debian. Took almost 2 hours." },
+  { when: "03/2017", title: "Second prize at Hack for Good hackathon", description: "In a 36-hour hackathon focused on social good, built Aprende con Amidi, a PWA to help teach and preserve Canarian culture through interactive quizzes." },
+  { when: "03/2016", title: "First prize at Startup Weekend hackathon", description: "Built BasketUp, a basketball analytics platform using three smartphones for ball tracking and visualization." },
+];
+
+const sponsored = [
+  { when: "05/2022", title: "JSDay Canarias", location: "San Cristóbal de la La Laguna, Spain" },
+  { when: "11/2019", title: "Global Day of Coderetreat Canarias", location: "Las Palmas de Gran Canaria, Spain" },
+  { when: "11/2019", title: "PyDay Gran Canaria", location: "Las Palmas de Gran Canaria, Spain" },
+  { when: "11/2019", title: "JSDay Canarias", location: "San Cristóbal de la La Laguna, Spain" },
+  { when: "11/2018", title: "JSDay Canarias", location: "San Cristóbal de la La Laguna, Spain" },
+];
+
+const attended = [
+  { when: "05/2025", title: "Socracan", location: "Las Palmas de Gran Canaria, Spain" },
+  { when: "07/2022", title: "Tenerife GG", location: "Santa Cruz de Tenerife, Spain" },
+  { when: "06/2022", title: "Pamplona Software Crafters", location: "Pamplona, Spain" },
+  { when: "05/2022", title: "JSDay Canarias", location: "San Cristóbal de la La Laguna, Spain" },
+  { when: "02/2020", title: "Socracan", location: "Santa Cruz de Tenerife, Spain" },
+  { when: "11/2019", title: "NodeCONF EU", location: "Kilkenny, Ireland" },
+  { when: "11/2019", title: "JSDay Canarias", location: "San Cristóbal de la La Laguna, Spain" },
+  { when: "09/2019", title: "AdaLoversConf", location: "San Cristóbal de la La Laguna, Spain" },
+  { when: "06/2019", title: "JSConf EU", location: "Berlin, Germany" },
+  { when: "06/2019", title: "CSSconf EU", location: "Berlin, Germany" },
+  { when: "05/2019", title: "React Europe", location: "Paris, France" },
+  { when: "11/2018", title: "JSDay Canarias", location: "San Cristóbal de la La Laguna, Spain" },
+  { when: "11/2018", title: "NodeCONF EU", location: "Kilkenny, Ireland" },
+  { when: "06/2018", title: "JSConf EU", location: "Berlin, Germany" },
+  { when: "04/2018", title: "Socracan", location: "Las Palmas de Gran Canaria, Spain" },
+  { when: "11/2017", title: "JSDay Canarias", location: "Santa Cruz de Tenerife, Spain" },
+];
+---
+
+<Layout title={`CV | ${SITE.title}`}>
+  <Header translatedUrl="/es/cv/" />
+  <Breadcrumb />
+  <main id="main-content" class="mx-auto max-w-3xl px-4 pb-16">
+    <h1 class="mb-2 text-3xl font-bold text-accent">Curriculum Vitae</h1>
+    <p class="mb-6 text-sm text-muted">Ulises Santana · Full Stack Developer</p>
+
+    <section class="prose mb-12 max-w-3xl">
+      <p>I'm a Full Stack Developer from the Canary Islands with a strong focus on building maintainable, well-tested software. I've been working on digital products since 2013 and professionally developing software since 2016. JavaScript is my native language—both literally and figuratively—and I specialize in Node.js, TypeScript, and frontend technologies like React.</p>
+      <p>Over the years, I've led teams, contributed to large-scale architectures, and implemented practices like Clean Architecture, TDD, and microservices in production environments. I've built invoicing engines used by hundreds of thousands of users, deployed microfrontends to millions, and optimized complex Node.js processes from hours to minutes—one of which became the subject of a talk and blog post. I enjoy sharing knowledge, and I've trained both teammates and clients in modern JavaScript, TypeScript and Node.js asynchronous performance.</p>
+      <p>Beyond code, I care deeply about how we work as developers. I believe in sustainable practices, continuous learning, and giving back to the community through talks, workshops, and open-source tools. I'm also passionate about creativity—whether it's designing developer tools, walking in nature with my dog Mocha, or learning to produce music.</p>
+      <p>In late 2022, I recognized I was experiencing burnout and took a conscious step back to recover. That pause helped me reconnect with what truly matters: people. Since then, I've been intentional about creating healthier, more sustainable ways of working—not only through practices like TDD or clean architecture, but also by fostering environments where well-being is part of the process.</p>
+      <p>As part of mentoring junior developers, I now share not only technical knowledge but also tools for managing stress and recognizing early signs of burnout. Helping others grow without burning out has become one of the most meaningful aspects of my work.</p>
+    </section>
+
+    <!-- Jobs -->
+    <section class="mb-12">
+      <h2 class="mb-6 text-2xl font-semibold border-b border-dashed pb-2">Experience</h2>
+      {jobs.map(job => (
+        <article class="mb-8">
+          <div class="flex flex-wrap items-baseline justify-between gap-x-4">
+            <h3 class="text-lg font-bold">{job.position} · <span class="text-accent">{job.employer}</span></h3>
+            <span class="text-sm text-muted">{job.from} – {job.to}</span>
+          </div>
+          <p class="mb-2 text-sm italic text-muted">{job.location}</p>
+          {job.description.map(p => <p class="mb-2 text-sm leading-relaxed">{p}</p>)}
+          <ul class="mt-3 flex flex-wrap gap-2">
+            {job.skills.map(s => (
+              <li class="rounded bg-muted/30 px-2 py-0.5 text-xs">{s}</li>
+            ))}
+          </ul>
+        </article>
+      ))}
+    </section>
+
+    <!-- Education -->
+    <section class="mb-12">
+      <h2 class="mb-6 text-2xl font-semibold border-b border-dashed pb-2">Education</h2>
+      {education.map(edu => (
+        <article class="mb-8">
+          <div class="flex flex-wrap items-baseline justify-between gap-x-4">
+            <h3 class="text-lg font-bold">{edu.position}</h3>
+            <span class="text-sm text-muted">{edu.from} – {edu.to}</span>
+          </div>
+          <p class="mb-2 text-sm italic text-muted">{edu.institution} · {edu.location}</p>
+          {edu.description.map(p => <p class="mb-2 text-sm leading-relaxed">{p}</p>)}
+          <ul class="mt-3 flex flex-wrap gap-2">
+            {edu.skills.map(s => (
+              <li class="rounded bg-muted/30 px-2 py-0.5 text-xs">{s}</li>
+            ))}
+          </ul>
+        </article>
+      ))}
+    </section>
+
+    <!-- Milestones -->
+    <section class="mb-12">
+      <h2 class="mb-6 text-2xl font-semibold border-b border-dashed pb-2">Milestones</h2>
+      <ul class="space-y-6">
+        {milestones.map(m => (
+          <li>
+            <div class="flex flex-wrap items-baseline justify-between gap-x-4">
+              <h3 class="font-semibold">{m.title}</h3>
+              <span class="text-sm text-muted">{m.when}</span>
+            </div>
+            <p class="mt-1 text-sm leading-relaxed">{m.description}</p>
+            {m.youtube && (
+              <a
+                href={`https://www.youtube.com/watch?v=${m.youtube}`}
+                class="mt-1 inline-block text-xs text-accent underline"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Watch on YouTube ↗
+              </a>
+            )}
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <!-- Sponsored Events -->
+    <section class="mb-12">
+      <h2 class="mb-6 text-2xl font-semibold border-b border-dashed pb-2">Sponsored Events</h2>
+      <ul class="space-y-2">
+        {sponsored.map(e => (
+          <li class="flex flex-wrap justify-between gap-x-4 text-sm">
+            <span class="font-medium">{e.title}</span>
+            <span class="text-muted">{e.location} · {e.when}</span>
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <!-- Attended Events -->
+    <section class="mb-12">
+      <h2 class="mb-6 text-2xl font-semibold border-b border-dashed pb-2">Events Attended</h2>
+      <ul class="space-y-2">
+        {attended.map(e => (
+          <li class="flex flex-wrap justify-between gap-x-4 text-sm">
+            <span class="font-medium">{e.title}</span>
+            <span class="text-muted">{e.location} · {e.when}</span>
+          </li>
+        ))}
+      </ul>
+    </section>
+  </main>
+  <Footer />
+</Layout>

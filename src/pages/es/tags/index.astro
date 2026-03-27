@@ -17,7 +17,7 @@ let tags = getUniqueTags(posts);
 
 <Layout title={`${t(locale, "tags")} | ${SITE.title}`}>
   <Header />
-  <Main pageTitle={t(locale, "tags")} pageDesc={t(locale, "allTagsUsed")}>
+  <Main pageTitle={t(locale, "tags")} pageDesc={t(locale, "allTagsUsed")} {locale}>
     <ul>
       {tags.map(({ tag, tagName }) => <Tag {tag} {tagName} size="lg" {locale} />)}
     </ul>

@@ -39,6 +39,7 @@ const locale = "en";
     pageTitle={[`${t(locale, "tag")}`, `${tagName}`]}
     titleTransition={tag}
     pageDesc={`${t(locale, "taggedWith")} "${tagName}".`}
+    {locale}
   >
     <h1 slot="title" transition:name={tag}>{`${t(locale, "tag")}${tag}`}</h1>
     <ul>

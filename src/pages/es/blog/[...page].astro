@@ -22,7 +22,7 @@ const locale = "es";
 
 <Layout title={`${t(locale, "posts")} | ${SITE.title}`}>
   <Header />
-  <Main pageTitle={t(locale, "posts")} pageDesc={t(locale, "allArticles")}>
+  <Main pageTitle={t(locale, "posts")} pageDesc={t(locale, "allArticles")} {locale}>
     <ul>
       {page.data.map(data => <Card {...data} />)}
     </ul>

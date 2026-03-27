@@ -2,21 +2,25 @@
 import Breadcrumb from "@/components/Breadcrumb.astro";
 import { SITE } from "@/config";
 import GoToTopButton from "@/components/GoToTopButton.astro";
+import { type Locale } from "@/config/i18n";
 
 interface StringTitleProp {
   pageTitle: string;
   pageDesc?: string;
+  locale?: Locale;
 }
 
 interface ArrayTitleProp {
   pageTitle: [string, string];
   titleTransition: string;
   pageDesc?: string;
+  locale?: Locale;
 }
 
 export type Props = StringTitleProp | ArrayTitleProp;
 
 const { props } = Astro;
+const locale = ("locale" in props ? props.locale : undefined) ?? "en";
 
 const backUrl = SITE.showBackButton ? Astro.url.pathname : "/";
 ---
@@ -41,7 +45,7 @@ const backUrl = SITE.showBackButton ? Astro.url.pathname : "/";
   }
   <p class="mt-2 mb-6 italic">{props.pageDesc}</p>
   <slot />
-  <GoToTopButton />
+  <GoToTopButton {locale} />
 </main>
 
 <script>

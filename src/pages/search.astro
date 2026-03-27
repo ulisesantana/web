@@ -13,7 +13,7 @@ const locale = "en";
 
 <Layout title={`${t(locale, "searchTitle")} | ${SITE.title}`}>
   <Header />
-  <Main pageTitle={t(locale, "searchTitle")} pageDesc={t(locale, "searchDesc")}>
+  <Main pageTitle={t(locale, "searchTitle")} pageDesc={t(locale, "searchDesc")} {locale}>
     <div id="pagefind-search" transition:persist data-backurl={backUrl}></div>
   </Main>
   <Footer />

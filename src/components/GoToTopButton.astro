@@ -1,10 +1,13 @@
 ---
 import IconArrowUp from "@/assets/icons/IconArrowUp.svg";
+import { t, type Locale } from "@/config/i18n";
+
+const { locale = "en" } = Astro.props as { locale?: Locale };
 ---
 <button
   id="go-to-top-btn"
   class="go-to-top-btn"
-  aria-label="Go to top"
+  aria-label={t(locale, "backToTop")}
   onclick="window.scrollToTop()"
 >
   <IconArrowUp class="inline-block" />
