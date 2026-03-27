@@ -116,13 +116,17 @@ const navItems = nav[locale];
       <LanguageSwitch translatedUrl={translatedUrl} />
     </li>
     {
-      navItems.map(({ url, label }) => (
-        <li>
-          <a href={url} class={currentUrl === url ? "active" : ""}>
-            {label}
-          </a>
-        </li>
-      ))
+      navItems.map(({ url, label }) => {
+        const navPath = url.endsWith("/") ? url.slice(0, -1) : url;
+        const isActive = navPath !== "" && currentUrl.startsWith(navPath);
+        return (
+          <li>
+            <a href={url} class={isActive ? "active" : ""}>
+              {label}
+            </a>
+          </li>
+        );
+      })
     }
     <li>
       <ThemeSwitch />
