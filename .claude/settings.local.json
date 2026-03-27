@@ -4,7 +4,8 @@
       "Bash(find /Users/ulisesantana/projects/web-old/src -name *search* -o -name *archive* -o -name *tag*)",
       "Bash(ls -1 /Users/ulisesantana/projects/web-old/src/pages/es/blog/drafts/*.md)",
       "Bash(xargs -I {} basename {} .md)",
-      "Bash(grep -E \"\\\\.\\(astro|ts|md|mdx\\)$\")"
+      "Bash(grep -E \"\\\\.\\(astro|ts|md|mdx\\)$\")",
+      "Bash(npm run:*)"
     ]
   }
 }

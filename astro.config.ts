@@ -4,6 +4,7 @@ import sitemap from "@astrojs/sitemap";
 import remarkToc from "remark-toc";
 import remarkCollapse from "remark-collapse";
 import { SITE } from "./src/config";
+import yaml from "@modyfi/vite-plugin-yaml";
 
 import mdx from "@astrojs/mdx";
 
@@ -25,7 +26,7 @@ export default defineConfig({
     },
   },
   vite: {
-    plugins: [tailwindcss()],
+    plugins: [tailwindcss(), yaml()],
     optimizeDeps: {
       exclude: ["@resvg/resvg-js"],
     },

@@ -1,0 +1,474 @@
+jobs:
+  - employer: Kentech
+    location: Las Palmas de Gran Canaria, Las Palmas, España (Híbrido)
+    position: Desarrollador Frontend
+    from: 01/2024
+    to: Actualidad
+    description:
+      - |
+        En Kentech he contribuido al desarrollo y mantenimiento de varios proyectos
+        frontend en un entorno de alto tráfico. Entre mis responsabilidades se incluyen
+        mejoras de arquitectura, refactorización de código legado con foco en la
+        mantenibilidad, y redacción de documentación técnica para facilitar el intercambio
+        de conocimiento en el equipo y reducir los silos de información. También realizo
+        spikes técnicos y colaboro regularmente con otros desarrolladores para mejorar
+        los flujos de trabajo.
+      - |
+        He impulsado activamente la adopción del Desarrollo Guiado por Pruebas (TDD) en el
+        equipo. A través de la programación en pareja y el apoyo individualizado, he
+        contribuido a que las pruebas sean una parte más natural y consistente de nuestro
+        flujo de trabajo. Como resultado, la cobertura de tests en uno de nuestros
+        proyectos clave ha aumentado significativamente, lo que ha mejorado la estabilidad
+        del código y la confianza al refactorizar. Además, he participado en el proceso de
+        selección entrevistando candidatos y proponiendo una nueva prueba técnica orientada
+        a evaluar la resolución de problemas y las habilidades de diseño de forma más
+        efectiva.
+    skills:
+      - TDD
+      - Clean Architecture
+      - TypeScript with ESNext
+      - React
+      - NestJS
+      - Node.js
+      - Jest
+      - JavaScript with ES5
+      - AngularJS
+      - Husky
+      - Socket.io
+      - PHP7
+      - MySQL
+      - Backend For Frontend
+      - Microfrontends
+      - Docker
+      - Gitlab
+      - Express
+      - Technical Documentation
+
+  - employer: Triditive
+    location: Meres, Asturias, España (Remoto)
+    position: Programador Senior
+    from: 04/2023
+    to: 06/2023
+    description:
+      - |
+        En Triditive contribuí de forma remota al desarrollo de una plataforma para
+        gestionar flujos de trabajo de fabricación aditiva. Durante mi tiempo allí, apoyé
+        diversas tareas técnicas y busqué oportunidades para aportar valor en un entorno
+        dinámico y en rápida evolución. A pesar de la corta duración, mantuve mi
+        compromiso con el código limpio, la colaboración asíncrona y la documentación de
+        mi trabajo para apoyar al equipo.
+    skills:
+      - Python
+      - JavaScript
+      - Docker
+      - Additive Manufacturing
+      - Github
+      - Vue
+      - jQuery
+      - Flask
+      - Async communication
+
+  - employer: Lean Mind
+    location: San Cristóbal de La Laguna, Santa Cruz de Tenerife, España (Remoto)
+    position: Desarrollador Full Stack
+    from: 03/2020
+    to: 10/2022
+    description:
+      - |
+        En Lean Mind trabajé de forma remota como parte de equipos multidisciplinares para
+        distintos clientes, contribuyendo a productos que iban desde plataformas de
+        e-learning hasta sistemas de facturación y herramientas de inteligencia de
+        audiencia. La empresa opera con un fuerte compromiso con el Software Craftsmanship
+        y la Programación Extrema (XP), algo que encajó perfectamente con mis propios
+        valores como desarrollador. Nuestro trabajo no se centraba solo en entregar
+        funcionalidades, sino en construir software mantenible, bien testeado y con
+        significado.
+      - |
+        Participé en el desarrollo full stack con tecnologías como Node.js, TypeScript,
+        React y ocasionalmente PHP para el mantenimiento de sistemas legacy. Practiqué
+        habitualmente la programación en pareja y el TDD, y contribuí a las decisiones
+        arquitectónicas con la sostenibilidad a largo plazo en mente. En uno de los
+        proyectos, nuestro equipo logró entregar funcionalidades a producción sin ningún
+        informe de bugs gracias a una sólida estrategia de testing y al foco en la
+        simplicidad. También logramos mejoras de rendimiento significativas optimizando
+        procesos de datos que antes tardaban semanas en ejecutarse, reduciéndolos a un
+        solo día. Más allá del trabajo con clientes, mentoricé a aprendices —uno de los
+        cuales se incorporó posteriormente a la empresa— y lideré sesiones de formación
+        interna para fomentar el aprendizaje continuo en el equipo.
+    skills:
+      - Node.js
+      - JavaScript
+      - TypeScript
+      - Hexagonal Architecture
+      - eXtreme Programming (XP)
+      - Test-driven Development (TDD)
+      - React
+      - PHP5
+      - MySQL
+      - MongoDB
+      - Docker
+      - Gitlab
+      - Github
+      - Bitbucket
+      - Technical documentation
+      - Async communication
+
+  - employer: Kentech
+    location: Las Palmas de Gran Canaria, Las Palmas, España
+    position: Desarrollador Full Stack
+    from: 08/2018
+    to: 03/2020
+    description:
+      - |
+        Tras ser ascendido en Kentech, asumí responsabilidades más amplias tanto en
+        backend como en frontend. Alternaba entre el desarrollo de servicios backend en
+        Node.js o PHP y la implementación de funcionalidades frontend con frameworks como
+        AngularJS y React según las necesidades del equipo. Colaboré estrechamente con
+        arquitectos de soluciones y líderes de equipo para diseñar soluciones escalables
+        y prácticas alineadas con los objetivos del proyecto.
+      - |
+        Durante este periodo, jugué un papel activo en la modernización de nuestras
+        prácticas de desarrollo. Introduje varias herramientas y metodologías en el equipo,
+        como TypeScript, NestJS, Storybook, Microfrontends, Cypress, Husky y la creación
+        de paquetes npm internos. Estos esfuerzos contribuyeron a una base de código más
+        cohesionada y mantenible, así como a mejores estándares de testing y documentación.
+        Más allá del desarrollo, también apoyé los despliegues a producción, mantuve los
+        entornos de desarrollo y ayudé en la entrevista e incorporación de nuevos
+        desarrolladores tanto de frontend como de backend.
+    skills:
+      - Node.js
+      - AngularJS
+      - React
+      - TypeScript
+      - Storybook
+      - Jest
+      - Husky
+      - Socket.io
+      - PHP7
+      - MySQL
+      - MongoDB
+      - Microservices
+      - Microfrontends
+      - Redis
+      - Docker
+      - Gitlab
+      - Express
+      - NestJS
+      - Technical Documentation
+
+  - employer: Kentech
+    location: Las Palmas de Gran Canaria, Las Palmas, España
+    position: Desarrollador Backend
+    from: 06/2017
+    to: 07/2018
+    description:
+      - |
+        Fui contratado como Desarrollador Backend gracias a mi interés y rendimiento en
+        las tareas de Node.js durante mis prácticas. En los primeros seis meses, mis
+        tareas principales fueron desarrollar nuevas funcionalidades en microservicios
+        Node.js, apoyar al área de infraestructura y gestionar despliegues en nuestros
+        entornos antes de que CI/CD llegara a nuestras vidas. Eso implicaba gestionar
+        servidores web con Nginx y procesos pm2 para Node.js, además de gestionar los
+        ficheros en los servidores para otros servicios. Afortunadamente, algunos
+        compañeros muy capaces desplegaron Rancher con Docker conectado a nuestro Gitlab,
+        lo que nos dio la oportunidad de incorporar CI/CD a nuestro flujo de trabajo.
+      - |
+        Durante los siguientes seis meses, fui dejando de lado la infraestructura y
+        empecé a crear nuevas funcionalidades en toda la pila. También evangelicé las
+        buenas prácticas sobre Promises de ES2017 con async/await.
+    skills:
+      - Node.js
+      - AngularJS
+      - Socket.io
+      - PHP7
+      - MySQL
+      - MongoDB
+      - Microservices
+      - Redis
+      - Docker
+      - Gitlab
+      - WordPress Development
+      - Technical Documentation
+
+  - employer: Kentech
+    location: Las Palmas de Gran Canaria, Las Palmas, España
+    position: Becario de Desarrollo Web
+    from: 03/2017
+    to: 05/2017
+    description:
+      - |
+        Como parte de mi último año en el Ciclo Superior de Desarrollo de Aplicaciones
+        Web, elegí hacer mis prácticas en Kentech —una de las pocas empresas en Gran
+        Canaria que trabajaba con Node.js en aquella época. También fue una gran
+        oportunidad para practicar el inglés profesional, ya que la empresa operaba
+        íntegramente en ese idioma.
+      - |
+        Comencé como tester de QA para la aplicación web principal de la empresa, pero
+        pronto tuve la oportunidad de asumir tareas de desarrollo. Trabajé en
+        optimizaciones de rendimiento de UI para Opera Mini y desarrollé un tema
+        personalizado de WordPress para un sitio corporativo. Al final de las prácticas,
+        mi mentor me introdujo en su arquitectura de microservicios y me planteó el reto
+        de construir una prueba de concepto para un mecanismo de bloqueo de caché
+        distribuida usando MySQL y Redis. Esa exposición práctica despertó mi interés en
+        la arquitectura backend y sentó las bases para mi transición a un puesto a tiempo
+        completo como backend.
+    skills:
+      - Opera Mini Optimization
+      - Node.js
+      - AngularJS
+      - Quality Assurance
+      - PHP7
+      - MongoDB
+      - Gitlab
+      - Docker
+      - WordPress Development
+      - Technical Documentation
+
+  - employer: Cmas Digital
+    location: Maspalomas, Las Palmas, España (Parcialmente remoto)
+    position: Desarrollador Web
+    from: 04/2016
+    to: 09/2016
+    description:
+      - |
+        Mientras cursaba el Ciclo Superior de Desarrollo de Aplicaciones Web me incorporé
+        a Cmas Digital, un estudio de dos personas donde apliqué mucho de lo que había
+        aprendido en Mokaps sobre contenido, flujo de proyectos e interacción con clientes.
+        Como único desarrollador, diseñé y construí sitios web con WordPress, HTML5 y CSS3,
+        creé wireframes y ayudé a organizar la información de los proyectos.
+      - |
+        El puesto requería una gran autonomía e iniciativa. Mi experiencia en Mokaps me
+        ayudó a adaptarme con fluidez a un rol más técnico, asumiendo la responsabilidad
+        completa de los proyectos web.
+    skills:
+      - HTML5
+      - CSS3
+      - JavaScript
+      - PHP5
+      - WordPress Development
+      - Scrum
+      - Kanban
+      - UI/UX
+      - Customer Management
+      - Project Management
+
+  - employer: Mokaps Studio
+    location: Las Palmas de Gran Canaria, Las Palmas, España (Parcialmente remoto)
+    position: Social Media Manager / Cofundador
+    from: 02/2013
+    to: 06/2015
+    description:
+      - |
+        En Mokaps Studio, una pequeña agencia creativa que cofundé, lideré los esfuerzos
+        de marketing digital mientras adquiría mi primera experiencia práctica con
+        tecnologías web. Planifiqué y ejecuté estrategias de contenido en múltiples
+        canales, gestioné comunidades online y me encargué de la comunicación de crisis
+        cuando fue necesario. Como copywriter, fui responsable de todo el contenido del
+        blog y también trabajé directamente en sitios web, insertando y maquetando
+        contenido con HTML y CSS.
+      - |
+        Gestionar una empresa también implicaba asumir múltiples roles. Me encargué de
+        las relaciones con clientes, la planificación de productos, los presupuestos, los
+        impuestos y la resolución de problemas del día a día. Esta experiencia me dio una
+        perspectiva más amplia sobre los productos digitales y despertó mi interés por la
+        programación, que más tarde se convirtió en mi camino profesional.
+    skills:
+      - Digital Marketing
+      - Social Media Strategy
+      - Content Generation
+      - Community Management
+      - Customer Management
+      - Project Management
+      - Business Management
+      - HTML5
+      - CSS3
+      - WordPress
+      - Scrum
+      - Kanban
+      - Async communication
+
+education:
+  - institution: CIFP Villa de Agüimes
+    location: Cruce de Arinaga, Las Palmas, España
+    position: Técnico Superior en Desarrollo de Aplicaciones Web
+    from: 10/2015
+    to: 05/2017
+    description:
+      - |
+        Este programa de formación profesional de dos años me proporcionó una base sólida
+        en tecnologías web, incluyendo HTML5, CSS3, JavaScript, Java, PHP, SQL y
+        frameworks como Angular y Express. Aprendí tanto desarrollo frontend como backend,
+        así como metodologías como MVC y Agile.
+      - |
+        El programa también incluyó unas prácticas profesionales que realicé en Kentech.
+        Esa oportunidad me permitió aplicar todo lo aprendido en un entorno real y
+        confirmó mi decisión de dedicarme al desarrollo de software a largo plazo.
+    skills:
+      - HTML5
+      - CSS3
+      - SQL
+      - Java
+      - PHP5
+      - OOP
+      - JavaScript
+      - jQuery
+      - MVC
+      - Bootstrap 3
+      - Progressive Web Apps
+      - Angular 2
+      - MongoDB
+      - Node.js
+      - Express
+
+  - institution: IES José Zerpa
+    location: Vecindario, Las Palmas, España
+    position: Técnico Superior en Gestión de Ventas y Espacios Comerciales
+    from: 09/2011
+    to: 11/2012
+    description:
+      - |
+        Antes de entrar en el mundo tecnológico, completé un ciclo formativo de 1.400
+        horas en gestión empresarial y marketing. Estudié áreas como la gestión de
+        clientes, logística, ventas y elaboración de informes con Excel.
+      - |
+        Aunque no directamente técnico, esta formación me dio una sólida comprensión de
+        cómo funcionan las empresas, lo que ha resultado muy valioso a la hora de
+        colaborar con stakeholders, entender los objetivos del producto y desenvolverme
+        en entornos multidisciplinares.
+    skills:
+      - Marketing
+      - Customer management
+      - Logistics
+      - Sales
+      - Business management
+      - Office automation
+      - Excel reporting
+
+milestones:
+  - when: 10/2022 – 03/2023
+    title: Superé el burnout profesional
+    description: |
+      Tras sufrir un burnout profesional debido al exceso de trabajo sostenido y a la
+      falta de límites claros, decidí dar un paso atrás para recuperarme y reflexionar.
+      Este período me permitió reconstruir hábitos de trabajo más saludables, priorizar
+      la sostenibilidad y reconectar con el tipo de desarrollo de software que aporta
+      valor a largo plazo, tanto a los usuarios como a los desarrolladores. Fue un punto
+      de inflexión clave en mi forma de entender el trabajo, la colaboración y el
+      crecimiento.
+
+  - when: 05/2022
+    title: Charla en JSDay Canarias 2022
+    youtube: V4sXNlzJIy8
+    description: |
+      En esta charla compartí cómo optimizamos drásticamente un proceso pesado en
+      Node.js, reduciendo su tiempo de ejecución de varias horas a tan solo minutos.
+      Expliqué estrategias para gestionar flujos asíncronos y simplificar el código para
+      lograr mejoras de rendimiento medibles.
+
+  - when: 11/2019
+    title: Organizador y anfitrión – Global Day of Coderetreat
+    description: |
+      Co-organicé y fui anfitrión de la edición de Gran Canaria del Global Day of
+      Coderetreat, un evento de jornada completa centrado en los fundamentos del diseño
+      de software. Ofreció un espacio seguro y colaborativo para que los desarrolladores
+      practicaran y reflexionaran sobre su oficio.
+
+  - when: 10/2019
+    title: Taller para la comunidad React Canarias
+    youtube: gkTAlgsr4tg
+    description: |
+      Impartí un taller práctico para introducir a los desarrolladores frontend en
+      estrategias modernas de testing usando Cypress y React Testing Library. La sesión
+      se centró en ejemplos prácticos y en fomentar una mentalidad de test-first.
+
+  - when: 11/2018
+    title: Charla en JSDay Canarias 2018
+    youtube: Joqdb-oZjC8
+    description: Una charla introductoria sobre npm y cómo publicar paquetes en él.
+
+  - when: 11/2018
+    title: Compilé Node.js en un Chromebook en NodeConf EU
+    description: |
+      Durante un taller en NodeConf EU compilé Node.js desde cero en un Acer Chromebook
+      R11 con Debian virtual. Tardé casi 2 horas solo en compilar.
+
+  - when: 03/2017
+    title: Segundo premio en el hackathon Hack for Good
+    description: |
+      En un hackathon de 36 horas centrado en el bien social, mi equipo y yo desarrollamos
+      Aprende con Amidi, una Progressive Web App para ayudar a enseñar y preservar la
+      cultura canaria a través de cuestionarios interactivos.
+
+  - when: 03/2016
+    title: Primer premio en el hackathon Startup Weekend
+    description: |
+      Me uní a un equipo de habla inglesa en este hackathon de 54 horas, donde construimos
+      BasketUp, una plataforma de análisis de baloncesto usando tres smartphones para el
+      seguimiento del balón y la visualización de datos.
+
+sponsored:
+  - when: 05/2022
+    location: San Cristóbal de la La Laguna, España
+    title: JSDay Canarias
+  - when: 11/2019
+    location: Las Palmas de Gran Canaria, España
+    title: Global Day of Coderetreat Canarias
+  - when: 11/2019
+    location: Las Palmas de Gran Canaria, España
+    title: PyDay Gran Canaria
+  - when: 11/2019
+    location: San Cristóbal de la La Laguna, España
+    title: JSDay Canarias
+  - when: 11/2018
+    location: San Cristóbal de la La Laguna, España
+    title: JSDay Canarias
+
+attended:
+  - when: 05/2025
+    location: Las Palmas de Gran Canaria, España
+    title: Socracan
+  - when: 07/2022
+    location: Santa Cruz de Tenerife, España
+    title: Tenerife GG
+  - when: 06/2022
+    location: Pamplona, España
+    title: Pamplona Software Crafters
+  - when: 05/2022
+    location: San Cristóbal de la La Laguna, España
+    title: JSDay Canarias
+  - when: 02/2020
+    location: Santa Cruz de Tenerife, España
+    title: Socracan
+  - when: 11/2019
+    location: Kilkenny, Irlanda
+    title: NodeCONF EU
+  - when: 11/2019
+    location: San Cristóbal de la La Laguna, España
+    title: JSDay Canarias
+  - when: 09/2019
+    location: San Cristóbal de la La Laguna, España
+    title: AdaLoversConf
+  - when: 06/2019
+    location: Berlín, Alemania
+    title: JSConf EU
+  - when: 06/2019
+    location: Berlín, Alemania
+    title: CSSconf EU
+  - when: 05/2019
+    location: París, Francia
+    title: React Europe
+  - when: 11/2018
+    location: San Cristóbal de la La Laguna, España
+    title: JSDay Canarias
+  - when: 11/2018
+    location: Kilkenny, Irlanda
+    title: NodeCONF EU
+  - when: 06/2018
+    location: Berlín, Alemania
+    title: JSConf EU
+  - when: 04/2018
+    location: Las Palmas de Gran Canaria, España
+    title: Socracan
+  - when: 11/2017
+    location: Santa Cruz de Tenerife, España
+    title: JSDay Canarias

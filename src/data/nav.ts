@@ -7,6 +7,6 @@ export const nav = {
   es: [
     { url: "/es/blog/", label: "Blog" },
     { url: "/es/sobre-mi/", label: "Sobre mí" },
-    { url: "/cv/", label: "CV" },
+    { url: "/es/cv/", label: "CV" },
   ],
 };
