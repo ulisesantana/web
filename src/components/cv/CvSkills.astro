@@ -2,7 +2,7 @@
 const { skills } = Astro.props as { skills: string[] };
 ---
 
-<ul class="mt-3 flex list-none flex-wrap justify-evenly gap-2">
+<ul class="mt-3 px-0 flex list-none flex-wrap justify-evenly gap-2">
   {
     skills.map((skill: string) => (
       <li class="rounded border border-accent/30 bg-accent/10 px-2 py-0.5 text-sm text-accent">
