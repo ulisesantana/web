@@ -13,7 +13,7 @@ const locale = getLanguageFromPath(Astro.url.pathname);
 const rssHref = locale === "es" ? "/es/rss.xml" : "/rss.xml";
 ---
 
-<div class:list={["flex-wrap justify-center gap-1", { flex: centered }]}>
+<div class:list={["flex-wrap items-center justify-center gap-1", { flex: centered }]}>
   {
     SOCIALS.map(social => (
       <LinkButton
