@@ -3,6 +3,7 @@ export const SITE = {
   author: "Ulises Santana",
   profile: "https://ulisesantana.dev/",
   desc: "Full Stack Developer with JavaScript as mother tongue and web as my home nation. Based in the Canary Islands 🏝️.",
+  descEs: "Desarrollador Full Stack con JavaScript como lengua materna y la web como patria. Trasteo con tecnologías desde las Islas Canarias 🏝️.",
   title: "Ulises Santana",
   ogImage: "favicon.png", // default image for meta tags
   lightAndDarkMode: true,
