@@ -9,7 +9,7 @@ const { locale = "en" } = Astro.props as { locale?: Locale };
 const { milestones } = locale === "es" ? es : en;
 ---
 
-<section class="mb-12">
+<section id="milestones" class="mb-12">
   <CvSectionTitle title={locale === "es" ? "Hitos" : "Milestones"} />
   <ul class="list-none px-0">
     {

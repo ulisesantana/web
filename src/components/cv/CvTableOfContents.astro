@@ -1,0 +1,95 @@
+---
+import type { Locale } from "@/config/i18n";
+
+const { locale = "en" } = Astro.props as { locale?: Locale };
+const isEs = locale === "es";
+
+const sections = isEs
+  ? [
+      { emoji: "👤", label: "Quién soy", href: "#who-i-am" },
+      { emoji: "💼", label: "Experiencia", href: "#work-experience" },
+      { emoji: "🎓", label: "Formación", href: "#education" },
+      { emoji: "🏆", label: "Hitos", href: "#milestones" },
+      { emoji: "💰", label: "Eventos patrocinados", href: "#sponsored-events" },
+      { emoji: "👥", label: "Eventos asistidos", href: "#attended-events" },
+    ]
+  : [
+      { emoji: "👤", label: "Who I am", href: "#who-i-am" },
+      { emoji: "💼", label: "Work experience", href: "#work-experience" },
+      { emoji: "🎓", label: "Education & Training", href: "#education" },
+      { emoji: "🏆", label: "Milestones", href: "#milestones" },
+      { emoji: "💰", label: "Sponsored events", href: "#sponsored-events" },
+      { emoji: "👥", label: "Attended events", href: "#attended-events" },
+    ];
+---
+
+<nav class="toc not-prose my-8">
+  <p class="toc-title">{isEs ? "Tabla de contenidos:" : "Table of contents:"}</p>
+  <ol>
+    {sections.map(({ emoji, label, href }) => (
+      <li>
+        <a href={href}>
+          <span aria-hidden="true">{emoji}</span> {label}
+        </a>
+      </li>
+    ))}
+  </ol>
+  <a href="/resume.pdf" class="resume-link" download>
+    {isEs
+      ? "📄 Descarga un resumen en PDF (en inglés)"
+      : "📄 Download my résumé as PDF"}
+  </a>
+</nav>
+
+<style>
+  .toc {
+    border: 1px dashed var(--accent);
+    border-radius: 0.5rem;
+    padding: 1.25rem 1.5rem;
+    max-width: fit-content;
+  }
+
+  .toc-title {
+    font-weight: 600;
+    margin: 0 0 0.5rem;
+    color: var(--foreground);
+  }
+
+  ol {
+    margin: 0 0 1rem;
+    padding-left: 1.25rem;
+  }
+
+  li {
+    margin: 0.25rem 0;
+  }
+
+  a {
+    color: var(--accent);
+    text-decoration: none;
+    transition: opacity 0.15s ease;
+  }
+
+  a:hover {
+    opacity: 0.75;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .resume-link {
+    display: inline-block;
+    margin-top: 0.25rem;
+    font-size: 0.875rem;
+    border: 1px solid var(--accent);
+    border-radius: 0.375rem;
+    padding: 0.25rem 0.75rem;
+    transition: background-color 0.15s ease, color 0.15s ease;
+  }
+
+  .resume-link:hover {
+    background-color: var(--accent);
+    color: var(--background);
+    text-decoration: none;
+    opacity: 1;
+  }
+</style>

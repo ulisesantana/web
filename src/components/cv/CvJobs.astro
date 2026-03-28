@@ -10,7 +10,7 @@ const { locale = "en" } = Astro.props as { locale?: Locale };
 const { jobs } = locale === "es" ? es : en;
 ---
 
-<section class="mb-12 px-0">
+<section id="work-experience" class="mb-12 px-0">
   <CvSectionTitle title={locale === "es" ? "Experiencia" : "Experience"} />
   {
     jobs.map((job: any) => (
