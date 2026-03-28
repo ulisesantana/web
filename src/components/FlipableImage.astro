@@ -45,11 +45,19 @@
         width: 100%;
         height: 100%;
         backface-visibility: hidden;
+        -webkit-backface-visibility: hidden;
         transition: opacity ease-in-out var(--transition-speed-regular);
+        will-change: transform;
     }
 
     .flip-back {
+        opacity: 0;
         transform: rotateY(180deg);
+    }
+
+    .flipable-image:hover .flip-back,
+    .flipable-image:active .flip-back {
+        opacity: 1;
     }
 
     @media (max-width: 767px) {
