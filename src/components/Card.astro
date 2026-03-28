@@ -10,7 +10,9 @@ export interface Props extends CollectionEntry<"blog"> {
 
 const { variant = "h2", data, id, filePath } = Astro.props;
 
-const { title, description, pubDatetime, modDatetime, timezone, lang = "en", slug } = data;
+const { title, description, pubDatetime, modDatetime, timezone, lang = "en", slug, draft } = data;
+
+const isDraft = import.meta.env.DEV && draft;
 
 const headerProps = {
   style: { viewTransitionName: slugifyStr(title) },
@@ -18,19 +20,28 @@ const headerProps = {
 };
 ---
 
-<li class="my-6">
-  <a
-    href={getPath(id, filePath, true, lang, slug)}
-    class="inline-block text-lg font-medium text-accent decoration-dashed underline-offset-4 focus-visible:no-underline focus-visible:underline-offset-0"
-  >
+<li class:list={["my-6", { "bg-red-950": isDraft }]}>
+  <div class="flex items-baseline gap-2">
+    <a
+      href={getPath(id, filePath, true, lang, slug)}
+      class="inline-block text-lg font-medium text-accent decoration-dashed underline-offset-4 focus-visible:no-underline focus-visible:underline-offset-0"
+    >
+      {
+        variant === "h2" ? (
+          <h2 {...headerProps}>{title}</h2>
+        ) : (
+          <h3 {...headerProps}>{title}</h3>
+        )
+      }
+    </a>
     {
-      variant === "h2" ? (
-        <h2 {...headerProps}>{title}</h2>
-      ) : (
-        <h3 {...headerProps}>{title}</h3>
+      isDraft && (
+        <span class="shrink-0 rounded border border-dashed border-accent px-1.5 py-0.5 text-xs text-accent">
+          Draft
+        </span>
       )
     }
-  </a>
+  </div>
   <Datetime {pubDatetime} {modDatetime} {timezone} locale={lang} />
   <p>{description}</p>
 </li>

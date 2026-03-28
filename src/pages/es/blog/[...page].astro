@@ -12,7 +12,7 @@ import { SITE } from "@/config";
 import { t } from "@/config/i18n";
 
 export const getStaticPaths = (async ({ paginate }) => {
-  const posts = await getCollection("blog", ({ data }) => !data.draft && data.lang === "es");
+  const posts = await getCollection("blog", ({ data }) => (import.meta.env.DEV || !data.draft) && data.lang === "es");
   return paginate(getSortedPosts(posts), { pageSize: SITE.postPerPage });
 }) satisfies GetStaticPaths;
 

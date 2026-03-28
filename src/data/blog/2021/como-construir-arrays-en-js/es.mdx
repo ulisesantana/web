@@ -104,9 +104,15 @@ Como vemos tenemos varias opciones a la hora de crear un array en JavaScript. En
 
 El `Array.from` lo uso sobre todo cuando necesito pasar un iterable o array-like object a array para trabajar con él. También lo uso para hacer cosas como esta y tratar de parecer más inteligente ☕️🧐:
 
-<JsRepl
-  title="Array.from fancy"
-  init={`[\`Array.from({length: 5}).map((_, index) => \\\`\${'*'.repeat(index + 1)}\\\`)\`]`}
-/>
+```js
+const triangle = Array.from({length: 5}).map((_, index) => `${'*'.repeat(index + 1)}`)
+// [ '*', '**', '***', '****', '*****' ]
+console.log(triangle.join('\n'));
+// *
+// **
+// ***
+// ****
+// *****
+```
 
 Además, `Array.from` es bastante legible, lo puedes leer casi como si fuera lenguaje natural. Y si no has entendido de qué va ese `.map` no te preocupes, estoy preparando más entradas en las que explicaré todo lo que sé sobre los arrays en JavaScript.

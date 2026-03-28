@@ -1,0 +1,49 @@
+list  :
+  - name: git-reporter
+    url:
+    source:
+    image:
+    status: Maintained
+    description:
+      es:
+      en:
+  - name: array-analyzer
+    url:
+    source:
+    image:
+    status: Maintained
+    description:
+      es:
+      en:
+  - name: cheapest-power-hour
+    url:
+    source:
+    image:
+    status: Maintained
+    description:
+      es:
+      en:
+  - name: diet
+    url:
+    source:
+    image:
+    status: Maintained
+    description:
+      es:
+      en:
+  - name: object-comparer
+    url:
+    source:
+    image:
+    status: Maintained
+    description:
+      es:
+      en:
+  - name: fefo
+    url:
+    source: https://github.com/ulisesantana/bug-hunter
+    image:
+    status: Maintained
+    description:
+      es:
+      en:
