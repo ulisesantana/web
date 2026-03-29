@@ -1,6 +1,6 @@
 ---
 title: "Large files processing performance in Node.js"
-pubDatetime: 2025-08-07
+pubDatetime: 2026-03-30
 description: When working with large files in Node.js, the choice of processing strategy can make a dramatic difference in both performance and memory consumption. In this post, we'll explore three different approaches to processing a CSV file and analyze their trade-offs using a real-world performance comparison.
 tags: [node.js, csv, javascript]
 draft: true

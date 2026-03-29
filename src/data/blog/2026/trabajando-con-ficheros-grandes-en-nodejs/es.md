@@ -1,6 +1,6 @@
 ---
 title: Trabajando con ficheros grandes en Node.js
-pubDatetime: 2025-08-07
+pubDatetime: 2026-03-30
 description: Después de un tiempo alejado del backend, decidí enfrentarme a un reto clásico pero siempre interesante, procesar archivos CSV enormes con Node.js. En esta entrada comparo tres enfoques —lectura completa, streaming y streaming con concurrencia— para ver cuál ofrece el mejor equilibrio entre rendimiento y uso de memoria.
 tags: [node.js, csv]
 draft: true
@@ -9,7 +9,7 @@ lang: es
 
 Después de mi excedencia [para recuperarme del burnout](/es/blog/2025/despues-del-burnout/) y de reincorporarme al mundo del desarrollo como frontend developer, llevaba un tiempo sin ensuciarme las manos con Node.js. Echo de menos trabajar en backend y enfrentarme a ese tipo de retos técnicos en los que puedes jugar con el rendimiento, medir el impacto de tus decisiones y, de paso, aprender cosas útiles para el futuro.
 
-Así que decidí hacer un pequeño experimento: ¿cómo se comporta Node.js procesando archivos CSV grandes? No solo por curiosidad, sino porque este tipo de tareas —importar datos, validar información y transformarla— son muy comunes en la vida real. Y si no has tenido que pelearte nunca con un CSV de varios gigas, dame tiempo, que ya te tocará.
+Así que decidí hacer un pequeño experimento: ¿cómo se comporta Node.js procesando archivos CSV grandes? No solo por curiosidad, sino porque este tipo de tareas —importar datos, validar información y transformarla— son muy comunes en la vida real. Y si no has tenido que pelearte nunca con un CSV de varios gigas, date tiempo, que ya te tocará.
 
 Quería algo lo bastante simple como para enfocarme en la estrategia y no en la lógica de negocio, pero también lo bastante realista como para que los resultados fueran aplicables a proyectos del día a día. Lo que hice fue comparar tres maneras distintas de procesar un archivo CSV y medir cuánto tardan, cuánta memoria consumen y cómo escalan.
 
