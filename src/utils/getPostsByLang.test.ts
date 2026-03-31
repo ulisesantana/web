@@ -28,11 +28,11 @@ function createPost(
 
 describe("getPostsByLang", () => {
   const posts = [
-    createPost({ lang: "es", title: "Post en español" }),
+    createPost({ lang: "es", title: "Spanish post" }),
     createPost({ lang: "en", title: "Post in English" }),
-    createPost({ lang: "es", title: "Otro post en español" }),
+    createPost({ lang: "es", title: "Another Spanish post" }),
     createPost({ lang: "en", title: "Another English post" }),
-    createPost({ lang: "es", title: "Borrador", draft: true }),
+    createPost({ lang: "es", title: "Draft post", draft: true }),
   ];
 
   it("filters posts by Spanish language", () => {

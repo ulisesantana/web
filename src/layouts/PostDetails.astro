@@ -99,7 +99,7 @@ const translatedPosts = await getCollection(
 const translatedPostUrl = getTranslatedPostUrl(post, translatedPosts);
 ---
 
-<Layout {...layoutProps}>
+<Layout {...layoutProps} alternateUrl={translatedPostUrl ?? null}>
   <Header translatedUrl={translatedPostUrl} />
   <BackButton {locale} />
   <main

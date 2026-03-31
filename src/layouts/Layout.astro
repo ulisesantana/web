@@ -16,6 +16,13 @@ export interface Props {
   pubDatetime?: Date;
   modDatetime?: Date | null;
   scrollSmooth?: boolean;
+  /**
+   * URL of the translated version of this page.
+   * - `string`    → explicit alternate URL (used by blog posts with a translation)
+   * - `null`      → no alternate exists (untranslated post — omit hreflang alternate)
+   * - `undefined` → auto-derive by flipping the `/es` prefix (listing pages, static pages)
+   */
+  alternateUrl?: string | null;
 }
 
 const lang = getLanguageFromPath(Astro.url.pathname);
@@ -31,7 +38,36 @@ const {
   pubDatetime,
   modDatetime,
   scrollSmooth = false,
+  alternateUrl,
 } = Astro.props;
+
+// Compute the alternate-language URL for hreflang tags.
+// - Explicit string from the caller (post with a known translation URL)
+// - null explicitly → no alternate (untranslated post)
+// - undefined → auto-derive for listing / static pages by swapping the /es prefix
+let hreflangAlternate: string | null;
+if (alternateUrl === null) {
+  hreflangAlternate = null;
+} else if (typeof alternateUrl === "string") {
+  hreflangAlternate = alternateUrl;
+} else {
+  // Auto-derive: flip /es prefix
+  const pathname = Astro.url.pathname;
+  hreflangAlternate =
+    lang === "es"
+      ? new URL(pathname.replace(/^\/es/, "") || "/", Astro.site).href
+      : new URL(`/es${pathname}`, Astro.site).href;
+}
+
+// English URL is always the x-default
+const hreflangEnUrl =
+  lang === "en"
+    ? canonicalURL.toString()
+    : hreflangAlternate ?? canonicalURL.toString();
+const hreflangEsUrl =
+  lang === "es"
+    ? canonicalURL.toString()
+    : hreflangAlternate ?? null;
 
 const socialImageURL = new URL(ogImage, Astro.url);
 
@@ -122,6 +158,11 @@ const structuredData = {
       title={SITE.title}
       href={new URL(getLanguageFromPath(Astro.url.pathname) === "es" ? "es/rss.xml" : "rss.xml", Astro.site)}
     />
+
+    <!-- hreflang: link English and Spanish versions for SEO -->
+    <link rel="alternate" hreflang="en" href={hreflangEnUrl} />
+    {hreflangEsUrl && <link rel="alternate" hreflang="es" href={hreflangEsUrl} />}
+    <link rel="alternate" hreflang="x-default" href={hreflangEnUrl} />
 
     <meta name="theme-color" content="" />
 

@@ -14,7 +14,7 @@ const locale = "en";
 <Layout title={`${t(locale, "searchTitle")} | ${SITE.title}`}>
   <Header />
   <Main pageTitle={t(locale, "searchTitle")} pageDesc={t(locale, "searchDesc")} {locale}>
-    <div id="pagefind-search" transition:persist data-backurl={backUrl}></div>
+    <div id="pagefind-search" data-backurl={backUrl}></div>
   </Main>
   <Footer />
 </Layout>
@@ -34,14 +34,12 @@ const locale = "en";
       // @ts-expect-error — Missing types for @pagefind/default-ui package.
       const { PagefindUI } = await import("@pagefind/default-ui");
 
-      // Display warning inn dev mode
+      // Display warning in dev mode (search still works using the existing built index)
       if (import.meta.env.DEV) {
-        pageFindSearch.innerHTML = `
-            <div class="bg-muted/75 rounded p-4 space-y-4 mb-4">
-              <p><strong>DEV mode Warning! </strong>You need to build the project at least once to see the search results during development.</p>
-              <code class="block bg-black text-white px-2 py-1 rounded">pnpm run build</code>
-            </div>
-          `;
+        const warning = document.createElement("div");
+        warning.className = "bg-muted/75 rounded p-4 space-y-4 mb-4";
+        warning.innerHTML = `<p><strong>DEV mode warning:</strong> Results may be outdated. Run <code class="bg-black text-white px-1 rounded">npm run build</code> to refresh the index.</p>`;
+        pageFindSearch.before(warning);
       }
 
       // Init pagefind ui
@@ -63,7 +61,8 @@ const locale = "en";
       // If search param exists (eg: search?q=astro), trigger search
       const query = params.get("q");
       if (query) {
-        search.triggerSearch(query);
+        // Defer until after PagefindUI's component has mounted
+        setTimeout(() => search.triggerSearch(query), 0);
       }
 
       // Reset search param if search input is cleared
@@ -80,15 +79,10 @@ const locale = "en";
     });
   }
 
-  document.addEventListener("astro:after-swap", () => {
-    const pagefindSearch = document.querySelector("#pagefind-search");
-
-    // if pagefind search form already exists, don't initialize search component
-    if (pagefindSearch && pagefindSearch.querySelector("form")) return;
-
+  document.addEventListener("astro:page-load", () => {
+    if (window.location.pathname !== "/search") return;
     initSearch();
   });
-  initSearch();
 </script>
 
 <style is:global>

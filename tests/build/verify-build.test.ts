@@ -4,18 +4,18 @@ import { join } from 'path';
 
 const DIST_DIR = join(process.cwd(), 'dist');
 
-describe('Build Output - Separación de idiomas', () => {
+describe('Build Output - Language separation', () => {
   beforeAll(async () => {
-    // Verificar que dist existe
+    // Verify dist directory exists
     try {
       await access(DIST_DIR);
     } catch {
-      throw new Error('Directorio dist/ no existe. Ejecuta: npm run build');
+      throw new Error('dist/ directory does not exist. Run: npm run build');
     }
   });
 
-  describe('Posts en español', () => {
-    it('posts de 2021 están en /es/blog/2021/', async () => {
+  describe('Spanish posts', () => {
+    it('2021 posts are under /es/blog/2021/', async () => {
       const esPostsDir = join(DIST_DIR, 'es/blog/2021');
       const esPosts = await readdir(esPostsDir);
 
@@ -26,7 +26,7 @@ describe('Build Output - Separación de idiomas', () => {
       expect(esPosts).toContain('como-construir-arrays-en-js');
     });
 
-    it('posts de 2022 están en /es/blog/2022/', async () => {
+    it('2022 posts are under /es/blog/2022/', async () => {
       const esPostsDir = join(DIST_DIR, 'es/blog/2022');
       const esPosts = await readdir(esPostsDir);
 
@@ -35,7 +35,7 @@ describe('Build Output - Separación de idiomas', () => {
       expect(esPosts).toContain('deshabilita-tu-webcam');
     });
 
-    it('posts de 2020 están en /es/blog/2020/', async () => {
+    it('2020 posts are under /es/blog/2020/', async () => {
       const esPostsDir = join(DIST_DIR, 'es/blog/2020');
       const esPosts = await readdir(esPostsDir);
 
@@ -44,7 +44,7 @@ describe('Build Output - Separación de idiomas', () => {
     });
   });
 
-  describe('Posts en inglés', () => {
+  describe('English posts', () => {
     it('bilingual post exists in /blog/2022/ with English slug', async () => {
       const enPostsDir = join(DIST_DIR, 'blog/2022');
       const enPosts = await readdir(enPostsDir);
@@ -61,7 +61,7 @@ describe('Build Output - Separación de idiomas', () => {
       expect(enPosts).not.toContain('how-to-configure-astropaper-theme');
     });
 
-    it('posts en español NO están en /blog/', async () => {
+    it('Spanish posts are NOT under /blog/', async () => {
       const enPostsDir = join(DIST_DIR, 'blog');
       const enPosts = await readdir(enPostsDir);
 
@@ -79,29 +79,29 @@ describe('Build Output - Separación de idiomas', () => {
     });
   });
 
-  describe('Estructura de páginas', () => {
-    it('existe página principal en español', async () => {
+  describe('Page structure', () => {
+    it('Spanish homepage exists', async () => {
       const esIndexPath = join(DIST_DIR, 'es/index.html');
-      await access(esIndexPath); // Lanza error si no existe
+      await access(esIndexPath); // Throws if file does not exist
     });
 
-    it('existe página de blog en español', async () => {
+    it('Spanish blog listing page exists', async () => {
       const esBlogPath = join(DIST_DIR, 'es/blog/index.html');
       await access(esBlogPath);
     });
 
-    it('existe página de tags en español', async () => {
+    it('Spanish tags page exists', async () => {
       const esTagsPath = join(DIST_DIR, 'es/tags/index.html');
       await access(esTagsPath);
     });
 
-    it('existe página de búsqueda en español', async () => {
+    it('Spanish search page exists', async () => {
       const esSearchPath = join(DIST_DIR, 'es/search/index.html');
       await access(esSearchPath);
     });
 
-    it('existe página about en español', async () => {
-      const esAboutPath = join(DIST_DIR, 'es/about/index.html');
+    it('Spanish sobre-mi page exists', async () => {
+      const esAboutPath = join(DIST_DIR, 'es/sobre-mi/index.html');
       await access(esAboutPath);
     });
   });
@@ -124,7 +124,7 @@ describe('Build Output - Separación de idiomas', () => {
   });
 
   describe('Pagefind', () => {
-    it('Pagefind generó índice', async () => {
+    it('Pagefind generated an index', async () => {
       const pagefindDir = join(DIST_DIR, 'pagefind');
       await access(pagefindDir);
 
@@ -134,4 +134,3 @@ describe('Build Output - Separación de idiomas', () => {
     });
   });
 });
-
