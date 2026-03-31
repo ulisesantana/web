@@ -81,7 +81,8 @@ const locale = "es";
     }
 
     // Only initialize the search UI when on the ES search page
-    if (window.location.pathname !== "/es/search") return;
+    if (!searchEl) return;
+    if (document.documentElement.lang !== "es") return;
     initSearch();
   });
 </script>

@@ -80,7 +80,8 @@ const locale = "en";
   }
 
   document.addEventListener("astro:page-load", () => {
-    if (window.location.pathname !== "/search") return;
+    if (!document.querySelector("#pagefind-search")) return;
+    if (document.documentElement.lang !== "en") return;
     initSearch();
   });
 </script>
