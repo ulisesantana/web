@@ -31,8 +31,26 @@ if (isSpanish) {
 </style>
 
 <a
+  data-language-switch
   aria-label={isSpanish ? 'Switch to English' : 'Cambiar a español'}
   href={targetPath}
 >
   {emoji}
 </a>
+
+<script>
+  function updateReloadBehavior() {
+    const link = document.querySelector<HTMLAnchorElement>("[data-language-switch]");
+    if (!link) return;
+
+    // On search pages, force a full reload so Pagefind reinitializes
+    // with the correct language (its internal state persists across View Transitions)
+    if (document.querySelector("#pagefind-search")) {
+      link.setAttribute("data-astro-reload", "");
+    } else {
+      link.removeAttribute("data-astro-reload");
+    }
+  }
+
+  document.addEventListener("astro:page-load", updateReloadBehavior);
+</script>
